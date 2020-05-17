@@ -1,3 +1,5 @@
 from django.contrib import admin
+from auth.models import Author, Role
 
-# Register your models here.
+admin.site.register(Author)
+admin.site.register(Role)
