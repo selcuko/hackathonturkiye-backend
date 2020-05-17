@@ -1,6 +1,5 @@
 from django.db import models
 from django.contrib.auth.models import User
-from auth.models import Author
 
 
 class EventType(models.Model):

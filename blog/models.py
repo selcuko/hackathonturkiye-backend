@@ -1,5 +1,5 @@
 from django.db import models
-from auth.models import Author
+from django.contrib.auth.models import User
 
 
 class Post(models.Model):
@@ -8,7 +8,7 @@ class Post(models.Model):
     text = models.TextField(max_length=1024**2)
     published = models.BooleanField(default=False)
     
-    authors = models.ManyToManyField(Author)
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now=True)
     edited_at = models.DateTimeField(auto_now_add=True)

@@ -1,0 +1,1362 @@
+{
+  "hackathons" : [ {
+    "date" : 1511596800000,
+    "description" : "25 Kasım, Eski Büyükdere cad. Maslak No:1 34398, Istanbul",
+    "imageUrl" : "https://secure.meetupstatic.com/photos/event/b/6/3/1/global_461686641.jpeg",
+    "name" : "Greenfield",
+    "url" : "http://javausergroup.istanbul/greenfield"
+  }, {
+    "date" : 1511427600000,
+    "description" : "DEPARK Beta (Dokuz Eylül Teknoloji Geliştirme) Kuruçeşme Mahallesi, 35390 Buca/İzmir",
+    "imageUrl" : "https://lh4.googleusercontent.com/t3GH6v8i3PqCAkBjCE_0kjOXlCIZncBS1n5BVaxewo3Z0m1fniCVsGMyAZhY5zw30KGvobTc-g=w1080",
+    "name" : "HACK THE BOSS",
+    "url" : "http://hacktheboss.com/"
+  }, {
+    "date" : 1510347600000,
+    "description" : "Accenture Turkey Tamburi Ali Efendi Sok. No:13 Etiler, İstanbul 34337",
+    "imageUrl" : "img/Accenture_Logo.jpg",
+    "name" : "Accenture Digital Hackathon The Global Connected Edition ",
+    "url" : "https://www.accenture.com/tr-en/careers/event-digital-hackathon"
+  }, {
+    "date" : 1510387200000,
+    "description" : "node.js üzerine 48 saatlik çevrimiçi hackathon 1-4 kişilik takımlarla yapılacaktır",
+    "imageUrl" : "https://pbs.twimg.com/profile_images/623570379437510656/b0gi4XDH_400x400.png",
+    "name" : "Node Knockout",
+    "url" : "https://www.nodeknockout.com/"
+  }, {
+    "date" : 1510261200000,
+    "description" : "Istanbul Spark Meetup, PyData Istanbul Big Data Hackathon' u Microsoft Türkiye ofisinde gerçekleştirilecek",
+    "imageUrl" : "img/datademi.png",
+    "name" : "BIG DATA HACKATHON",
+    "url" : "http://hackathon.datademi.com/"
+  }, {
+    "date" : 1511470800000,
+    "description" : "P&G Ana Ofisi: Barbaros Mahallesi, Begonya Sk. No:3, 34750 Ataşehir/İstanbul, Turkey",
+    "imageUrl" : "img/pg_hackathon.jpg",
+    "name" : "P&G Avrupa IT Hackathonu",
+    "url" : "http://pgcareers.com/it-hackathon"
+  }, {
+    "date" : 1512162000000,
+    "description" : "Atatürk Havalimanı Dış Hatlar Terminal binasında Ali Sürmen toplantı salonu - İstanbul",
+    "imageUrl" : "img/tav-hackathon.png",
+    "name" : "TAV Technologies Hackathon",
+    "url" : "http://hackathon.techboomerang.aero/"
+  }, {
+    "date" : 1513890000000,
+    "description" : "22-24 Aralık- Florya'daki Türk Hava Yolları Uçuş Eğitim Merkezi - İstanbul",
+    "imageUrl" : "https://static.wixstatic.com/media/7cb29b_a59092ec1a5b4e55bb54bd4b816d59c2~mv2.png/v1/fill/w_271,h_49,al_c,usm_0.66_1.00_0.01/7cb29b_a59092ec1a5b4e55bb54bd4b816d59c2~mv2.png",
+    "name" : "Turkish Airlines Travel Hackathon",
+    "url" : "https://www.hackathon.turkishairlines.com/"
+  }, {
+    "date" : 1512680400000,
+    "description" : "8-10 Aralık Banka API'larını kullanarak fintech ve bankacılık ekosistemine yön verecek öğrenci ve genç girişimcilerin fikirlerini yarıştırdığı bir maratondur",
+    "imageUrl" : "https://code.yapikredi.com.tr/.resources/template-module/webresources/img/ready-to-live/logo_2.png",
+    "name" : "code.yapıkredi Hackathon",
+    "url" : "https://code.yapikredi.com.tr/anasayfa/hackathon"
+  }, {
+    "date" : 1513371600000,
+    "description" : "16-17 Aralık / NüvEGE Kuluçka Merkezi(Ege Üniversitesi EBİLTEM-TTO Binası)",
+    "imageUrl" : "img/hack4wellbeing.png",
+    "name" : "Hack 4 Wellbeing",
+    "url" : "https://www.hack4wellbeing.com/"
+  }, {
+    "date" : 1512680400000,
+    "description" : "8-10 Aralık / İstanbul / Impact Hub",
+    "imageUrl" : "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F37913691%2F235621997763%2F1%2Foriginal.jpg?w=800&rect=11%2C0%2C8954%2C4477&s=d1904f3ba78bbd72c3d6b08af8aa3fde",
+    "name" : "Istanbul Social Innovation Hackathon",
+    "url" : "https://www.eventbrite.com/e/istanbul-social-innovation-hackathon-tickets-39954269295"
+  }, {
+    "date" : 1513285200000,
+    "description" : "15-17 Aralık / İstanbul / Özü Girişim",
+    "imageUrl" : "https://pbs.twimg.com/media/DPuN8uJWkAAIh80.jpg",
+    "name" : "Özü Hackathon",
+    "url" : "https://www.ozugirisim.club/"
+  }, {
+    "date" : 1512980400000,
+    "description" : "9-10 Aralık / IEEE GTÜ",
+    "imageUrl" : "https://pbs.twimg.com/media/DQIgI63WsAAeJtP.jpg",
+    "name" : "Arduino Hackathon",
+    "url" : "https://twitter.com/gtuieee"
+  }, {
+    "date" : 1513285200000,
+    "description" : "15 -17 Aralık / Yalova",
+    "imageUrl" : "https://pbs.twimg.com/media/DQXAQW0XUAAYjJz.jpg:large",
+    "name" : "Hackathon Yalova",
+    "url" : "https://t.co/5fiKnzojVE"
+  }, {
+    "date" : 1513371600000,
+    "description" : "16-17 Aralık / İstanbul @İTÜ, ITUNOVA",
+    "imageUrl" : "http://image-store.slidesharecdn.com/f3004d42-7710-4104-ac0f-f74c0ee2ed98-original.jpeg",
+    "name" : "CODEZILLA",
+    "url" : "http://www.hackathon.bestistanbul.org/"
+  }, {
+    "date" : 1513890000000,
+    "description" : " 22-24 Aralık - Bursa Tofaş",
+    "imageUrl" : "http://www.hack-auto.com/img/popup.jpg",
+    "name" : "Hack-Auto 4.0",
+    "url" : "http://www.hack-auto.com/"
+  }, {
+    "date" : 1513717200000,
+    "description" : "20 Aralık - Çankaya Üniversitesi Merkez Kampüs",
+    "imageUrl" : "https://pbs.twimg.com/media/DQ2n6-DXkAE2bWf.jpg",
+    "name" : "Genç Fikir Atölyesi Hackathon",
+    "url" : "https://www.bilimsenligi.com/cankaya-universitesi-genc-fikir-atolyesi-hackathon.html"
+  }, {
+    "date" : 1515531600000,
+    "description" : "Son Başvuru: 30 Aralık 2017 Sonuçlar: 10 Ocak 2018 - Online",
+    "imageUrl" : "https://angelhack.com/wp-content/uploads/2017/11/World-Virtual-GovHack.png",
+    "name" : "World Virtual Govhack",
+    "url" : "http://hackathon.govtechprize.ae/"
+  }, {
+    "date" : 1515358800000,
+    "description" : "8 Ocak 2018 - Online",
+    "imageUrl" : "https://pbs.twimg.com/media/DQsbOyyW4AEghm0.jpg",
+    "name" : "RingCentral Bots Challenge",
+    "url" : "https://ringcentral.devpost.com/"
+  }, {
+    "date" : 1518210000000,
+    "description" : "10-11 Şubat - İstanbul - İzmir",
+    "imageUrl" : "https://uk.usembassy.gov/wp-content/uploads/sites/16/2016/04/fishackathon_2016750x450-1.jpg",
+    "name" : "Fish Hackathon",
+    "url" : "http://fishackathon.hackernest.com/"
+  }, {
+    "date" : 1516568400000,
+    "description" : "22-24 Ocak ODTÜ Kültür Kongre Merkezi - Ankara",
+    "imageUrl" : "https://i1.wp.com/ieee.metu.edu.tr/wp-content/uploads/2017/01/ieee-logo-son.png?fit=3328%2C2251&ssl=1",
+    "name" : "IEEE ODTÜ Hackathon",
+    "url" : "https://ieee.metu.edu.tr/hackathon/"
+  }, {
+    "date" : 1515704400000,
+    "description" : "12-13 Ocak - Online",
+    "imageUrl" : "https://datahack.analyticsvidhya.com/media/__sized__/contest_cover/Analytics_Vidhya_920_480-thumbnail-1200x1200.png",
+    "name" : "Analytics Vidhya Hiring Hackathon",
+    "url" : "https://datahack.analyticsvidhya.com/contest/analytics-vidhya-hiring-hackathon/"
+  }, {
+    "date" : 1516395600000,
+    "description" : "20-21 Ocak - Online",
+    "imageUrl" : "https://datahack.analyticsvidhya.com/media/__sized__/contest_cover/mckinsey_cover_pic-thumbnail-1200x1200.png",
+    "name" : "McKinsey Analytics Online Hackathon - Sales Excellence",
+    "url" : "https://datahack.analyticsvidhya.com/contest/mckinsey-analytics-online-hackathon-ii/"
+  }, {
+    "date" : 1515099600000,
+    "description" : "22 Aralık - 5 Ocak - Online",
+    "imageUrl" : "https://camo.githubusercontent.com/3de37ca658b37386fe5ea1fc41f5c4af045a4e0d/68747470733a2f2f692e68697a6c69726573696d2e636f6d2f58503779616f2e706e67",
+    "name" : "2Friday Hackathon",
+    "url" : "https://github.com/2Friday/Hackathon"
+  }, {
+    "date" : 1516309200000,
+    "description" : "5 Ocak - 19 Ocak - Online",
+    "imageUrl" : "https://camo.githubusercontent.com/3de37ca658b37386fe5ea1fc41f5c4af045a4e0d/68747470733a2f2f692e68697a6c69726573696d2e636f6d2f58503779616f2e706e67",
+    "name" : "2Friday Hackathon",
+    "url" : "https://github.com/2Friday/Hackathon"
+  }, {
+    "date" : 1520024400000,
+    "description" : "3-4 Mart - Son Başvuru: 18 Ocak 23:59",
+    "id" : "isbak",
+    "imageUrl" : "http://ituym.ituieee.com/images/ym_banner.png",
+    "name" : "İsbak Yazılım Maratonu",
+    "url" : "http://ituym.ituieee.com/"
+  }, {
+    "date" : 1516914000000,
+    "description" : "26-28 Ocak, 2018, İzmir",
+    "id" : "game",
+    "imageUrl" : "https://www.ggjege.org/wp-content/uploads/2017/12/global_game_jam_logo.jpg",
+    "name" : "Global Game Jam EGE",
+    "url" : "https://www.ggjege.org/"
+  }, {
+    "date" : 1518123600000,
+    "description" : "9-11 Şubat 2018 - Online",
+    "imageUrl" : "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F35210141%2F166160958419%2F1%2Foriginal.jpg?w=800&rect=0%2C87%2C1048%2C524&s=0cb1215e4c77aa39b0e90e9b982a9a9c",
+    "name" : "Collaboration Tree Hackathon",
+    "url" : "https://www.eventbrite.com/e/collaboration-tree-hackathon-tickets-37789360996?aff=erelexpmlt"
+  }, {
+    "date" : 1517518800000,
+    "description" : "2-4 Şubat 2018 - Impact Hub İstanbul",
+    "id" : "creathon",
+    "imageUrl" : "https://creathon.arikovani.com/wp-content/uploads/2017/10/2.png",
+    "name" : "Creathon - Hikayeyi Sen Tamamla",
+    "url" : "https://creathon.arikovani.com/"
+  }, {
+    "date" : 1521320400000,
+    "description" : "Son Tarih: 18 Mart - Online",
+    "imageUrl" : "https://hackerearth-media.global.ssl.fastly.net/media/hackathon/stockpile-for-millennials-ideathon/images/195e0914e7-stockpile_he_cover.jpg",
+    "name" : "Stockpile Ideathon",
+    "url" : "https://www.hackerearth.com/sprints/stockpile-for-millennials-ideathon/"
+  }, {
+    "date" : 1519678800000,
+    "description" : "5-27 Şubat - Online",
+    "imageUrl" : "https://hackerearth-media.global.ssl.fastly.net/media/hackathon/lets-hack-for-rural-development/images/7eed89b6da-cover3_1.jpg",
+    "name" : "Rural Development Hackathon",
+    "url" : "https://www.hackerearth.com/sprints/lets-hack-for-rural-development/custom-tab/agriculture/"
+  }, {
+    "date" : 1516395600000,
+    "description" : "20-29 Ocak - Online",
+    "imageUrl" : "https://hackerearth-media.global.ssl.fastly.net/media/hackathon/january-circuits-18/images/5d75616cdb-Circuit_Jan_cover.png",
+    "name" : "January Circuits '18",
+    "url" : "https://www.hackerearth.com/challenge/competitive/january-circuits-18/"
+  }, {
+    "date" : 1519419600000,
+    "description" : "Son başvuru: 15 Şubat - İzmir",
+    "id" : "music",
+    "imageUrl" : "https://pbs.twimg.com/profile_images/951581406374891521/xz8k18fz_400x400.jpg",
+    "name" : "Hack’oMusic",
+    "url" : "https://www.hackomusic.com/"
+  }, {
+    "date" : 1518728400000,
+    "description" : "16-18 Şubat 2018",
+    "id" : "getir",
+    "imageUrl" : "img/getir2018.png",
+    "name" : "Getir Bitaksi Hackathon",
+    "url" : "http://hackathon.getir.com/"
+  }, {
+    "date" : 1518728400000,
+    "description" : "16-18 Şubat 2018 - Kayseri",
+    "id" : "iot",
+    "imageUrl" : "http://habitatdernegi.org/tr/dl/IOT_Duyuru_Small-02-1024x318.png",
+    "name" : "IoT Hackathon",
+    "url" : "http://habitatdernegi.org/iot-hackathon.html/"
+  }, {
+    "date" : 1520542800000,
+    "description" : "9-11 Mart 2018 - İzmir",
+    "id" : "duty",
+    "imageUrl" : "https://pbs.twimg.com/profile_images/960977732132921344/CVa3ogt__400x400.jpg",
+    "name" : "Code of Duty",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSd7vr98wQCkaKLg0VFdUUiBV0NegP4a9BguLW7XsUgM_-hmRg/viewform"
+  }, {
+    "date" : 1520542800000,
+    "description" : "9-11 Mart 2018 - Kocaeli Üniversitesi - Savaş Ayberk Konferans Salonu",
+    "id" : "society",
+    "imageUrl" : "http://u4s.biz/uploads/ana-27074-efd34d_68034027912b4d928e58e64bb992b99a-mv2_d_2644_1514_s_2.png",
+    "name" : "University4Society",
+    "url" : "https://kou.university4society.com/"
+  }, {
+    "date" : 1527109200000,
+    "description" : "6 Farklı ilde seçmeler (Gaziantep - Elazığ - Ankara - Trabzon - Antalya - İstanbul) - Final İstanbul",
+    "id" : "airpreneurs",
+    "imageUrl" : "https://www.airpreneurs.org/wp-content/uploads/2018/01/1920x1080pxl2.jpg",
+    "name" : "Airpreneurs - Aklım Göklerde",
+    "url" : "https://www.airpreneurs.org/"
+  }, {
+    "date" : 1523653200000,
+    "description" : "Atatürk Havalimanı C terminali",
+    "id" : "tavide",
+    "imageUrl" : "http://ideathon.techboomerang.aero/assets/images/slider/ideathon-1.jpg",
+    "name" : "TAV Technologies Boomerang Ideathon",
+    "url" : "http://ideathon.techboomerang.aero/"
+  }, {
+    "date" : 1523653200000,
+    "description" : "Atatürk Havalimanı C terminali",
+    "id" : "tavhack",
+    "imageUrl" : "http://hackathon.techboomerang.aero/assets/images/slider/hackathon-1.jpg",
+    "name" : "TAV Technologies Boomerang Hackathon",
+    "url" : "http://hackathon.techboomerang.aero/"
+  }, {
+    "date" : 1523048400000,
+    "description" : "7-8 Nisan 2018 - Başakşehir Living Lab İstanbul",
+    "id" : "basaksehir",
+    "imageUrl" : "http://basaksehir-livinglab.com/BLL/wp-content/uploads/2018/02/Cloud-%C3%87%C3%B6z%C3%BCmleri-ile-Ak%C4%B1ll%C4%B1-%C5%9Eehirler-Hackathonu-POSTER-795x1125.jpg",
+    "name" : "Başakşehir - Cloud Çözümleri ile Akıllı Şehirler Hackathonu",
+    "url" : "http://basaksehir-livinglab.com/BLL/blog/2018/02/23/cloud-cozumleri-ile-akilli-sehirler-hackathonu/"
+  }, {
+    "date" : 1524776400000,
+    "description" : "28-29 Nisan ETTOM Etkinlik Alan - Eskişehir",
+    "id" : "eskisehir",
+    "imageUrl" : "http://www.citech.com.tr/hackathon/wp-content/uploads/2018/03/HCKESlogo1.png",
+    "name" : "Citech Hackathones",
+    "url" : "http://www.citech.com.tr/hackathon/"
+  }, {
+    "date" : 1524258000000,
+    "description" : "21-23 Nisan / KTÜ Prof.Dr Osman Turan Kültür ve Kongre Merkezi - Trabzon",
+    "id" : "kodla",
+    "imageUrl" : "http://www.unicrow.com/media/unicrow/filer_public_thumbnails/filer_public/fa/bf/fabf96b0-2cbf-47bc-880a-d4f25fac9af2/masthead.png__840x840_q85_subsampling-2.png",
+    "name" : "Kodla18",
+    "url" : "http://kodla.co/"
+  }, {
+    "date" : 1522357200000,
+    "description" : "30 Mart - 1 Nisan Hasan Kalyoncu Üniversitesi - Gaziantep",
+    "id" : "gastro",
+    "imageUrl" : "http://hackathon.hku.edu.tr/assets/img/hku.jpg",
+    "name" : "Hackathon Gastrobilişim",
+    "url" : "http://hackathon.hku.edu.tr/"
+  }, {
+    "date" : 1523048400000,
+    "description" : "7-8 Nisan ITU Ayazaga Kampusu, Teknokent ARI 2 / İstanbul",
+    "id" : "algo",
+    "imageUrl" : "http://algorunhackathon.com/Media/Default/2018/algoruntwitterbanner.gif",
+    "name" : "AlgoRun Hackathon",
+    "url" : "http://algorunhackathon.com/"
+  }, {
+    "date" : 1523653200000,
+    "description" : "Kayseri",
+    "id" : "agücs",
+    "imageUrl" : "https://cdn-az.allevents.in/banners/1967093c76d1642a2eb20caba40b1ddf-rimg-w720-h405-gmir.jpg",
+    "name" : "AGÜCS Mobil Hackathon",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLScF6ioAncKPxc1n7RlFJ4xcapgjR_o5MTmrv_VjtcneFkDs0Q/viewform"
+  }, {
+    "date" : 1524776400000,
+    "description" : "27-29 Nisan / kworks / 19 Mayıs Cad, Golden Plaza, Kat:1 Şişli / İstanbul",
+    "id" : "agücs",
+    "imageUrl" : "https://static.tildacdn.com/tild3966-3437-4662-b432-323462353435/1280x1920px_bos.jpg",
+    "name" : "ALGIDA DESIGN HACKATHON",
+    "url" : "http://www.algidaicintasarla.com/"
+  }, {
+    "date" : 1524776400000,
+    "description" : "27-29 Nisan / Teknopark Ankara",
+    "id" : "makeathon",
+    "imageUrl" : "img/makeathon_2.jpg",
+    "name" : "Makeathon Ankara",
+    "url" : "https://makeathon.makersankara.org/"
+  }, {
+    "date" : 1524776400000,
+    "description" : "27 Nisan / Balçova - İzmir",
+    "id" : "tip",
+    "imageUrl" : "https://pbs.twimg.com/media/Daln6GVXkAA5fQM.jpg",
+    "name" : "Tıpta Bilişim Hackathonu",
+    "url" : "https://tiptabilisim.splashthat.com/"
+  }, {
+    "date" : 1525986000000,
+    "description" : "11 - 13 Mayıs Kozyatağı / İstanbul",
+    "id" : "fintech",
+    "imageUrl" : "http://www.kt-invent.com.tr/img/slide2.png",
+    "name" : "Kuveyt Türk Hackathon",
+    "url" : "http://www.kt-invent.com.tr/"
+  }, {
+    "date" : 1529614800000,
+    "description" : "22-23 Haziran 2018 / Habita Co-work İstanbul",
+    "id" : "tepe",
+    "imageUrl" : "https://www.tepesavunmahackathon.com/img/s-image-1.png",
+    "name" : "Tepe Savunma Hackathon",
+    "url" : "https://www.tepesavunmahackathon.com/"
+  }, {
+    "date" : 1525381200000,
+    "description" : "4-6 Mayıs 2018 / Düzce Teknopark Yönetim ve Kuluçka Merkezi Fuaye Alanı",
+    "id" : "düzce",
+    "imageUrl" : "https://pbs.twimg.com/media/DboclLJXUAA0fBC.jpg",
+    "name" : "Hackathon Düzce",
+    "url" : "http://www.hackathonduzce.com/"
+  }, {
+    "date" : 1525986000000,
+    "description" : "11-12 Mayıs 2018 / Cumhuriyet Üniversitesi Mühendislik Fakültesi B Blok Zemin Kat Bilgisayar Laboratuvar / Sivas",
+    "id" : "sivas",
+    "imageUrl" : "https://pbs.twimg.com/media/DbqD0KTXkAAiI2r.jpg",
+    "name" : "Cumhuriyet Üniversitesi Hackathon",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSe0vZhkR13oKHf74UA8dCJgm9DBuc5NFsSCFFxDaVK7FB1wDg/viewform"
+  }, {
+    "date" : 1526072400000,
+    "description" : "Vodafone Park - İstanbul 12-13 Mayıs 2018",
+    "id" : "fiat",
+    "imageUrl" : "https://hackathon.fiat.com.tr/images/hackathon-logo-tekli.png",
+    "name" : "Fiat Müşteri Deneyimi Hackathon",
+    "url" : "https://hackathon.fiat.com.tr/"
+  }, {
+    "date" : 1525986000000,
+    "description" : "Bahçeşehir Üniversitesi Galata Kampüsü İstanbul/ 11-13 Mayıs 2018",
+    "id" : "block",
+    "imageUrl" : "https://img.evbuc.com/https%3A%2F%2Fcdn.evbuc.com%2Fimages%2F44264751%2F2844258409%2F1%2Foriginal.jpg?w=800&auto=compress&rect=0%2C29%2C640%2C320&s=ac958b5826e79f7af0ba6b9815b43e0c",
+    "name" : "İstanbul Blockchain Hackathon By Blockstack",
+    "url" : "https://www.eventbrite.com/e/istanbul-blockchain-hackathon-by-blockstack-tickets-45688562721"
+  }, {
+    "date" : 1525467600000,
+    "description" : "Kolektif House İstanbul/ 5-6 Mayıs 2018",
+    "id" : "obss",
+    "imageUrl" : "https://hackathon.obss.com.tr/assets/images/logo.svg",
+    "name" : "Codemaster Hackathon",
+    "url" : "https://hackathon.obss.com.tr/"
+  }, {
+    "date" : 1527282000000,
+    "description" : "19 Mayıs Mahallesi. Golden Plaza 1. Kat Şişli / Istanbul / 26-27 Mayıs 2018",
+    "id" : "alametifarika",
+    "imageUrl" : "img/alametifarika.png",
+    "name" : "Alametifarika Hackathon 2018",
+    "url" : "https://hackathon.obss.com.tr/"
+  }, {
+    "date" : 1527886800000,
+    "description" : "2-3 Haziran 2018 / Google Dome İstanbul",
+    "id" : "teknovasyon",
+    "imageUrl" : "https://images.typeform.com/images/A8VQg4TEcQiz/image/default#.jpeg",
+    "name" : "Teknovasyon Hackathon",
+    "url" : "https://teknovasyonhackathon.wixsite.com/teknovasyonhackathon"
+  }, {
+    "date" : 1528232400000,
+    "description" : "6-7 Haziran 2018 / Incubation İstanbul Girişimcilik ve Kuluçka Merkezi İAÜ Florya Kampüsü D Blok",
+    "id" : "istanbul",
+    "imageUrl" : "https://pbs.twimg.com/media/Deigbg0XcAIj9-Q.jpg",
+    "name" : "Hackathon - İstanbul",
+    "url" : "http://incubation.istanbul/big-shot/"
+  }, {
+    "date" : 1537390800000,
+    "description" : "20-21 Eylül 2018 / Dallas - Budapeşte - Mumbai",
+    "id" : "aegon",
+    "imageUrl" : "https://www.aegon.com/globalassets/vpp/documents/platformwide/logos/aegon_logo.jpg",
+    "name" : "Aegon Hackathon",
+    "url" : "https://www.aegonhackathon.com/"
+  }, {
+    "date" : 1530219600000,
+    "description" : "29 Haziran - 1 Temmuz 2018 / İstanbul",
+    "id" : "circus",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/circus.png?alt=media&token=06c2f856-9be8-4bf0-b975-1c0dd91a6632",
+    "name" : "Block Circus",
+    "url" : "https://blockcircus.com/"
+  }, {
+    "date" : 1532034000000,
+    "description" : "20-21 Temmuz / Levent, İstanbul",
+    "id" : "zeplin",
+    "imageUrl" : "https://hangar.zeplin.io/static/img/img-hackaboom.png",
+    "name" : "HackaBoom",
+    "url" : "https://hangar.zeplin.io/"
+  }, {
+    "date" : 1509656400000,
+    "description" : "2-3 Kasım, Lutfi Kirdar International Convention & Exhibition Center",
+    "imageUrl" : "img/city_istanbul.png",
+    "name" : "Hackathon City İstanbul",
+    "url" : "http://hackathoncity.istanbul"
+  }, {
+    "date" : 1509742800000,
+    "description" : "4 – 5 Kasım 2017 / Ford Otosan Sancaktepe AR-GE Merkezi",
+    "imageUrl" : "img/ford.png",
+    "name" : "Ford Hackhaton",
+    "url" : "http://openxchackathon.com"
+  }, {
+    "date" : 1510174800000,
+    "description" : "9-10-11 Kasım 2017 / DEPARK Zeytin Binası VIP Katı / Balçova / İzmir",
+    "imageUrl" : "img/izmir.jpg",
+    "name" : "HACK4HEALTH",
+    "url" : "http://www.hack4healthizmir.com"
+  }, {
+    "date" : 1510952400000,
+    "description" : "18 – 19 Kasım 2017 / Anadolu Sigorta Genel Müdürlüğü",
+    "imageUrl" : "img/anadolu.png",
+    "name" : "ANADOLU SIGORTA #HACKATHON2017",
+    "url" : "https://hackathon.anadolusigorta.com.tr/"
+  }, {
+    "date" : 1511557200000,
+    "description" : "25-26 Kasım, Bilkent Cyberpark",
+    "imageUrl" : "img/ing.jpg",
+    "name" : "ING Hackhaton",
+    "url" : "http://hackathon.ingbank.com.tr/"
+  }, {
+    "date" : 1535749200000,
+    "description" : "1-9 Eylül 2018, Urla - Open Campus",
+    "imageUrl" : "http://hacknbreak.com/wp-content/uploads/2016/05/logohb.png",
+    "name" : "Hack'n Break",
+    "url" : "http://hacknbreak.com/"
+  }, {
+    "date" : 1533934800000,
+    "description" : "11 Ağustos 2018 - Yeditepe Üniversitesi Kayışdağı Kampüsü",
+    "imageUrl" : "http://www.ttgv.org.tr/assets/default/images/ttgv-menubar-logo.svg",
+    "name" : "Dijital Sağlık'ta Ideathon",
+    "url" : "http://www.ideathon.ttgv.org.tr/"
+  }, {
+    "date" : 1533243600000,
+    "description" : "3-4 Ağustos 2018 - Teknopark İzmir",
+    "imageUrl" : "https://pbs.twimg.com/media/DiUPvgwXcAARG-s.jpg",
+    "name" : "CFM-Hackathon",
+    "url" : "https://www.technroll.com.tr/sayfa/hackathon---cfm"
+  }, {
+    "date" : 1533243600000,
+    "description" : "3-4 Ağustos 2018 - Teknopark İzmir",
+    "imageUrl" : "https://www.technroll.com.tr/yonetim/ckeditor/kcfinder/upload/files/hacknroll-1.png",
+    "name" : "Hack’n Roll - Commencis",
+    "url" : "https://www.technroll.com.tr/sayfa/hackathon---commencis"
+  }, {
+    "date" : 1537390800000,
+    "description" : "20-22 Eylül - Bahçeşehir Üniversitesi Game Lab / İstanbul",
+    "imageUrl" : "https://pbs.twimg.com/media/DjvLbGVXcAAuT2m.jpg",
+    "name" : "Gamification Hackathon",
+    "url" : "http://www.gamificationhackathon.com/"
+  }, {
+    "date" : 1537477200000,
+    "description" : "21-23 Eylül / İstanbul Yeni Havalimanı",
+    "imageUrl" : "https://static.wixstatic.com/media/7cb29b_2b0355618edd4e63827c51d235eda45f~mv2.png/v1/fill/w_1071,h_722,al_c,q_85,usm_0.66_1.00_0.01/7cb29b_2b0355618edd4e63827c51d235eda45f~mv2.webp",
+    "name" : "Travel Hackathon 2018",
+    "url" : "https://www.hackathon.turkishairlines.com/"
+  }, {
+    "date" : 1537563600000,
+    "description" : "1. Tur 9 Eylül, Final: 22 Eylül 2018 / İstanbul Yeni Havalimanı",
+    "imageUrl" : "https://www.hackistanbul.com/images/logo-white.png",
+    "name" : "HACKISTANBUL",
+    "url" : "https://www.hackistanbul.com/"
+  }, {
+    "date" : 1542402000000,
+    "description" : "17 Kasım 2018 - Anadolu Sigorta Genel Müdürlük B2 Katı – İSTANBUL",
+    "imageUrl" : "https://hackathon.anadolusigorta.com.tr/wp-content/uploads/2017/08/ANADOLU_SIG_HACKATHON_LOGO-01-1-e1502351313136.png",
+    "name" : "Anadolu Sigorta Hackathon",
+    "url" : "https://hackathon.anadolusigorta.com.tr/"
+  }, {
+    "date" : 1539032400000,
+    "description" : "9 Ekim 2018 - Keytorc Maslak İş Merkezi - Sarıyer/İstanbul",
+    "imageUrl" : "https://testhackathon.org/wp-content/uploads/2017/07/TestHackathon-logo-new.png",
+    "name" : "Test Hackathon",
+    "url" : "https://testhackathon.org"
+  }, {
+    "date" : 1539378000000,
+    "description" : "13-14 Ekim 2018 - Pisano Türkiye Ofisi Ortaköy/İstanbul",
+    "imageUrl" : "https://pbs.twimg.com/media/DnTTLZWXsAEIQ0a.jpg:large",
+    "name" : "Pisano Hackathon",
+    "url" : "https://hackathon.pisano.co/"
+  }, {
+    "date" : 1539982800000,
+    "description" : "20 Ekim 2018 - sahiplex Ofis / İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/dev-akademi.jpg?alt=media&token=15e883ca-dc08-49f0-a55b-ddceeae62607",
+    "name" : "Sahibinden.com dev.akademi Yazılım Maratonu",
+    "url" : "https://devakademi.sahibinden.com/"
+  }, {
+    "date" : 1539205200000,
+    "description" : "11-12 Ekim 2018 - Haliç Kongre Merkezi / İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hackathoncity.istanbul.png?alt=media&token=9032b039-d181-486c-9ce1-b0d5bb196a8d",
+    "name" : "HackathonCity Istanbul",
+    "url" : "http://hackathoncity.istanbul/"
+  }, {
+    "date" : 1538254800000,
+    "description" : "30 Eylül - 2 Ekim 2018 - Anadolu Üniversitesi Öğrenci Merkezi - Eskişehir",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/sosyal-kooperatif.png?alt=media&token=1b420cad-82f4-4b82-9fa9-1b17933deb96",
+    "name" : "Sosyal Kooperatif Hackathonu",
+    "url" : "https://form.jotform.com/bbbo/Sosyal-Kooperatif-Eskisehir"
+  }, {
+    "date" : 1539896400000,
+    "description" : "19-21 Ekim 2018 / Kolektif House, 42 Maslak - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/one.block.png?alt=media&token=59a69aa4-6e4b-4149-a66d-cd222c678511",
+    "name" : "one.block Blockchain Hackathon",
+    "url" : "https://oneblock.in/hackathons/"
+  }, {
+    "date" : 1541019600000,
+    "description" : "1 Kasım - 1 Aralık 2018/ ING Bank Genel Müdürlüğü Maslak - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/big-datathon-logo.png?alt=media&token=0da4d710-8eaa-416d-b456-9a920cf5819a",
+    "name" : "ING Datathon",
+    "url" : "http://datathon.ingbank.com.tr/"
+  }, {
+    "date" : 1541106000000,
+    "description" : " 2-3-4 Kasım / 14-15-16 Aralık 2018 - Konya",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/konya-maker.jpg?alt=media&token=c0ec2ee1-5bca-432a-815a-d503b66ad459",
+    "name" : "Konya Maker Hackathon",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSdFseDbz433R7TqG-8fYkOp0OiG6WbrOglva6AOnQ69WXpKtQ/viewform"
+  }, {
+    "date" : 1541192400000,
+    "description" : "3 Kasım 2018 Bilkent Cyberpark Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/havelsan.png?alt=media&token=a2503773-9c27-4fbe-aa58-c1813aee8af6",
+    "name" : "Artırılmış Gerçeklik Hackathonu",
+    "url" : "https://armaraton.havelsan.com.tr/"
+  }, {
+    "date" : 1545080400000,
+    "description" : "18-20 Aralık 2018 / BTK - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/oyun-maratonu.jpg?alt=media&token=601ccf7c-e4ba-4bcf-b04b-3990708f099e",
+    "name" : "BTK Oyun Maratonu",
+    "url" : "https://gim.btk.gov.tr/oyunmaratonu/"
+  }, {
+    "date" : 1540414800000,
+    "description" : "25-26 Ekim 2018 / İzmir",
+    "imageUrl" : "https://pbs.twimg.com/profile_images/897525390092009472/mHXRV54N_400x400.jpg",
+    "name" : "Climathon",
+    "url" : "https://climathon.climate-kic.org/tr/izmir"
+  }, {
+    "date" : 1543525200000,
+    "description" : "30 Kasım, 1-2 Aralık 2018 / @INOGAR - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/kobi.jpeg?alt=media&token=5167cfdc-f5bd-45e2-b76a-1273b16e8416",
+    "name" : "Sağlam KOBİ Hackathon",
+    "url" : "https://form.jotform.com/idemadan/saglamkobi-hackathon-basvuruformu"
+  }, {
+    "date" : 1541365200000,
+    "description" : "5 - 7 Kasım 2018 @ HUGO BOSS Tekstil Sanayi İzmir",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hackourstlye.jpg?alt=media&token=ec09ab2b-8531-44b8-8f48-ee221068f007",
+    "name" : "Hack Our Style",
+    "url" : "http://hackourstyle.com/tr/"
+  }, {
+    "date" : 1543611600000,
+    "description" : "1-2 Aralık 2018 Mercedes-Benz Türk Genel Müdürlük",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hack.istanbul.png?alt=media&token=a0bd1ff1-1740-44e0-95fd-4eafc9fab392",
+    "name" : "Hack.Istanbul",
+    "url" : "http://hackathon.mercedes-benz.com.tr/tr/"
+  }, {
+    "date" : 1542920400000,
+    "description" : "23-24 Kasım 2018 Şutso Şanlıurfa",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/sanliurfa.jpg?alt=media&token=40f1918a-2660-482f-93ed-d2c541152f1a",
+    "name" : "GDG URFA & IEEE HRU Devfest ‘18 İnovation Hackathon",
+    "url" : "http://devfest2018.hruieee.com/"
+  }, {
+    "date" : 1542315600000,
+    "description" : "16-18 Kasım 2018 Hasan Kalyoncu Üniversitesi, Gaziantep",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hk%C3%BC-eurasia-graph.jpg?alt=media&token=ae7018f4-ea61-47eb-970f-2a806e48c249",
+    "name" : "Eurasia Graphics 2018",
+    "url" : "http://www.eurasiagraphics.org/"
+  }, {
+    "date" : 1543611600000,
+    "description" : "1 Aralık 2018 Cumartesi - Şişli/ İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/mini-hackathon.jpeg?alt=media&token=61b7000a-993b-4836-b28a-8c8972b80ed0",
+    "name" : "TIL Mini Hackathon - #1 Hello World",
+    "url" : "https://www.meetup.com/today-i-learned/events/256562990/"
+  }, {
+    "date" : 1543611600000,
+    "description" : "1 -2 Aralık 2018 - Abdullah Gül Üniversitesi / Kayseri",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/agucs.jpg?alt=media&token=d9fab050-18e9-4931-bb93-3a6c34bda465",
+    "name" : "AGUCS Mobile Hackathon '18",
+    "url" : "http://hackathon.agucs.com/"
+  }, {
+    "date" : 1544734800000,
+    "description" : "14-16 Aralık 2018 / Mevlana Kalkınma Ajansı Hizmet Binası / Konya",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/mevka.PNG?alt=media&token=d9954b8b-f84a-46a8-9948-1f3a0cfe68fc",
+    "name" : "2. Maker Hackathon",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSfmNa5TGSQXo3AcTBpqvNPGgFsJ9aVrZpCoJtqzJJvCAxBkdw/viewform"
+  }, {
+    "date" : 1544130000000,
+    "description" : "7-8 Aralık 2018 / Bahçeşehir Fen ve Teknoloji Lisesi – Başakşehir/İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/robothon.jpeg?alt=media&token=cb7ff0b7-5af0-4154-a5c9-3f38881ea810",
+    "name" : "Borusan Atölye Robothon",
+    "url" : "https://www.toptalent.co/borusan-grubu-robothon"
+  }, {
+    "date" : 1544821200000,
+    "description" : "15 Aralık 2018 / Şişli-İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/analitik-hackathon.jpg?alt=media&token=49cabe6b-526a-4525-ae16-ec943fe6f928",
+    "name" : "Tam Faktoring Analitik Hackathon",
+    "url" : "https://twitter.com/OzgurOzluk/status/1070245300881817600/photo/1"
+  }, {
+    "date" : 1545253200000,
+    "description" : "20 Aralık 2018 / Dokuz Eylül Üniversitesi Tınaztepe Kampüsü, DEPARK Bambu Hızlandırma ve Ön Kuluçka Merkezi - İzmir",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/game-jam-bambu.jpg?alt=media&token=3c1f9227-8b25-47c3-90e0-f4354bfb314a",
+    "name" : "Game Jam",
+    "url" : "https://docs.google.com/forms/d/1aYqAtZGnaSfUkQRXhkypv4HEzGZUXcG4iRUfygRF0Tg/viewform?edit_requested=true"
+  }, {
+    "date" : 1545426000000,
+    "description" : "22-23 Aralık 2018 -  İTÜ Ayazağa Kampüsü",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/codezilla.png?alt=media&token=e3cbc4c6-e025-4eed-ae9f-618dc6f88192",
+    "name" : "Codezilla Best İstanbul Hackathon",
+    "url" : "https://www.hackathon.bestistanbul.org/"
+  }, {
+    "date" : 1545339600000,
+    "description" : "21-23 Aralık 2018 - Fatih / Istanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/arap-bahari.png?alt=media&token=252512a4-d5c8-4337-88d7-85137b8a25ef",
+    "name" : "Arap Baharından Bugüne Terör Söylemi Hackathon",
+    "url" : "https://www.ab-ilan.com/arap-baharindan-bugune-teror-soylemi-hackathonu-icin-kaydolun/"
+  }, {
+    "date" : 1548363600000,
+    "description" : "25-27 Ocak 2019 - ODTÜ Kültür ve Kongre Merkezi / Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/ggj-atom.jpg?alt=media&token=ffc4ec26-6c82-484d-8e5c-49b900599494",
+    "name" : "GGJ Atom",
+    "url" : "http://www.atom.org.tr/tr/haber/oyun-dunyasini-sarsmaya-hazir-misin-2"
+  }, {
+    "date" : 1550869200000,
+    "description" : "23-24 Şubat 2019 - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/code-fest.jpg?alt=media&token=23d10b1d-9cf4-47a7-b32c-0cfdc0fbc5e0",
+    "name" : "Üsküdar Amerikan Lisesi Codefest",
+    "url" : "https://www.codefesttr.org/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1548968400000,
+    "description" : "1 Şubat 2019 - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/producthon.png?alt=media&token=41b318ec-c525-49c7-a7d1-1276a3dd07eb",
+    "name" : "Producthon",
+    "url" : "http://producthon.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1547845200000,
+    "description" : "19-21 Ocak 2019 - Denge Lisesi, Çankaya - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/odtu.png?alt=media&token=5bb2c077-d6a1-44f6-ad96-ac27b6a7f2c9",
+    "name" : "IEEE ODTÜ Hackathon",
+    "url" : "http://www.ieee.metu.edu.tr/hackathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1551301200000,
+    "description" : "Son başvuru: 28 Şubat 2019",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/teknofest.PNG?alt=media&token=fed659a5-df5d-4f15-8e83-355dd07b7bc1",
+    "name" : "Akıllı Mekanlar Hackathon Yarışması",
+    "url" : "https://www.teknofestistanbul.org/tr/2019-teknoloji-yarismalari/akilli-mekanlar-hackathon-yarismasi?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1550264400000,
+    "description" : "Son başvuru: 16-17 Şubat 2019 / ITU Ayazaga Kampusu, Teknokent ARI 2 İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/algorun.jpg?alt=media&token=72043909-3a1d-4c96-b299-f15a9bc97a61",
+    "name" : "AlgoRun",
+    "url" : "http://algorunhackathon.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1550869200000,
+    "description" : "23-24 Şubat 2019 / Kolektif House Maslak - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/blockfellow.PNG?alt=media&token=082fbb09-a7f3-43c8-ad92-c989cc3aa238",
+    "name" : "Blockfellow Hackathon",
+    "url" : "https://blockfellow.com/hackathon?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1550782800000,
+    "description" : "22-24 Şubat - Özyeğin Üniversitesi-İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/%C3%B6z%C3%BC-makeathon.png?alt=media&token=de74c663-d943-46cf-96be-a14112a767ed",
+    "name" : "ÖZÜ Makeathon",
+    "url" : "http://makeathon.ozumaker.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1550264400000,
+    "description" : "16-17 Şubat - Sakıp Sabancı Müzesi The Seed İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/muzede-hackathon.jpg?alt=media&token=db88438b-e946-490d-a9e7-2655ea02da67",
+    "name" : "Müzede Hackathon",
+    "url" : "https://www.eventbrite.com/e/muzede-hackathon-tickets-56038002173?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1553202000000,
+    "description" : "22-23 Mart 2019 ÇiçekSepeti Teknoloji Yıldız Teknopark Davutpaşa, İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/cicek-sepeti.png?alt=media&token=020aab33-2c3f-4e7c-a9fe-866485118c4d",
+    "name" : "Çiçeksepeti Hackathon 2019",
+    "url" : "http://hackathon.ciceksepeti.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1551992400000,
+    "description" : "08-10 Mart 2019 - LC Waikiki Genel Merkez, İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/lcwaikiki.png?alt=media&token=92848687-134a-48bc-b11f-e7480813b176",
+    "name" : "LC Waikiki Datathon 2019",
+    "url" : "http://datathon.lcwaikiki.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1552424400000,
+    "description" : "13-14 Mart 2019 - Son başvuru: 1 Mart - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/sustainbul.png?alt=media&token=9795ff95-436c-470d-a095-5bbe53b8fc2e",
+    "name" : "SustainBul Ideathon",
+    "url" : "http://worldcities.istanbul/yarismalar/sustainbul-ideathon?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1551301200000,
+    "description" : "28 Şubat - 1 Mart 2019 - Dokuz Eylül Üniversitesi Tınaztepe Kampüsü İzmir",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/haveanidea.PNG?alt=media&token=72c4ea50-eb5b-49ac-8dce-e7060665d04b",
+    "name" : "Have An Idea - Bi' Fikrin Olsun",
+    "url" : "http://bifikrinolsun.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1556917200000,
+    "description" : "4-5 Mayıs 2019, COZONE - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/energy-efficiency.png?alt=media&token=7b5011d2-a0b0-46fb-a1a1-6ebd051416ed",
+    "name" : "Energy Efficiency Hackathon",
+    "url" : "http://hackathon.ee-turkey.org/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1553288400000,
+    "description" : "23-24 Mart 2019, Gaziantep Üniversitesi",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/here-locial.jpg?alt=media&token=c52b6aad-5133-4284-8b44-e119c58b81b5",
+    "name" : "here & Locial Hackathon",
+    "url" : "http://locial.hackathlon.org/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1554411600000,
+    "description" : "5 -7 Nisan 2019 - BAU VRLab, Karaköy",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/educathon.png?alt=media&token=474283e1-9635-46e5-a374-155bc21997f7",
+    "name" : "Educathon - Eğitim Hackathonu",
+    "url" : "https://mektepp.com/educathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1554498000000,
+    "description" : "6-7 Nisan 2019 -  Gaziantep Üniversitesi içi Belediye Kültür Merkezi.",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hackathon-pcb.jpg?alt=media&token=2e79dbad-1e16-465b-a7a0-f8ebe06b7182",
+    "name" : "Hack.PCB - Ulusal PCB Tasarım Hackathonu",
+    "url" : "http://pcb.hackathlon.org/index.php?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1556312400000,
+    "dateEnd" : 1556485200000,
+    "description" : "27-28 Nisan Kolektif House, Levent - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/pixery-hackathon.png?alt=media&token=620b0f86-4883-4152-b601-d373d6129031",
+    "name" : "Pixery Hackathon",
+    "url" : "https://www.pixerylabs.com/hackathon2019?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1555102800000,
+    "dateEnd" : 1555275600000,
+    "description" : "13-14 Nisan Kuveyt Türk Bankacılık Üssü - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/kuveyt-turk-2019.png?alt=media&token=8e482836-cdd3-4391-83d9-91bb4b2567aa",
+    "name" : "Kuveyt Türk Hackathon 2019",
+    "url" : "http://www.kt-invent.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1556830800000,
+    "dateEnd" : 1557003600000,
+    "description" : "3-4 Mayıs 2019 - ITU / İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/arcelik-token-hackathon.jpg?alt=media&token=325c88e4-bd65-44e4-b5dd-9b4a46a6f2f8",
+    "name" : "Token Hackathon 2019",
+    "url" : "https://live.peoplise.com/arcelik/Application/Landing/90fd2ba2-d9f8-44b2-8ce5-e5295cbe453e?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1556312400000,
+    "dateEnd" : 1556485200000,
+    "description" : "27-28 Nisan 2019 | Eskişehir Osmangazi Üniversitesi - ETTOM Etkinlik Alanı",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hackathones.png?alt=media&token=4eb034ac-716a-4992-b05e-6c0fca8f25d3",
+    "name" : "HackathonES",
+    "url" : "http://www.citech.com.tr/hackathon?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1556312400000,
+    "dateEnd" : 1556485200000,
+    "description" : "27-28 Nisan 2019 | Tokat Teknopark",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hackathon-tokat.jpeg?alt=media&token=bd28cd34-3701-4ed0-b129-2f60550ae42f",
+    "name" : "Hackathon Tokat",
+    "url" : "http://www.tokatteknopark.com/tr/duyurular/tokat-hackathon-yarismasi-27-28-nisanda-yapilacaktir.html?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1556917200000,
+    "dateEnd" : 1557090000000,
+    "description" : "4-5 Mayıs 2019 | C0-11 İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hack-bogazici.png?alt=media&token=a1e73c22-e514-47e8-940c-90afe81c7ee8",
+    "name" : "Hack Boğaziçi",
+    "url" : "http://hack.bogazici.edu.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1557435600000,
+    "dateEnd" : 1557694800000,
+    "description" : "10-12 Mayıs 2019 | Harran Üniversitesi",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hr%C3%BC-uni-society-hackathon.jpg?alt=media&token=8848b2b9-0e8c-4e9f-ad7d-70cd6f11f4c9",
+    "name" : "University4Society Hackathon",
+    "url" : "https://www.eventbrite.com/e/university4society-harran-university-tickets-58097197281?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1558040400000,
+    "dateEnd" : 1558299600000,
+    "description" : "17-19 Mayıs 2019 | Bilkent Cyberpark - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hackathon-ekinoks-hackinoks.jpg?alt=media&token=47cfb326-c705-4617-8519-07b3c0cef07c",
+    "name" : "Smart Assistant Hackathon",
+    "url" : "http://hackinoks.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1557522000000,
+    "dateEnd" : 1557608400000,
+    "description" : "11 Mayıs 2019 | Kozmos Yazılım ve Anadolu Lisesi - KozmoPoint | İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/kodsavaslari.jpg?alt=media&token=73a72875-23e3-4eb0-a2f6-ee004cbff8b4",
+    "name" : "Liseliler Arası Kod Savaşları",
+    "url" : "http://kodsavaslari.bcywts.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1557522000000,
+    "dateEnd" : 1557608400000,
+    "description" : "11 Mayıs 2019 | İzmir Ekonomi Üniversitesi | İzmir",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/Hack-O-Life-engelli-yasam-hackathon.jpg?alt=media&token=b4a6bca1-57bd-401f-acc5-9b1cb6c8f492",
+    "name" : "Hack O Life",
+    "url" : "https://www.eventbrite.com/e/hack-o-life-engelli-yasamn-kolaylastrmaya-yon-registration-60026292256?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1561064400000,
+    "dateEnd" : 1561237200000,
+    "description" : "21-22 Haziran 2019 | Turkcell Genel Müdürlüğü | İstanbul-Maltepe",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/turkcell-gnc-bi-fikir-hackathon.PNG?alt=media&token=d009d7d7-68a9-440e-a29f-6da619f8023e",
+    "name" : "Gnç Bi'Fikir",
+    "url" : "https://www.turkcell.com.tr/gnc-bifikir?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1560459600000,
+    "dateEnd" : 1560546000000,
+    "description" : "14 Haziran 2019 | Zemin İstanbul | İstanbul-Beyoğlu",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/zemin-istanbul-hackathon.jpg?alt=media&token=295efd91-2621-47a8-803f-5b779c342326",
+    "name" : "Zemin İstanbul Hackathon",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSfwyolnWEOGulPXkh2zT8hIlpGWFN1khYPTxIcpzp3acHG7Hw/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1561582800000,
+    "dateEnd" : 1561755600000,
+    "description" : "27-28 Haziran 2019 - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/mechathon-basaksehir-living-lab-hackathon.jpg?alt=media&token=da567048-439c-4129-ada2-c6bce26473f4",
+    "name" : "Mechathon",
+    "url" : "http://basaksehir-livinglab.com/BLL/blog/2019/05/31/mechathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1562187600000,
+    "dateEnd" : 1562360400000,
+    "description" : "4-5 Temmuz 2019 - TED Üniversitesi - Çankaya - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/diplohack-ankara.jpg?alt=media&token=8231009c-91d6-464c-92e5-6d99297a6a19",
+    "name" : "Diplohack Ankara",
+    "url" : "https://www.ab.gov.tr/51681.html?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1569531600000,
+    "dateEnd" : 1569618000000,
+    "description" : "27 Eylül 2019 - Bahçeşehir Üni. BUG Galata Kampüsü, İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/gamification-hackathon.jpg?alt=media&token=e54e0bdc-e2f7-471b-b332-49bdc4919146",
+    "name" : "GAMFED Gamification Hackathon 2019",
+    "url" : "http://www.gamificationhackathon.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1566594000000,
+    "dateEnd" : 1567285200000,
+    "description" : "24 Ağustos-1 Eylül 2019, Urla - Open Campus",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hack-n-break-2019-hackathon.png?alt=media&token=f363c043-4dc7-4ebb-a14f-5a7841ab431c",
+    "name" : "Hack'n Break 2019",
+    "url" : "http://hacknbreak.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1562965200000,
+    "dateEnd" : 1563138000000,
+    "description" : "13-14 Temmuz 2019, Habita - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/insider-php-hackathon.png?alt=media&token=3c03df0c-b383-4768-89a3-96b30b5be5d0",
+    "name" : "Insider PHP Hackathon",
+    "url" : "https://landing.useinsider.com/php-conference-july-2019/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1567803600000,
+    "dateEnd" : 1567976400000,
+    "description" : "7-8 Eylül 2019 / Gençlik ve Spor Bakanlığı - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/genc-hackathon.jpg?alt=media&token=3fdc0905-9df1-441a-8c64-5a0296ec4ab4",
+    "name" : "Genç Hackathon",
+    "url" : "http://e-genc.gsb.gov.tr/EGenc/Content/Hackathon2019?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1568926800000,
+    "dateEnd" : 1569186000000,
+    "description" : "20-22 Eylül 2019 / Atatürk Havalimanı",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/travel-datathon-2019.png?alt=media&token=46b9d18b-33db-4bd7-bceb-70934aa92c19",
+    "name" : "Travel Datathon 2019",
+    "url" : "https://www.datathon.turkishairlines.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1571432400000,
+    "dateEnd" : 1571605200000,
+    "description" : "19-20 Ekim 2019 / ODTÜ",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/nasa-space-apps-challenge.PNG?alt=media&token=65002f09-3401-421f-9b52-6f0d20ab83d3",
+    "name" : "NASA Space Apps Challenge",
+    "url" : "https://2019.spaceappschallenge.org/locations/ankara/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1571950800000,
+    "dateEnd" : 1572210000000,
+    "description" : "25-27 Ekim 2019 / Workinton Levent - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/serathonin-hackathon-3.jpg?alt=media&token=64ae6bce-b805-4d5c-904f-644543867015",
+    "name" : "SERATHON-IN",
+    "url" : "http://serathonin.org.tr/default.aspx?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1570482000000,
+    "dateEnd" : 1570568400000,
+    "description" : "8 Ekim 2019 / Co-11, Istanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/test-hackathon.JPG?alt=media&token=8dbf82f5-d2fe-4794-b4e1-ea9c4f072094",
+    "name" : "4. Uluslararası Test Hackathon",
+    "url" : "https://testhackathon.org?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1571864400000,
+    "dateEnd" : 1571950800000,
+    "description" : "24 Ekim 2019 - TBB Av. Özdemir Özok Kongre Merkezi - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/cografi-bilgi-sistemleri-ideathon.jpg?alt=media&token=e9b44e04-619a-4f2e-a6ef-f1236f40bbe4",
+    "name" : "Coğrafi Bilgi Sistemleri Ideathon",
+    "url" : "https://cbskongresi.org/girisim-yarismasi-basvuru-formu/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1568840400000,
+    "dateEnd" : 1568926800000,
+    "description" : "19 Eylül 2019 - Galata Rum Okulu İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/logo-machine-learning-hackathon.jpg?alt=media&token=4d86814d-65f5-49f4-bc6a-6157da51dc41",
+    "name" : "Logo Machine Learning Hackathon",
+    "url" : "https://awsloft.istanbul/event/6c69e1f8-4771-45ee-ba41-b2a43a416265?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1569013200000,
+    "dateEnd" : 1569099600000,
+    "description" : "21 Eylül 2019 - Galata Rum Okulu İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/logo-machine-learning-hackathon.jpg?alt=media&token=4d86814d-65f5-49f4-bc6a-6157da51dc41",
+    "name" : "Insider Hack Devops",
+    "url" : "https://awsloft.istanbul/event/8305cb95-85ac-4710-97d4-c1f0fc6e0180?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1570222800000,
+    "dateEnd" : 1570309200000,
+    "description" : "5 Ekim 2019 - Ataşehir Migros Müdürlüğü - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/migros-master-minds-ideathon.jpg?alt=media&token=6b67830f-6df4-43a6-8891-ac241ee4ed27",
+    "name" : "Migros Master Minds Ideathon",
+    "url" : "https://www.mtstajprogramlari.com/migrosmasterminds/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1571432400000,
+    "dateEnd" : 1571518800000,
+    "description" : "19 Ekim 2019 - sahiplex Ofis - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/dev-akademi-yaz%C4%B1l%C4%B1m-maratonu.jpg?alt=media&token=1c0ab60c-4492-4643-8a73-95dc43754690",
+    "name" : "dev.akademi Yazılım Maratonu",
+    "url" : "https://devakademi.sahibinden.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1574456400000,
+    "dateEnd" : 1574629200000,
+    "description" : "23-24 Kasım 2019 - Anadolu Sigorta Genel Müdürlük / Beykoz - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/anadolu-sigorta-hackathon.jpg?alt=media&token=21988ab9-3055-4915-a4b9-4c26a34a1704",
+    "name" : "Anadolu Sigorta Hackathon",
+    "url" : "https://hackathon.anadolusigorta.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1571950800000,
+    "dateEnd" : 1572123600000,
+    "description" : "25–26 Ekim 2019 - EÜ EBİLTEM-TTO - İzmir",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hack4art.png?alt=media&token=42d7f550-bfd3-4b01-9caa-ac6f8da9c3f9",
+    "name" : "Hack4Art",
+    "url" : "https://tr.surveymonkey.com/r/hackathon-kayit?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1571432400000,
+    "dateEnd" : 1571605200000,
+    "description" : "19 - 20 Ekim 2019 - Grand Hyatt Hotel / Istanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/peak-unithon-engineering.png?alt=media&token=b0325bc4-4e65-4db1-bc74-b6688ffd8c3a",
+    "name" : "Peak Unithon Engineering",
+    "url" : "https://unithon.peak.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1568494800000,
+    "dateEnd" : 1572555600000,
+    "description" : "15 Eylül - 31 Ekim 2019 - Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/habitat-online-hackathon.png?alt=media&token=5fb88c33-76a5-420e-b40b-d75d91fe0215",
+    "name" : "Habitat Online Hackathon",
+    "url" : "https://habitatdernegi.org/online-hackathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1571432400000,
+    "dateEnd" : 1571605200000,
+    "description" : "19-20 Ekim 2019 - Tofaş Genel Müdürlük - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/fiat-deneyim-atolyesi-hackathon.jpg?alt=media&token=fffb4014-98da-4469-8033-e3bfcf7ea432",
+    "name" : "Fiat Deneyim Atölyesi",
+    "url" : "https://deneyim.fiat.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1571432400000,
+    "dateEnd" : 1571605200000,
+    "description" : "19-20 Ekim 2019 - TBA",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/rewrite-hackathon-marsh.jfif?alt=media&token=55e17222-aa08-445c-b02a-818c22b1cf19",
+    "name" : "#ReWRITE Hackathon",
+    "url" : "https://www.eventbrite.com/e/rewrite-hackathon-in-europe-tickets-68582400807?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1573765200000,
+    "dateEnd" : 1574024400000,
+    "description" : "15 -17 Kasım 2019",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/akbank-lab-hackathon-code-yarinin-bankaciligi.png?alt=media&token=e6d22343-a4e8-4352-b1ef-b6ed8daad269",
+    "name" : "Akbank LAB Code: Yarının Bankacılığı",
+    "url" : "https://www.akbanklab.com/tr/hackathon?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1576270800000,
+    "dateEnd" : 1576357200000,
+    "description" : "14 Aralık 2019 - Teknopark Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/dijital-turkiye-fikir-maratonu.png?alt=media&token=145e9fb9-a7ae-4bc1-845d-9098fe5e483e",
+    "name" : "Dijital Türkiye Fikir Maratonu",
+    "url" : "https://fikirmaratonu.turksat.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1575666000000,
+    "dateEnd" : 1575838800000,
+    "description" : "7-8 Aralık 2019 - İTÜ Ayazağa Kampüsü - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/best-istanbul-hackathon.jpg?alt=media&token=aa027ebe-04d6-4484-b512-4b6e743faa88",
+    "name" : "BEST İstanbul Hackathon",
+    "url" : "https://www.hackathon.bestistanbul.org/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1575579600000,
+    "dateEnd" : 1575838800000,
+    "description" : "6-8 Aralık 2019 - Antalya Teknokent A.Ş. Kuluçka Merkezi Salonları",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/antalya-hackathonu.png?alt=media&token=5829731f-e840-414b-97aa-84b0ef8ee187",
+    "name" : "Antalya IoT Hackathonu",
+    "url" : "https://habitatdernegi.org/haber/antalya-iot-hackathonu-kuresel-sorunlara-teknolojik-cozumler.html/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1575061200000,
+    "dateEnd" : 1575234000000,
+    "description" : "30 Kasım - 1 Aralık 2019 Yer: Bilişim Vadisi [Muallimköy Mahallesi, Deniz Cd. No:143-5, 41400 Gebze/Kocaeli]",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/acik-hack-social.jpg?alt=media&token=94718210-e1b6-404c-b8de-a57916858af0",
+    "name" : "Açık Hack",
+    "url" : "https://www.acikhack.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1575061200000,
+    "dateEnd" : 1575234000000,
+    "description" : "30 Kasım - 1 Aralık 2019 Yer: Bilkent Cyberpark Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hackathor-bilkent-yes.jpg?alt=media&token=a8c6e57a-ad7e-497f-bb21-95e40efde635",
+    "name" : "Hackathor",
+    "url" : "http://www.hackathor.net/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1576184400000,
+    "dateEnd" : 1576443600000,
+    "description" : "13,14,15 Aralık 2019 Yer: VakıfBank Genel Müdürlük (Ümraniye, İstanbul)",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hack-to-the-future-vakifbank.jpg?alt=media&token=0b7398a2-b587-4f94-8839-2a9d2ce5cd27",
+    "name" : "Hack to the Future",
+    "url" : "https://www.hacktothefuture.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1575061200000,
+    "dateEnd" : 1575234000000,
+    "description" : "30 Kasım - 1 Aralık 2019 Facebook İstasyon",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/gelecegi-tasarla-engelsiz-hackathon.jpg?alt=media&token=092afaed-3e94-4c89-be37-5bbd2608b81e",
+    "name" : "Engelsiz Hackathon",
+    "url" : "https://habitatdernegi.org/haber/engelsiz-hackathon-basliyor.html/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1576270800000,
+    "dateEnd" : 1576443600000,
+    "description" : "14-15 Aralık 2019 ODTÜ CoZone Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/kuantum-programlama-uygulamalari-hackathon-q-turkey.jfif?alt=media&token=2844bf17-aaa4-4c12-bfa7-776c58f5209d",
+    "name" : "Kuantum Programlama Uygulamaları Hackathonu",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSeGMgpr2jZ_WYkCcm4GhjULd94l_pbXFwtwkoNEr74kcPBQsA/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1576270800000,
+    "dateEnd" : 1576357200000,
+    "description" : "14 Aralık 2019 - Türkiye Bosna Sancak Kültür ve Yardımlaşma Derneği İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/ideja-marathon.jfif?alt=media&token=4c75c2e0-1b9d-4b95-848a-2e0b28c4c618",
+    "name" : "Ideja Marathon",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSeZYBl7aSc7cTdK0q652F70xsW3YhsUzzSDdq9I8QtIAW2S6g/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1577480400000,
+    "dateEnd" : 1577653200000,
+    "description" : "28-29 Aralık 2019 - Manisa Celal Bayar Üniversitesi",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/manisa-industrial-park-hackathon.jpg?alt=media&token=9faf3687-71d4-4165-bbe4-023a47b2a000",
+    "name" : "Manisa Industrial Park Hackathon",
+    "url" : "http://miphackathon.mcbu.edu.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1577480400000,
+    "dateEnd" : 1577566800000,
+    "description" : "28 Aralık 2019 - Konya Bilim Merkezi ",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/akilli-sehirler-hackathonu.jpeg?alt=media&token=282e71f1-3cb7-4c44-9d3f-c877b4a66a6d",
+    "name" : "Akıllı Şehirler Hackathonu",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSeLutq4a-0sOm-EIfP8yvyCp5glenLwXi5ya5P2go2CopW5fA/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1584738000000,
+    "dateEnd" : 1584910800000,
+    "description" : "21-22 Mart 2020 - TOBB Ekonomi ve Teknoloji Üniversitesi - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/genc-durus-hackathon.jpg?alt=media&token=b067453c-c6b3-44fd-981e-5272a5276474",
+    "name" : "Genç Duruş Hackathonu",
+    "url" : "http://gencdurus.com/hackathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1578690000000,
+    "dateEnd" : 1578949200000,
+    "description" : "11,12,13 Ocak 2020 - VIAFLAT, Söğütözü - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/ieee-odtu-pixery-mobil-hackathon.jpg?alt=media&token=ceb83bc5-354a-42d3-96d7-0a4508ae9058",
+    "name" : "IEEE ODTÜ Pixery Mobil Teknolojiler Hackathonu",
+    "url" : "http://ieee.metu.edu.tr/hackathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1581714000000,
+    "dateEnd" : 1581886800000,
+    "description" : "15 - 16 Şubat 2020 - Antalya OSB Teknopark",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/agt-ideathon.jpg?alt=media&token=92835b69-bf53-45ef-8483-aaf9bf2d641c",
+    "name" : "AGT IDEATHON",
+    "url" : "https://ideathon.agt.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1579294800000,
+    "dateEnd" : 1579467600000,
+    "description" : "18-19 Ocak 2020 - Bilgiyi Ticarileştirme Merkezi - Şişli/İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/sertifier-ideathon.jfif?alt=media&token=39d5bec9-2458-4761-9b17-aa5477bbf43c",
+    "name" : "Sertifier Ideathon",
+    "url" : "https://www.eventbrite.com/e/sertifier-ideathon-tickets-86317492945?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1583442000000,
+    "dateEnd" : 1583701200000,
+    "description" : "6-8 Mart 2020 - İGA (İstanbul Havalimanı)",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/iga-sosyal-hackathon.png?alt=media&token=1ab153ab-0372-4288-a334-7087e4b1bbff",
+    "name" : "Sosyal Hackathon",
+    "url" : "https://www.igasocialhack.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1578690000000,
+    "dateEnd" : 1578862800000,
+    "description" : "11-12 Ocak 2020 - Kültürpark İzmir",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hack-4-mobility-ideathon.png?alt=media&token=aa3f0afd-3522-4009-ad06-02cc04878674",
+    "name" : "Hack4Mobility İdeathon",
+    "url" : "http://hack4mobility.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1582232400000,
+    "dateEnd" : 1582405200000,
+    "description" : "21-22 Şubat 2020 - Saint Benoît Fransız Lisesi",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/iathon.png?alt=media&token=fd346036-7833-435e-8b19-95f06d46281b",
+    "name" : "IAthon",
+    "url" : "https://www.sb.k12.tr/6-uluslararasi-dijital-bahar-udb/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1579294800000,
+    "dateEnd" : 1579381200000,
+    "description" : "18 January 2020 - Facebook İstasyon Maslak - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/devc-istanbul-semi-ideathon.jpeg?alt=media&token=428c95fc-cebd-48a9-a714-2bdfe815377c",
+    "name" : "DevC İstanbul Semi Ideathon",
+    "url" : "https://www.meetup.com/en-AU/Facebook-Developer-Circle-Istanbul/events/267663190/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1581541200000,
+    "dateEnd" : 1581627600000,
+    "description" : "13 Şubat 2020 - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/genc-hackathon-2020-benim-yurdum.jpeg?alt=media&token=797ddfc9-5a74-41d0-9c6c-e74381895ece",
+    "name" : "Genç Hackathon - Benim Yurdum",
+    "url" : "http://e-genc.gsb.gov.tr/EGenc/Content/Hackathon2020?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1583442000000,
+    "dateEnd" : 1583614800000,
+    "description" : "6-7 Mart 2020 - InogarArt Ataşehir - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/panasonic-hackathon-life-solutions.jpg?alt=media&token=de394b20-7427-4b8f-9f08-d9a03fff2d11",
+    "name" : "Hackathon Life Solutions",
+    "url" : "https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAARnvrFlUNTJQOFkwNDA0R0dJVENHQUMxSFlKSUlVRi4u&utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1584046800000,
+    "dateEnd" : 1584306000000,
+    "description" : "13-15 Mart 2020 - Zemin İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/deprem-hackathonu.JPG?alt=media&token=3d54dbc8-5b61-41be-b554-ae9af171c967",
+    "name" : "Deprem Hackathonu",
+    "url" : "https://depremhackathonu.ibb.istanbul/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1582923600000,
+    "dateEnd" : 1583096400000,
+    "description" : "29 Şubat - 1 Mart 2020 - Grand Hyatt Hotel, Istanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/peak-unithon-2020.jpg?alt=media&token=7a6d216c-2238-42a6-a409-0399e796335b",
+    "name" : "Peak Unithon",
+    "url" : "https://unithon.peak.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1581714000000,
+    "dateEnd" : 1581800400000,
+    "description" : "15 Şubat 2020 - Karaköy Minerva Palas, Istanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/sabanci-universitesi-blockchain-hackathon.JPG?alt=media&token=134f6723-dcb1-48d3-b2db-7fc2365fdf01",
+    "name" : "Sabancı Üniversitesi Blockchain Hackathon",
+    "url" : "https://docs.google.com/forms/d/1F6MuQ79cRJR5UqGInuUp4UyTxk11sHwialuBqfw5JSA/viewform?edit_requested=true&utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1581714000000,
+    "dateEnd" : 1581800400000,
+    "description" : "15 Şubat 2020 - Robert Kolej, Istanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hackidhon-robert-college.png?alt=media&token=3a63ab09-f0ab-4acd-aa3f-0d71bd4a7e13",
+    "name" : "Hackidhon Robert College",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSf2J86FlfcTlvzGS7QpFa95-Ij1rJHXrPv2BLQ3L8cZgleosA/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc"
+  }, {
+    "date" : 1582318800000,
+    "dateEnd" : 1582491600000,
+    "description" : "22-23 Şubat 2020 - ITU Ayazaga Kampusu, Teknokent ARI 2, Istanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/algorun-hackathon-2020.jpg?alt=media&token=893bc17b-a53d-4484-8664-a5cbbbdffcde",
+    "name" : "Algorun'20 Hackathon",
+    "url" : "http://algorunhackathon.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1581714000000,
+    "dateEnd" : 1581886800000,
+    "description" : "15-16 Şubat 2020 - Bilgiyi Ticarileştirme Merkezi, İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/tobb-istanbul-genc-ideathon.jpg?alt=media&token=96e812e2-1789-417f-80c1-2602e1857340",
+    "name" : "Tobb Gkp Ideathon",
+    "url" : "https://docs.google.com/forms/d/e/1FAIpQLSdm9ADmdIsMRG-ZZn7jo1aCv0eXAN58-iawnyLqkXuWIzDofg/viewform?ref=hackathonturkiye"
+  }, {
+    "date" : 1581886800000,
+    "dateEnd" : 1582059600000,
+    "description" : "17-18 Şubat 2020 - Ostim Teknopark, Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/ostim-teknopark-hackathon-2020.jpeg?alt=media&token=5d0f2a45-f838-4b6a-9300-fb0046b06f9e",
+    "name" : "Ostim Teknopark Hackathon",
+    "url" : "https://www.ostimteknopark.com.tr/ostim-teknopark-hackathon-haberi-88?ref=hackathonturkiye"
+  }, {
+    "date" : 1581627600000,
+    "dateEnd" : 1581886800000,
+    "description" : "14-16 Şubat 2020 - Ankara",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/akilli-teknolojiler-iot-hackathon-2020.jpeg?alt=media&token=78b81ae0-d048-40d4-be81-1029b196a153",
+    "name" : "Akıllı Teknolojiler IoT Hackathonu",
+    "url" : "https://habitatdernegi.org/haber/akilli-teknolojiler-iot-hackathonunu-kacirma.html/?ref=hackathonturkiye"
+  }, {
+    "date" : 1586552400000,
+    "dateEnd" : 1586725200000,
+    "description" : "11-12 Nisan 2020 - Denizli Koleji",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/denizli-cocuk-hackathonu-2020.JPG?alt=media&token=085d5544-e41a-44a7-952e-e1d8307c257c",
+    "name" : "Denizli Çocuk Hackathonu",
+    "url" : "http://www.hackathon.denizlikoleji.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1583442000000,
+    "dateEnd" : 1583614800000,
+    "description" : "6-7 Mart 2020 - İzmir Havagazı Fabrikası",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/izmir-hackathon-2020.jpg?alt=media&token=618fa57e-d19c-40fc-a906-702caae90d51",
+    "name" : "İzmir Hackathon",
+    "url" : "http://izmirhackathon.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1587330000000,
+    "dateEnd" : 1587675600000,
+    "description" : "20-23 Nisan 2020 - Bursa Tüyap Fuar Alanı",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/science-expo-hackathon.jpg?alt=media&token=923cc109-40f5-49b5-8b75-17a6135b243a",
+    "name" : "Science Expo Hackathon",
+    "url" : "https://www.bursabilimsenligi.org/hackathon-yarismasi?ref=hackathonturkiye"
+  }, {
+    "date" : 1582232400000,
+    "dateEnd" : 1582491600000,
+    "description" : "21-23 Şubat 2020 - Özyeğin Üniversitesi, İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/ozu-makeathon-2020.JPG?alt=media&token=ab2e667b-f1e0-4684-a02b-0a7aa385d5a0",
+    "name" : "ÖZÜ Makeathon",
+    "url" : "http://makeathon.ozumaker.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1583096400000,
+    "dateEnd" : 1583182800000,
+    "description" : "2 Mart 2020 - Özyeğin Üniversitesi, İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/alternatif-bank-engelsiz-bankacilik-hackathon-2020.jpg?alt=media&token=4c23dd4e-fa2c-4c24-9e56-7986d618a830",
+    "name" : "Alternatif Bank Engelsiz Bankacılık Hackathon",
+    "url" : "https://www.ozyegin.edu.tr/tr/duyurular/10698/alternatif-bank-engelsiz-bankacilik-hackathon?ref=hackathonturkiye"
+  }, {
+    "date" : 1597957200000,
+    "dateEnd" : 1598216400000,
+    "description" : "21-23 Ağustos 2020 | Levent 199 Workinton, İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/educathon-hackathon-2020.JPG?alt=media&token=5258f82d-4e61-4ca1-a100-6b71320308a7",
+    "name" : "Educathon",
+    "url" : "http://educathon.com.tr/?ref=hackathonturkiye"
+  }, {
+    "date" : 1584046800000,
+    "dateEnd" : 1584306000000,
+    "description" : "13-15 Mart 2020 - İzmir Yüksek Teknoloji Enstitüsü (Merkezi Kafeterya ve Teknopark İzmir)",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/code-of-duty-2020.jpeg?alt=media&token=a51eefc4-2e80-4e3f-9d4c-080d852e9793",
+    "name" : "Code of Duty",
+    "url" : "http://codeofduty.iyte.edu.tr/?ref=hackathonturkiye"
+  }, {
+    "date" : 1585774800000,
+    "dateEnd" : 1585947600000,
+    "description" : "2-3 Nisan 2020 - Antalya",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/ansiad-hackathon.jpeg?alt=media&token=e709e5fb-e0db-4b03-af78-870c5a62998b",
+    "name" : "ANSIAD Değişim Yarat Hackathon",
+    "url" : "http://www.ansiad.org.tr/index.php?goto=icerik&cat_idx=63&ref=hackathonturkiye"
+  }, {
+    "date" : 1584046800000,
+    "dateEnd" : 1584306000000,
+    "description" : "13-15 Mart 2020 - Erciyes Üniversitesi 15 Temmuz Yerleşkesi Konferans Salonu, Kayseri",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/girisimcilik-kampi-university-4-society.jpeg?alt=media&token=a44a4815-39fa-4fb9-b718-d3454a1b1546",
+    "name" : "U4S ERÜ Girişimcilik Kampı",
+    "url" : "https://u4s.at/kayit.php?event=33&ref=hackathonturkiye"
+  }, {
+    "date" : 1584651600000,
+    "dateEnd" : 1584738000000,
+    "description" : "20 Mart 2020 - Abdullah Gül Üniversitesi, Kayseri",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/big-react-hackathon.JPG?alt=media&token=6787751a-f97a-4b76-a180-387dd9d2ccac",
+    "name" : "Big React Hackathon",
+    "url" : "https://bigreact.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1587762000000,
+    "dateEnd" : 1587848400000,
+    "description" : "25 Nisan 2020 - İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/mckinsey-datathon-the-city-cup-2020.JPG?alt=media&token=a2231ed8-9c06-4dff-98f7-064913759ff6",
+    "name" : "McKinsey's Datathon - The City Cup - Istanbul",
+    "url" : "https://jobs.mckinsey.com/careers/eventDetails?folderId=38757&ref=hackathonturkiye"
+  }, {
+    "date" : 1584651600000,
+    "dateEnd" : 1584824400000,
+    "description" : "20-21 Mart 2020 - Teknopark İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/siber-guvenlik-fikir-yarismasi.jpg?alt=media&token=9d89920f-639f-4cfa-a4f4-07e66a3ac59f",
+    "name" : "Siber Güvenlik Fikir Yarışması",
+    "url" : "https://siberguvenlikfikiryarismasi.org/basvuru/?ref=hackathonturkiye"
+  }, {
+    "date" : 1584738000000,
+    "dateEnd" : 1584910800000,
+    "description" : "21-22 Mart 2020 - TMMOB Mimarlar Odası, Karaköy, İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/ag-haritalama-hackathon.JPG?alt=media&token=3fb2ce04-5dba-43d6-a7a0-570874ef79b9",
+    "name" : "Veri Müşterekleri için Ağ Haritalama Hackathonu",
+    "url" : "https://graphcommons.github.io/hackathons/2020/03/02/veri-musterekleri/?ref=hackathonturkiye"
+  }, {
+    "date" : 1583355600000,
+    "dateEnd" : 1585688400000,
+    "description" : "5-31 Mart 2020 - Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/github-actions-hackathon.JPG?alt=media&token=7cf5f16c-7caa-41bd-8384-27495fdabdcb",
+    "name" : "Github Actions Hackathon",
+    "url" : "https://githubhackathon.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1584046800000,
+    "dateEnd" : 1584306000000,
+    "description" : "13-15 Mart 2020 - Gaziantep Teknopark",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hack-pcb-2020.JPG?alt=media&token=63cd0250-0371-463e-9c1d-5c41b1831e53",
+    "name" : "Hack PCB",
+    "url" : "http://pcb.hackathlon.org/?ref=hackathonturkiye"
+  }, {
+    "date" : 1585256400000,
+    "dateEnd" : 1585515600000,
+    "description" : "27-29 Mart 2020 -  Facebook İstasyon, İstanbul",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/istanbul-blockchain-hackathon-chainathon.jpg?alt=media&token=b83640b2-9fec-4d1a-9b41-84853b4ae180",
+    "name" : "Chainathon - Blockchain Hackathon",
+    "url" : "https://habitatdernegi.org/haber/istanbul-blockchain-okulu-projesi-blockchain-hackathonu.html/?ref=hackathonturkiye"
+  }, {
+    "date" : 1584738000000,
+    "dateEnd" : 1584910800000,
+    "description" : "21-22 Mart 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/coronathon-turkiye.webp?alt=media&token=343557f1-936f-4e8c-948d-b36f15358002",
+    "name" : "Coronathon Türkiye",
+    "url" : "https://coronathonturkiye.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1586552400000,
+    "dateEnd" : 1586725200000,
+    "description" : "11-12 Nisan 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/yarini-kodlayanlar-online-covideathon-2020.jpg?alt=media&token=08d87eb9-6043-4a99-a49b-b8f183cc8acb",
+    "name" : "Yarını Kodlayanlar Online Covideathon",
+    "url" : "https://habitatdernegi.org/yarini-kodlayanlar-online-covideathon/?ref=hackathonturkiye"
+  }, {
+    "date" : 1586466000000,
+    "dateEnd" : 1586725200000,
+    "description" : "10-13 Nisan 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/son-km-fark-at-fikrin-evde-kalmasin.jpg?alt=media&token=c38a3ea3-2a13-4801-b93d-c043e84010b7",
+    "name" : "FarkLabs Hackathon - #fikrinevdekalmasin",
+    "url" : "https://hackathon.farklabs.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1586552400000,
+    "dateEnd" : 1586725200000,
+    "description" : "11-12 Nisan 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/designathon-for-cure.jfif?alt=media&token=bb5d1dc5-1328-4df6-9204-8f67986c7bf8",
+    "name" : "Designathon for Cure",
+    "url" : "https://www.designathonturkey.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1588366800000,
+    "dateEnd" : 1588539600000,
+    "description" : "2-3 Mayıs 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/online-marketing-hackathon.jpg?alt=media&token=f62fd90e-4707-44fc-8de3-02785963562f",
+    "name" : "Online Marketing Hackathon",
+    "url" : "http://hackathon.kirenyazilim.com?ref=hackathonturkiye"
+  }, {
+    "date" : 1589490000000,
+    "dateEnd" : 1589749200000,
+    "description" : "15-17 Mayıs 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/hack-the-normal-arcelik-online-hackathon.jfif?alt=media&token=6b6e4b08-3c38-4956-a9b3-0b1f52877e67",
+    "name" : "Hack the Normal",
+    "url" : "https://hackthenormal.com/?ref=hackathonturkiye"
+  }, {
+    "date" : 1589317200000,
+    "dateEnd" : 1589576400000,
+    "description" : "13-15 Mayıs 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/online-genc-ideathon.jpeg?alt=media&token=76c08e26-61af-4525-bc4c-9c81b618c5d1",
+    "name" : "Online Genç Ideathon",
+    "url" : "http://e-genc.gsb.gov.tr/EGenc/Content/Ideathon2020?ref=hackathonturkiye"
+  }, {
+    "date" : 1589490000000,
+    "dateEnd" : 1590008400000,
+    "description" : "15-20 Mayıs 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/online-sim%C3%BClasyon-hackathonu-simathon.jfif?alt=media&token=4ac0a492-66f1-4672-abb2-2e558d55fe3e",
+    "name" : "Online Simülasyon Hackathonu",
+    "url" : "https://simathon.org/?ref=hackathonturkiye"
+  }, {
+    "date" : 1591045200000,
+    "dateEnd" : 1591390800000,
+    "description" : "Başakşehir Living Lab, 2-5 Haziran 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/basaksehir-living-lab-tasarim-hackathonu.jpg?alt=media&token=4aa592d2-a9ed-44f3-a5aa-3cefe48f29f3",
+    "name" : "Tasarım Hackathonu: Covid – 19 Salgını ile Mücadele",
+    "url" : "http://basaksehir-livinglab.com/BLL/blog/2020/04/30/basaksehir-living-lab-tasarim-hackathonu-covid-19-salgini-ile-mucadele/?ref=hackathonturkiye"
+  }, {
+    "date" : 1589835600000,
+    "dateEnd" : 1590181200000,
+    "description" : "T3 Girişim Merkezi, 19-22 Mayıs 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/unideathon-universite-ideathon.jpg?alt=media&token=fa1db658-ab73-45b0-872d-a9d1c8e3b984",
+    "name" : "UNIdeathon",
+    "url" : "https://t3gm.org/unideathon-basvur.php?ref=hackathonturkiye"
+  }, {
+    "date" : 1589662800000,
+    "dateEnd" : 1589922000000,
+    "description" : "17-19 Mayıs 2020, Online",
+    "imageUrl" : "https://firebasestorage.googleapis.com/v0/b/boiga-cyanea.appspot.com/o/code-mamak-hackathon.jfif?alt=media&token=c508267c-88a0-41d5-b1e1-b508437c3d4e",
+    "name" : "Code Mamak",
+    "url" : "http://code.mamak.bel.tr/?ref=hackathonturkiye"
+  } ]
+}
