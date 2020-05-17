@@ -12,6 +12,9 @@ class EventViewSet(viewsets.ModelViewSet):
     serializer_class = EventSerializer
     queryset = Event.objects.all().order_by('-added_at')
 
+    def perform_create(self, serializer):
+        serializer.save(added_by=self.request.user)
+
 class EventTypeViewSet(viewsets.ModelViewSet):
     """
     API endpoint

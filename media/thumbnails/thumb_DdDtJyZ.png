@@ -1,0 +1,1197 @@
+<!DOCTYPE html>
+<html lang="tr" xmlns:fb="https://ogp.me/ns/fb#">
+<head>
+
+    <meta charset="utf-8"/>
+    <title>TTGV</title>
+    <meta name="author" content="Touch Dijital İletişim Çözümleri Ltd. Şti."/>
+    <link rel="canonical" href="https://www.ttgv.org.tr/tr"/>
+    <link rel="apple-touch-icon" href="/assets/default/images/favicon.png">
+    <meta name="generator" content="Touch CMS v3.0 - 2016"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="format-detection" content="telephone=no"/>
+    <meta name="HandheldFriendly" content="true"/>
+    <meta property="og:title" content="TTGV"/>
+    <meta property="og:url" content="https://www.ttgv.org.tr/tr"/>
+    <meta property="og:image" content="https://www.ttgv.org.tr/assets/default/images/ttgv-sm-og-cover.jpg"/>
+    <meta property="og:site_name" content="TTGV"/>
+    <meta property="og:description" content="1991 yılında kamu-özel sektör işbirliği ile Türkiye’de özel sektörün teknoloji ve inovasyon faaliyetlerinin desteklenerek teknolojinin gerçek dünya ile buluşturulması amacı ile kurulduk.
+
+Başta Avrupa Birliği olmak üzere dünyada gelişmiş ekosistemlerde kabul ve ilgi gören “kar amacını öncelikli olarak gütmeyen aracı/uygulayıcı kuruluş” modelinin Türkiye’deki tek örneğiyiz."/>
+	
+	<meta name="twitter:image" content="https://www.ttgv.org.tr/assets/default/images/ttgv-sm-og-cover.jpg">   
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:site" content="@TTGV">
+	<meta name="twitter:creator" content="@TTGV">
+	<meta name="twitter:title" content="TTGV">
+	<meta name="twitter:description" content="1991 yılında kamu-özel sektör işbirliği ile Türkiye’de özel sektörün teknoloji ve inovasyon faaliyetlerinin desteklenerek teknolojinin gerçek dünya ile buluşturulması amacı ile kurulduk.
+
+Başta Avrupa Birliği olmak üzere dünyada gelişmiş ekosistemlerde kabul ve ilgi gören “kar amacını öncelikli olarak gütmeyen aracı/uygulayıcı kuruluş” modelinin Türkiye’deki tek örneğiyiz.">
+	<meta name="twitter:url" content="https://www.ttgv.org.tr/tr">
+
+    <meta name="description" content="1991 yılında kamu-özel sektör işbirliği ile Türkiye’de özel sektörün teknoloji ve inovasyon faaliyetlerinin desteklenerek teknolojinin gerçek dünya ile buluşturulması amacı ile kurulduk.
+
+Başta Avrupa Birliği olmak üzere dünyada gelişmiş ekosistemlerde kabul ve ilgi gören “kar amacını öncelikli olarak gütmeyen aracı/uygulayıcı kuruluş” modelinin Türkiye’deki tek örneğiyiz."/>
+    <meta name="keywords" content=""/>
+	<meta name="google-site-verification" content="EqmPC3RGtJueVHh7KVjuSj6p86nk0H3Tr7HelJIORjw" />
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,300,400italic,400,600,600italic,700,700italic&subset=latin,latin-ext'
+          rel='stylesheet' type='text/css'>
+            <script src='https://www.google.com/recaptcha/api.js?hl=tr'></script>
+    <!-- Components Styles START -->
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/components/bootstrap/dist/css/bootstrap-flex.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/components/tether/dist/css/tether.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/components/font-awesome/css/font-awesome.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/components/lightgallery/dist/css/lightgallery.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/components/jquery-colorbox/example2/colorbox.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/components/bxslider-4/dist/jquery.bxslider.min.css">
+
+<!-- Components Styles END -->
+
+
+    <!-- Theme styles START -->
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/styles/snapToPlugin.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/styles/jPages.css">
+
+
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/styles/swiper.min.css">
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/styles/application.css?v5">
+        <!--[if lte IE 8]>
+    <![endif]-->
+    <link rel="shortcut icon" href="/assets/default/images/favicon.png" type="image/png"/>
+    <link href="/wp_plugin/revslider/rs-plugin/css/captions.php" rel="stylesheet" type="text/css">
+
+    <!-- Theme styles END -->
+
+    <style>
+        @media  all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+            .col-md-5 {
+                flex: 2;
+            }
+
+            .col-md-4 {
+                flex: 1;
+            }
+
+            .col-md-3 {
+                flex: 1;
+            }
+        }
+    </style>
+    <!--[if lt IE 9]>
+    <script src="https://www.ttgv.org.tr/assets/default/components/ie9-js/lib/IE9.js"></script>
+    <link media="all" type="text/css" rel="stylesheet" href="https://www.ttgv.org.tr/assets/default/styles/ie9.css">
+    <![endif]-->
+
+    <script src="https://www.ttgv.org.tr/assets/default/components/jquery/dist/jquery.min.js"></script>
+    <script src="https://www.ttgv.org.tr/assets/default/components/gsap/src/minified/TweenMax.min.js"></script>
+
+    <link href="/wp_plugin/revslider/rs-plugin/css/settings.css?rev=4.6.0" rel="stylesheet" type="text/css"/><script src="/wp_plugin/revslider/rs-plugin/js/jquery.themepunch.enablelog.js?rev=4.6.0"></script><script src="/wp_plugin/revslider/rs-plugin/js/jquery.themepunch.tools.min.js?rev=4.6.0"></script><script src="/wp_plugin/revslider/rs-plugin/js/jquery.themepunch.revolution.min.js?rev=4.6.0"></script>
+
+    
+</head>
+<body id="homepage" class="hidden-footer tr" style="perspective: inherit !important;">
+
+<div id="wrapper">
+    <div id="search-overlay">
+        <div class="row-view">
+            <div class="col-view">
+                <a href="javascript:void(0);" class="close">&nbsp;</a>
+                <div class="row">
+<form method="GET" action="https://ttgv.org.tr/tr/arama-sonuclari" accept-charset="UTF-8" class="form-search" role="form">
+    <div class="col-md-12">
+        <div class="input-group">
+            <label for="search-q" class="hide-mobile">Aranacak kelimeyi girin ve "enter" tuşuna basın.</label>
+            <label for="search-q" class="hide-desk">Aranacak kelimeyi girin ve "git" tuşuna basın.</label>
+            <input id="search-q" class="form-control" autocomplete="off" name="q" type="text">
+            <span class="input-group-btn">4190141
+                <input class="btn btn-default" type="submit" value="Search">
+                </span>
+        </div>
+    </div>
+</form>
+</div>
+            </div>
+        </div>
+    </div>
+
+    <header>
+        <nav id="top-bar">
+    <nav class="container navbar">
+        <div class="clearfix">
+                                <a class="navbar-brand hidden-sm-down" href="https://ttgv.org.tr/tr"><img src="https://www.ttgv.org.tr/assets/default/images/ttgv-logo-new.png" alt="" id="ttgv_logo"></a>
+                <a class="navbar-brand hidden-sm-up" href="https://ttgv.org.tr/tr"><img src="https://www.ttgv.org.tr/assets/default/images/ttgv-logo-new-mobile.png" alt="" id="ttgv_logo"></a>
+                                        <div id="navbar" class="pull-xs-right hidden-sm-down top-nav-h">
+                <nav class="nav navbar-nav pull-xs-right">
+                    <ul class="nav clearfix" data-level="0"><li class="nav-item   "><a class="nav-link "  data-id="467" href="https://ttgv.org.tr/tr/kivilcim">Kıvılcım</a></li><li class="nav-item   "><a class="nav-link "  data-id="23" href="https://ttgv.org.tr/tr/ttgv-istanbul-ofisi">TTGV İstanbul Ofisi</a></li><li class="nav-item   "><a class="nav-link "  data-id="24" href="https://ttgv.org.tr/tr/bize-ulasin">Bize Ulaşın</a></li></ul>
+
+                    <div class="social-buttons-nav">
+                        <span class="navbar-divider"></span>
+                        <a target="_blank" class="nav-item nav-link nav-social social-link-instagram" href="https://www.instagram.com/t_t_g_v_/?hl=tr"><i class="fa fa-instagram"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-linkedin" href="https://www.linkedin.com/company/1057760"><i class="fa fa-linkedin"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-twitter" href="https://twitter.com/t_t_g_v"><i class="fa fa-twitter"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-facebook" href="https://www.facebook.com/T%C3%BCrkiye-Teknoloji-Geli%C5%9Ftirme-Vakf%C4%B1-TTGV-175046069220812/"><i class="fa fa-facebook"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-youtube" href="https://www.youtube.com/channel/UCAWunPvxAcFiaiJQDupPrQA"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                    <span class="navbar-divider"></span>
+                    <a class="nav-item nav-link search-buton" href="#"><i class="fa fa-search"></i></a>
+                    <span class="navbar-divider"></span>
+                    <ul class="nav nav-lang"><li class="nav-item"><a class="nav-link" href="/en">EN</a></li></ul>
+
+                </nav>
+                <!-- <form class="pull-xs-right m-r-1">
+                     <div class="input-group">
+                         <input type="text" class="form-control" placeholder="Search...">
+                         <button class="btn flaty-shadow"><i class="fa fa-search"></i></button>
+                     </div>
+                 </form>-->
+            </div>
+            <button id="mobile-navigation-button" class="navbar-toggler hidden-sm-up pull-xs-right" type="button">
+            </button>
+            <div class="hidden-md-up pull-sm-right">
+                <ul class="nav nav-lang"><li class="nav-item  active""><a class="nav-link" href="https://ttgv.org.tr/tr">TR</a></li><li class="nav-item "><a class="nav-link" href="https://ttgv.org.tr/en">EN</a></li></ul>
+            </div>
+            <div class="collapse navbar-toggleable-xs hidden-sm-up" id="mobile-menu">
+                <ul class="nav navbar-nav">
+                    <li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="12" href="/tr/biz-kimiz/ttgv-hakkinda">BİZ KİMİZ</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="165" href="https://ttgv.org.tr/tr/biz-kimiz/ttgv-hakkinda">Hakkımızda</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="573" href="https://ttgv.org.tr/tr/biz-kimiz/ne-yapiyoruz-1">Ne Yapıyoruz?</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="409" href="https://ttgv.org.tr/tr/biz-kimiz/yonetim">Yönetim</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="74" href="https://ttgv.org.tr/tr/biz-kimiz/takim">Takım</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="43" href="https://ttgv.org.tr/tr/biz-kimiz/is-modeli">İş Modeli</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="76" href="https://ttgv.org.tr/tr/biz-kimiz/kronoloji">Kronoloji</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="47" href="https://ttgv.org.tr/tr/biz-kimiz/uyelikler">Üyelikler</a></li></ul></li><li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="19" href="https://www.ttgv.org.tr/tr/programlar/explore">PROGRAMLARIMIZ</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="547" href="https://ttgv.org.tr/tr/programlar/explore">Explore</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="451" href="https://ttgv.org.tr/tr/programlar/hit">Hit</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="167" href="https://ttgv.org.tr/tr/programlar/kitlesel-kaynak-gelistirme-platformu-ideanest">ideanest</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="166" href="https://ttgv.org.tr/tr/programlar/ideaport">ideaport</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="95" href="https://ttgv.org.tr/tr/programlar/xnovate">Xnovate </a></li><li class="dropdown-item  "><a class="nav-link "  data-id="465" href="https://ttgv.org.tr/tr/programlar/yarini-insa-et">Yarını İnşa Et</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="708" href="https://ttgv.org.tr/tr/programlar/yesil-teknoloji">Yeşil Teknoloji Projeleri (YETEP) Destek Programı</a></li></ul></li><li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="18" href="http://ttgv.org.tr/tr/projeler/antalya-osb-endustriyel-simbiyoz-projesi">HİZMETLERİMİZ</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="568" href="https://ttgv.org.tr/tr/projeler/dijital-donusum-tedarikci-veri-tabani-n">Dijital Dönüşüm Tedarikçi Veri Tabanı</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="446" href="https://ttgv.org.tr/tr/projeler/inovasyon-esasli-rekabetcilik-analizi-inoreka">İnovasyon Esaslı Rekabetçilik Analizi -İNOREKA</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="452" href="https://ttgv.org.tr/tr/projeler/eko-verimlilik-ve-endustriyel-simbiyoz-faaliyetleri">Eko-verimlilik ve Endüstriyel Simbiyoz Faaliyetleri</a></li></ul></li><li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="571" href="https://ttgv.org.tr/tr/odul-programlari">ÖDÜL PROGRAMLARI</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="572" href="https://ttgv.org.tr/tr/odul-programlari/ttgv-odulleri">TTGV Ödülleri</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="574" href="https://ttgv.org.tr/tr/odul-programlari/teknoloji-odulleri">Teknoloji Ödülleri</a></li></ul></li>
+                </ul>
+                <ul class="nav navbar-nav pull-xs-right">
+                    <li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="20" href="/tr/haber-merkezi/haberler">HABER MERKEZİ</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="78" href="https://ttgv.org.tr/tr/haber-merkezi/haberler">HABERLER</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="82" href="https://ttgv.org.tr/tr/haber-merkezi/basin-bultenleri">BASIN BÜLTENLERİ</a></li></ul></li><li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="22" href="http://ttgv.org.tr/tr/multimedya/fotograf-galerileri">MULTİMEDYA</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="29" href="https://ttgv.org.tr/tr/multimedya/fotograf-galerileri">FOTOĞRAF GALERİLERİ</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="30" href="https://ttgv.org.tr/tr/multimedya/arastirma-ve-yayinlar">ARAŞTIRMA ve YAYINLAR</a></li></ul></li>
+                </ul>
+                <div id="navbar" class="hidden-md-up">
+                    <nav class="nav navbar-nav">
+                        <ul class="nav clearfix" data-level="0"><li class="nav-item   "><a class="nav-link "  data-id="467" href="https://ttgv.org.tr/tr/kivilcim">Kıvılcım</a></li><li class="nav-item   "><a class="nav-link "  data-id="23" href="https://ttgv.org.tr/tr/ttgv-istanbul-ofisi">TTGV İstanbul Ofisi</a></li><li class="nav-item   "><a class="nav-link "  data-id="24" href="https://ttgv.org.tr/tr/bize-ulasin">Bize Ulaşın</a></li></ul>
+                        <a class="nav-item nav-link search-buton" href="#"><i class="fa fa-search"></i></a>
+                        <div class="social-buttons-nav">
+
+                            <a target="_blank" class="nav-item nav-link nav-social social-link-instagram" href="https://www.instagram.com/t_t_g_v_/?hl=tr"><i class="fa fa-instagram"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-linkedin" href="https://www.linkedin.com/company/1057760"><i class="fa fa-linkedin"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-twitter" href="https://twitter.com/t_t_g_v"><i class="fa fa-twitter"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-facebook" href="https://www.facebook.com/T%C3%BCrkiye-Teknoloji-Geli%C5%9Ftirme-Vakf%C4%B1-TTGV-175046069220812/"><i class="fa fa-facebook"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-youtube" href="https://www.youtube.com/channel/UCAWunPvxAcFiaiJQDupPrQA"><i class="fa fa-youtube-play"></i></a>
+                        </div>
+
+
+                    </nav>
+                    <!-- <form class="pull-xs-right m-r-1">
+                         <div class="input-group">
+                             <input type="text" class="form-control" placeholder="Search...">
+                             <button class="btn flaty-shadow"><i class="fa fa-search"></i></button>
+                         </div>
+                     </form>-->
+                </div>
+            </div>
+        </div>
+    </nav>
+</nav>
+
+
+        <div id="menu-bar" class="snapbar-to-top hidden-sm-down">
+    <div class="container navbar clearfix p-y-0">
+        <a class="navbar-brand menubar-logo" href="https://ttgv.org.tr/tr"><img src="https://www.ttgv.org.tr/assets/default/images/ttgv-menubar-logo.svg" alt="" id="ttgv_logo"></a>
+        <button class="navbar-toggler hidden-sm-up pull-xs-right hidden-md-down" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar2">
+            &#9776;
+        </button>
+        <div class="collapse navbar-toggleable-xs" id="exCollapsingNavbar2">
+            <ul class="nav navbar-nav">
+                <li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="12" href="/tr/biz-kimiz/ttgv-hakkinda">BİZ KİMİZ</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="165" href="https://ttgv.org.tr/tr/biz-kimiz/ttgv-hakkinda">Hakkımızda</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="573" href="https://ttgv.org.tr/tr/biz-kimiz/ne-yapiyoruz-1">Ne Yapıyoruz?</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="409" href="https://ttgv.org.tr/tr/biz-kimiz/yonetim">Yönetim</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="74" href="https://ttgv.org.tr/tr/biz-kimiz/takim">Takım</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="43" href="https://ttgv.org.tr/tr/biz-kimiz/is-modeli">İş Modeli</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="76" href="https://ttgv.org.tr/tr/biz-kimiz/kronoloji">Kronoloji</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="47" href="https://ttgv.org.tr/tr/biz-kimiz/uyelikler">Üyelikler</a></li></ul></li><li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="19" href="https://www.ttgv.org.tr/tr/programlar/explore">PROGRAMLARIMIZ</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="547" href="https://ttgv.org.tr/tr/programlar/explore">Explore</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="451" href="https://ttgv.org.tr/tr/programlar/hit">Hit</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="167" href="https://ttgv.org.tr/tr/programlar/kitlesel-kaynak-gelistirme-platformu-ideanest">ideanest</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="166" href="https://ttgv.org.tr/tr/programlar/ideaport">ideaport</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="95" href="https://ttgv.org.tr/tr/programlar/xnovate">Xnovate </a></li><li class="dropdown-item  "><a class="nav-link "  data-id="465" href="https://ttgv.org.tr/tr/programlar/yarini-insa-et">Yarını İnşa Et</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="708" href="https://ttgv.org.tr/tr/programlar/yesil-teknoloji">Yeşil Teknoloji Projeleri (YETEP) Destek Programı</a></li></ul></li><li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="18" href="http://ttgv.org.tr/tr/projeler/antalya-osb-endustriyel-simbiyoz-projesi">HİZMETLERİMİZ</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="568" href="https://ttgv.org.tr/tr/projeler/dijital-donusum-tedarikci-veri-tabani-n">Dijital Dönüşüm Tedarikçi Veri Tabanı</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="446" href="https://ttgv.org.tr/tr/projeler/inovasyon-esasli-rekabetcilik-analizi-inoreka">İnovasyon Esaslı Rekabetçilik Analizi -İNOREKA</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="452" href="https://ttgv.org.tr/tr/projeler/eko-verimlilik-ve-endustriyel-simbiyoz-faaliyetleri">Eko-verimlilik ve Endüstriyel Simbiyoz Faaliyetleri</a></li></ul></li><li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="571" href="https://ttgv.org.tr/tr/odul-programlari">ÖDÜL PROGRAMLARI</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="572" href="https://ttgv.org.tr/tr/odul-programlari/ttgv-odulleri">TTGV Ödülleri</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="574" href="https://ttgv.org.tr/tr/odul-programlari/teknoloji-odulleri">Teknoloji Ödülleri</a></li></ul></li>
+            </ul>
+            <ul class="nav navbar-nav pull-xs-right">
+                <li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="20" href="/tr/haber-merkezi/haberler">HABER MERKEZİ</a><ul class="dropdown-menu" data-level="1"><li class="dropdown-item  "><a class="nav-link "  data-id="78" href="https://ttgv.org.tr/tr/haber-merkezi/haberler">HABERLER</a></li><li class="dropdown-item  "><a class="nav-link "  data-id="82" href="https://ttgv.org.tr/tr/haber-merkezi/basin-bultenleri">BASIN BÜLTENLERİ</a></li></ul></li><li class="nav-item   dropdown"><a class="nav-link dropdown-toggle" data-toggle="dropdown" data-id="22" href="http://ttgv.org.tr/tr/multimedya/fotograf-galerileri">MULTİMEDYA</a><div class="dropdown-menu megamenu megamenu-content-width megameu-id-22"><ul class="megamenu-content">
+<li><a href="/tr/multimedya/fotograf-galerileri"><img style="max-width: 100%;" src="/content/images/ttgv-fotograf-icon.png" alt="" />Fotoğraflar</a></li>
+<li><br /><a href="/tr/multimedya/arastirma-ve-yayinlar" target="blank"><img style="max-width: 100%;" src="/content/images/ttgv-arastirmalar-icon.png" alt="" />Araştıma ve Yayınlar</a></li>
+<li><a href="/tr/multimedya/videolar"><img style="max-width: 100%;" src="/content/images/ttgv-video-icon.png" alt="" />Videolar</a></li>
+</ul></div></li>
+            </ul>
+        </div>
+    </div>
+</div>            </header>
+
+    <main>
+        <section id="main-slider">
+            <!-- START REVOLUTION SLIDER  fullwidth mode -->
+
+<div id="rev_slider_1_2_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#E9E9E9;padding:0px;margin-top:0px;margin-bottom:0px;max-height:500px;">
+	<div id="rev_slider_1_2" class="rev_slider fullwidthabanner" style="display:none;max-height:500px;height:500px;">
+<ul>	<!-- SLIDE  -->
+	<li data-transition="slideleft" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/content/images/yesilteknoloji_webbanner-5.jpg"  alt="yesilteknoloji_webbanner-5"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption line-button tp-fade tp-resizeme"
+			 data-x="center" data-hoffset="11"
+			 data-y="bottom" data-voffset="-24"
+			data-speed="600"
+			data-start="0"
+			data-easing="Power3.easeInOut"
+			data-splitin="none"
+			data-splitout="none"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-end="-300"
+ data-endspeed="300"
+
+			style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;"><a href='https://ttgv.org.tr/tr/programlar/yesil-teknoloji/' style='color:#fff' target='blank' class="zoom-this-button-2">daha fazla bilgi</a>
+		</div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-transition="slideleft" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/content/images/explore-banner1.jpg"  alt="explore-banner1"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption line-button tp-fade tp-resizeme"
+			 data-x="center" data-hoffset="10"
+			 data-y="bottom" data-voffset="-126"
+			data-speed="600"
+			data-start="0"
+			data-easing="Power3.easeInOut"
+			data-splitin="none"
+			data-splitout="none"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-end="-300"
+ data-endspeed="300"
+
+			style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;"><a href='https://www.ttgv.org.tr/tr/programlar/explore/' style='color:#fff' target='blank' class="zoom-this-button-2">daha fazla bilgi</a>
+		</div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-transition="slideleft" data-slotamount="7" data-masterspeed="600"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/content/images/hitana5tr.jpeg"  alt="hitana5tr"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption line-button-dark sft tp-resizeme"
+			 data-x="center" data-hoffset="166"
+			 data-y="bottom" data-voffset="-91"
+			data-speed="300"
+			data-start="800"
+			data-easing="Power3.easeInOut"
+			data-splitin="none"
+			data-splitout="none"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;"><a href='https://ttgv.org.tr/tr/programlar/hit/' style='color:#fff' target='blank' class="zoom-this-button-2">daha fazla bilgi</a>
+		</div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-transition="slideleft" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/content/images/anasayfa_ideaport.png"  alt="anasayfa_ideaport"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption line-button tp-fade tp-resizeme"
+			 data-x="502"
+			 data-y="343" 
+			data-speed="300"
+			data-start="500"
+			data-easing="Power3.easeInOut"
+			data-splitin="none"
+			data-splitout="none"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;"><a href='https://ttgv.org.tr/tr/programlar/ideaport/' style='color:#fff' target='blank' class="zoom-this-button-2">daha fazla bilgi</a>
+		</div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-transition="slideleft" data-slotamount="7" data-masterspeed="600"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/content/images/ttgv_xno_home.png"  alt="ttgv_xno_home"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption line-button sft tp-resizeme"
+			 data-x="center" data-hoffset="7"
+			 data-y="bottom" data-voffset="-36"
+			data-speed="300"
+			data-start="800"
+			data-easing="Power3.easeInOut"
+			data-splitin="none"
+			data-splitout="none"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;"><a href='https://ttgv.org.tr/tr/programlar/xnovate/' style='color:#fff' target='blank' class="zoom-this-button-2">daha fazla bilgi</a>
+		</div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-transition="slideleft" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/content/images/5.jpg"  alt="5"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption line-button tp-fade tp-resizeme"
+			 data-x="center" data-hoffset="-2"
+			 data-y="bottom" data-voffset="-71"
+			data-speed="600"
+			data-start="0"
+			data-easing="Power3.easeInOut"
+			data-splitin="none"
+			data-splitout="none"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-end="-300"
+ data-endspeed="300"
+
+			style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;"><a href='http://ttgv.org.tr/tr/programlar/yarini-insa-et/' style='color:#fff' target='blank' class="zoom-this-button-2">daha fazla bilgi</a>
+		</div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-transition="slideleft" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/content/images/ideanest-web-banner-yeni.png"  alt="ideanest-web-banner-yeni"  data-bgposition="center center" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption medium_bg_asbestos tp-fade tp-resizeme"
+			 data-x="383"
+			 data-y="331" 
+			data-speed="600"
+			data-start="0"
+			data-easing="Power3.easeInOut"
+			data-splitin="none"
+			data-splitout="none"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-end="-300"
+ data-endspeed="300"
+
+			style="z-index: 2; max-width: auto; max-height: auto; white-space: nowrap;"><a href='https://ttgv.org.tr/tr/programlar/kitlesel-kaynak-gelistirme-platformu-ideanest/' style='color:#fff' target='blank' class="zoom-this-button-2">daha fazla bilgi</a>
+		</div>
+	</li>
+</ul>
+<div class="tp-bannertimer"></div>	</div>
+
+			<script type="text/javascript">
+
+				/******************************************
+					-	PREPARE PLACEHOLDER FOR SLIDER	-
+				******************************************/
+				
+
+				var setREVStartSize = function() {
+					var	tpopt = new Object();
+						tpopt.startwidth = 960;
+						tpopt.startheight = 500;
+						tpopt.container = jQuery('#rev_slider_1_2');
+						tpopt.fullScreen = "off";
+						tpopt.forceFullWidth="off";
+
+					tpopt.container.closest(".rev_slider_wrapper").css({height:tpopt.container.height()});tpopt.width=parseInt(tpopt.container.width(),0);tpopt.height=parseInt(tpopt.container.height(),0);tpopt.bw=tpopt.width/tpopt.startwidth;tpopt.bh=tpopt.height/tpopt.startheight;if(tpopt.bh>tpopt.bw)tpopt.bh=tpopt.bw;if(tpopt.bh<tpopt.bw)tpopt.bw=tpopt.bh;if(tpopt.bw<tpopt.bh)tpopt.bh=tpopt.bw;if(tpopt.bh>1){tpopt.bw=1;tpopt.bh=1}if(tpopt.bw>1){tpopt.bw=1;tpopt.bh=1}tpopt.height=Math.round(tpopt.startheight*(tpopt.width/tpopt.startwidth));if(tpopt.height>tpopt.startheight&&tpopt.autoHeight!="on")tpopt.height=tpopt.startheight;if(tpopt.fullScreen=="on"){tpopt.height=tpopt.bw*tpopt.startheight;var cow=tpopt.container.parent().width();var coh=jQuery(window).height();if(tpopt.fullScreenOffsetContainer!=undefined){try{var offcontainers=tpopt.fullScreenOffsetContainer.split(",");jQuery.each(offcontainers,function(e,t){coh=coh-jQuery(t).outerHeight(true);if(coh<tpopt.minFullScreenHeight)coh=tpopt.minFullScreenHeight})}catch(e){}}tpopt.container.parent().height(coh);tpopt.container.height(coh);tpopt.container.closest(".rev_slider_wrapper").height(coh);tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(coh);tpopt.container.css({height:"100%"});tpopt.height=coh;}else{tpopt.container.height(tpopt.height);tpopt.container.closest(".rev_slider_wrapper").height(tpopt.height);tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(tpopt.height);}
+				};
+
+				/* CALL PLACEHOLDER */
+				setREVStartSize();
+
+
+				var tpj=jQuery;
+				tpj.noConflict();
+				var revapi1;
+
+				tpj(document).ready(function() {
+
+				if(tpj('#rev_slider_1_2').revolution == undefined)
+					revslider_showDoubleJqueryError('#rev_slider_1_2');
+				else
+				   revapi1 = tpj('#rev_slider_1_2').show().revolution(
+					{
+						dottedOverlay:"none",
+						delay:9000,
+						startwidth:960,
+						startheight:500,
+						hideThumbs:0,
+
+						thumbWidth:100,
+						thumbHeight:50,
+						thumbAmount:5,
+						
+												
+						simplifyAll:"off",
+
+						navigationType:"bullet",
+						navigationArrows:"none",
+						navigationStyle:"round",
+
+						touchenabled:"on",
+						onHoverStop:"on",
+						nextSlideOnWindowFocus:"off",
+
+						swipe_threshold: 75,
+						swipe_min_touches: 1,
+						drag_block_vertical: false,
+						
+												
+												
+						keyboardNavigation:"on",
+
+						navigationHAlign:"center",
+						navigationVAlign:"bottom",
+						navigationHOffset:0,
+						navigationVOffset:20,
+
+						soloArrowLeftHalign:"left",
+						soloArrowLeftValign:"center",
+						soloArrowLeftHOffset:20,
+						soloArrowLeftVOffset:0,
+
+						soloArrowRightHalign:"right",
+						soloArrowRightValign:"center",
+						soloArrowRightHOffset:20,
+						soloArrowRightVOffset:0,
+
+						shadow:0,
+						fullWidth:"on",
+						fullScreen:"off",
+
+						spinner:"spinner4",
+						
+						stopLoop:"off",
+						stopAfterLoops:-1,
+						stopAtSlide:-1,
+
+						shuffle:"off",
+
+						autoHeight:"off",
+						forceFullWidth:"off",
+						
+						
+						
+						hideThumbsOnMobile:"off",
+						hideNavDelayOnMobile:1500,
+						hideBulletsOnMobile:"off",
+						hideArrowsOnMobile:"off",
+						hideThumbsUnderResolution:0,
+
+												hideSliderAtLimit:0,
+						hideCaptionAtLimit:0,
+						hideAllCaptionAtLilmit:0,
+						startWithSlide:0					});
+
+
+
+					
+				});	/*ready*/
+
+			</script>
+
+
+			<style type="text/css">
+	#rev_slider_1_2_wrapper .tp-loader.spinner4 div { background-color: #FFFFFF !important; }
+</style>
+</div><!-- END REVOLUTION SLIDER -->        </section>
+    
+        
+    <section id="content" class="bg-faded">
+<div class="container">
+<div class="row p-y-3">
+<div class="col-md-5 col-xs-12"><div class="card news-slider card-slider m-a-0  card-2x-small ">
+        <div class="card-block ">
+        <ul class="touch-slider-navigation">
+            <li>&nbsp;</li>
+        </ul>
+        <div class="touch-slider">
+                            <div class="slider-item">
+                    <div class="slide-bg"
+                          style="background: url('/content/images/thumbs/lg/Web_haber-2-1.jpg') center; background-size:cover" >
+                    </div>
+                    <div class="card-footer card-footer-abs">
+                        <div class="center-wrapper text-md-left">
+                            <div class="center-inner">
+                                <a href="https://ttgv.org.tr/tr/haber/teknolojik-cozum-icin-fikir-tecrube-veri-paylasim-merkezi-ttgv-covid19-bilgi-santrali-ni-gelistiriyoruz"                                  class="card-link">Teknolojik çözüm için fikir, tecrübe, veri paylaşım merkezi: TTGV COVID19 Bilgi Santralı’nı geliştiriyoruz</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="slider-item">
+                    <div class="slide-bg"
+                          style="background: url('/content/images/thumbs/lg/TTGV-Odulleri-Web_haber.jpg') center; background-size:cover" >
+                    </div>
+                    <div class="card-footer card-footer-abs">
+                        <div class="center-wrapper text-md-left">
+                            <div class="center-inner">
+                                <a href="https://ttgv.org.tr/tr/haber/2020-ttgv-odulleri-ne-aday-gosterme-sureci-basladi"                                  class="card-link">2020 TTGV Ödülleri’ne Aday Gösterme Süreci Başladı.</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="slider-item">
+                    <div class="slide-bg"
+                          style="background: url('/content/images/thumbs/lg/0.jpeg') center; background-size:cover" >
+                    </div>
+                    <div class="card-footer card-footer-abs">
+                        <div class="center-wrapper text-md-left">
+                            <div class="center-inner">
+                                <a href="https://ttgv.org.tr/tr/haber/turkiye-covid-19-ortak-akil-platformu-nun-lansmani-gerceklesti"                                  class="card-link">Türkiye COVID-19 Ortak Akıl Platformu’nun lansmanı gerçekleşti</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="slider-item">
+                    <div class="slide-bg"
+                          style="background: url('/content/images/thumbs/lg/Web_haber-2-3.jpg') center; background-size:cover" >
+                    </div>
+                    <div class="card-footer card-footer-abs">
+                        <div class="center-wrapper text-md-left">
+                            <div class="center-inner">
+                                <a href="https://ttgv.org.tr/tr/haber/webinar-covid-19-pandemi-surecinde-3d-printing-medikal-uygulamalari"                                  class="card-link">WEBINAR: COVID-19 Pandemi Sürecinde 3D-Printing Medikal Uygulamaları</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                            <div class="slider-item">
+                    <div class="slide-bg"
+                          style="background: url('/content/images/thumbs/lg/Web_haber-2-4.jpg') center; background-size:cover" >
+                    </div>
+                    <div class="card-footer card-footer-abs">
+                        <div class="center-wrapper text-md-left">
+                            <div class="center-inner">
+                                <a href="https://ttgv.org.tr/tr/haber/webinar-covid-19-pandemi-surecinde-erken-tani-amacli-yapay-zeka-uygulamalari"                                  class="card-link">WEBINAR: COVID-19 Pandemi Sürecinde Erken Tanı Amaçlı Yapay Zeka Uygulamaları</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                    </div>
+    </div>
+</div></div>
+<div class="col-md-3 col-xs-12">
+<div class="card card-2x-small card-theme-green m-a-0" style="background: url('/content/images/ttgv-isbirlikleri-main.jpg') no-repeat;">
+<div class="card-block">
+<h4 class="card-title">Birlikte değer ürettiklerimiz</h4>
+</div>
+<div class="card-footer card-footer-abs card-padding"><a class="card-link" href="/tr/is-birlikleri">TTGV’nin değer yarattığı işbirliklerini görmek için tıklayın</a></div>
+</div>
+</div>
+<div class="col-md-4 col-xs-12">
+<div class="row m-b-2">
+<div class="col-md-12 col-xs-12">
+<div class="card card-block card-bg-green-4 text-xs-center card-xsmall m-a-0 m-m-10">
+<div class="center-wrapper">
+<div class="center-inner">
+<h5>Teknoloji üreten bir Türkiye için siz nasıl destek olabilirsiniz</h5>
+<a class="btn btn-md btn-info" href="/tr/bagis-ve-sponsorluk">Bağış ve Sponsorluk</a></div>
+</div>
+</div>
+</div>
+</div>
+<div class="row m-b-2">
+<div class="col-md-12 col-xs-12">
+<div class="card card-block text-xs-center card-bg-green-4 card-xsmall m-a-0 m-m-10" style="background: url('content/images/ttgv-home-link.jpg') no-repeat;">
+<div class="center-wrapper">
+<div class="center-inner">
+<h5>Bilgiden pazara açılan pencere</h5>
+<a class="btn btn-md btn-info" href="/tr/kivilcim">Kıvılcım</a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="ne-yapiyoruz"></section>
+<section id="tecrube" class="bg-faded"><div class="container container-half p-y-3 text-xs-center">
+    <div class="card card-transparent experience-slider">
+        <div class="card-header">
+                    </div>
+        <div class="card-block">
+            <ul class="touch-slider-navigation"><li>&nbsp;</li></ul>
+            <div class="touch-slider-ex">
+
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/1-u04TiaBRxOBg1WOojVkEtA.png" alt="1 U04TiaBRxOBg1WOojVkEtA">
+                    <blockquote class="blockquote">
+                        <h5> Rosalinda Natividad</h5>
+                        <footer class="blockquote-footer">Incite Consultancy, CEO</footer>
+                        <p class="m-b-0">TTGV is a catalyst for economic change in Turkey and will most assuredly catapult the city to the forefront of innovation. It leverages the Turkish culture, which is inherently entrepreneurial and is incubating an ecosystem for prosperity. As it works to transition the economy and nurture startups, it will need leadership, financial resources, and support from both Turkey and our global community of innovators.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/064bcd5.jpg" alt="064bcd5">
+                    <blockquote class="blockquote">
+                        <h5> Şenay Ataselim Yılmaz</h5>
+                        <footer class="blockquote-footer">Turkish Philanthropy Funds, COO</footer>
+                        <p class="m-b-0">TTGV, birlikte calışmaya başlamadan önce de teknoloji ve inovasyon gelişimi icin yaptıkları projelerle bizi heycanlandıran bir oluşumdu. Yaratıcı fikirlerin oluşması, paylaşılması ve gerçeğe dönüştürülmesi için ayrım yapmaksızın, herkese imkan sağlayarak, Türkiye’nin teknolojik olarak gelişmesine bulundukları katkının bir parçası olmaktan gurur duyuyoruz.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/gunes-yildirim.jpg" alt="Gunes Yildirim">
+                    <blockquote class="blockquote">
+                        <h5> Güneş Yıldırım</h5>
+                        <footer class="blockquote-footer">Fundraising School Kurucusu, Uluslararası Kaynak Geliştirme Uzmanı</footer>
+                        <p class="m-b-0">'TTGV’nin birleştirici gücü, Özel sektör, kamu ve sivil toplum arasında gerçek bir köprü kuruyor. Çünkü Yönetim Kurulundan,Kurucularına, Genel Sekreterinden, uzmanlarına kadar açık fikirli, vizyoner insanlarla dopdolu. Geleceğe ışık tutan bir kurum olmaya devam edeceğine eminim.
+</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/12249927_10153818431128530_1737387426332922277_n.jpg" alt="12249927 10153818431128530 1737387426332922277 N">
+                    <blockquote class="blockquote">
+                        <h5> Pelin Mavili </h5>
+                        <footer class="blockquote-footer">GE Kurumsal İlişkiler ve Politika Direktörü</footer>
+                        <p class="m-b-0">TTGV kuruluşundan bu yana ülkede inovasyon kültürünün oluşturulmasında öncülük ediyor. Diğer yandan teknolojinin ticarileşmesi sürecindeki liderliği ile ekonomik kalkınmada kritik rol oynuyor. 
+ 
+</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/ussal-sahbaz.jpg" alt="Ussal Sahbaz">
+                    <blockquote class="blockquote">
+                        <h5> Ussal Şahbaz</h5>
+                        <footer class="blockquote-footer">GE Türkiye İnovasyon Direktörü</footer>
+                        <p class="m-b-0">TTGV, bürokrasi dışında ve özel sektör ortaklığıyla kurulan,Türkiye’de kamu politikalarında inovasyon misyonuna sahip bir kuruluştur. TTGV’nin iştirak ettiği kuruluşlar, mesela Teknoloji Yatırım, iş yaptıkları alanda inovasyona en iyi örnektir. TTGV son 5 yılda bilgi ve tecrübe birikimi, saygın konumuyla geliştirdiği ilişki ağı ve başarılı uygulamalarıyla Türkiye’de inovasyonun en önemli platformu haline gelmiştir.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/DSC_0073.JPG" alt="DSC 0073">
+                    <blockquote class="blockquote">
+                        <h5> Melek Bar Elmas</h5>
+                        <footer class="blockquote-footer">TOBB Türkiye Yazılım Meclisi Başkanı</footer>
+                        <p class="m-b-0">TTGV, vizyoner duruşuyla teknolojinin ve teknolojiye gönül verenlerin yolunu aydınlattı. Bununla kalmadı teknoloji habitatının oluşumunda aktif rol alarak, işbirliğinin gücünü hepimizin kavramasına öncülük etti.
+
+</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/Cem-Sertoglu.jpg" alt="Cem Sertoglu">
+                    <blockquote class="blockquote">
+                        <h5> Cem Sertoğlu</h5>
+                        <footer class="blockquote-footer">Early Bird Venture Capital</footer>
+                        <p class="m-b-0">TTGV,Türkiye teknoloji ekosisteminin en ilerici paydaşlarından biri olarak dikkat çekiyor.Özellikle, teknoloji odaklı fonlara yönelik yatırımcılık faaliyetleriyle, kurumsal fon yönetimi konusunda yerli bilgi birikiminin sağlanması konusunda öncü rol üstlenerek, Türkiye'nin finansal altyapısına önemli katkılar sağlıyor.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/samir-deliormanli.jpg" alt="Samir Deliormanli">
+                    <blockquote class="blockquote">
+                        <h5> Samir Deliormanlı</h5>
+                        <footer class="blockquote-footer">LES Türkiye Yönetim Kurulu Başkanı</footer>
+                        <p class="m-b-0">“TTGV, ülkemizde teknoloji, inovasyon ve girişimcilik ekosisteminin gelişmesindeki en önemli oyunculardan. Kendilerinde en değer verdiğim yaklaşımları, gerçekten fark yaratacak çözümler için aktif bir çaba ve arayış içerisinde olmaları. Bu sayede hem makro hem de mikro seviyede birçok yaratıcı mekanizma ortaya koyabiliyorlar"</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/a6CZnisO.jpg" alt="A6CZnisO">
+                    <blockquote class="blockquote">
+                        <h5> Dr. Ceyhun Göcenoğlu</h5>
+                        <footer class="blockquote-footer">IBM Türk Kurumsal İlişkiler Müdürü</footer>
+                        <p class="m-b-0">"Türkiye Teknoloji Geliştirme Vakfı, kamu-özel sektör işbirliğiyle Türkiye'de inovasyon ekosisteminin gelişimine katkı sağlayan öncü kuruluşlardan. TTGV sadece teknoloji ve inovasyon kültürünün değil aynı zamanda ülkemizde işbirliği kültürünün gelişmesine de katkı sağlıyor."</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/Ilhan-Basgoren.png" alt="Ilhan Basgoren">
+                    <blockquote class="blockquote">
+                        <h5> İlhan Bağören</h5>
+                        <footer class="blockquote-footer">Telenity  CEO</footer>
+                        <p class="m-b-0">TTGV  hem misyonu hem de yönetim şekli ile, Türkiye’de şimdiye kadar gördüğüm en ciddi, profesyonel ve verimli kuruluşlardan birisidir.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/baran-korkut.jpg" alt="Baran Korkut">
+                    <blockquote class="blockquote">
+                        <h5> Baran Korkut</h5>
+                        <footer class="blockquote-footer">Partner<br/>Business Models Inc.</footer>
+                        <p class="m-b-0">İnovasyon ekseninde en net, desteklenilesi ve takip edilesi vizyon ve hikayeyi TTGV’de buldum ve içinin de dolu olduğunu gördüm.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/Murat-Idal.jpg" alt="Murat Idal">
+                    <blockquote class="blockquote">
+                        <h5> Murat İdal</h5>
+                        <footer class="blockquote-footer">LES Türkiye Yönetim Kurulu Üyesi</footer>
+                        <p class="m-b-0">TTGV ve Kıvılcım, dahil olduğu projelerde fark yaratmaya ve hayran bırakmaya devam ediyor. İşin sırrı doğal yollardan çözülmüş.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/ziya-altunyaldiz.jpg" alt="Ziya Altunyaldiz">
+                    <blockquote class="blockquote">
+                        <h5> Ziya Altunyaldız</h5>
+                        <footer class="blockquote-footer">Milletvekili,  TTGV Yönetim Kurulu Üyesi (2005-2010)</footer>
+                        <p class="m-b-0">TTGV, Türkiye iş dünyasının değişiminde ve dönüşümünde önemli bir yapı taşıdır.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/Laird-D.-Treiber.jpg" alt="Laird D  Treiber">
+                    <blockquote class="blockquote">
+                        <h5> Laird D. Treiber</h5>
+                        <footer class="blockquote-footer">ABD Büyükelçiliği Eski Ekonomik İlişkiler Konsolosu</footer>
+                        <p class="m-b-0">TTGV’nin Başarı Türk girişimcilerin yaratıcı hamle ve enerjilerinin büyük bir göstergesidir ve de bu takdire değen yenilikçilerin adımlarını takip etmeleri için diğerlerini de teşvik edecektir.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/suleyman-alata.jpg" alt="Suleyman Alata">
+                    <blockquote class="blockquote">
+                        <h5> Süleyman Alata</h5>
+                        <footer class="blockquote-footer">Güney Ege Kalkınma Ajansı Genel Sekreteri</footer>
+                        <p class="m-b-0">Ülkemiz kalkınma planında ve kalkınma ajansları koordinasyonunda hazırlanan bölgesel planlarda temiz teknolojilere ilişkin politika ve faaliyetlerin yer alması geleceğe daha güvenli bakmamızı sağlıyor. Bu konunun ülkemiz kalkınma gündemine girmesinde TTGV’nin yaptığı çalışmaların ve yürüttüğü faaliyetlerin büyük katkısı oldu.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/namik-unlu.jpg" alt="Namik Unlu">
+                    <blockquote class="blockquote">
+                        <h5> Dr. Namık Ünlü</h5>
+                        <footer class="blockquote-footer">TÜBİTAK-MAM Enerji Enstitüsü</footer>
+                        <p class="m-b-0">TTGV’nin değerli destekleri, çalışmayı yürüten kuruluş açısından önemli bir katma değer olarak değerlendirilmesinin yanında nitelikli örnek uygulamalar ile yaygınlaşma etkisini de yüksek seviyelere taşımaktadır.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/dr.t-fikret-yucel.jpg" alt="Dr T Fikret Yucel">
+                    <blockquote class="blockquote">
+                        <h5> Dr. T. Fikret Yücel</h5>
+                        <footer class="blockquote-footer">1991-2012 TTGV Yönetim Kurulu Başkanı</footer>
+                        <p class="m-b-0">TTGV kuşkusuz, özel sektörde yenileşimin firmaların rekabet gücü kazanma ve hatta yaşamını sürdürmek için ne denli önemli olduğunun anlaşılmasında çok etkili bir rol oynamaktadır.</p>
+                    </blockquote>
+                </div>
+                                <div class="slider-item" >
+                  <img src="https://www.ttgv.org.tr/content/images/thumbs/team/Erman-Ilicak.jpg" alt="Erman Ilicak">
+                    <blockquote class="blockquote">
+                        <h5> Erman Ilıcak</h5>
+                        <footer class="blockquote-footer">Rönesans Holding Yönetim Kurulu Başkanı</footer>
+                        <p class="m-b-0">Bugüne kadar TTGV ile çalışıp araştırma ve geliştirme alanında güçlenerek gelişen, her biri birer başarı öyküsü yaratan şirketlerin geçmişten bu güne kat ettikleri yolu dikkate aldığımda gelecekte TTGV’nin Türk ticaret hayatında yenilikçiliğin yapı taşlarından biri olacağına tüm kalbimle inanıyorum. TTGV’nin ülkemizin “rekabetçiliğini”artırmaya yönelik ilham verici çalışmalarını destekliyor, heyecanla takip ediyorum.</p>
+                    </blockquote>
+                </div>
+                            </div>
+        </div>
+    </div>
+</div>
+</section>
+<section id="biz-kimiz">
+<div class="container container-half p-y-3 text-xs-center">
+<h3>BİZ KİMİZ</h3>
+<p>Özgün bir misyonla kamunun ve özel sektörün ortak inisiyatifiyle kurulduğumuz günden bugüne tam 27 yıldır Türkiye’nin teknoloji serüvenine öncülük ediyor, denediğimiz ve uyguladığımız yeni modellerle ilkleri gerçekleştirmeye devam ediyoruz. Teknoloji ve inovasyonun gerektirdiği sürekli değişime uyum sağlamış ve farklılaşarak gelişen yenilikçi işbirliklerimizle ve araçlarımızla hizmetinizdeyiz.</p>
+<p><a class="btn btn-sm btn-info" href="https://ttgv.org.tr/tr/biz-kimiz/ttgv-hakkinda">daha fazla bilgi</a></p>
+</div>
+</section>
+<section id="markalar" class="bg-faded">
+<h3 class="p-t-3" style="text-align: center;">TTGV MARKALARI</h3>
+<!-- START REVOLUTION SLIDER  fullwidth mode -->
+
+<div id="rev_slider_3_1_wrapper" class="rev_slider_wrapper fullwidthbanner-container" style="margin:0px auto;background-color:#f7f7f9;padding:0px;margin-top:0px;margin-bottom:0px;max-height:180px;">
+	<div id="rev_slider_3_1" class="rev_slider fullwidthabanner" style="display:none;max-height:180px;height:180px;">
+<ul>	<!-- SLIDE  -->
+	<li data-transition="slidedown" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/wp_plugin/revslider/images/transparent.png" style='background-color:#f7f7f9' alt="ideaport-logo"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption sfb"
+			 data-x="center" data-hoffset="44"
+			 data-y="center" data-voffset="1"
+			data-speed="300"
+			data-start="500"
+			data-easing="Power3.easeInOut"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 2;"><a href="http://www.xnovate.org" target="_blank"><img src="/content/images/xlogo.png" alt="" data-ww="220" data-hh="220"></a>
+		</div>
+
+		<!-- LAYER NR. 2 -->
+		<div class="tp-caption sfb"
+			 data-x="88"
+			 data-y="16" 
+			data-speed="300"
+			data-start="500"
+			data-easing="Power3.easeInOut"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 3;"><a href="https://ideanest.org/"><img src="/content/images/ideanest-logo.png" alt=""></a>
+		</div>
+
+		<!-- LAYER NR. 3 -->
+		<div class="tp-caption sfb"
+			 data-x="789"
+			 data-y="42" 
+			data-speed="300"
+			data-start="500"
+			data-easing="Power3.easeInOut"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 4;"><img src="/content/images/hitlogo_marka.png" alt="">
+		</div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-transition="slidedown" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/wp_plugin/revslider/images/transparent.png" style='background-color:#f7f7f9' alt="ideaport-logo"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption sfb"
+			 data-x="center" data-hoffset="0"
+			 data-y="center" data-voffset="0"
+			data-speed="300"
+			data-start="500"
+			data-easing="Power3.easeInOut"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 2;"><a href="https://ttgv.org.tr/tr/kivilcim" target="_blank"><img src="/content/images/ttgv-kivilcim-logo.png" alt="" data-ww="220" data-hh="220"></a>
+		</div>
+
+		<!-- LAYER NR. 2 -->
+		<div class="tp-caption sfb"
+			 data-x="40"
+			 data-y="center" data-voffset="0"
+			data-speed="300"
+			data-start="500"
+			data-easing="Power3.easeInOut"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 3;"><a href="http://www.ideaport.org.tr/" target="_blank"><img src="/content/images/ttgv-ideaport-logo.png" alt="" data-ww="220" data-hh="220"></a>
+		</div>
+
+		<!-- LAYER NR. 3 -->
+		<div class="tp-caption sfb"
+			 data-x="right" data-hoffset="0"
+			 data-y="center" data-voffset="0"
+			data-speed="300"
+			data-start="500"
+			data-easing="Power3.easeInOut"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 4;"><a href="https://www.ttgv.org.tr/tr/projeler/inovasyon-esasli-rekabetcilik-analizi-inoreka"><img src="/content/images/ttgv-inoreka-logo.png" alt=""></a>
+		</div>
+	</li>
+	<!-- SLIDE  -->
+	<li data-transition="" data-slotamount="7" data-masterspeed="300"  data-saveperformance="off" >
+		<!-- MAIN IMAGE -->
+		<img src="/wp_plugin/revslider/images/transparent.png" style='background-color:#f7f7f9' alt="ideaport-logo"  data-bgposition="center top" data-bgfit="cover" data-bgrepeat="no-repeat">
+		<!-- LAYERS -->
+
+		<!-- LAYER NR. 1 -->
+		<div class="tp-caption tp-fade"
+			 data-x="10"
+			 data-y="10" 
+			data-speed="300"
+			data-start="500"
+			data-easing="Power3.easeInOut"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 2;"><a href="http://www.yariniinsaet.org/"><img src="/content/images/yariniinsaetlogofinal.png" alt=""></a>
+		</div>
+
+		<!-- LAYER NR. 2 -->
+		<div class="tp-caption tp-fade"
+			 data-x="center" data-hoffset="0"
+			 data-y="10" 
+			data-speed="300"
+			data-start="500"
+			data-easing="Power3.easeInOut"
+			data-elementdelay="0.1"
+			data-endelementdelay="0.1"
+			 data-endspeed="300"
+
+			style="z-index: 3;"><a href="https://ttgv.org.tr/tr/programlar/explore"><img src="/content/images/explore_logo.png" alt="" data-ww="169" data-hh="197"></a>
+		</div>
+	</li>
+</ul>
+<div class="tp-bannertimer tp-bottom" style="visibility: hidden !important;"></div>	</div>
+
+			<script type="text/javascript">
+
+				/******************************************
+					-	PREPARE PLACEHOLDER FOR SLIDER	-
+				******************************************/
+				
+
+				var setREVStartSize = function() {
+					var	tpopt = new Object();
+						tpopt.startwidth = 960;
+						tpopt.startheight = 180;
+						tpopt.container = jQuery('#rev_slider_3_1');
+						tpopt.fullScreen = "off";
+						tpopt.forceFullWidth="off";
+
+					tpopt.container.closest(".rev_slider_wrapper").css({height:tpopt.container.height()});tpopt.width=parseInt(tpopt.container.width(),0);tpopt.height=parseInt(tpopt.container.height(),0);tpopt.bw=tpopt.width/tpopt.startwidth;tpopt.bh=tpopt.height/tpopt.startheight;if(tpopt.bh>tpopt.bw)tpopt.bh=tpopt.bw;if(tpopt.bh<tpopt.bw)tpopt.bw=tpopt.bh;if(tpopt.bw<tpopt.bh)tpopt.bh=tpopt.bw;if(tpopt.bh>1){tpopt.bw=1;tpopt.bh=1}if(tpopt.bw>1){tpopt.bw=1;tpopt.bh=1}tpopt.height=Math.round(tpopt.startheight*(tpopt.width/tpopt.startwidth));if(tpopt.height>tpopt.startheight&&tpopt.autoHeight!="on")tpopt.height=tpopt.startheight;if(tpopt.fullScreen=="on"){tpopt.height=tpopt.bw*tpopt.startheight;var cow=tpopt.container.parent().width();var coh=jQuery(window).height();if(tpopt.fullScreenOffsetContainer!=undefined){try{var offcontainers=tpopt.fullScreenOffsetContainer.split(",");jQuery.each(offcontainers,function(e,t){coh=coh-jQuery(t).outerHeight(true);if(coh<tpopt.minFullScreenHeight)coh=tpopt.minFullScreenHeight})}catch(e){}}tpopt.container.parent().height(coh);tpopt.container.height(coh);tpopt.container.closest(".rev_slider_wrapper").height(coh);tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(coh);tpopt.container.css({height:"100%"});tpopt.height=coh;}else{tpopt.container.height(tpopt.height);tpopt.container.closest(".rev_slider_wrapper").height(tpopt.height);tpopt.container.closest(".forcefullwidth_wrapper_tp_banner").find(".tp-fullwidth-forcer").height(tpopt.height);}
+				};
+
+				/* CALL PLACEHOLDER */
+				setREVStartSize();
+
+
+				var tpj=jQuery;
+				tpj.noConflict();
+				var revapi3;
+
+				tpj(document).ready(function() {
+
+				if(tpj('#rev_slider_3_1').revolution == undefined)
+					revslider_showDoubleJqueryError('#rev_slider_3_1');
+				else
+				   revapi3 = tpj('#rev_slider_3_1').show().revolution(
+					{
+						dottedOverlay:"none",
+						delay:9000,
+						startwidth:960,
+						startheight:180,
+						hideThumbs:0,
+
+						thumbWidth:100,
+						thumbHeight:50,
+						thumbAmount:3,
+						
+												
+						simplifyAll:"off",
+
+						navigationType:"bullet",
+						navigationArrows:"none",
+						navigationStyle:"round",
+
+						touchenabled:"on",
+						onHoverStop:"on",
+						nextSlideOnWindowFocus:"off",
+
+						swipe_threshold: 75,
+						swipe_min_touches: 1,
+						drag_block_vertical: false,
+						
+												
+												
+						keyboardNavigation:"on",
+
+						navigationHAlign:"center",
+						navigationVAlign:"bottom",
+						navigationHOffset:0,
+						navigationVOffset:0,
+
+						soloArrowLeftHalign:"left",
+						soloArrowLeftValign:"center",
+						soloArrowLeftHOffset:20,
+						soloArrowLeftVOffset:0,
+
+						soloArrowRightHalign:"right",
+						soloArrowRightValign:"center",
+						soloArrowRightHOffset:20,
+						soloArrowRightVOffset:0,
+
+						shadow:0,
+						fullWidth:"on",
+						fullScreen:"off",
+
+						spinner:"spinner0",
+						
+						stopLoop:"off",
+						stopAfterLoops:-1,
+						stopAtSlide:-1,
+
+						shuffle:"off",
+
+						autoHeight:"off",
+						forceFullWidth:"off",
+						
+						
+						hideTimerBar:"on",
+						hideThumbsOnMobile:"off",
+						hideNavDelayOnMobile:1500,
+						hideBulletsOnMobile:"off",
+						hideArrowsOnMobile:"off",
+						hideThumbsUnderResolution:0,
+
+												hideSliderAtLimit:0,
+						hideCaptionAtLimit:0,
+						hideAllCaptionAtLilmit:0,
+						startWithSlide:0					});
+
+
+
+					
+				});	/*ready*/
+
+			</script>
+
+
+			</div><!-- END REVOLUTION SLIDER -->
+<p style="margin-bottom: 0;"> </p>
+</section>
+
+    </main>
+    <footer>
+        <div class="hidden-footer-wrapper">
+    <div id="footer-links">
+        <div class="container border-bottom p-y-2 clearfix">
+            <div class="row">
+<div class="col-md-2">
+<h4>BİZ KİMİZ</h4>
+<nav id="general-nav" class="item-length-7"><ul class="nav clearfix" data-level="0"><li class="nav-item   "><a class="nav-link "  data-id="165" href="https://ttgv.org.tr/tr/biz-kimiz/ttgv-hakkinda">Hakkımızda</a></li><li class="nav-item   "><a class="nav-link "  data-id="573" href="https://ttgv.org.tr/tr/biz-kimiz/ne-yapiyoruz-1">Ne Yapıyoruz?</a></li><li class="nav-item   "><a class="nav-link "  data-id="409" href="https://ttgv.org.tr/tr/biz-kimiz/yonetim">Yönetim</a></li><li class="nav-item   "><a class="nav-link "  data-id="74" href="https://ttgv.org.tr/tr/biz-kimiz/takim">Takım</a></li><li class="nav-item   "><a class="nav-link "  data-id="43" href="https://ttgv.org.tr/tr/biz-kimiz/is-modeli">İş Modeli</a></li><li class="nav-item   "><a class="nav-link "  data-id="76" href="https://ttgv.org.tr/tr/biz-kimiz/kronoloji">Kronoloji</a></li><li class="nav-item   "><a class="nav-link "  data-id="47" href="https://ttgv.org.tr/tr/biz-kimiz/uyelikler">Üyelikler</a></li></ul></nav></div>
+<div class="col-md-3">
+<h4>PROGRAMLAR</h4>
+<nav id="general-nav" class="item-length-7"><ul class="nav clearfix" data-level="0"><li class="nav-item   "><a class="nav-link "  data-id="547" href="https://ttgv.org.tr/tr/programlar/explore">Explore</a></li><li class="nav-item   "><a class="nav-link "  data-id="451" href="https://ttgv.org.tr/tr/programlar/hit">Hit</a></li><li class="nav-item   "><a class="nav-link "  data-id="167" href="https://ttgv.org.tr/tr/programlar/kitlesel-kaynak-gelistirme-platformu-ideanest">ideanest</a></li><li class="nav-item   "><a class="nav-link "  data-id="166" href="https://ttgv.org.tr/tr/programlar/ideaport">ideaport</a></li><li class="nav-item   "><a class="nav-link "  data-id="95" href="https://ttgv.org.tr/tr/programlar/xnovate">Xnovate </a></li><li class="nav-item   "><a class="nav-link "  data-id="465" href="https://ttgv.org.tr/tr/programlar/yarini-insa-et">Yarını İnşa Et</a></li><li class="nav-item   "><a class="nav-link "  data-id="708" href="https://ttgv.org.tr/tr/programlar/yesil-teknoloji">Yeşil Teknoloji Projeleri (YETEP) Destek Programı</a></li></ul></nav></div>
+<div class="col-md-4">
+<h4>HİZMETLERİMİZ</h4>
+<nav id="general-nav" class="item-length-8"><ul class="nav clearfix" data-level="0"><li class="nav-item   "><a class="nav-link "  data-id="568" href="https://ttgv.org.tr/tr/projeler/dijital-donusum-tedarikci-veri-tabani-n">Dijital Dönüşüm Tedarikçi Veri Tabanı</a></li><li class="nav-item   "><a class="nav-link "  data-id="446" href="https://ttgv.org.tr/tr/projeler/inovasyon-esasli-rekabetcilik-analizi-inoreka">İnovasyon Esaslı Rekabetçilik Analizi -İNOREKA</a></li><li class="nav-item   "><a class="nav-link "  data-id="452" href="https://ttgv.org.tr/tr/projeler/eko-verimlilik-ve-endustriyel-simbiyoz-faaliyetleri">Eko-verimlilik ve Endüstriyel Simbiyoz Faaliyetleri</a></li></ul></nav></div>
+<div class="col-md-3">
+<h4><a href="https://ttgv.org.tr/tr/bagis-ve-sponsorluk">BAĞIŞ ve SPONSORLUKLAR</a></h4>
+<p> </p>
+<h4>HABER MERKEZİ</h4>
+<nav id="general-nav" class="item-length-2"><ul class="nav clearfix" data-level="0"><li class="nav-item   "><a class="nav-link "  data-id="78" href="https://ttgv.org.tr/tr/haber-merkezi/haberler">HABERLER</a></li><li class="nav-item   "><a class="nav-link "  data-id="82" href="https://ttgv.org.tr/tr/haber-merkezi/basin-bultenleri">BASIN BÜLTENLERİ</a></li></ul></nav>
+<h4><a href="https://ttgv.org.tr/tr/is-birlikleri">İŞBİRLİKLERİ</a></h4>
+<nav id="general-nav" class="item-length-0"><ul class="nav clearfix" data-level="0"></ul></nav></div>
+</div>
+        </div>
+    </div>
+</div>
+<div class="hidden-footer-sticky">
+    <div id="footer-info">
+        <div class="container border-bottom p-y-2 clearfix">
+            <div class="row ">
+                <div class="col-md-4 col-xs-12">
+                    <ul class="nav nav-tabs tab-links">
+                        <li class="nav-item"><a class="nav-link active" href="#ankara-adress" data-toggle="tab">Ankara</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#istanbul-adress" data-toggle="tab">İstanbul</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="ankara-adress" class="tab-pane tab-content active">
+                                                            <address>Cyberpark Cyberplaza<br>
+                                    B-Blok Kat:5-6, Bilkent<br/>06800 ANKARA<br>
+                                    Tel: (312) 265 02 72<br>
+                                    Faks: (312) 265 02 62<br>
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="630a0d050c23171704154d0c11044d1711">[email&#160;protected]</a>
+                                </address>
+                                                        </div>
+                        <div id="istanbul-adress" class="tab-pane tab-content">
+                                                            <address>İTÜ Ayazağa Yerleşkesi<br>
+                                    Arı Teknokent Arı II Binası<br>
+                                    Koruyolu A Blok Kat:7<br>
+                                    Maslak-Sarıyer İSTANBUL<br>
+                                    Tel: (212) 276 75 60<br>
+                                    Faks: (212) 276 75 80
+                                    <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="9bf2f5fdf4dbefeffcedb5f4e9fcb5efe9">[email&#160;protected]</a>
+                                </address>
+                                                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5 col-xs-12">
+                                            <h4>Yeniliklerden haberdar olun!</h4>
+                                        <div id="subscription-form" class="form-inline">
+        <input type="email" name="email" class="form-control form-control-sm" id="e-bulten" placeholder="E-posta Adresinizi Girin">
+        <button type="button" class="btn btn-sm btn-dark-blue">GÖNDER</button>
+        <div id="subscription-message"></div>
+    </div>
+
+
+                    
+                    <div class="nav" style="display: inline-block;">
+                        <a target="_blank" class="nav-item nav-link nav-social social-link-instagram" href="https://www.instagram.com/t_t_g_v_/?hl=tr"><i class="fa fa-instagram"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-linkedin" href="https://www.linkedin.com/company/1057760"><i class="fa fa-linkedin"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-twitter" href="https://twitter.com/t_t_g_v"><i class="fa fa-twitter"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-facebook" href="https://www.facebook.com/T%C3%BCrkiye-Teknoloji-Geli%C5%9Ftirme-Vakf%C4%B1-TTGV-175046069220812/"><i class="fa fa-facebook"></i></a><a target="_blank" class="nav-item nav-link nav-social social-link-youtube" href="https://www.youtube.com/channel/UCAWunPvxAcFiaiJQDupPrQA"><i class="fa fa-youtube-play"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-3 col-xs-12">
+                    <div class="card card-transparent card-no-padding card-twitter">
+                        <div class="card-header">
+                            <h4>TWITTER'DAN</h4>
+                        </div>
+                        <div class="card-block">
+                                                                                           <iframe width="100%" src="https://ttgv.org.tr/public/tw-test/index.php" style="border:0;" frameborder="0"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="footer-bar" class="center-wrapper p-y-1">
+        <div class="center-inner text-xs-left">
+            <div class="container clearfix">
+                <span class="footer-logo" ><img src="https://www.ttgv.org.tr/assets/default/images/ttgv-menubar-logo.svg" alt="" id="ttgv_logo"></span>
+
+                <nav class="nav navbar-nav pull-xs-right small">
+                    <a class="nav-item nav-link " data-id="28" href="https://ttgv.org.tr/tr/guvenlik-ve-gizlilik">Güvenlik ve Gizlilik</a><a class="nav-item nav-link " data-id="177" href="https://ttgv.org.tr/tr/site-haritasi">Site Haritası</a>
+                </nav>
+            </div>
+        </div>
+        <a href="https://www.touchdijital.com" target="_blank" id="touch">Touch İletişim Çözümleri</a>
+    </div>
+</div>
+            </footer>
+    <!-- Go to www.addthis.com/dashboard to customize your tools -->
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-573b042b27fa910a"></script>
+</div>
+
+<div id="off-canvas-area"></div>
+<script src="https://www.ttgv.org.tr/assets/default/scripts/jPages.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/tether/dist/js/tether.min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/bootstrap/dist/js/bootstrap.min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/bootstrap-hover-dropdown/bootstrap-hover-dropdown.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/bxslider-4/dist/jquery.bxslider.min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/raphael/raphael-min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/morris.js/morris.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/ekko-lightbox/dist/ekko-lightbox.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/isotope/dist/isotope.pkgd.min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/imagesloaded/imagesloaded.pkgd.min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/jquery-colorbox/jquery.colorbox-min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/components/lightgallery/dist/js/lightgallery-all.min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/scripts/flattyshadow.plugin.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/scripts/hammer.min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/scripts/touchSlider.plugin.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/scripts/snapTo.plugin.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/scripts/swiper.min.js"></script>
+<script src="https://www.ttgv.org.tr/assets/default/scripts/application.js?v4"></script>
+<script>
+ /*   (function (i, s, o, g, r, a, m) {
+        i['GoogleAnalyticsObject'] = r;
+        i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+        a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+        a.async = 1;
+        a.src = g;
+        m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+    ga('create', 'UA-17827495-1', 'auto');
+    ga('send', 'pageview'); */
+</script>
+<script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@id": "https://www.ttgv.org.tr",
+        "@type": "Organization",
+        "name": "TTGV",
+        "url": "https://www.ttgv.org.tr/",
+        "logo": "https://www.ttgv.org.tr/assets/default/images/ttgv-menubar-logo.png",
+		"potentialAction": {
+			"@type": "SearchAction",
+			"target": "https://www.ttgv.org.tr/",
+			"query-input": "required name=q"
+		},
+        "sameAs": [
+            "https://www.facebook.com/T%C3%BCrkiye-Teknoloji-Geli%C5%9Ftirme-Vakf%C4%B1-TTGV-175046069220812/",
+            "https://twitter.com/t_t_g_v",
+            "https://www.instagram.com/t_t_g_v_/?hl=tr"
+        ]
+    }
+</script>
+<script>
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+ 
+
+  ga('create', 'UA-17827495-1', 'auto');
+
+  ga('send', 'pageview');
+
+ 
+
+</script>
+</body>
+</html>
