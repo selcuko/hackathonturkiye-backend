@@ -12,13 +12,12 @@ class Post(models.Model):
     summary = models.TextField(max_length=2000, blank=True, null=True)
     text = models.TextField(max_length=1024**2)
     published = models.BooleanField(default=False)
-    
-    author = models.ForeignKey(User, on_delete=models.SET_NULL, blank=True, null=True)
-    category = models.ForeignKey(PostCategory, on_delete=models.SET_NULL, blank=True, null=True)
+
+    author = models.ForeignKey(
+        User, on_delete=models.SET_NULL, blank=True, null=True)
+    category = models.ForeignKey(
+        PostCategory, on_delete=models.SET_NULL, blank=True, null=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
     published_at = models.DateTimeField(blank=True, null=True)
-
-
-    
