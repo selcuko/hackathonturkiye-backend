@@ -15,8 +15,8 @@ python manage.py runserver
 > ### API URL Parameters
 
 `format=json` 
-Response in raw JSON 
+Response in raw JSON   
 `limit=10`
-Limit query set length to 10
+Limit query set length to 10  
 `offset=10`
-Use offset for pagination
+Use offset for pagination  
