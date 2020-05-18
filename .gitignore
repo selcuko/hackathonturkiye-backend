@@ -3,4 +3,4 @@ db.*
 .vscode/
 
 secret
-su-pass
+pass
