@@ -1,5 +1,6 @@
 db.*
 *.sqlite*
-!db.sqlite3
-secret*
 .vscode/
+
+secret
+su-pass
