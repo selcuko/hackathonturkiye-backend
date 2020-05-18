@@ -18,7 +18,7 @@ class Event(models.Model):
                               blank=True, null=True, 
                               verbose_name="Event type")
 
-    origin_url = models.URLField(default=None)
+    origin_url = models.URLField()
     internal_url = models.URLField(null=True, blank=True)
     thumbnail = models.ImageField(
         upload_to='thumbnails', default='thumbnails/none/placeholder.jpg')
