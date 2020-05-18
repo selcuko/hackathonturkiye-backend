@@ -6,6 +6,9 @@ class PostCategory(models.Model):
     name = models.CharField(max_length=20)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Post(models.Model):
     title = models.CharField(max_length=140)
@@ -15,9 +18,13 @@ class Post(models.Model):
 
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, blank=True, null=True)
-    category = models.ForeignKey(
-        PostCategory, on_delete=models.SET_NULL, blank=True, null=True)
+    #category = models.ForeignKey(
+    #    PostCategory, on_delete=models.SET_NULL, blank=True, null=True)
+    category = models.ManyToManyField(PostCategory)
 
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
     published_at = models.DateTimeField(blank=True, null=True)
+
+    def __str__(self):
+        return f"{self.title} from {self.author}"
