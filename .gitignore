@@ -1,6 +1,14 @@
+# Media files
+media/
+
+# Databases
 db.*
 *.sqlite*
+
+# Editor folders
 .vscode/
 
+# Secret tokens
 secret
 pass
+
