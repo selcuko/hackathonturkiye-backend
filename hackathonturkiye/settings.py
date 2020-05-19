@@ -31,6 +31,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'rest_framework',
+    'rest_framework_swagger',
     'profile.apps.ProfileConfig',
     'blog.apps.BlogConfig',
     'event.apps.EventConfig',

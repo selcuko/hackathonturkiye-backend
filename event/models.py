@@ -29,6 +29,7 @@ class Event(models.Model):
     location = models.CharField(max_length=100, blank=True, null=True)
     prize = models.CharField(max_length=20, blank=True, null=True)
     priority = models.IntegerField(default=1)
+    holder = models.CharField(max_length=20, null=True, blank=True)
     published = models.BooleanField(default=True)
 
     added_at = models.DateTimeField(auto_now_add=True)
