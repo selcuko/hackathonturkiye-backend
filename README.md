@@ -1,6 +1,6 @@
 > ### Install dependencies
 ```
-pip install -r requirements
+pip install -r requirements.txt
 ```
 
 <br/>
@@ -13,10 +13,6 @@ python manage.py runserver
 <br/>
 
 > ### API URL Parameters
-
-`format=json` 
-Response in raw JSON   
-`limit=10`
-Limit query set length to 10  
-`offset=10`
-Use offset for pagination  
+* localhost:8000/         API Root
+* localhost:8000/swagger  Swagger
+* localhost:8000/redoc    ReDoc
