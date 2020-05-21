@@ -2,8 +2,8 @@
 media/
 
 # Databases
-db.*
-*.sqlite*
+#db.*
+#*.sqlite*
 
 # Editor folders
 .vscode/
