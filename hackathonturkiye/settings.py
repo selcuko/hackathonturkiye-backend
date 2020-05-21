@@ -9,6 +9,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     'localhost',        # gunicorn needs this
     '192.168.1.7',      # local ip, to be removed
+    'hackathonturkiye.herokuapp.com', 
 ]
 
 REST_FRAMEWORK = {
