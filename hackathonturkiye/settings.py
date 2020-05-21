@@ -2,7 +2,7 @@ import os
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.getenv("DJANGO_SECRET", open("secret", "rt").read())
+SECRET_KEY = os.getenv("DJANGO_SECRET", "e6eb327b-ae6c-4f63-97aa-773b91224028-@divisia")
 
 DEBUG = True
 
