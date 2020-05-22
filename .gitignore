@@ -1,15 +1,10 @@
-# Media files
 media/
 
-# Databases
-#db.*
-#*.sqlite*
-
-# Editor folders
 .vscode/
-.venv/
 
-# Secret tokens
-secret
-pass
+.venv/
+**/__pycache__/
+**/migrations/
+
+db.sqlite3
 
