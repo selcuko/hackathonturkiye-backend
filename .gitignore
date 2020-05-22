@@ -1,4 +1,5 @@
 media/
+legacy/
 
 .vscode/
 
@@ -7,4 +8,5 @@ media/
 **/migrations/
 
 db.sqlite3
+secrets
 

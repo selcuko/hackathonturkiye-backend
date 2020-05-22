@@ -7,9 +7,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET", "e6eb327b-ae6c-4f63-97aa-773b91224028-@d
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',        # gunicorn needs this
-    '192.168.1.7',      # local ip, to be removed
-    'hackathonturkiye.herokuapp.com', 
+    'localhost',        # Gunicorn needs this
+    '192.168.1.7',      # Local development environment
+    'hackathonturkiye.herokuapp.com', # Heroku domain
 ]
 
 REST_FRAMEWORK = {
@@ -70,8 +70,12 @@ WSGI_APPLICATION = 'hackathonturkiye.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'psdb',
+        'USER': os.getenv('DB_USER', 'root'),
+        'PASSWORD': os.getenv('DB_PASS', 'divisia'),
+        'HOST': 'localhost',
+        'PORT': '5432'
     }
 }
 
