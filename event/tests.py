@@ -6,5 +6,5 @@ from rest_framework.test import APIRequestFactory, APIClient
 #factory = APIRequestFactory()
 #request = factory.get('/')
 
-client = APIClient()
-client.get('/')
+#client = APIClient()
+#client.get('/')
