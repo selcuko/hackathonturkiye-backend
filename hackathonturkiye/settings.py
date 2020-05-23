@@ -1,8 +1,10 @@
 import os
+import uuid
+import dj_database_url
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-SECRET_KEY = os.getenv("DJANGO_SECRET", "e6eb327b-ae6c-4f63-97aa-773b91224028-@divisia")
+SECRET_KEY = os.getenv("SECRET_KEY", str(uuid.uuid4()))
 
 DEBUG = True
 
