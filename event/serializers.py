@@ -5,7 +5,12 @@ from event.models import Event, EventType
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Event
-        fields = '__all__'
+        exclude = (
+            'added_by',
+            'added_at',
+            'published',
+        )
+        
     
     def create(self, validated_data):
         request = self.context["request"]

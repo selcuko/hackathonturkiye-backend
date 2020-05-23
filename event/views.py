@@ -10,7 +10,7 @@ class EventViewSet(viewsets.ModelViewSet):
     API endpoint
     """
     serializer_class = EventSerializer
-    queryset = Event.objects.all().order_by('-added_at')
+    queryset = Event.objects.filter(published=True).order_by('-added_at')
 
 
 class EventTypeViewSet(viewsets.ModelViewSet):
