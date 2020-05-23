@@ -3,11 +3,9 @@ legacy/
 static/
 
 .vscode/
+.github/
 
-.venv/
+venv/
 **/__pycache__/
-**/migrations/
 
-db.sqlite3
-secrets
 

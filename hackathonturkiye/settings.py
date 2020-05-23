@@ -7,9 +7,9 @@ SECRET_KEY = os.getenv("DJANGO_SECRET", "e6eb327b-ae6c-4f63-97aa-773b91224028-@d
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    'localhost',        # Gunicorn needs this
-    '192.168.1.7',      # Local development environment
-    'hackathonturkiye.herokuapp.com', # Heroku domain
+    'localhost',                        # Gunicorn needs this
+    '192.168.1.7',                      # Local development environment
+    'hackathonturkiye.herokuapp.com',   # Heroku domain
 ]
 
 REST_FRAMEWORK = {
@@ -17,7 +17,7 @@ REST_FRAMEWORK = {
     'PAGE_SIZE': 10,
 
     'DEFAULT_PERMISSON_CLASSES': [
-        'rest_framework.permissions.IsAuthenticated',
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
     ]
 }
 
@@ -40,6 +40,7 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -69,14 +70,10 @@ TEMPLATES = [
 WSGI_APPLICATION = 'hackathonturkiye.wsgi.application'
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'psdb',
-        'USER': os.getenv('DB_USER', 'amy'),
-        'PASSWORD': os.getenv('DB_PASS', 'divisia'),
-        'HOST': 'localhost',
-        'PORT': '5432'
-    }
+    'default': dj_database_url.parse(os.getenv(
+        'DATABASE_URL',
+        'postgres://amy:amy@localhost:5432/htdb'
+        ))
 }
 
 
