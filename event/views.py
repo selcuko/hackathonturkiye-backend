@@ -14,7 +14,6 @@ class EventViewSet(viewsets.ModelViewSet):
     
     def get_queryset(self):
         params = self.request.query_params
-        print("request params", params)
 
         # filter: by event type
         etype = params.get('etype', None)
@@ -39,9 +38,14 @@ class EventViewSet(viewsets.ModelViewSet):
             except self.FieldError:
                 # todo: make below line more elegant
                 self.queryset = self.queryset[:0]
-        else:
-            self.queryset = self.queryset.order_by('-added_at')
-
+        
+        # filter: by date
+        after, before = params.get('after', None), params.get('before', None)
+        if after:
+            self.queryset = self.queryset.filter(starts_at__gt=after)
+        if before:
+            self.queryset = self.queryset.filter(starts_at__lt=before)
+            
         return self.queryset
 
 
