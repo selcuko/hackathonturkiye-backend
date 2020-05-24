@@ -10,7 +10,8 @@ DEBUG = True
 
 ALLOWED_HOSTS = [
     'localhost',                        # Gunicorn needs this
-    '192.168.1.7',                      # Local development environment
+    'jacqueline',                       # Local development environment
+    'testserver',                       # Used for unit testing
     'hackathonturkiye.herokuapp.com',   # Heroku domain
 ]
 
