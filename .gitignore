@@ -8,4 +8,6 @@ static/
 venv/
 **/__pycache__/
 
+script.py
+
 
