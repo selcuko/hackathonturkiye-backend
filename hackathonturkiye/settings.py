@@ -6,7 +6,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 SECRET_KEY = os.getenv("SECRET_KEY", str(uuid.uuid4()))
 
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = [
     'localhost',                        # Gunicorn needs this
@@ -19,6 +19,7 @@ CORS_ORIGIN_WHITELIST = [
     'https://hackathonturkiye.com',
     'http://hackathonturkiye.com',
 ]
+CORS_ORIGIN_ALLOW_ALL = True  # Testing something...
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
