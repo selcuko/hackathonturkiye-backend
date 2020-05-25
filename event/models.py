@@ -22,7 +22,9 @@ class Event(models.Model):
     origin_url = models.URLField()
     internal_url = models.URLField(null=True, blank=True)
     thumbnail = models.ImageField(
-        upload_to='thumbnails', default='thumbnails/none/placeholder.jpg')
+        upload_to='thumbnails', 
+        default='thumbnails/none/placeholder.jpg',
+        max_length=1024)
     starts_at = models.DateTimeField()
     ends_at = models.DateTimeField(blank=True, null=True)
     deadline = models.DateTimeField(blank=True, null=True)
