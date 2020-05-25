@@ -20,3 +20,10 @@ python manage.py runserver
 | localhost:8000/swagger | Swagger
 | localhost:8000/redoc | ReDoc
 
+> ### Event filters
+| Keyword | Example |
+| --- | --- |
+| location | ?location=izmir |
+| after | ?after=2020-01-01 |
+| before | ?before=2020-01-01 |
+| etype | ?etype=ideathon |
