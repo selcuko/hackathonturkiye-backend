@@ -9,6 +9,9 @@ class EventAdmin(admin.ModelAdmin):
         'published',
         'holder',
     ]
+    list_filter = ['etype', 'published']
+    exclude = ['added_by']
+    
 
 
 admin.site.register(Event, EventAdmin)
