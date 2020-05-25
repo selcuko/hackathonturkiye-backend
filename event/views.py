@@ -1,3 +1,4 @@
+from datetime import date
 from django.views import View
 from rest_framework import viewsets
 
@@ -43,6 +44,8 @@ class EventViewSet(viewsets.ModelViewSet):
         after, before = params.get('after', None), params.get('before', None)
         if after:
             self.queryset = self.queryset.filter(starts_at__gt=after)
+        else:
+            self.queryset = self.queryset.filter(starts_at__gt=str(date.today()))
         if before:
             self.queryset = self.queryset.filter(starts_at__lt=before)
             
