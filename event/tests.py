@@ -21,7 +21,6 @@ class Methods(TestCase):
             'description':'Test test test test',
             'location':'online'
         })
-        print(response.content)
         self.assertEqual(response.status_code, 201, "Unwanted status code returned.")
 
 
