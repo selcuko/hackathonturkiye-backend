@@ -10,7 +10,7 @@ class EventViewSet(viewsets.ModelViewSet):
     API endpoint
     """
     serializer_class = EventSerializer
-    queryset = Event.objects.filter(published=True)
+    queryset = Event.objects.filter(published=True).order_by('starts_at')
     
     def get_queryset(self):
         params = self.request.query_params
