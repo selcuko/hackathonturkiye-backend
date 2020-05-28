@@ -10,17 +10,26 @@ class PostCategory(models.Model):
         return self.name
 
 
+class PostTag(models.Model):
+    pass
+
+
 class Post(models.Model):
+    status_codes = (
+        ("d", "Draft"),
+        ("c", "Review"),
+        ("p", "Publish")
+    )
     title = models.CharField(max_length=140)
     summary = models.TextField(max_length=2000, blank=True, null=True)
     text = models.TextField(max_length=1024**2)
-    published = models.BooleanField(default=False)
+    status = models.CharField(max_length=1, choices=status_codes, default="d")
 
     author = models.ForeignKey(
-        User, on_delete=models.SET_NULL, blank=True, null=True)
-    #category = models.ForeignKey(
-    #    PostCategory, on_delete=models.SET_NULL, blank=True, null=True)
-    category = models.ManyToManyField(PostCategory)
+        User, on_delete=models.SET_NULL, null=True)
+
+    category = models.ForeignKey(PostCategory, null=True, on_delete=models.SET_NULL)
+    tags = models.ManyToManyField(PostTag)
 
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
