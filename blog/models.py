@@ -30,7 +30,7 @@ class Post(models.Model):
         User, on_delete=models.SET_NULL, null=True)
 
     category = models.ForeignKey(PostCategory, null=True, on_delete=models.SET_NULL)
-    tags = models.ManyToManyField(PostTag)
+    tags = models.ManyToManyField(PostTag, null=True, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
