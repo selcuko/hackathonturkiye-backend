@@ -6,10 +6,17 @@ from event.models import Event, EventType
 class EventSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Event
-        exclude = (
-            'added_by',
-            'added_at',
-            'published',
+        fields = (
+            'pk',
+            'name',
+            'description',
+            'starts_at',
+            'ends_at',
+            'priority',
+            'holder',
+            'prize',
+            'location',
+            'origin_url',
         )
         
     

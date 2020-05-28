@@ -14,7 +14,18 @@ class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.filter(published=True).order_by('starts_at')
     
     def get_queryset(self):
-        params = self.request.query_params
+        today = str(date.today())
+
+        # todo: find another method, im sure it exists
+        nonfield = ["offset", "limit", "page", "format"]
+        params = dict(self.request.query_params)
+        filters = {}
+        for key, value in params.items():
+            if key not in nonfield:
+                filters[key] = value[0]
+        
+        self.queryset = self.queryset.filter(**filters)
+        return self.queryset
 
         # filter: by event type
         etype = params.get('etype', None)
