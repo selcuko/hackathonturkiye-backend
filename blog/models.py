@@ -11,7 +11,8 @@ class PostCategory(models.Model):
 
 
 class PostTag(models.Model):
-    pass
+    name = models.CharField(max_length=16)
+    created_at = models.DateTimeField(auto_now_add=True)
 
 
 class Post(models.Model):
