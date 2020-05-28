@@ -23,7 +23,7 @@ class Post(models.Model):
     )
     title = models.CharField(max_length=140)
     summary = models.TextField(max_length=2000, blank=True, null=True)
-    text = models.TextField(max_length=1024**2)
+    body = models.TextField(max_length=1024**2)
     status = models.CharField(max_length=1, choices=status_codes, default="d")
 
     author = models.ForeignKey(
@@ -37,4 +37,7 @@ class Post(models.Model):
     published_at = models.DateTimeField(blank=True, null=True)
 
     def __str__(self):
-        return f"{self.title} from {self.author}"
+        return f"{self.title}"
+    
+    def published(self) -> bool:
+        return self.status == 'p'

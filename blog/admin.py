@@ -1,5 +1,32 @@
 from django.contrib import admin
-from blog.models import *
+from blog.models import Post, PostCategory, PostTag
+
+
+class PostAdmin(admin.ModelAdmin):
+    fields = (
+        'title',
+        'summary',
+        ('category', 'tags'),
+        'body',
+        'status',
+        'created_at',
+        'edited_at'
+    )
+    readonly_fields = [
+        'created_at',
+        'edited_at',
+    ]
+    list_display = [
+        'title',
+        'summary',
+        'author',
+        'published'
+    ]
+    list_filter = [
+        'status',
+        'author',
+    ]
+
 
 admin.site.register(PostCategory)
-admin.site.register(Post)
+admin.site.register(Post, PostAdmin)
