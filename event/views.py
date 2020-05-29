@@ -1,5 +1,6 @@
 from datetime import date
 from django.views import View
+from django.core.exceptions import FieldError
 from rest_framework import viewsets
 
 from event.models import Event, EventType
@@ -14,18 +15,29 @@ class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.filter(published=True).order_by('starts_at')
     
     def get_queryset(self):
-        today = str(date.today())
+        
 
         # todo: find another method, im sure it exists
-        nonfield = ["offset", "limit", "page", "format"]
-        params = dict(self.request.query_params)
+        nonfield = [
+            "etype", 
+            "offset", 
+            "limit", 
+            "page", 
+            "format", 
+            "highlighted",
+            "after",
+            "before",
+            "order_by"
+        ]
+        today = str(date.today())
+        params = self.request.query_params
+        highlight = params.get('highlight', None)
+        if highlight:
+            return self.query.order_by('starts_at')[:5]
         filters = {}
         for key, value in params.items():
             if key not in nonfield:
-                filters[key] = value[0]
-        
-        self.queryset = self.queryset.filter(**filters)
-        return self.queryset
+                filters[key] = value
 
         # filter: by event type
         etype = params.get('etype', None)
@@ -35,31 +47,28 @@ class EventViewSet(viewsets.ModelViewSet):
                 self.queryset = self.queryset.filter(etype=etype)
             except EventType.DoesNotExist:
                 # todo: make below line more elegant
-                self.queryset = self.queryset[:0]
-        
-        # filter: by location
-        location = params.get('location', None)
-        if location:
-            self.queryset = self.queryset.filter(location=location)
+                self.queryset = self.queryset.none()
         
         # order: by parameter
         order_by = params.get('order_by', None)
         if order_by:
             try:
                 self.queryset = self.queryset.order_by(order_by)
-            except self.FieldError:
-                # todo: make below line more elegant
-                self.queryset = self.queryset[:0]
+            except FieldError:
+                self.queryset = self.queryset.none()
         
         # filter: by date
-        after, before = params.get('after', None), params.get('before', None)
+        after = params.get('after', None)
+        before = params.get('before', None)
         if after:
             self.queryset = self.queryset.filter(starts_at__gt=after)
         else:
-            self.queryset = self.queryset.filter(starts_at__gt=str(date.today()))
+            self.queryset = self.queryset.filter(starts_at__gt=today)
         if before:
             self.queryset = self.queryset.filter(starts_at__lt=before)
-            
+        
+        if len(filters):
+            self.queryset = self.queryset.filter(**filters)
         return self.queryset
 
 
