@@ -1,3 +1,13 @@
 from django.shortcuts import render
+from rest_framework.viewsets import ModelViewSet
+from rest_framework.permissions import IsAdminUser
+from .models import ContactForm
+from .serializers import ContactFormSerializer
+from hackathonturkiye.permissions import IsPOST
 
-# Create your views here.
+
+
+class ContactFormViewSet(ModelViewSet):
+    queryset = ContactForm.objects.all()
+    serializer_class = ContactFormSerializer
+    permission_classes = [IsAdminUser|IsPOST]

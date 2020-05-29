@@ -5,6 +5,7 @@ from django.conf.urls.static import static
 from event import views as event_views
 from profile import views as profile_views
 from blog import views as blog_views
+from contact import views as contact_views
 from rest_framework import routers, permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -27,6 +28,7 @@ router.register(r'events', event_views.EventViewSet)
 router.register(r'groups', profile_views.GroupViewSet)
 router.register(r'users', profile_views.UserViewSet)
 router.register(r'posts', blog_views.PostViewSet)
+router.register(r'contact', contact_views.ContactFormViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
