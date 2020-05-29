@@ -8,6 +8,9 @@ class PostCategory(models.Model):
 
     def __str__(self):
         return self.name
+    class Meta:
+        verbose_name = "Post category"
+        verbose_name_plural = "Post categories"
 
 
 class PostTag(models.Model):
@@ -30,7 +33,7 @@ class Post(models.Model):
         User, on_delete=models.SET_NULL, null=True)
 
     category = models.ForeignKey(PostCategory, null=True, on_delete=models.SET_NULL)
-    tags = models.ManyToManyField(PostTag, null=True, blank=True)
+    tags = models.ManyToManyField(PostTag, blank=True)
 
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)

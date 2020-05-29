@@ -1,21 +1,27 @@
 from blog.models import *
+from profile.serializers import *
 from rest_framework import serializers
 
 
-class PostCategorySerializer(serializers.HyperlinkedModelSerializer):
+class PostCategorySerializer(serializers.ModelSerializer):
     class Meta:
         model = PostCategory
-        fields = '__all__'
+        fields = ['name']
 
 
-class PostSerializer(serializers.HyperlinkedModelSerializer):
-    category = PostCategorySerializer(
-        many=True,
-        read_only=False,
-    )
+class PostSerializer(serializers.ModelSerializer):
+    category = PostCategorySerializer(many=False, read_only=False)
+    author = UserSerializer(many=False, read_only=True)
     class Meta:
         model = Post
-        fields = '__all__'
+        fields = [
+            'title',
+            'summary',
+            'body',
+            'published_at',
+            'author',
+            'category',
+        ]
     
     def create(self, validated_data):
         request = self.context["request"]

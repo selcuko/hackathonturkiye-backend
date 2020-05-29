@@ -6,7 +6,7 @@ from event.views import EventViewSet
 
 
 
-class Methods(TestCase):
+class EventTest(TestCase):
 
     def setUp(self):
         User.objects.create_user(username='testserver', password='testserver')
@@ -19,9 +19,24 @@ class Methods(TestCase):
             'starts_at':'2020-01-02T00:00',
             'origin_url':'https://hackathonturkiye.com',
             'description':'Test test test test',
-            'location':'online'
+            'location':'online',
+            'etype':{'name':'hackathon', 'url':'https://sfs.com'}
         })
+        print("#####", response, response.content)
         self.assertEqual(response.status_code, 201, "Unwanted status code returned.")
+        
+
+        # test whether only logged in users can post
+        self.client.logout()
+        response = self.client.post('/events/', {
+            'name':'Lorem ipsum hackathon2',
+            'starts_at':'2020-01-02T00:10',
+            'origin_url':'https://hackathonturkiye.com',
+            'description':'Test test test test',
+            'location':'online',
+            'etype':1
+        })
+        self.assertEqual(response.status_code, 403, "POST method publicly available.")
 
 
     def test_get(self):
