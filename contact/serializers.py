@@ -28,7 +28,7 @@ class ContactFormSerializer(serializers.ModelSerializer):
         validated_data.update({
             'remote_addr': request.META['REMOTE_ADDR'],
             'path': request.META['PATH_INFO'],
-            'user_agent': request.META['HTTP_USER_AGENT'],
+            'user_agent': request.META.get('HTTP_USER_AGENT', None),
             'category': category
         })
         return ContactForm.objects.create(**validated_data)

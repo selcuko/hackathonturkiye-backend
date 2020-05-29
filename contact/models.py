@@ -3,14 +3,14 @@ from django.db import models
 
 class ContactFormCategory(models.Model):
     name = models.CharField(max_length=32)
-    url = models.URLField()
+    url = models.URLField(null=True)
 
 
 class ContactForm(models.Model):
     # server filled fields
     created_at = models.DateTimeField(auto_now_add=True)
     remote_addr = models.GenericIPAddressField()
-    user_agent = models.CharField(max_length=256)
+    user_agent = models.CharField(max_length=256, null=True)
     path = models.CharField(max_length=256)
 
     # request filled fields

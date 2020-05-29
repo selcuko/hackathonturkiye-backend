@@ -3,6 +3,7 @@ from django.test import TestCase, Client
 from django.contrib.auth.models import User
 from rest_framework.test import APIClient
 from event.views import EventViewSet
+from .models import *
 
 
 
@@ -10,22 +11,23 @@ class EventTest(TestCase):
 
     def setUp(self):
         User.objects.create_user(username='testserver', password='testserver')
-        self.logged = self.client.login(username='testserver', password='testserver')
-
+        EventType.objects.create(name='hackathon')
 
     def test_post(self):
+        logged = self.client.login(username='testserver', password='testserver')
+        self.assertEqual(logged, True, 'Cannot login')
         response = self.client.post('/events/', {
             'name':'Lorem ipsum hackathon',
             'starts_at':'2020-01-02T00:00',
             'origin_url':'https://hackathonturkiye.com',
             'description':'Test test test test',
             'location':'online',
-            'etype':{'name':'hackathon', 'url':'https://sfs.com'}
+            'etype.name': 'hackathon'
         })
-        print("#####", response, response.content)
         self.assertEqual(response.status_code, 201, "Unwanted status code returned.")
         
 
+    def test_is_publicly_writeable_better_not(self):
         # test whether only logged in users can post
         self.client.logout()
         response = self.client.post('/events/', {
@@ -34,7 +36,7 @@ class EventTest(TestCase):
             'origin_url':'https://hackathonturkiye.com',
             'description':'Test test test test',
             'location':'online',
-            'etype':1
+            'etype':'hackathon'
         })
         self.assertEqual(response.status_code, 403, "POST method publicly available.")
 
