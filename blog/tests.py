@@ -19,3 +19,6 @@ class BlogTest(TestCase):
             })
         self.assertEqual(response.status_code, 403, 'POST method publicly available')
         
+    def test_get(self):
+        response = self.client.get('/posts/?tag=mmm')
+        self.assertEqual(response.status_code, 200, "Server couldn't return results")

@@ -11,7 +11,7 @@ class PostCategoryViewSet(viewsets.ModelViewSet):
 
         tags = params.get('tag', None)
         if tag:
-            self.queryset = self.queryset.filter(tags__name=tag)
+            self.queryset = set(self.queryset.filter(tags__name=tag))
                 
         return self.queryset
 
