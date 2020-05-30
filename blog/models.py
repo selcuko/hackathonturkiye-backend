@@ -35,6 +35,12 @@ class Post(models.Model):
     category = models.ForeignKey(PostCategory, null=True, on_delete=models.SET_NULL)
     tags = models.ManyToManyField(PostTag, blank=True)
 
+    # statistical
+    priority = models.IntegerField(default=1)
+    read = models.IntegerField(default=1)
+    time = models.IntegerField(default=1)
+
+    # autofilled
     created_at = models.DateTimeField(auto_now_add=True)
     edited_at = models.DateTimeField(auto_now=True)
     published_at = models.DateTimeField(blank=True, null=True)

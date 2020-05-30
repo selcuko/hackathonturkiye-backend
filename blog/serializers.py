@@ -27,8 +27,10 @@ class PostSerializer(serializers.ModelSerializer):
         request = self.context["request"]
         user = request.user
 
-        if validated_data.get('author', None):
-             validated_data.pop('author')
+        validated_data.update({
+            'author': user,
+            'read': len(validated_data['body'])//500,
+        })
 
         return Event.objects.create(added_by=user, **validated_data)
 
