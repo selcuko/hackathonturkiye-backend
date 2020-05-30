@@ -1,13 +1,18 @@
 from blog.serializers import *
 from rest_framework import viewsets
-
+from .models import PostTag
 
 class PostCategoryViewSet(viewsets.ModelViewSet):
     serializer_class = PostCategorySerializer
     queryset = PostCategory.objects.all()
     
     def get_queryset(self):
-        self.queryset = self.queryset
+        params = self.queryset.query_params
+
+        tags = params.get('tag', None)
+        if tag:
+            self.queryset = set(self.queryset.filter(tags__name=tag))
+                
         return self.queryset
 
 
