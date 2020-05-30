@@ -1,13 +1,18 @@
 from blog.serializers import *
 from rest_framework import viewsets
-from .models import PostTag
+from .models import PostTag, Post
+
 
 class PostCategoryViewSet(viewsets.ModelViewSet):
     serializer_class = PostCategorySerializer
     queryset = PostCategory.objects.all()
+
+class PostViewSet(viewsets.ModelViewSet):
+    serializer_class = PostSerializer
+    queryset = Post.objects.filter(status='p')
     
     def get_queryset(self):
-        params = self.queryset.query_params
+        params = self.request.query_params
         filters = {}
         non_fields = [
             'highlighted',
@@ -19,7 +24,7 @@ class PostCategoryViewSet(viewsets.ModelViewSet):
             if p not in non_fields:
                 filters[p] = params[p]
 
-        tags = params.get('tag', None)
+        tag = params.get('tag', None)
         if tag:
             self.queryset = set(self.queryset.filter(tags__name=tag))
         
@@ -33,11 +38,13 @@ class PostCategoryViewSet(viewsets.ModelViewSet):
         
         if len(filters):
             self.queryset = self.queryset.filter(**filters)
+            if 'pk' in filters.keys() and len(self.queryset) > 0:
+                p = self.queryset[0]
+                p.read =+ 1
+                p.save()
                 
         return self.queryset
 
 
-class PostViewSet(viewsets.ModelViewSet):
-    serializer_class = PostSerializer
-    queryset = Post.objects.filter(status='p')
+
 
