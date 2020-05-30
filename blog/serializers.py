@@ -21,6 +21,9 @@ class PostSerializer(serializers.ModelSerializer):
             'published_at',
             'author',
             'category',
+            'tags',
+            'read',
+            'time'
         ]
     
     def create(self, validated_data):
@@ -29,7 +32,7 @@ class PostSerializer(serializers.ModelSerializer):
 
         validated_data.update({
             'author': user,
-            'read': len(validated_data['body'])//500,
+            'time': len(validated_data['body'])//500,
         })
 
         return Event.objects.create(added_by=user, **validated_data)
