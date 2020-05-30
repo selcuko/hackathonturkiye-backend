@@ -18,7 +18,8 @@ class PostViewSet(viewsets.ModelViewSet):
             'highlighted',
             'tag',
             'limit',
-            'offset'
+            'offset',
+            'order_by'
         ]
         for p in params.keys():
             if p not in non_fields:
@@ -26,15 +27,13 @@ class PostViewSet(viewsets.ModelViewSet):
 
         tag = params.get('tag', None)
         if tag:
-            self.queryset = set(self.queryset.filter(tags__name=tag))
+            self.queryset = self.queryset.filter(tags__name=tag).distinct()
         
-        highlighted = params.get('highlighted', None)
-        if highlighted:
-            try:
-                value = int(highlighted)
-            except ValueError:
-                value = 5
-            self.queryset = self.queryset.order_by('priority', 'created_at')[:value]
+        order_by = params.get('order_by', None)
+        if order_by:
+            self.queryset = self.queryset.order_by('priority', order_by)
+        else:
+            self.queryset = self.queryset.order_by('priority')
         
         if len(filters):
             self.queryset = self.queryset.filter(**filters)
