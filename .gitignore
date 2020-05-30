@@ -1,6 +1,7 @@
 media/
 legacy/
 static/
+DB
 
 .vscode/
 .github/

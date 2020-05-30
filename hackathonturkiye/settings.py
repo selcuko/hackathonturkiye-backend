@@ -12,7 +12,7 @@ ALLOWED_HOSTS = [
     'localhost',                        # Gunicorn needs this
     'jacqueline',                       # Local development environment
     'testserver',                       # Used for unit testing
-    'hackathonturkiye.herokuapp.com',   # Heroku domain
+    'omerselcuk.engineer',
 ]
 
 CORS_ORIGIN_WHITELIST = [
