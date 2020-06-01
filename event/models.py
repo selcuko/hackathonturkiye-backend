@@ -42,7 +42,7 @@ class Event(models.Model):
         ordering = ('starts_at',)
 
     def __str__(self):
-        return f"{self.name}, {self.starts_at.year}"
+        return f"{self.name} ({self.starts_at.year})"
     
     def is_applicable(self):
-        return datetime.now() > self.deadline
+        return datetime.now() > self.deadline if self.deadline else None

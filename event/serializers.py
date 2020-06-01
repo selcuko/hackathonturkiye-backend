@@ -20,28 +20,31 @@ class EventSerializer(serializers.HyperlinkedModelSerializer):
             'pk',
             'name',
             'description',
+            'body',
             'starts_at',
             'ends_at',
             'priority',
             'holder',
             'prize',
+            'thumbnail',
             'location',
             'etype',
             'origin_url',
+            'is_applicable',
         )
-        
     
     def create(self, validated_data):
 
         request = self.context["request"]
         user = request.user if isinstance(request.user, User) else None
+
         event_type = validated_data['etype']['name']
         etype = EventType.objects.get(name=event_type)
+
         validated_data.update({
             'added_by': user,
             'etype': etype
         })
-
         return Event.objects.create(**validated_data)
         
     

@@ -24,7 +24,7 @@ schema_view = get_schema_view(
 )
 
 router = routers.DefaultRouter()
-router.register(r'events', event_views.EventViewSet)
+router.register(r'events', event_views.EventViewSet, basename='event')
 router.register(r'groups', profile_views.GroupViewSet)
 router.register(r'users', profile_views.UserViewSet)
 router.register(r'posts', blog_views.PostViewSet)
