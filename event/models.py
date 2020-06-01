@@ -10,6 +10,12 @@ class EventType(models.Model):
     def __str__(self):
         return self.name
 
+class EventTag(models.Model):
+    name = models.CharField(max_length=20)
+    
+    def __str__(self):
+        return self.name
+
 
 class Event(models.Model):
     name = models.CharField(max_length=64)
@@ -33,6 +39,7 @@ class Event(models.Model):
     priority = models.IntegerField(default=1)
     holder = models.CharField(max_length=20, null=True, blank=True)
     published = models.BooleanField(default=True)
+    tags = models.ManyToManyField(EventTag, related_name='eventtag')
 
     added_at = models.DateTimeField(auto_now_add=True)
     added_by = models.ForeignKey(

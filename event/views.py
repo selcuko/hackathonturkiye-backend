@@ -12,8 +12,14 @@ class EventViewSet(viewsets.ModelViewSet):
     """
     API endpoint
     """
-    serializer_class = EventSerializer
     queryset = Event.objects.filter(published=True).order_by('starts_at')
+    serializer_class = EventSerializer
+    
+    def retrieve(self, **kwargs):
+        queryset = Event.objects.all()
+        serializer = ExtentedEventSerializer(queryset, many=False)
+        return Response(serializer.data)
+
     
     def get_queryset(self):
         
@@ -27,7 +33,8 @@ class EventViewSet(viewsets.ModelViewSet):
             "highlighted",
             "after",
             "before",
-            "order_by"
+            "order_by",
+            'tags'
         ]
         params = self.request.query_params
 
@@ -57,13 +64,11 @@ class EventViewSet(viewsets.ModelViewSet):
                 # todo: make below line more elegant
                 self.queryset = self.queryset.none()
         
-        # order: by parameter
-        order_by = params.get('order_by', None)
-        if order_by:
-            try:
-                self.queryset = self.queryset.order_by(order_by)
-            except FieldError:
-                self.queryset = self.queryset.none()
+        tags = params.get('tags', None)
+        if tags:
+            tags = tags.lower().split(',')
+            for tag in tags:
+                self.queryset = self.queryset.filter(tags__name=tag).distinct()
         
         # filter: by date
         after = params.get('after', None)
