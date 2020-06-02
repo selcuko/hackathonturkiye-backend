@@ -58,5 +58,6 @@ class Post(models.Model):
         return self.status == 'p'
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title, allow_unicode=True)
-        super.save(*args, **kwargs)
+        self.slug = slugify(self.title, allow_unicode=False)
+        self.time = len(self.body.split(" ")) // 100
+        super().save(*args, **kwargs)

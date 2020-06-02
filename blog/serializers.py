@@ -1,6 +1,7 @@
 from blog.models import *
 from profile.serializers import *
 from rest_framework import serializers
+from action_serializer import ModelActionSerializer
 
 class PostTagSerializer(serializers.ModelSerializer):
     class Meta:
@@ -13,7 +14,7 @@ class PostCategorySerializer(serializers.ModelSerializer):
         fields = ['name']
 
 
-class PostSerializer(serializers.ModelSerializer):
+class PostSerializer(ModelActionSerializer):
     category = PostCategorySerializer(many=False, read_only=False)
     tags = PostTagSerializer(many=True, read_only=False)
     author = UserSerializer(many=False, read_only=True)
@@ -31,6 +32,15 @@ class PostSerializer(serializers.ModelSerializer):
             'read',
             'time'
         ]
+        action_fields = {"list": {"fields": (
+            "slug",
+            "title",
+            'author',
+            'category',
+            'tags',
+            'read',
+            'time'
+        )}}
     
     def create(self, validated_data):
         request = self.context["request"]

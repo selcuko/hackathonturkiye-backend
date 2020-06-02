@@ -10,6 +10,7 @@ class PostCategoryViewSet(viewsets.ModelViewSet):
 class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.filter(status='p')
+    lookup_field = 'slug'
     
     def get_queryset(self):
         params = self.request.query_params
