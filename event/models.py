@@ -60,6 +60,9 @@ class Event(models.Model):
     def is_applicable(self):
         return datetime.now() > self.deadline if self.deadline else None
     
+    def has_details(self):
+        return bool(self.body)
+    
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name, allow_unicode=False)
         super().save(*args, **kwargs)
