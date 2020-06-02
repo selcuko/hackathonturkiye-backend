@@ -14,11 +14,6 @@ class EventViewSet(viewsets.ModelViewSet):
     """
     queryset = Event.objects.filter(published=True).order_by('starts_at')
     serializer_class = EventSerializer
-    
-    def retrieve(self, **kwargs):
-        queryset = Event.objects.all()
-        serializer = ExtentedEventSerializer(queryset, many=False)
-        return Response(serializer.data)
 
     
     def get_queryset(self):

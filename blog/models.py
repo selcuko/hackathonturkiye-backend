@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils.text import slugify
 from django.contrib.auth.models import User
 
 
@@ -28,6 +29,11 @@ class Post(models.Model):
     summary = models.TextField(max_length=2000, blank=True, null=True)
     body = models.TextField(max_length=1024**2)
     status = models.CharField(max_length=1, choices=status_codes, default="d")
+    slug = models.SlugField(
+        default='',
+        editable=False,
+        max_length=140,
+    )
 
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True)
@@ -50,3 +56,7 @@ class Post(models.Model):
     
     def published(self) -> bool:
         return self.status == 'p'
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.title, allow_unicode=True)
+        super.save(*args, **kwargs)
