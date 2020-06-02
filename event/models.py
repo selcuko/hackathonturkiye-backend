@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from django.utils.text import slugify
 
 
 class EventType(models.Model):
@@ -24,6 +25,11 @@ class Event(models.Model):
     etype = models.ForeignKey(EventType, on_delete=models.SET_NULL,
                               blank=True, null=True, 
                               verbose_name="Event type")
+    slug = models.SlugField(
+        default='',
+        editable=False,
+        max_length=64,
+    )
 
     origin_url = models.URLField()
     internal_url = models.URLField(null=True, blank=True)
@@ -53,3 +59,8 @@ class Event(models.Model):
     
     def is_applicable(self):
         return datetime.now() > self.deadline if self.deadline else None
+    
+    def save(self, *args, **kwargs):
+        self.slug = slugify(self.name, allow_unicode=False)
+        super().save(*args, **kwargs)
+
