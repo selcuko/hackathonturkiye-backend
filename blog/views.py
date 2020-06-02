@@ -20,15 +20,18 @@ class PostViewSet(viewsets.ModelViewSet):
             'tag',
             'limit',
             'offset',
-            'order_by'
+            'order_by',
+            'tags'
         ]
         for p in params.keys():
             if p not in non_fields:
                 filters[p] = params[p]
 
-        tag = params.get('tag', None)
-        if tag:
-            self.queryset = self.queryset.filter(tags__name=tag).distinct()
+        tags = params.get('tags', None)
+        if tags:
+            tags = tags.split(',')
+            for tag in tags:
+                self.queryset = self.queryset.filter(tags__name=tag).distinct()
         
         order_by = params.get('order_by', None)
         if order_by:
@@ -36,12 +39,7 @@ class PostViewSet(viewsets.ModelViewSet):
         else:
             self.queryset = self.queryset.order_by('priority')
         
-        if len(filters):
-            self.queryset = self.queryset.filter(**filters)
-            if 'pk' in filters.keys() and len(self.queryset) > 0:
-                p = self.queryset[0]
-                p.read =+ 1
-                p.save()
+        self.queryset = self.queryset.filter(**filters)
                 
         return self.queryset
 
