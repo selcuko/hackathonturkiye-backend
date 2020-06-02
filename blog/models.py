@@ -1,6 +1,7 @@
 from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
+from djrichtextfield.models import RichTextField
 
 
 class PostCategory(models.Model):
@@ -18,6 +19,9 @@ class PostTag(models.Model):
     name = models.CharField(max_length=16)
     created_at = models.DateTimeField(auto_now_add=True)
 
+    def __str__(self):
+        return self.name
+
 
 class Post(models.Model):
     status_codes = (
@@ -27,7 +31,7 @@ class Post(models.Model):
     )
     title = models.CharField(max_length=140)
     summary = models.TextField(max_length=2000, blank=True, null=True)
-    body = models.TextField(max_length=1024**2)
+    body = RichTextField(max_length=1024**2)
     status = models.CharField(max_length=1, choices=status_codes, default="d")
     slug = models.SlugField(
         default='',
