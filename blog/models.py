@@ -37,6 +37,7 @@ class Post(models.Model):
         default='',
         editable=False,
         max_length=140,
+        unique=True,
     )
 
     author = models.ForeignKey(

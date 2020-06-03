@@ -1,7 +1,9 @@
 from django.db import models
 from django.contrib.auth.models import User
 from datetime import datetime
+from djrichtextfield.models import RichTextField
 from django.utils.text import slugify
+from django.core.exceptions import MultipleObjectsReturned
 
 
 class EventType(models.Model):
@@ -21,7 +23,7 @@ class EventTag(models.Model):
 class Event(models.Model):
     name = models.CharField(max_length=64)
     description = models.TextField(max_length=140, null=True)
-    body = models.TextField(max_length=10240, null=True, blank=True)
+    body = RichTextField(blank=True, null=True)
     etype = models.ForeignKey(EventType, on_delete=models.SET_NULL,
                               blank=True, null=True, 
                               verbose_name="Event type")
@@ -29,6 +31,7 @@ class Event(models.Model):
         default='',
         editable=False,
         max_length=64,
+        unique=True
     )
 
     origin_url = models.URLField()
@@ -65,5 +68,10 @@ class Event(models.Model):
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name, allow_unicode=False)
+        try:
+            self.validate_unique()
+        except:
+            self.slug += f'-{self.starts_at.year}'
+            self.validate_unique()
         super().save(*args, **kwargs)
 
