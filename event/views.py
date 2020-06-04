@@ -80,10 +80,6 @@ class EventViewSet(viewsets.ModelViewSet):
             self.queryset = self.queryset.filter(**filters)
         return self.queryset
 
-    def retrieve(self, request, pk):
-        obj = Event.objects.get(pk=pk)
-        ser = EventSerializer(obj)
-        return Response(ser.data)
 
 
 class EventTypeViewSet(viewsets.ModelViewSet):
