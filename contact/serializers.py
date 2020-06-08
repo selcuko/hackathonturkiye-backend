@@ -13,7 +13,6 @@ class ContactFormSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactForm
         fields = [
-            'title',
             'category',
             'body',
             'email',
@@ -21,9 +20,13 @@ class ContactFormSerializer(serializers.ModelSerializer):
             'phone'
         ]
     def create(self, validated_data):
-        request = self.context['request']        
+        request = self.context['request']
         category_name = validated_data['category']['name']
-        category = ContactFormCategory.objects.get(name=category_name)
+        try:
+            category = ContactFormCategory.objects.get(name=category_name)
+        except:
+            category = ContactFormCategory(name=category_name)
+            category.save()
 
         validated_data.update({
             'remote_addr': request.META['REMOTE_ADDR'],
