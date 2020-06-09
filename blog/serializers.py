@@ -2,6 +2,7 @@ from blog.models import *
 from profile.serializers import *
 from rest_framework import serializers
 from action_serializer import ModelActionSerializer
+from common.serializers import TagSerializer
 
 class PostTagSerializer(serializers.ModelSerializer):
     class Meta:
@@ -16,7 +17,7 @@ class PostCategorySerializer(serializers.ModelSerializer):
 
 class PostSerializer(ModelActionSerializer):
     category = PostCategorySerializer(many=False, read_only=False)
-    tags = PostTagSerializer(many=True, read_only=False)
+    tags = TagSerializer(many=True, read_only=False)
     author = UserSerializer(many=False, read_only=True)
     class Meta:
         model = Post

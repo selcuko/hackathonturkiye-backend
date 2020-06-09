@@ -2,7 +2,7 @@ from django.db import models
 from django.utils.text import slugify
 from django.contrib.auth.models import User
 from djrichtextfield.models import RichTextField
-
+from common.models import Tag
 
 class PostCategory(models.Model):
     name = models.CharField(max_length=20)
@@ -44,7 +44,7 @@ class Post(models.Model):
         User, on_delete=models.SET_NULL, null=True)
 
     category = models.ForeignKey(PostCategory, null=True, on_delete=models.SET_NULL)
-    tags = models.ManyToManyField(PostTag, blank=True)
+    tags = models.ManyToManyField(Tag, blank=True)
 
     # statistical
     priority = models.IntegerField(default=1)

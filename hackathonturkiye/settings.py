@@ -47,7 +47,8 @@ INSTALLED_APPS = [
     'profile.apps.ProfileConfig',
     'blog.apps.BlogConfig',
     'event.apps.EventConfig',
-    'contact.apps.ContactConfig'
+    'contact.apps.ContactConfig',
+    'common',
 ]
 
 MIDDLEWARE = [

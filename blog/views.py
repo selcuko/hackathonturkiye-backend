@@ -31,7 +31,7 @@ class PostViewSet(viewsets.ModelViewSet):
         if tags:
             tags = tags.split(',')
             for tag in tags:
-                self.queryset = self.queryset.filter(tags__name=tag).distinct()
+                self.queryset = self.queryset.filter(tags__slug=tag).distinct()
         
         order_by = params.get('order_by', None)
         if order_by:

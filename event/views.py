@@ -64,7 +64,7 @@ class EventViewSet(viewsets.ModelViewSet):
         if tags:
             tags = tags.lower().split(',')
             for tag in tags:
-                self.queryset = self.queryset.filter(tags__name=tag).distinct()
+                self.queryset = self.queryset.filter(tags__slug=tag).distinct()
         
         # filter: by date
         after = params.get('after', None)

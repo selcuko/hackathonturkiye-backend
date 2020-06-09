@@ -2,6 +2,7 @@ from django.contrib.auth.models import User
 from rest_framework import serializers
 from event.models import Event, EventType, EventTag
 from action_serializer import ModelActionSerializer
+from common.serializers import TagSerializer
 
 
 class EventTypeSerializer(serializers.HyperlinkedModelSerializer):
@@ -21,7 +22,7 @@ class EventSerializer(ModelActionSerializer):
         many=False,
         read_only=True
     )
-    tags = EventTagSerializer(
+    tags = TagSerializer(
         many=True,
         read_only=True
     )
@@ -42,7 +43,6 @@ class EventSerializer(ModelActionSerializer):
             'etype',
             'origin_url',
             'is_applicable',
-            'has_details',
             'tags',
         )
         action_fields = {"list": {"fields": (
@@ -58,7 +58,8 @@ class EventSerializer(ModelActionSerializer):
             'thumbnail',
             'etype',
             'is_applicable',
-            'priority'
+            'priority',
+            'has_details',
             )}}
     
     def create(self, validated_data):

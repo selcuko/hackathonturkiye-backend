@@ -1,5 +1,5 @@
 from django.db import models
-from djang.utils.text import slugify
+from django.utils.text import slugify
 
 class Tag(models.Model):
     name = models.CharField(max_length=100)
@@ -12,5 +12,5 @@ class Tag(models.Model):
         return self.name
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name, allow_unicode=False)
+        self.slug = slugify(self.name.lower().replace('ı', 'i'), allow_unicode=False)
         super().save(*args, **kwargs)

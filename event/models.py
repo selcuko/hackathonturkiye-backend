@@ -4,6 +4,7 @@ from datetime import datetime
 from djrichtextfield.models import RichTextField
 from django.utils.text import slugify
 from django.core.exceptions import MultipleObjectsReturned
+from common.models import Tag
 
 
 class EventType(models.Model):
@@ -48,7 +49,7 @@ class Event(models.Model):
     priority = models.IntegerField(default=1)
     holder = models.CharField(max_length=20, null=True, blank=True)
     published = models.BooleanField(default=True)
-    tags = models.ManyToManyField(EventTag, related_name='eventtag')
+    tags = models.ManyToManyField(Tag, related_name='eventtag')
 
     added_at = models.DateTimeField(auto_now_add=True)
     added_by = models.ForeignKey(
