@@ -1,0 +1,2509 @@
+--
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 10.12 (Ubuntu 10.12-0ubuntu0.18.04.1)
+-- Dumped by pg_dump version 10.12 (Ubuntu 10.12-0ubuntu0.18.04.1)
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET idle_in_transaction_session_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET xmloption = content;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: auth_group; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.auth_group (
+    id integer NOT NULL,
+    name character varying(150) NOT NULL
+);
+
+
+ALTER TABLE public.auth_group OWNER TO root;
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.auth_group_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_id_seq OWNER TO root;
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.auth_group_id_seq OWNED BY public.auth_group.id;
+
+
+--
+-- Name: auth_group_permissions; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.auth_group_permissions (
+    id integer NOT NULL,
+    group_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_group_permissions OWNER TO root;
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.auth_group_permissions_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_group_permissions_id_seq OWNER TO root;
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.auth_group_permissions_id_seq OWNED BY public.auth_group_permissions.id;
+
+
+--
+-- Name: auth_permission; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.auth_permission (
+    id integer NOT NULL,
+    name character varying(255) NOT NULL,
+    content_type_id integer NOT NULL,
+    codename character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.auth_permission OWNER TO root;
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.auth_permission_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_permission_id_seq OWNER TO root;
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.auth_permission_id_seq OWNED BY public.auth_permission.id;
+
+
+--
+-- Name: auth_user; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.auth_user (
+    id integer NOT NULL,
+    password character varying(128) NOT NULL,
+    last_login timestamp with time zone,
+    is_superuser boolean NOT NULL,
+    username character varying(150) NOT NULL,
+    first_name character varying(30) NOT NULL,
+    last_name character varying(150) NOT NULL,
+    email character varying(254) NOT NULL,
+    is_staff boolean NOT NULL,
+    is_active boolean NOT NULL,
+    date_joined timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.auth_user OWNER TO root;
+
+--
+-- Name: auth_user_groups; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.auth_user_groups (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    group_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_user_groups OWNER TO root;
+
+--
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.auth_user_groups_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_groups_id_seq OWNER TO root;
+
+--
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.auth_user_groups_id_seq OWNED BY public.auth_user_groups.id;
+
+
+--
+-- Name: auth_user_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.auth_user_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_id_seq OWNER TO root;
+
+--
+-- Name: auth_user_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.auth_user_id_seq OWNED BY public.auth_user.id;
+
+
+--
+-- Name: auth_user_user_permissions; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.auth_user_user_permissions (
+    id integer NOT NULL,
+    user_id integer NOT NULL,
+    permission_id integer NOT NULL
+);
+
+
+ALTER TABLE public.auth_user_user_permissions OWNER TO root;
+
+--
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.auth_user_user_permissions_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.auth_user_user_permissions_id_seq OWNER TO root;
+
+--
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.auth_user_user_permissions_id_seq OWNED BY public.auth_user_user_permissions.id;
+
+
+--
+-- Name: blog_post; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.blog_post (
+    id integer NOT NULL,
+    title character varying(140) NOT NULL,
+    summary text,
+    body text NOT NULL,
+    created_at timestamp with time zone NOT NULL,
+    edited_at timestamp with time zone NOT NULL,
+    published_at timestamp with time zone,
+    author_id integer,
+    status character varying(1) NOT NULL,
+    category_id integer,
+    priority integer NOT NULL,
+    read integer NOT NULL,
+    "time" integer NOT NULL,
+    slug character varying(140) NOT NULL
+);
+
+
+ALTER TABLE public.blog_post OWNER TO root;
+
+--
+-- Name: blog_post_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.blog_post_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.blog_post_id_seq OWNER TO root;
+
+--
+-- Name: blog_post_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.blog_post_id_seq OWNED BY public.blog_post.id;
+
+
+--
+-- Name: blog_post_tags; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.blog_post_tags (
+    id integer NOT NULL,
+    post_id integer NOT NULL,
+    posttag_id integer NOT NULL
+);
+
+
+ALTER TABLE public.blog_post_tags OWNER TO root;
+
+--
+-- Name: blog_post_tags_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.blog_post_tags_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.blog_post_tags_id_seq OWNER TO root;
+
+--
+-- Name: blog_post_tags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.blog_post_tags_id_seq OWNED BY public.blog_post_tags.id;
+
+
+--
+-- Name: blog_postcategory; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.blog_postcategory (
+    id integer NOT NULL,
+    name character varying(20) NOT NULL,
+    created_at timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.blog_postcategory OWNER TO root;
+
+--
+-- Name: blog_postcategory_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.blog_postcategory_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.blog_postcategory_id_seq OWNER TO root;
+
+--
+-- Name: blog_postcategory_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.blog_postcategory_id_seq OWNED BY public.blog_postcategory.id;
+
+
+--
+-- Name: blog_posttag; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.blog_posttag (
+    id integer NOT NULL,
+    created_at timestamp with time zone NOT NULL,
+    name character varying(16) NOT NULL
+);
+
+
+ALTER TABLE public.blog_posttag OWNER TO root;
+
+--
+-- Name: blog_posttag_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.blog_posttag_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.blog_posttag_id_seq OWNER TO root;
+
+--
+-- Name: blog_posttag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.blog_posttag_id_seq OWNED BY public.blog_posttag.id;
+
+
+--
+-- Name: common_tag; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.common_tag (
+    id integer NOT NULL,
+    name character varying(100) NOT NULL,
+    slug character varying(50) NOT NULL,
+    description text,
+    created_at timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.common_tag OWNER TO root;
+
+--
+-- Name: common_tag_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.common_tag_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.common_tag_id_seq OWNER TO root;
+
+--
+-- Name: common_tag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.common_tag_id_seq OWNED BY public.common_tag.id;
+
+
+--
+-- Name: contact_contactform; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.contact_contactform (
+    id integer NOT NULL,
+    created_at timestamp with time zone NOT NULL,
+    remote_addr inet NOT NULL,
+    user_agent character varying(256),
+    path character varying(256) NOT NULL,
+    title character varying(256),
+    body text NOT NULL,
+    email character varying(254) NOT NULL,
+    contact character varying(64) NOT NULL,
+    phone character varying(32),
+    category_id integer
+);
+
+
+ALTER TABLE public.contact_contactform OWNER TO root;
+
+--
+-- Name: contact_contactform_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.contact_contactform_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.contact_contactform_id_seq OWNER TO root;
+
+--
+-- Name: contact_contactform_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.contact_contactform_id_seq OWNED BY public.contact_contactform.id;
+
+
+--
+-- Name: contact_contactformcategory; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.contact_contactformcategory (
+    id integer NOT NULL,
+    name character varying(32) NOT NULL,
+    url character varying(200)
+);
+
+
+ALTER TABLE public.contact_contactformcategory OWNER TO root;
+
+--
+-- Name: contact_contactformcategory_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.contact_contactformcategory_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.contact_contactformcategory_id_seq OWNER TO root;
+
+--
+-- Name: contact_contactformcategory_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.contact_contactformcategory_id_seq OWNED BY public.contact_contactformcategory.id;
+
+
+--
+-- Name: django_admin_log; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.django_admin_log (
+    id integer NOT NULL,
+    action_time timestamp with time zone NOT NULL,
+    object_id text,
+    object_repr character varying(200) NOT NULL,
+    action_flag smallint NOT NULL,
+    change_message text NOT NULL,
+    content_type_id integer,
+    user_id integer NOT NULL,
+    CONSTRAINT django_admin_log_action_flag_check CHECK ((action_flag >= 0))
+);
+
+
+ALTER TABLE public.django_admin_log OWNER TO root;
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.django_admin_log_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_admin_log_id_seq OWNER TO root;
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.django_admin_log_id_seq OWNED BY public.django_admin_log.id;
+
+
+--
+-- Name: django_content_type; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.django_content_type (
+    id integer NOT NULL,
+    app_label character varying(100) NOT NULL,
+    model character varying(100) NOT NULL
+);
+
+
+ALTER TABLE public.django_content_type OWNER TO root;
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.django_content_type_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_content_type_id_seq OWNER TO root;
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.django_content_type_id_seq OWNED BY public.django_content_type.id;
+
+
+--
+-- Name: django_migrations; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.django_migrations (
+    id integer NOT NULL,
+    app character varying(255) NOT NULL,
+    name character varying(255) NOT NULL,
+    applied timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.django_migrations OWNER TO root;
+
+--
+-- Name: django_migrations_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.django_migrations_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.django_migrations_id_seq OWNER TO root;
+
+--
+-- Name: django_migrations_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.django_migrations_id_seq OWNED BY public.django_migrations.id;
+
+
+--
+-- Name: django_session; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.django_session (
+    session_key character varying(40) NOT NULL,
+    session_data text NOT NULL,
+    expire_date timestamp with time zone NOT NULL
+);
+
+
+ALTER TABLE public.django_session OWNER TO root;
+
+--
+-- Name: event_event; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.event_event (
+    id integer NOT NULL,
+    name character varying(64) NOT NULL,
+    description text,
+    body text,
+    origin_url character varying(200) NOT NULL,
+    internal_url character varying(200),
+    thumbnail character varying(1024) NOT NULL,
+    starts_at timestamp with time zone NOT NULL,
+    ends_at timestamp with time zone,
+    published boolean NOT NULL,
+    added_at timestamp with time zone NOT NULL,
+    added_by_id integer,
+    etype_id integer,
+    deadline timestamp with time zone,
+    location character varying(100),
+    priority integer NOT NULL,
+    prize character varying(20),
+    holder character varying(140),
+    slug character varying(64) NOT NULL
+);
+
+
+ALTER TABLE public.event_event OWNER TO root;
+
+--
+-- Name: event_event_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.event_event_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.event_event_id_seq OWNER TO root;
+
+--
+-- Name: event_event_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.event_event_id_seq OWNED BY public.event_event.id;
+
+
+--
+-- Name: event_event_tags; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.event_event_tags (
+    id integer NOT NULL,
+    event_id integer NOT NULL,
+    tag_id integer NOT NULL
+);
+
+
+ALTER TABLE public.event_event_tags OWNER TO root;
+
+--
+-- Name: event_event_tags_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.event_event_tags_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.event_event_tags_id_seq OWNER TO root;
+
+--
+-- Name: event_event_tags_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.event_event_tags_id_seq OWNED BY public.event_event_tags.id;
+
+
+--
+-- Name: event_eventtag; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.event_eventtag (
+    id integer NOT NULL,
+    name character varying(20) NOT NULL
+);
+
+
+ALTER TABLE public.event_eventtag OWNER TO root;
+
+--
+-- Name: event_eventtag_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.event_eventtag_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.event_eventtag_id_seq OWNER TO root;
+
+--
+-- Name: event_eventtag_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.event_eventtag_id_seq OWNED BY public.event_eventtag.id;
+
+
+--
+-- Name: event_eventtype; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.event_eventtype (
+    id integer NOT NULL,
+    name character varying(20) NOT NULL,
+    url character varying(200)
+);
+
+
+ALTER TABLE public.event_eventtype OWNER TO root;
+
+--
+-- Name: event_eventtype_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.event_eventtype_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.event_eventtype_id_seq OWNER TO root;
+
+--
+-- Name: event_eventtype_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.event_eventtype_id_seq OWNED BY public.event_eventtype.id;
+
+
+--
+-- Name: profile_profile; Type: TABLE; Schema: public; Owner: root
+--
+
+CREATE TABLE public.profile_profile (
+    id integer NOT NULL,
+    title character varying(100) NOT NULL,
+    bio text NOT NULL,
+    linkedin character varying(200) NOT NULL,
+    instagram character varying(200) NOT NULL,
+    user_id integer NOT NULL
+);
+
+
+ALTER TABLE public.profile_profile OWNER TO root;
+
+--
+-- Name: profile_profile_id_seq; Type: SEQUENCE; Schema: public; Owner: root
+--
+
+CREATE SEQUENCE public.profile_profile_id_seq
+    AS integer
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+ALTER TABLE public.profile_profile_id_seq OWNER TO root;
+
+--
+-- Name: profile_profile_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: root
+--
+
+ALTER SEQUENCE public.profile_profile_id_seq OWNED BY public.profile_profile.id;
+
+
+--
+-- Name: auth_group id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_group ALTER COLUMN id SET DEFAULT nextval('public.auth_group_id_seq'::regclass);
+
+
+--
+-- Name: auth_group_permissions id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_group_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_group_permissions_id_seq'::regclass);
+
+
+--
+-- Name: auth_permission id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_permission ALTER COLUMN id SET DEFAULT nextval('public.auth_permission_id_seq'::regclass);
+
+
+--
+-- Name: auth_user id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user ALTER COLUMN id SET DEFAULT nextval('public.auth_user_id_seq'::regclass);
+
+
+--
+-- Name: auth_user_groups id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_groups ALTER COLUMN id SET DEFAULT nextval('public.auth_user_groups_id_seq'::regclass);
+
+
+--
+-- Name: auth_user_user_permissions id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_user_permissions ALTER COLUMN id SET DEFAULT nextval('public.auth_user_user_permissions_id_seq'::regclass);
+
+
+--
+-- Name: blog_post id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post ALTER COLUMN id SET DEFAULT nextval('public.blog_post_id_seq'::regclass);
+
+
+--
+-- Name: blog_post_tags id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post_tags ALTER COLUMN id SET DEFAULT nextval('public.blog_post_tags_id_seq'::regclass);
+
+
+--
+-- Name: blog_postcategory id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_postcategory ALTER COLUMN id SET DEFAULT nextval('public.blog_postcategory_id_seq'::regclass);
+
+
+--
+-- Name: blog_posttag id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_posttag ALTER COLUMN id SET DEFAULT nextval('public.blog_posttag_id_seq'::regclass);
+
+
+--
+-- Name: common_tag id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.common_tag ALTER COLUMN id SET DEFAULT nextval('public.common_tag_id_seq'::regclass);
+
+
+--
+-- Name: contact_contactform id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.contact_contactform ALTER COLUMN id SET DEFAULT nextval('public.contact_contactform_id_seq'::regclass);
+
+
+--
+-- Name: contact_contactformcategory id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.contact_contactformcategory ALTER COLUMN id SET DEFAULT nextval('public.contact_contactformcategory_id_seq'::regclass);
+
+
+--
+-- Name: django_admin_log id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_admin_log ALTER COLUMN id SET DEFAULT nextval('public.django_admin_log_id_seq'::regclass);
+
+
+--
+-- Name: django_content_type id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_content_type ALTER COLUMN id SET DEFAULT nextval('public.django_content_type_id_seq'::regclass);
+
+
+--
+-- Name: django_migrations id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_migrations ALTER COLUMN id SET DEFAULT nextval('public.django_migrations_id_seq'::regclass);
+
+
+--
+-- Name: event_event id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event ALTER COLUMN id SET DEFAULT nextval('public.event_event_id_seq'::regclass);
+
+
+--
+-- Name: event_event_tags id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event_tags ALTER COLUMN id SET DEFAULT nextval('public.event_event_tags_id_seq'::regclass);
+
+
+--
+-- Name: event_eventtag id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_eventtag ALTER COLUMN id SET DEFAULT nextval('public.event_eventtag_id_seq'::regclass);
+
+
+--
+-- Name: event_eventtype id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_eventtype ALTER COLUMN id SET DEFAULT nextval('public.event_eventtype_id_seq'::regclass);
+
+
+--
+-- Name: profile_profile id; Type: DEFAULT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.profile_profile ALTER COLUMN id SET DEFAULT nextval('public.profile_profile_id_seq'::regclass);
+
+
+--
+-- Data for Name: auth_group; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.auth_group (id, name) FROM stdin;
+\.
+
+
+--
+-- Data for Name: auth_group_permissions; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.auth_group_permissions (id, group_id, permission_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: auth_permission; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.auth_permission (id, name, content_type_id, codename) FROM stdin;
+1	Can add log entry	1	add_logentry
+2	Can change log entry	1	change_logentry
+3	Can delete log entry	1	delete_logentry
+4	Can view log entry	1	view_logentry
+5	Can add permission	2	add_permission
+6	Can change permission	2	change_permission
+7	Can delete permission	2	delete_permission
+8	Can view permission	2	view_permission
+9	Can add group	3	add_group
+10	Can change group	3	change_group
+11	Can delete group	3	delete_group
+12	Can view group	3	view_group
+13	Can add user	4	add_user
+14	Can change user	4	change_user
+15	Can delete user	4	delete_user
+16	Can view user	4	view_user
+17	Can add content type	5	add_contenttype
+18	Can change content type	5	change_contenttype
+19	Can delete content type	5	delete_contenttype
+20	Can view content type	5	view_contenttype
+21	Can add session	6	add_session
+22	Can change session	6	change_session
+23	Can delete session	6	delete_session
+24	Can view session	6	view_session
+25	Can add profile	7	add_profile
+26	Can change profile	7	change_profile
+27	Can delete profile	7	delete_profile
+28	Can view profile	7	view_profile
+29	Can add post	8	add_post
+30	Can change post	8	change_post
+31	Can delete post	8	delete_post
+32	Can view post	8	view_post
+33	Can add post category	9	add_postcategory
+34	Can change post category	9	change_postcategory
+35	Can delete post category	9	delete_postcategory
+36	Can view post category	9	view_postcategory
+37	Can add event type	10	add_eventtype
+38	Can change event type	10	change_eventtype
+39	Can delete event type	10	delete_eventtype
+40	Can view event type	10	view_eventtype
+41	Can add event	11	add_event
+42	Can change event	11	change_event
+43	Can delete event	11	delete_event
+44	Can view event	11	view_event
+45	Can add post tag	12	add_posttag
+46	Can change post tag	12	change_posttag
+47	Can delete post tag	12	delete_posttag
+48	Can view post tag	12	view_posttag
+49	Can add contact form	13	add_contactform
+50	Can change contact form	13	change_contactform
+51	Can delete contact form	13	delete_contactform
+52	Can view contact form	13	view_contactform
+53	Can add contact form category	14	add_contactformcategory
+54	Can change contact form category	14	change_contactformcategory
+55	Can delete contact form category	14	delete_contactformcategory
+56	Can view contact form category	14	view_contactformcategory
+57	Can add event tag	15	add_eventtag
+58	Can change event tag	15	change_eventtag
+59	Can delete event tag	15	delete_eventtag
+60	Can view event tag	15	view_eventtag
+61	Can add tag	16	add_tag
+62	Can change tag	16	change_tag
+63	Can delete tag	16	delete_tag
+64	Can view tag	16	view_tag
+\.
+
+
+--
+-- Data for Name: auth_user; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.auth_user (id, password, last_login, is_superuser, username, first_name, last_name, email, is_staff, is_active, date_joined) FROM stdin;
+2	pbkdf2_sha256$180000$sAQcokvaP3mc$J46k2qR9V8gq4es400PnE8DsB+jKUHnDYMBHm7kvBMk=	\N	t	testserver				t	t	2020-05-25 15:32:52.366843+03
+3	pbkdf2_sha256$180000$V7z9m4jL8SOE$Z8p4hm+6ZVIg/nJywz+4Ywmoq80DDR2PXT2wF0bIouc=	\N	t	ttest				t	t	2020-06-03 19:12:45.81706+03
+1	pbkdf2_sha256$180000$AjybgxFhGgNo$vy+5QvnA6Qv/7rQYonGyENciZasU8QiuPkrSdgfO8aY=	2020-06-08 20:27:46.236632+03	t	divisia			omrfyyz@gmail.com	t	t	2020-05-24 02:03:56.41276+03
+5	pbkdf2_sha256$180000$0S7D9OdhzP8i$+cQCROvHZ13KuZV/ClIB2Y39chCTa/MylJt04Cw0MrU=	2020-06-08 20:30:44.850639+03	f	senem				t	t	2020-06-04 17:19:22+03
+4	pbkdf2_sha256$180000$2sT39D99GtFs$ufhSH1Vaqd/FL1MRBSEMwhfP32cm4VwPG06xkSoWKjU=	2020-06-09 18:16:33.316663+03	t	test				t	t	2020-06-03 19:13:31.600686+03
+\.
+
+
+--
+-- Data for Name: auth_user_groups; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.auth_user_groups (id, user_id, group_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: auth_user_user_permissions; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.auth_user_user_permissions (id, user_id, permission_id) FROM stdin;
+1	5	32
+2	5	33
+3	5	34
+4	5	35
+5	5	36
+6	5	37
+7	5	38
+8	5	40
+9	5	41
+10	5	42
+11	5	44
+12	5	45
+13	5	46
+14	5	48
+15	5	57
+16	5	58
+17	5	60
+18	5	29
+19	5	30
+20	5	31
+\.
+
+
+--
+-- Data for Name: blog_post; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.blog_post (id, title, summary, body, created_at, edited_at, published_at, author_id, status, category_id, priority, read, "time", slug) FROM stdin;
+1	Tatlı minik blog postum	Tatlı minik blog postumun iki cümlelik özeti. İki cümle.	tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postum tatlı minik blog postumTatlı minik blog postum tatlı minik blog postum	2020-05-28 19:44:49.450522+03	2020-06-09 18:18:32.035641+03	\N	1	p	1	1	35	0	tatl-minik-blog-postum
+2	Uğur	Deneneme uğur uğru	<p>hello emre</p>	2020-06-07 20:35:32.218645+03	2020-06-09 18:18:32.06713+03	\N	\N	p	1	1	1	0	ugur
+3	uğur 2	gegege	<p>lorem ipsum</p>	2020-06-07 20:35:50.924608+03	2020-06-09 18:18:32.090101+03	\N	\N	p	1	1	1	0	ugur-2
+4	uğur 3	uğur 3	<p>uğur 3 uğur 3 uğur 3 uğur 3 uğur 3 uğur 3</p>	2020-06-07 20:36:10.687282+03	2020-06-09 18:18:32.112008+03	\N	\N	p	1	1	1	0	ugur-3
+5	uğur 4	uğur 4 uğur 4 uğur 4 uğur 4 uğur 4 uğur 4	<p>uğur 4 uğur 4 uğur 4 uğur 4 uğur 4</p>	2020-06-07 20:36:30.959648+03	2020-06-09 18:18:32.133885+03	\N	\N	p	1	1	1	0	ugur-4
+\.
+
+
+--
+-- Data for Name: blog_post_tags; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.blog_post_tags (id, post_id, posttag_id) FROM stdin;
+\.
+
+
+--
+-- Data for Name: blog_postcategory; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.blog_postcategory (id, name, created_at) FROM stdin;
+1	tatlı kategori	2020-05-28 19:44:00.192545+03
+\.
+
+
+--
+-- Data for Name: blog_posttag; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.blog_posttag (id, created_at, name) FROM stdin;
+1	2020-05-29 21:37:33.72445+03	kat
+2	2020-05-29 21:37:38.196689+03	kat2
+3	2020-05-29 21:37:42.145808+03	mmm2
+4	2020-05-29 21:37:44.468437+03	mmm
+\.
+
+
+--
+-- Data for Name: common_tag; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.common_tag (id, name, slug, description, created_at) FROM stdin;
+1	online	online	\N	2020-06-09 18:06:03.366882+03
+2	commercial	commercial	\N	2020-06-09 18:06:03.408969+03
+3	Sürdürülebilirlik	surdurulebilirlik	\N	2020-06-09 18:06:03.431022+03
+4	Akıllı Şehirler	akilli-sehirler	\N	2020-06-09 18:06:03.441732+03
+5	Covid19	covid19	\N	2020-06-09 18:06:03.453029+03
+6	ödüllü	odullu	\N	2020-06-09 18:06:03.464046+03
+7	Akıllı Ulaşım	akilli-ulasim	\N	2020-06-09 18:06:03.476084+03
+8	Girişimcilik	girisimcilik	\N	2020-06-09 18:06:03.488759+03
+9	Blockchain	blockchain	\N	2020-06-09 18:06:03.497943+03
+10	Siber Güvenlik	siber-guvenlik	\N	2020-06-09 18:06:03.50872+03
+11	Oyun	oyun	\N	2020-06-09 18:06:03.519637+03
+\.
+
+
+--
+-- Data for Name: contact_contactform; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.contact_contactform (id, created_at, remote_addr, user_agent, path, title, body, email, contact, phone, category_id) FROM stdin;
+2	2020-05-29 15:15:04.368799+03	127.0.0.1	Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0	/contact/	Merba	Merba yardımcı olr musuz	omrfyyz@gmail.com	Adım soyadım	+90 555 555 55 55	1
+3	2020-05-29 15:16:26.539613+03	127.0.0.1	Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0	/contact/	Merba	Merba yardımcı olr musuz	omrfyyz@gmail.com	Adım soyadım	+90 555 555 55 55	1
+4	2020-05-29 16:25:21.493276+03	127.0.0.1	Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0	/contact/	szgasfg	asdfas	omrfyyz@gmail.com	dgfvsdg	sdfgvfsdgbsd	1
+5	2020-05-29 16:26:24.551202+03	127.0.0.1	Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:76.0) Gecko/20100101 Firefox/76.0	/contact/	szgasfg	asdfas	omrfyyz@gmail.com	dgfvsdg	sdfgvfsdgbsd	1
+6	2020-06-08 20:17:27.512404+03	78.163.14.2	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/81.0.4044.138 Safari/537.36	/contact/	\N	abc	nonemre@gmail.com	Emre	5388155059	2
+\.
+
+
+--
+-- Data for Name: contact_contactformcategory; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.contact_contactformcategory (id, name, url) FROM stdin;
+1	kattttt	https://dummyurl.com
+2	B	\N
+\.
+
+
+--
+-- Data for Name: django_admin_log; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.django_admin_log (id, action_time, object_id, object_repr, action_flag, change_message, content_type_id, user_id) FROM stdin;
+1	2020-05-24 02:23:52.88401+03	1	Lorem Ipsum Hackathon, 2020	1	[{"added": {}}]	11	1
+2	2020-05-24 03:38:54.962886+03	790	Facebook Hackathons - AR, AI, Messaging, 2020	2	[{"changed": {"fields": ["Event type"]}}]	11	1
+3	2020-05-24 12:02:50.51566+03	1002	HacknBreak 2020, 2020	2	[{"changed": {"fields": ["Location", "Holder"]}}]	11	1
+4	2020-05-24 12:10:01.867427+03	2	gamejam	2	[{"changed": {"fields": ["Name"]}}]	10	1
+5	2020-05-25 13:57:38.877294+03	1002	HacknBreak 2020, 2020	2	[]	11	1
+6	2020-05-28 19:44:00.207788+03	1	tatlı kategori	1	[{"added": {}}]	9	1
+7	2020-05-28 19:44:49.534478+03	1	Tatlı minik blog postum from divisia	1	[{"added": {}}]	8	1
+8	2020-05-28 19:45:13.625388+03	1	Tatlı minik blog postum from divisia	2	[{"changed": {"fields": ["Published at"]}}]	8	1
+9	2020-05-28 22:01:11.774136+03	1	Tatlı minik blog postum	2	[{"changed": {"fields": ["Status"]}}]	8	1
+10	2020-05-29 15:12:22.250498+03	1	ContactFormCategory object (1)	1	[{"added": {}}]	14	1
+11	2020-06-01 17:02:17.229518+03	1	online	1	[{"added": {}}]	15	1
+12	2020-06-01 17:02:30.018572+03	2	commercial	1	[{"added": {}}]	15	1
+13	2020-06-01 17:03:28.449575+03	1002	HacknBreak 2020 (2020)	2	[{"changed": {"fields": ["Tags"]}}]	11	1
+14	2020-06-01 17:03:41.802115+03	977	Educathon (2020)	2	[{"changed": {"fields": ["Tags"]}}]	11	1
+15	2020-06-03 19:23:06.676187+03	3	Sürdürülebilirlik	1	[{"added": {}}]	15	4
+16	2020-06-03 19:23:15.207781+03	4	Akıllı Şehirler	1	[{"added": {}}]	15	4
+17	2020-06-03 19:23:17.408446+03	1002	HacknBreak 2020 (2020)	2	[{"changed": {"fields": ["Body", "Tags"]}}]	11	4
+18	2020-06-04 17:19:22.158089+03	5	senem	1	[{"added": {}}]	4	4
+19	2020-06-04 17:22:57.119733+03	5	senem	2	[{"changed": {"fields": ["Staff status"]}}]	4	4
+20	2020-06-04 17:45:35.951696+03	5	senem	2	[{"changed": {"fields": ["User permissions"]}}]	4	4
+21	2020-06-05 11:35:50.778606+03	5	Covid19	1	[{"added": {}}]	15	4
+22	2020-06-05 11:36:57.335519+03	996	Tasarım Hackathonu: Covid – 19 Salgını ile Mücadele (2020)	2	[{"changed": {"fields": ["Body", "Tags"]}}]	11	4
+23	2020-06-05 12:01:08.73772+03	6	ödüllü	1	[{"added": {}}]	15	5
+24	2020-06-05 12:01:21.136733+03	977	Educathon (2020)	2	[{"changed": {"fields": ["Body", "Tags"]}}]	11	5
+25	2020-06-05 12:04:51.241874+03	7	bootcamp	1	[{"added": {}}]	10	5
+26	2020-06-05 12:05:13.194615+03	1001	CaseCampus Bootcamp Live (2020)	2	[{"changed": {"fields": ["Body", "Event type", "Tags"]}}]	11	5
+27	2020-06-05 12:06:25.194894+03	996	Tasarım Hackathonu: Covid – 19 Salgını ile Mücadele (2020)	2	[{"changed": {"fields": ["Body", "Tags"]}}]	11	5
+28	2020-06-05 12:07:24.087909+03	1004	NASA Space Apps Covid-19 Challenge (2020)	2	[{"changed": {"fields": ["Event type", "Tags"]}}]	11	5
+29	2020-06-05 12:08:04.757576+03	1003	Complexity Jam (2020)	2	[{"changed": {"fields": ["Tags"]}}]	11	5
+30	2020-06-05 12:10:50.517314+03	999	Gameathon Genç (2020)	2	[{"changed": {"fields": ["Body", "Origin url", "Tags"]}}]	11	5
+31	2020-06-05 12:13:23.400073+03	997	UNIdeathon (2020)	2	[{"changed": {"fields": ["Body", "Tags"]}}]	11	5
+32	2020-06-05 12:15:50.009997+03	998	Code Mamak (2020)	2	[{"changed": {"fields": ["Body", "Event type", "Tags"]}}]	11	5
+33	2020-06-05 12:18:14.589049+03	995	Online Simülasyon Hackathonu (2020)	2	[{"changed": {"fields": ["Body", "Starts at", "Ends at", "Tags"]}}]	11	5
+34	2020-06-05 12:22:23.757655+03	993	Hack the Normal (2020)	2	[{"changed": {"fields": ["Body", "Ends at", "Holder", "Tags"]}}]	11	5
+35	2020-06-05 12:32:28.802993+03	994	Online Genç Ideathon (2020)	2	[{"changed": {"fields": ["Description", "Body", "Ends at", "Holder", "Tags"]}}]	11	5
+36	2020-06-05 12:37:43.370689+03	992	Online Marketing Hackathon (2020)	2	[{"changed": {"fields": ["Body", "Holder", "Tags"]}}]	11	5
+37	2020-06-05 12:41:42.665809+03	1005	Next Game Startup - Oyun Girişimciliği (2020)	2	[{"changed": {"fields": ["Body", "Tags"]}}]	11	5
+38	2020-06-05 12:45:00.272833+03	7	Akıllı Ulaşım	1	[{"added": {}}]	15	5
+39	2020-06-05 12:46:00.060747+03	974	Science Expo Hackathon (2020)	2	[{"changed": {"fields": ["Body", "Location", "Holder", "Tags"]}}]	11	5
+40	2020-06-05 12:49:02.675486+03	991	Designathon for Cure (2020)	2	[{"changed": {"fields": ["Body", "Tags"]}}]	11	5
+41	2020-06-05 12:50:55.417137+03	989	Yarını Kodlayanlar Online Covideathon (2020)	2	[{"changed": {"fields": ["Body", "Holder", "Tags"]}}]	11	5
+42	2020-06-05 12:52:19.105362+03	972	Denizli Çocuk Hackathonu (2020)	2	[{"changed": {"fields": ["Body", "Location", "Tags"]}}]	11	5
+43	2020-06-05 12:57:38.85734+03	990	FarkLabs Hackathon - #fikrinevdekalmasin (2020)	2	[{"changed": {"fields": ["Body", "Holder", "Tags"]}}]	11	5
+44	2020-06-05 13:00:59.126673+03	8	Girişimcilik	1	[{"added": {}}]	15	5
+45	2020-06-05 13:01:01.49223+03	979	ANSIAD Değişim Yarat Hackathon (2020)	2	[{"changed": {"fields": ["Body", "Location", "Tags"]}}]	11	5
+46	2020-06-05 13:02:01.517352+03	9	Blockchain	1	[{"added": {}}]	15	5
+47	2020-06-05 13:02:03.549784+03	987	Chainathon - Blockchain Hackathon (2020)	2	[{"changed": {"fields": ["Holder", "Published", "Tags"]}}]	11	5
+48	2020-06-05 13:04:52.948391+03	988	Coronathon Türkiye (2020)	2	[{"changed": {"fields": ["Body", "Event type", "Tags"]}}]	11	5
+49	2020-06-05 13:07:42.039022+03	984	Veri Müşterekleri için Ağ Haritalama Hackathonu (2020)	2	[{"changed": {"fields": ["Description", "Body", "Location", "Tags"]}}]	11	5
+50	2020-06-05 13:11:35.199164+03	954	Genç Duruş Hackathonu (2020)	2	[{"changed": {"fields": ["Body", "Location", "Tags"]}}]	11	5
+51	2020-06-05 13:13:07.123408+03	10	Siber Güvenlik	1	[{"added": {}}]	15	5
+52	2020-06-05 13:13:14.582488+03	983	Siber Güvenlik Fikir Yarışması (2020)	2	[{"changed": {"fields": ["Body", "Event type", "Location", "Tags"]}}]	11	5
+53	2020-06-05 13:15:10.752416+03	981	Big React Hackathon (2020)	2	[{"changed": {"fields": ["Body", "Location", "Holder", "Tags"]}}]	11	5
+54	2020-06-05 13:18:34.045877+03	986	Hack PCB (2020)	2	[{"changed": {"fields": ["Body", "Event type", "Location", "Holder", "Tags"]}}]	11	5
+55	2020-06-05 13:30:45.485499+03	980	U4S ERÜ Girişimcilik Kampı (2020)	2	[{"changed": {"fields": ["Event type", "Holder", "Tags"]}}]	11	5
+56	2020-06-05 13:32:31.926338+03	980	U4S ERÜ Girişimcilik Kampı (2020)	2	[{"changed": {"fields": ["Body", "Location"]}}]	11	5
+57	2020-06-05 13:37:05.193781+03	978	Code of Duty (2020)	2	[{"changed": {"fields": ["Body", "Event type", "Location", "Holder", "Tags"]}}]	11	5
+58	2020-06-05 13:41:25.302581+03	964	Deprem Hackathonu (2020)	2	[{"changed": {"fields": ["Body", "Location", "Tags"]}}]	11	5
+59	2020-06-05 13:43:15.323229+03	973	İzmir Hackathon (2020)	2	[{"changed": {"fields": ["Body", "Location", "Holder", "Tags"]}}]	11	5
+60	2020-06-05 13:44:50.961043+03	963	Hackathon Life Solutions (2020)	2	[{"changed": {"fields": ["Published", "Tags"]}}]	11	5
+61	2020-06-05 13:48:29.81713+03	958	Sosyal Hackathon (2020)	2	[{"changed": {"fields": ["Body", "Location", "Holder", "Tags"]}}]	11	5
+62	2020-06-05 13:49:48.685174+03	985	Github Actions Hackathon (2020)	2	[{"changed": {"fields": ["Tags"]}}]	11	5
+63	2020-06-05 13:51:20.077183+03	976	Alternatif Bank Engelsiz Bankacılık Hackathon (2020)	2	[{"changed": {"fields": ["Body", "Location", "Holder", "Tags"]}}]	11	5
+64	2020-06-05 16:17:03.64401+03	973	İzmir Hackathon (2020)	2	[{"changed": {"fields": ["Holder"]}}]	11	5
+65	2020-06-05 16:17:16.655725+03	994	Online Genç Ideathon (2020)	2	[{"changed": {"fields": ["Holder"]}}]	11	5
+66	2020-06-05 16:17:30.232519+03	974	Science Expo Hackathon (2020)	2	[{"changed": {"fields": ["Holder"]}}]	11	5
+67	2020-06-05 16:17:56.019917+03	978	Code of Duty (2020)	2	[{"changed": {"fields": ["Holder"]}}]	11	5
+68	2020-06-05 17:00:29.566274+03	968	Algorun'20 Hackathon (2020)	2	[{"changed": {"fields": ["Origin url", "Location", "Published", "Tags"]}}]	11	5
+69	2020-06-05 17:01:27.95722+03	11	Oyun	1	[{"added": {}}]	15	5
+70	2020-06-05 17:01:33.001127+03	965	Peak Unithon (2020)	2	[{"changed": {"fields": ["Location", "Tags"]}}]	11	5
+71	2020-06-05 17:01:47.794951+03	1003	Complexity Jam (2020)	2	[{"changed": {"fields": ["Tags"]}}]	11	5
+72	2020-06-05 17:08:47.006223+03	1005	Next Game Startup - Oyun Girişimciliği (2020)	2	[{"changed": {"fields": ["Tags"]}}]	11	5
+73	2020-06-05 17:09:35.668706+03	968	Algorun'20 Hackathon (2020)	2	[{"changed": {"fields": ["Published"]}}]	11	5
+74	2020-06-05 17:11:15.293403+03	8	Makeathon	1	[{"added": {}}]	10	5
+75	2020-06-05 17:12:19.456587+03	975	ÖZÜ Makeathon (2020)	2	[{"changed": {"fields": ["Body", "Event type", "Origin url", "Location", "Holder", "Tags"]}}]	11	5
+76	2020-06-06 16:58:26.653567+03	960	IAthon (2020)	2	[{"changed": {"fields": ["Body", "Holder", "Tags"]}}]	11	5
+77	2020-06-07 20:35:32.224305+03	2	Uğur	1	[{"added": {}}]	8	4
+78	2020-06-07 20:35:50.927817+03	3	uğur 2	1	[{"added": {}}]	8	4
+79	2020-06-07 20:36:10.690371+03	4	uğur 3	1	[{"added": {}}]	8	4
+80	2020-06-07 20:36:30.962641+03	5	uğur 4	1	[{"added": {}}]	8	4
+81	2020-06-08 20:20:15.278286+03	1	divisia	2	[{"changed": {"fields": ["password"]}}]	4	4
+82	2020-06-08 20:28:21.314135+03	5	senem	2	[{"changed": {"fields": ["password"]}}]	4	1
+83	2020-06-09 16:57:31.684526+03	970	Ostim Teknopark Hackathon (2020)	2	[{"changed": {"fields": ["Body", "Location", "Holder", "Tags"]}}]	11	5
+84	2020-06-09 17:11:24.441713+03	969	Tobb Gkp Ideathon (2020)	2	[{"changed": {"fields": ["Location", "Published", "Tags"]}}]	11	5
+\.
+
+
+--
+-- Data for Name: django_content_type; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.django_content_type (id, app_label, model) FROM stdin;
+1	admin	logentry
+2	auth	permission
+3	auth	group
+4	auth	user
+5	contenttypes	contenttype
+6	sessions	session
+7	profile	profile
+8	blog	post
+9	blog	postcategory
+10	event	eventtype
+11	event	event
+12	blog	posttag
+13	contact	contactform
+14	contact	contactformcategory
+15	event	eventtag
+16	common	tag
+\.
+
+
+--
+-- Data for Name: django_migrations; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.django_migrations (id, app, name, applied) FROM stdin;
+1	contenttypes	0001_initial	2020-05-24 02:02:20.30743+03
+2	auth	0001_initial	2020-05-24 02:02:20.825947+03
+3	admin	0001_initial	2020-05-24 02:02:21.579398+03
+4	admin	0002_logentry_remove_auto_add	2020-05-24 02:02:21.770405+03
+5	admin	0003_logentry_add_action_flag_choices	2020-05-24 02:02:21.839188+03
+6	contenttypes	0002_remove_content_type_name	2020-05-24 02:02:21.974556+03
+7	auth	0002_alter_permission_name_max_length	2020-05-24 02:02:22.070031+03
+8	auth	0003_alter_user_email_max_length	2020-05-24 02:02:22.137731+03
+9	auth	0004_alter_user_username_opts	2020-05-24 02:02:22.213033+03
+10	auth	0005_alter_user_last_login_null	2020-05-24 02:02:22.284587+03
+11	auth	0006_require_contenttypes_0002	2020-05-24 02:02:22.305994+03
+12	auth	0007_alter_validators_add_error_messages	2020-05-24 02:02:22.378515+03
+13	auth	0008_alter_user_username_max_length	2020-05-24 02:02:22.503904+03
+14	auth	0009_alter_user_last_name_max_length	2020-05-24 02:02:22.585777+03
+15	auth	0010_alter_group_name_max_length	2020-05-24 02:02:22.663922+03
+16	auth	0011_update_proxy_permissions	2020-05-24 02:02:22.737724+03
+17	blog	0001_initial	2020-05-24 02:02:22.928159+03
+18	blog	0002_auto_20200517_2119	2020-05-24 02:02:23.302968+03
+19	blog	0003_auto_20200518_1737	2020-05-24 02:02:23.608935+03
+20	event	0001_initial	2020-05-24 02:02:24.02462+03
+21	event	0002_auto_20200517_2119	2020-05-24 02:02:24.580696+03
+22	event	0003_auto_20200517_2209	2020-05-24 02:02:24.6899+03
+23	event	0004_auto_20200517_2209	2020-05-24 02:02:24.77993+03
+24	event	0005_event_deadline	2020-05-24 02:02:24.878024+03
+25	event	0006_event_is_online	2020-05-24 02:02:25.155822+03
+26	event	0007_auto_20200518_1629	2020-05-24 02:02:25.276238+03
+27	event	0008_auto_20200519_2302	2020-05-24 02:02:25.81831+03
+28	event	0009_event_holder	2020-05-24 02:02:25.929672+03
+29	profile	0001_initial	2020-05-24 02:02:26.16713+03
+30	sessions	0001_initial	2020-05-24 02:02:26.301049+03
+31	event	0010_remove_event_is_online	2020-05-24 02:20:10.79964+03
+32	event	0011_auto_20200524_0227	2020-05-24 02:27:16.182292+03
+33	event	0012_auto_20200525_2335	2020-05-25 23:35:15.313606+03
+34	blog	0004_auto_20200528_1937	2020-05-28 19:37:52.069533+03
+35	event	0013_auto_20200528_1937	2020-05-28 19:37:52.419763+03
+36	blog	0005_auto_20200528_1939	2020-05-28 19:39:45.424575+03
+37	blog	0006_auto_20200528_2003	2020-05-28 20:03:55.116955+03
+38	blog	0007_auto_20200529_1445	2020-05-29 14:45:35.635275+03
+39	contact	0001_initial	2020-05-29 14:58:24.904304+03
+40	contact	0002_auto_20200529_1611	2020-05-29 16:11:57.199411+03
+41	contact	0003_auto_20200529_1629	2020-05-29 16:29:29.846409+03
+42	blog	0008_auto_20200530_1723	2020-05-30 17:23:50.453652+03
+43	event	0014_auto_20200601_1654	2020-06-01 16:54:47.090072+03
+44	blog	0009_post_slug	2020-06-02 12:23:28.789005+03
+45	event	0015_event_slug	2020-06-02 13:02:05.777314+03
+46	blog	0010_auto_20200603_1829	2020-06-03 18:29:24.124192+03
+47	event	0016_auto_20200603_1829	2020-06-03 19:03:59.350119+03
+48	event	0017_auto_20200605_1452	2020-06-05 14:52:44.865521+03
+49	contact	0004_auto_20200608_1332	2020-06-08 20:14:58.894458+03
+50	common	0001_initial	2020-06-09 18:03:19.306339+03
+51	event	0017_auto_20200609_1753	2020-06-09 18:07:57.625987+03
+\.
+
+
+--
+-- Data for Name: django_session; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.django_session (session_key, session_data, expire_date) FROM stdin;
+uu5p030jc0bnl6jlfi5auaeg6vgsvegp	MmYwODlhMmE3NjFjMDk1YThkZjYxYzk5ZTNlZmQ3M2U2ZmRhOTRlMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIwODY2NmFlMGJhODYwOTA1NmU0MzhhODdhMzhjNDFjNWY1NjA1ZDkwIn0=	2020-06-07 02:05:15.295503+03
+67kndrgbl3veqw1xy5dhrnj9afs8tsj5	MmYwODlhMmE3NjFjMDk1YThkZjYxYzk5ZTNlZmQ3M2U2ZmRhOTRlMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIwODY2NmFlMGJhODYwOTA1NmU0MzhhODdhMzhjNDFjNWY1NjA1ZDkwIn0=	2020-06-07 11:44:18.299769+03
+ny06tewgieudxrigml8d0r4k7o5kygsb	MmYwODlhMmE3NjFjMDk1YThkZjYxYzk5ZTNlZmQ3M2U2ZmRhOTRlMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIwODY2NmFlMGJhODYwOTA1NmU0MzhhODdhMzhjNDFjNWY1NjA1ZDkwIn0=	2020-06-08 13:52:45.299527+03
+1g1ti3glfczqo5r8irncrdqwo0bwb22a	MmYwODlhMmE3NjFjMDk1YThkZjYxYzk5ZTNlZmQ3M2U2ZmRhOTRlMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIwODY2NmFlMGJhODYwOTA1NmU0MzhhODdhMzhjNDFjNWY1NjA1ZDkwIn0=	2020-06-12 15:39:45.684841+03
+tjpys757ev96qk5fimpkandyi9lf3fk1	MmYwODlhMmE3NjFjMDk1YThkZjYxYzk5ZTNlZmQ3M2U2ZmRhOTRlMDp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIwODY2NmFlMGJhODYwOTA1NmU0MzhhODdhMzhjNDFjNWY1NjA1ZDkwIn0=	2020-06-15 17:01:03.837059+03
+co4bh7rsbbsje7i9n31ar5wzw7tl33m1	ZjkzOGZlY2I2MjA1NjUwNTU0OTg0ZDc3OTc0ZTQ5ZWM5MzMzZGEyZDp7Il9hdXRoX3VzZXJfaWQiOiI0IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjYjRhMjVhMTQ4MDczNzk5YzYwZDcyMzVmNzIzYmFiZGEwZjlhNzU2In0=	2020-06-17 19:13:42.888316+03
+ubjnlusx1ufvx40aachebaxs48z50xbi	ZjkzOGZlY2I2MjA1NjUwNTU0OTg0ZDc3OTc0ZTQ5ZWM5MzMzZGEyZDp7Il9hdXRoX3VzZXJfaWQiOiI0IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjYjRhMjVhMTQ4MDczNzk5YzYwZDcyMzVmNzIzYmFiZGEwZjlhNzU2In0=	2020-06-18 17:22:30.745518+03
+6vsj3p7t3h66flyrlq4vs7zuxh6q9z70	ODE1NGRlY2U5OTFiYWVhM2ViODk0M2JjN2JmNWIyYjQwYjllOTk2Njp7Il9hdXRoX3VzZXJfaWQiOiI1IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJiYTYwZmRjZTlhNDA3YTU3NjYwOGU1OTI2NGYzZmQxOWIzNGFhMWY0In0=	2020-06-18 17:33:57.702034+03
+ctfz7spvf20anr0hr5iozkgcbj761bnn	ZjkzOGZlY2I2MjA1NjUwNTU0OTg0ZDc3OTc0ZTQ5ZWM5MzMzZGEyZDp7Il9hdXRoX3VzZXJfaWQiOiI0IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiJjYjRhMjVhMTQ4MDczNzk5YzYwZDcyMzVmNzIzYmFiZGEwZjlhNzU2In0=	2020-06-21 20:11:17.2391+03
+wtrgygnev9yr1g6ng874l8oivovhlg2d	YmU0YzFlZTUyZjI2ZmVjYWRlMmUzODJjNzk3ZjM5MDA1YzBkZWVhNzp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIzMGUzNjA0NmYwOTQ3MWM3ODJlZmZiY2NjNWJiNDMyNTkwZDU3ZjQzIn0=	2020-06-22 20:28:21.326039+03
+y7q6zqxgs0nhsopfxpbgcb4r71p7cgu3	OWE3ZDM0NmI1NjE2NjE5MTgzNDUyZTU0YjYxZGZjNGE5NmIxOWY2Mjp7Il9hdXRoX3VzZXJfaWQiOiI1IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiIxMTFhOTVlMjZiOWQ2OWUyMjY2ZDA3YzEyMjUyMGM0MjAyNjY0YjM4In0=	2020-06-22 20:30:44.85967+03
+hp09myv4kbrw6kb35wr4u68gb0uatfkh	Mjk0M2YyMDVkMjk3NTAxZmJmYTJmOTk5ODNhZGRmNTZkYjQxMzllYzp7Il9hdXRoX3VzZXJfaWQiOiI0IiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI3ODQ3NDVkNzY3YjJiOGRkMjQzNTdiOTFlOTdmZTcyODcyNjNkMzNiIn0=	2020-06-23 18:16:33.351477+03
+\.
+
+
+--
+-- Data for Name: event_event; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.event_event (id, name, description, body, origin_url, internal_url, thumbnail, starts_at, ends_at, published, added_at, added_by_id, etype_id, deadline, location, priority, prize, holder, slug) FROM stdin;
+826	Getir Bitaksi Hackathon	16-18 Şubat 2018	\N	http://hackathon.getir.com/	\N		2018-02-16 00:00:00+03	\N	t	2020-05-24 03:40:15.409848+03	\N	1	\N	\N	1	\N	\N	getir-bitaksi-hackathon
+827	IoT Hackathon	16-18 Şubat 2018 - Kayseri	\N	http://habitatdernegi.org/iot-hackathon.html/	\N	thumbnails/thumbnail_BnuDj8q.png	2018-02-16 00:00:00+03	\N	t	2020-05-24 03:40:17.63401+03	\N	1	\N	\N	1	\N	\N	iot-hackathon
+830	Airpreneurs - Aklım Göklerde	6 Farklı ilde seçmeler (Gaziantep - Elazığ - Ankara - Trabzon - Antalya - İstanbul) - Final İstanbul	\N	https://www.airpreneurs.org/	\N	thumbnails/thumbnail_RRjTBT6.png	2018-05-24 00:00:00+03	\N	t	2020-05-24 03:40:18.822598+03	\N	\N	\N	\N	1	\N	\N	airpreneurs-aklm-goklerde
+831	TAV Technologies Boomerang Ideathon	Atatürk Havalimanı C terminali	\N	http://ideathon.techboomerang.aero/	\N		2018-04-14 00:00:00+03	\N	t	2020-05-24 03:40:18.905729+03	\N	3	\N	\N	1	\N	\N	tav-technologies-boomerang-ideathon
+832	TAV Technologies Boomerang Hackathon	Atatürk Havalimanı C terminali	\N	http://hackathon.techboomerang.aero/	\N		2018-04-14 00:00:00+03	\N	t	2020-05-24 03:40:18.978126+03	\N	1	\N	\N	1	\N	\N	tav-technologies-boomerang-hackathon
+834	Citech Hackathones	28-29 Nisan ETTOM Etkinlik Alan - Eskişehir	\N	http://www.citech.com.tr/hackathon/	\N	thumbnails/thumbnail_6hJ3jTt.png	2018-04-27 00:00:00+03	\N	t	2020-05-24 03:40:19.752547+03	\N	1	\N	\N	1	\N	\N	citech-hackathones
+835	Kodla18	21-23 Nisan / KTÜ Prof.Dr Osman Turan Kültür ve Kongre Merkezi - Trabzon	\N	http://kodla.co/	\N	thumbnails/thumbnail_f5oABzb.png	2018-04-21 00:00:00+03	\N	t	2020-05-24 03:40:20.57737+03	\N	\N	\N	\N	1	\N	\N	kodla18
+837	AlgoRun Hackathon	7-8 Nisan ITU Ayazaga Kampusu, Teknokent ARI 2 / İstanbul	\N	http://algorunhackathon.com/	\N	thumbnails/thumbnail_C2iZG5h.png	2018-04-07 00:00:00+03	\N	t	2020-05-24 03:40:22.32108+03	\N	1	\N	\N	1	\N	\N	algorun-hackathon
+839	ALGIDA DESIGN HACKATHON	27-29 Nisan / kworks / 19 Mayıs Cad, Golden Plaza, Kat:1 Şişli / İstanbul	\N	http://www.algidaicintasarla.com/	\N		2018-04-27 00:00:00+03	\N	t	2020-05-24 03:40:26.146286+03	\N	1	\N	\N	1	\N	\N	algida-design-hackathon
+840	Makeathon Ankara	27-29 Nisan / Teknopark Ankara	\N	https://makeathon.makersankara.org/	\N		2018-04-27 00:00:00+03	\N	t	2020-05-24 03:40:26.290347+03	\N	\N	\N	\N	1	\N	\N	makeathon-ankara
+841	Tıpta Bilişim Hackathonu	27 Nisan / Balçova - İzmir	\N	https://tiptabilisim.splashthat.com/	\N	thumbnails/thumbnail_i9r9zrq.png	2018-04-27 00:00:00+03	\N	t	2020-05-24 03:40:26.91778+03	\N	1	\N	\N	1	\N	\N	tpta-bilisim-hackathonu
+842	Kuveyt Türk Hackathon	11 - 13 Mayıs Kozyatağı / İstanbul	\N	http://www.kt-invent.com.tr/	\N	thumbnails/thumbnail_ppdfy9a.png	2018-05-11 00:00:00+03	\N	t	2020-05-24 03:40:29.313992+03	\N	1	\N	\N	1	\N	\N	kuveyt-turk-hackathon
+843	Tepe Savunma Hackathon	22-23 Haziran 2018 / Habita Co-work İstanbul	\N	https://www.tepesavunmahackathon.com/	\N	thumbnails/thumbnail_ENOngcI.png	2018-06-22 00:00:00+03	\N	t	2020-05-24 03:40:30.451165+03	\N	1	\N	\N	1	\N	\N	tepe-savunma-hackathon
+844	Hackathon Düzce	4-6 Mayıs 2018 / Düzce Teknopark Yönetim ve Kuluçka Merkezi Fuaye Alanı	\N	http://www.hackathonduzce.com/	\N	thumbnails/thumbnail_3SUjFsq.png	2018-05-04 00:00:00+03	\N	t	2020-05-24 03:40:31.065216+03	\N	1	\N	\N	1	\N	\N	hackathon-duzce
+846	Fiat Müşteri Deneyimi Hackathon	Vodafone Park - İstanbul 12-13 Mayıs 2018	\N	https://hackathon.fiat.com.tr/	\N	thumbnails/thumbnail_4cF2H4l.png	2018-05-12 00:00:00+03	\N	t	2020-05-24 03:40:31.815278+03	\N	1	\N	\N	1	\N	\N	fiat-musteri-deneyimi-hackathon
+848	Codemaster Hackathon	Kolektif House İstanbul/ 5-6 Mayıs 2018	\N	https://hackathon.obss.com.tr/	\N	thumbnails/thumbnail_vZHzBGX.png	2018-05-05 00:00:00+03	\N	t	2020-05-24 03:40:32.566709+03	\N	1	\N	\N	1	\N	\N	codemaster-hackathon
+849	Alametifarika Hackathon 2018	19 Mayıs Mahallesi. Golden Plaza 1. Kat Şişli / Istanbul / 26-27 Mayıs 2018	\N	https://hackathon.obss.com.tr/	\N		2018-05-26 00:00:00+03	\N	t	2020-05-24 03:40:32.630763+03	\N	1	\N	\N	1	\N	\N	alametifarika-hackathon-2018
+850	Teknovasyon Hackathon	2-3 Haziran 2018 / Google Dome İstanbul	\N	https://teknovasyonhackathon.wixsite.com/teknovasyonhackathon	\N	thumbnails/thumbnail_KZSGgg2.png	2018-06-02 00:00:00+03	\N	t	2020-05-24 03:40:33.273956+03	\N	1	\N	\N	1	\N	\N	teknovasyon-hackathon
+851	Hackathon - İstanbul	6-7 Haziran 2018 / Incubation İstanbul Girişimcilik ve Kuluçka Merkezi İAÜ Florya Kampüsü D Blok	\N	http://incubation.istanbul/big-shot/	\N	thumbnails/thumbnail_nTnKExz.png	2018-06-06 00:00:00+03	\N	t	2020-05-24 03:40:33.891226+03	\N	1	\N	\N	1	\N	\N	hackathon-istanbul
+852	Aegon Hackathon	20-21 Eylül 2018 / Dallas - Budapeşte - Mumbai	\N	https://www.aegonhackathon.com/	\N	thumbnails/thumbnail_z2G1uV6.png	2018-09-20 00:00:00+03	\N	t	2020-05-24 03:40:36.555765+03	\N	1	\N	\N	1	\N	\N	aegon-hackathon
+853	Block Circus	29 Haziran - 1 Temmuz 2018 / İstanbul	\N	https://blockcircus.com/	\N	thumbnails/thumbnail_OOuoc7E.png	2018-06-29 00:00:00+03	\N	t	2020-05-24 03:40:37.640756+03	\N	\N	\N	\N	1	\N	\N	block-circus
+854	HackaBoom	20-21 Temmuz / Levent, İstanbul	\N	https://hangar.zeplin.io/	\N	thumbnails/thumbnail_mvlkpUK.png	2018-07-20 00:00:00+03	\N	t	2020-05-24 03:40:39.155966+03	\N	\N	\N	\N	1	\N	\N	hackaboom
+857	HACK4HEALTH	9-10-11 Kasım 2017 / DEPARK Zeytin Binası VIP Katı / Balçova / İzmir	\N	http://www.hack4healthizmir.com	\N		2017-11-09 00:00:00+03	\N	t	2020-05-24 03:40:39.300984+03	\N	\N	\N	\N	1	\N	\N	hack4health
+858	ANADOLU SIGORTA #HACKATHON2017	18 – 19 Kasım 2017 / Anadolu Sigorta Genel Müdürlüğü	\N	https://hackathon.anadolusigorta.com.tr/	\N		2017-11-18 00:00:00+03	\N	t	2020-05-24 03:40:39.352551+03	\N	1	\N	\N	1	\N	\N	anadolu-sigorta-hackathon2017
+859	ING Hackhaton	25-26 Kasım, Bilkent Cyberpark	\N	http://hackathon.ingbank.com.tr/	\N		2017-11-25 00:00:00+03	\N	t	2020-05-24 03:40:39.38224+03	\N	\N	\N	\N	1	\N	\N	ing-hackhaton
+862	CFM-Hackathon	3-4 Ağustos 2018 - Teknopark İzmir	\N	https://www.technroll.com.tr/sayfa/hackathon---cfm	\N	thumbnails/thumbnail_fFvZHmE.png	2018-08-03 00:00:00+03	\N	t	2020-05-24 03:40:42.228671+03	\N	1	\N	\N	1	\N	\N	cfm-hackathon
+864	Gamification Hackathon	20-22 Eylül - Bahçeşehir Üniversitesi Game Lab / İstanbul	\N	http://www.gamificationhackathon.com/	\N	thumbnails/thumbnail_caaP6On.png	2018-09-20 00:00:00+03	\N	t	2020-05-24 03:40:43.069375+03	\N	1	\N	\N	1	\N	\N	gamification-hackathon
+867	Anadolu Sigorta Hackathon	17 Kasım 2018 - Anadolu Sigorta Genel Müdürlük B2 Katı – İSTANBUL	\N	https://hackathon.anadolusigorta.com.tr/	\N	thumbnails/thumbnail_eeavXlc.png	2018-11-17 00:00:00+03	\N	t	2020-05-24 03:40:44.416484+03	\N	1	\N	\N	1	\N	\N	anadolu-sigorta-hackathon-2018
+868	Test Hackathon	9 Ekim 2018 - Keytorc Maslak İş Merkezi - Sarıyer/İstanbul	\N	https://testhackathon.org	\N	thumbnails/thumbnail_2MMlX6d.png	2018-10-09 00:00:00+03	\N	t	2020-05-24 03:40:44.688942+03	\N	1	\N	\N	1	\N	\N	test-hackathon
+869	Pisano Hackathon	13-14 Ekim 2018 - Pisano Türkiye Ofisi Ortaköy/İstanbul	\N	https://hackathon.pisano.co/	\N	thumbnails/thumbnail_v141JtT.png	2018-10-13 00:00:00+03	\N	t	2020-05-24 03:40:45.189703+03	\N	1	\N	\N	1	\N	\N	pisano-hackathon
+880	Hack Our Style	5 - 7 Kasım 2018 @ HUGO BOSS Tekstil Sanayi İzmir	\N	http://hackourstyle.com/tr/	\N	thumbnails/thumbnail_jF48Ybe.png	2018-11-05 00:00:00+03	\N	t	2020-05-24 03:40:55.980216+03	\N	\N	\N	\N	1	\N	\N	hack-our-style
+883	Eurasia Graphics 2018	16-18 Kasım 2018 Hasan Kalyoncu Üniversitesi, Gaziantep	\N	http://www.eurasiagraphics.org/	\N	thumbnails/thumbnail_s71xdYG.png	2018-11-16 00:00:00+03	\N	t	2020-05-24 03:40:59.375143+03	\N	\N	\N	\N	1	\N	\N	eurasia-graphics-2018
+833	Başakşehir - Cloud Çözümleri ile Akıllı Şehirler Hackathonu	7-8 Nisan 2018 - Başakşehir Living Lab İstanbul	\N	http://basaksehir-livinglab.com/BLL/blog/2018/02/23/cloud-cozumleri-ile-akilli-sehirler-hackathonu/	\N	thumbnails/thumbnail_N52xleW.png	2018-04-07 00:00:00+03	\N	t	2020-05-24 03:40:19.170765+03	\N	1	\N	\N	1	\N	\N	basaksehir-cloud-cozumleri-ile-akll-sehirler-hackathonu
+836	Hackathon Gastrobilişim	30 Mart - 1 Nisan Hasan Kalyoncu Üniversitesi - Gaziantep	\N	http://hackathon.hku.edu.tr/	\N	thumbnails/thumbnail_3cMjEyP.png	2018-03-30 00:00:00+03	\N	t	2020-05-24 03:40:20.765877+03	\N	1	\N	\N	1	\N	\N	hackathon-gastrobilisim
+847	İstanbul Blockchain Hackathon By Blockstack	Bahçeşehir Üniversitesi Galata Kampüsü İstanbul/ 11-13 Mayıs 2018	\N	https://www.eventbrite.com/e/istanbul-blockchain-hackathon-by-blockstack-tickets-45688562721	\N	thumbnails/thumbnail_93NkFcQ.png	2018-05-11 00:00:00+03	\N	t	2020-05-24 03:40:32.235752+03	\N	1	\N	\N	1	\N	\N	istanbul-blockchain-hackathon-by-blockstack
+861	Dijital Sağlık'ta Ideathon	11 Ağustos 2018 - Yeditepe Üniversitesi Kayışdağı Kampüsü	\N	http://www.ideathon.ttgv.org.tr/	\N	thumbnails/thumbnail_g8qEfi8.png	2018-08-11 00:00:00+03	\N	t	2020-05-24 03:40:41.658587+03	\N	3	\N	\N	1	\N	\N	dijital-saglkta-ideathon
+866	HACKISTANBUL	1. Tur 9 Eylül, Final: 22 Eylül 2018 / İstanbul Yeni Havalimanı	\N	https://www.hackistanbul.com/	\N	thumbnails/thumbnail_00QV1oY.png	2018-09-22 00:00:00+03	\N	t	2020-05-24 03:40:44.082647+03	\N	\N	\N	\N	1	\N	\N	hackistanbul-2018
+870	Sahibinden.com dev.akademi Yazılım Maratonu	20 Ekim 2018 - sahiplex Ofis / İstanbul	\N	https://devakademi.sahibinden.com/	\N	thumbnails/thumbnail_NUDDaGm.png	2018-10-20 00:00:00+03	\N	t	2020-05-24 03:40:46.262552+03	\N	\N	\N	\N	1	\N	\N	sahibindencom-devakademi-yazlm-maratonu
+872	Sosyal Kooperatif Hackathonu	30 Eylül - 2 Ekim 2018 - Anadolu Üniversitesi Öğrenci Merkezi - Eskişehir	\N	https://form.jotform.com/bbbo/Sosyal-Kooperatif-Eskisehir	\N	thumbnails/thumbnail_J7kTldh.png	2018-09-30 00:00:00+03	\N	t	2020-05-24 03:40:48.429862+03	\N	1	\N	\N	1	\N	\N	sosyal-kooperatif-hackathonu
+873	one.block Blockchain Hackathon	19-21 Ekim 2018 / Kolektif House, 42 Maslak - İstanbul	\N	https://oneblock.in/hackathons/	\N	thumbnails/thumbnail_YamUJPP.png	2018-10-19 00:00:00+03	\N	t	2020-05-24 03:40:49.323166+03	\N	1	\N	\N	1	\N	\N	oneblock-blockchain-hackathon
+875	Konya Maker Hackathon	 2-3-4 Kasım / 14-15-16 Aralık 2018 - Konya	\N	https://docs.google.com/forms/d/e/1FAIpQLSdFseDbz433R7TqG-8fYkOp0OiG6WbrOglva6AOnQ69WXpKtQ/viewform	\N	thumbnails/thumbnail_BIiiCqY.png	2018-11-02 00:00:00+03	\N	t	2020-05-24 03:40:51.382374+03	\N	1	\N	\N	1	\N	\N	konya-maker-hackathon
+876	Artırılmış Gerçeklik Hackathonu	3 Kasım 2018 Bilkent Cyberpark Ankara	\N	https://armaraton.havelsan.com.tr/	\N	thumbnails/thumbnail_hZFQ6hX.png	2018-11-03 00:00:00+03	\N	t	2020-05-24 03:40:52.534456+03	\N	1	\N	\N	1	\N	\N	artrlms-gerceklik-hackathonu
+878	Climathon	25-26 Ekim 2018 / İzmir	\N	https://climathon.climate-kic.org/tr/izmir	\N	thumbnails/thumbnail_Ny9F4v3.png	2018-10-25 00:00:00+03	\N	t	2020-05-24 03:40:53.803661+03	\N	\N	\N	\N	1	\N	\N	climathon
+879	Sağlam KOBİ Hackathon	30 Kasım, 1-2 Aralık 2018 / @INOGAR - İstanbul	\N	https://form.jotform.com/idemadan/saglamkobi-hackathon-basvuruformu	\N	thumbnails/thumbnail_GNdNsG9.png	2018-11-30 00:00:00+03	\N	t	2020-05-24 03:40:55.042893+03	\N	1	\N	\N	1	\N	\N	saglam-kobi-hackathon
+882	GDG URFA & IEEE HRU Devfest ‘18 İnovation Hackathon	23-24 Kasım 2018 Şutso Şanlıurfa	\N	http://devfest2018.hruieee.com/	\N	thumbnails/thumbnail_tWaWxmY.png	2018-11-23 00:00:00+03	\N	t	2020-05-24 03:40:58.408169+03	\N	1	\N	\N	1	\N	\N	gdg-urfa-ieee-hru-devfest-18-inovation-hackathon
+885	AGUCS Mobile Hackathon '18	1 -2 Aralık 2018 - Abdullah Gül Üniversitesi / Kayseri	\N	http://hackathon.agucs.com/	\N	thumbnails/thumbnail_xAvP3vh.png	2018-12-01 00:00:00+03	\N	t	2020-05-24 03:41:01.300667+03	\N	1	\N	\N	1	\N	\N	agucs-mobile-hackathon-18
+888	Tam Faktoring Analitik Hackathon	15 Aralık 2018 / Şişli-İstanbul	\N	https://twitter.com/OzgurOzluk/status/1070245300881817600/photo/1	\N	thumbnails/thumbnail_bPUxfyr.png	2018-12-15 00:00:00+03	\N	t	2020-05-24 03:41:04.134551+03	\N	1	\N	\N	1	\N	\N	tam-faktoring-analitik-hackathon
+890	Codezilla Best İstanbul Hackathon	22-23 Aralık 2018 -  İTÜ Ayazağa Kampüsü	\N	https://www.hackathon.bestistanbul.org/	\N	thumbnails/thumbnail_nsiXJ1q.png	2018-12-22 00:00:00+03	\N	t	2020-05-24 03:41:06.216019+03	\N	1	\N	\N	1	\N	\N	codezilla-best-istanbul-hackathon
+891	Arap Baharından Bugüne Terör Söylemi Hackathon	21-23 Aralık 2018 - Fatih / Istanbul	\N	https://www.ab-ilan.com/arap-baharindan-bugune-teror-soylemi-hackathonu-icin-kaydolun/	\N	thumbnails/thumbnail_yIcQiPQ.png	2018-12-21 00:00:00+03	\N	t	2020-05-24 03:41:07.094368+03	\N	1	\N	\N	1	\N	\N	arap-baharndan-bugune-teror-soylemi-hackathon
+892	GGJ Atom	25-27 Ocak 2019 - ODTÜ Kültür ve Kongre Merkezi / Ankara	\N	http://www.atom.org.tr/tr/haber/oyun-dunyasini-sarsmaya-hazir-misin-2	\N	thumbnails/thumbnail_bg5AFHl.png	2019-01-25 00:00:00+03	\N	t	2020-05-24 03:41:08.263483+03	\N	\N	\N	\N	1	\N	\N	ggj-atom
+893	Üsküdar Amerikan Lisesi Codefest	23-24 Şubat 2019 - İstanbul	\N	https://www.codefesttr.org/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_nGQvq05.png	2019-02-23 00:00:00+03	\N	t	2020-05-24 03:41:09.307683+03	\N	\N	\N	\N	1	\N	\N	uskudar-amerikan-lisesi-codefest
+895	IEEE ODTÜ Hackathon	19-21 Ocak 2019 - Denge Lisesi, Çankaya - Ankara	\N	http://www.ieee.metu.edu.tr/hackathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_JyBSQC1.png	2019-01-19 00:00:00+03	\N	t	2020-05-24 03:41:11.311665+03	\N	1	\N	\N	1	\N	\N	ieee-odtu-hackathon
+897	AlgoRun	Son başvuru: 16-17 Şubat 2019 / ITU Ayazaga Kampusu, Teknokent ARI 2 İstanbul	\N	http://algorunhackathon.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_FyTYDtZ.png	2019-02-16 00:00:00+03	\N	t	2020-05-24 03:41:13.661379+03	\N	\N	\N	\N	1	\N	\N	algorun
+899	ÖZÜ Makeathon	22-24 Şubat - Özyeğin Üniversitesi-İstanbul	\N	http://makeathon.ozumaker.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_mlAEY7n.png	2019-02-22 00:00:00+03	\N	t	2020-05-24 03:41:15.579413+03	\N	\N	\N	\N	1	\N	\N	ozu-makeathon-2019
+905	Energy Efficiency Hackathon	4-5 Mayıs 2019, COZONE - Ankara	\N	http://hackathon.ee-turkey.org/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_ZRrNOKu.png	2019-05-04 00:00:00+03	\N	t	2020-05-24 03:41:20.727641+03	\N	1	\N	\N	1	\N	\N	energy-efficiency-hackathon
+906	here & Locial Hackathon	23-24 Mart 2019, Gaziantep Üniversitesi	\N	http://locial.hackathlon.org/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_vvtFW3Q.png	2019-03-23 00:00:00+03	\N	t	2020-05-24 03:41:22.010272+03	\N	1	\N	\N	1	\N	\N	here-locial-hackathon
+907	Educathon - Eğitim Hackathonu	5 -7 Nisan 2019 - BAU VRLab, Karaköy	\N	https://mektepp.com/educathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_McxoeEm.png	2019-04-05 00:00:00+03	\N	t	2020-05-24 03:41:23.01949+03	\N	1	\N	\N	1	\N	\N	educathon-egitim-hackathonu
+914	Hack Boğaziçi	4-5 Mayıs 2019 | C0-11 İstanbul	\N	http://hack.bogazici.edu.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_bDGjhzY.png	2019-05-04 00:00:00+03	2019-05-06 00:00:00+03	t	2020-05-24 03:41:30.755379+03	\N	\N	\N	\N	1	\N	\N	hack-bogazici
+871	HackathonCity Istanbul	11-12 Ekim 2018 - Haliç Kongre Merkezi / İstanbul	\N	http://hackathoncity.istanbul/	\N	thumbnails/thumbnail_7z1RPlC.png	2018-10-11 00:00:00+03	\N	t	2020-05-24 03:40:47.363089+03	\N	1	\N	\N	1	\N	\N	hackathoncity-istanbul
+898	Blockfellow Hackathon	23-24 Şubat 2019 / Kolektif House Maslak - İstanbul	\N	https://blockfellow.com/hackathon?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_Rl7VHRS.png	2019-02-23 00:00:00+03	\N	t	2020-05-24 03:41:14.550957+03	\N	1	\N	\N	1	\N	\N	blockfellow-hackathon
+902	LC Waikiki Datathon 2019	08-10 Mart 2019 - LC Waikiki Genel Merkez, İstanbul	\N	http://datathon.lcwaikiki.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_Yh9Dfnt.png	2019-03-08 00:00:00+03	\N	t	2020-05-24 03:41:18.176177+03	\N	4	\N	\N	1	\N	\N	lc-waikiki-datathon-2019
+903	SustainBul Ideathon	13-14 Mart 2019 - Son başvuru: 1 Mart - İstanbul	\N	http://worldcities.istanbul/yarismalar/sustainbul-ideathon?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_Ps0utJk.png	2019-03-13 00:00:00+03	\N	t	2020-05-24 03:41:18.982553+03	\N	3	\N	\N	1	\N	\N	sustainbul-ideathon
+909	Pixery Hackathon	27-28 Nisan Kolektif House, Levent - İstanbul	\N	https://www.pixerylabs.com/hackathon2019?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_CUp5HRx.png	2019-04-27 00:00:00+03	2019-04-29 00:00:00+03	t	2020-05-24 03:41:25.373795+03	\N	1	\N	\N	1	\N	\N	pixery-hackathon
+912	HackathonES	27-28 Nisan 2019 | Eskişehir Osmangazi Üniversitesi - ETTOM Etkinlik Alanı	\N	http://www.citech.com.tr/hackathon?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_spd1FYr.png	2019-04-27 00:00:00+03	2019-04-29 00:00:00+03	t	2020-05-24 03:41:28.757753+03	\N	1	\N	\N	1	\N	\N	hackathones
+916	Smart Assistant Hackathon	17-19 Mayıs 2019 | Bilkent Cyberpark - Ankara	\N	http://hackinoks.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_fHcC3dl.png	2019-05-17 00:00:00+03	2019-05-20 00:00:00+03	t	2020-05-24 03:41:32.744295+03	\N	1	\N	\N	1	\N	\N	smart-assistant-hackathon
+917	Liseliler Arası Kod Savaşları	11 Mayıs 2019 | Kozmos Yazılım ve Anadolu Lisesi - KozmoPoint | İstanbul	\N	http://kodsavaslari.bcywts.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_k4Hn2fA.png	2019-05-11 00:00:00+03	2019-05-12 00:00:00+03	t	2020-05-24 03:41:33.90721+03	\N	\N	\N	\N	1	\N	\N	liseliler-aras-kod-savaslar
+921	Mechathon	27-28 Haziran 2019 - İstanbul	\N	http://basaksehir-livinglab.com/BLL/blog/2019/05/31/mechathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_X7jWvrO.png	2019-06-27 00:00:00+03	2019-06-29 00:00:00+03	t	2020-05-24 03:41:38.859748+03	\N	\N	\N	\N	1	\N	\N	mechathon
+923	GAMFED Gamification Hackathon 2019	27 Eylül 2019 - Bahçeşehir Üni. BUG Galata Kampüsü, İstanbul	\N	http://www.gamificationhackathon.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_qJZKyYT.png	2019-09-27 00:00:00+03	2019-09-28 00:00:00+03	t	2020-05-24 03:41:40.961648+03	\N	1	\N	\N	1	\N	\N	gamfed-gamification-hackathon-2019
+924	Hack'n Break 2019	24 Ağustos-1 Eylül 2019, Urla - Open Campus	\N	http://hacknbreak.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_j4y8GRA.png	2019-08-24 00:00:00+03	2019-09-01 00:00:00+03	t	2020-05-24 03:41:42.049056+03	\N	\N	\N	\N	1	\N	\N	hackn-break-2019
+925	Insider PHP Hackathon	13-14 Temmuz 2019, Habita - İstanbul	\N	https://landing.useinsider.com/php-conference-july-2019/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_cdtJVbk.png	2019-07-13 00:00:00+03	2019-07-15 00:00:00+03	t	2020-05-24 03:41:42.939554+03	\N	1	\N	\N	1	\N	\N	insider-php-hackathon
+927	Travel Datathon 2019	20-22 Eylül 2019 / Atatürk Havalimanı	\N	https://www.datathon.turkishairlines.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_szeLkn9.png	2019-09-20 00:00:00+03	2019-09-23 00:00:00+03	t	2020-05-24 03:41:46.013758+03	\N	4	\N	\N	1	\N	\N	travel-datathon-2019
+928	NASA Space Apps Challenge	19-20 Ekim 2019 / ODTÜ	\N	https://2019.spaceappschallenge.org/locations/ankara/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_4s9cWuz.png	2019-10-19 00:00:00+03	2019-10-21 00:00:00+03	t	2020-05-24 03:41:46.807637+03	\N	\N	\N	\N	1	\N	\N	nasa-space-apps-challenge
+930	4. Uluslararası Test Hackathon	8 Ekim 2019 / Co-11, Istanbul	\N	https://testhackathon.org?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_72xBzyq.png	2019-10-08 00:00:00+03	2019-10-09 00:00:00+03	t	2020-05-24 03:41:48.595723+03	\N	1	\N	\N	1	\N	\N	4-uluslararas-test-hackathon
+933	Insider Hack Devops	21 Eylül 2019 - Galata Rum Okulu İstanbul	\N	https://awsloft.istanbul/event/8305cb95-85ac-4710-97d4-c1f0fc6e0180?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_3B9iuL3.png	2019-09-21 00:00:00+03	2019-09-22 00:00:00+03	t	2020-05-24 03:41:51.010675+03	\N	\N	\N	\N	1	\N	\N	insider-hack-devops
+934	Migros Master Minds Ideathon	5 Ekim 2019 - Ataşehir Migros Müdürlüğü - İstanbul	\N	https://www.mtstajprogramlari.com/migrosmasterminds/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_oMquIDI.png	2019-10-05 00:00:00+03	2019-10-06 00:00:00+03	t	2020-05-24 03:41:51.943522+03	\N	3	\N	\N	1	\N	\N	migros-master-minds-ideathon
+935	dev.akademi Yazılım Maratonu	19 Ekim 2019 - sahiplex Ofis - İstanbul	\N	https://devakademi.sahibinden.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_8LoAelh.png	2019-10-19 00:00:00+03	2019-10-20 00:00:00+03	t	2020-05-24 03:41:52.734341+03	\N	\N	\N	\N	1	\N	\N	devakademi-yazlm-maratonu
+937	Hack4Art	25–26 Ekim 2019 - EÜ EBİLTEM-TTO - İzmir	\N	https://tr.surveymonkey.com/r/hackathon-kayit?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_wQdtQg7.png	2019-10-25 00:00:00+03	2019-10-27 00:00:00+03	t	2020-05-24 03:41:55.035182+03	\N	\N	\N	\N	1	\N	\N	hack4art
+938	Peak Unithon Engineering	19 - 20 Ekim 2019 - Grand Hyatt Hotel / Istanbul	\N	https://unithon.peak.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_xmXDfBm.png	2019-10-19 00:00:00+03	2019-10-21 00:00:00+03	t	2020-05-24 03:41:56.071365+03	\N	\N	\N	\N	1	\N	\N	peak-unithon-engineering
+941	#ReWRITE Hackathon	19-20 Ekim 2019 - TBA	\N	https://www.eventbrite.com/e/rewrite-hackathon-in-europe-tickets-68582400807?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_5BFeYlk.png	2019-10-19 00:00:00+03	2019-10-21 00:00:00+03	t	2020-05-24 03:41:59.606159+03	\N	1	\N	\N	1	\N	\N	rewrite-hackathon
+945	Antalya IoT Hackathonu	6-8 Aralık 2019 - Antalya Teknokent A.Ş. Kuluçka Merkezi Salonları	\N	https://habitatdernegi.org/haber/antalya-iot-hackathonu-kuresel-sorunlara-teknolojik-cozumler.html/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_jxPcYoT.png	2019-12-06 00:00:00+03	2019-12-09 00:00:00+03	t	2020-05-24 03:42:04.803016+03	\N	1	\N	\N	1	\N	\N	antalya-iot-hackathonu
+947	Hackathor	30 Kasım - 1 Aralık 2019 Yer: Bilkent Cyberpark Ankara	\N	http://www.hackathor.net/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_TkLkgcv.png	2019-11-30 00:00:00+03	2019-12-02 00:00:00+03	t	2020-05-24 03:42:08.076419+03	\N	\N	\N	\N	1	\N	\N	hackathor
+948	Hack to the Future	13,14,15 Aralık 2019 Yer: VakıfBank Genel Müdürlük (Ümraniye, İstanbul)	\N	https://www.hacktothefuture.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_RAGwh3o.png	2019-12-13 00:00:00+03	2019-12-16 00:00:00+03	t	2020-05-24 03:42:09.854001+03	\N	\N	\N	\N	1	\N	\N	hack-to-the-future
+949	Engelsiz Hackathon	30 Kasım - 1 Aralık 2019 Facebook İstasyon	\N	https://habitatdernegi.org/haber/engelsiz-hackathon-basliyor.html/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_sGFLOif.png	2019-11-30 00:00:00+03	2019-12-02 00:00:00+03	t	2020-05-24 03:42:11.575634+03	\N	1	\N	\N	1	\N	\N	engelsiz-hackathon
+951	Ideja Marathon	14 Aralık 2019 - Türkiye Bosna Sancak Kültür ve Yardımlaşma Derneği İstanbul	\N	https://docs.google.com/forms/d/e/1FAIpQLSeZYBl7aSc7cTdK0q652F70xsW3YhsUzzSDdq9I8QtIAW2S6g/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_xKbvG4G.png	2019-12-14 00:00:00+03	2019-12-15 00:00:00+03	t	2020-05-24 03:42:14.006835+03	\N	\N	\N	\N	1	\N	\N	ideja-marathon
+952	Manisa Industrial Park Hackathon	28-29 Aralık 2019 - Manisa Celal Bayar Üniversitesi	\N	http://miphackathon.mcbu.edu.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_yiQaCOq.png	2019-12-28 00:00:00+03	2019-12-30 00:00:00+03	t	2020-05-24 03:42:15.167035+03	\N	1	\N	\N	1	\N	\N	manisa-industrial-park-hackathon
+953	Akıllı Şehirler Hackathonu	28 Aralık 2019 - Konya Bilim Merkezi 	\N	https://docs.google.com/forms/d/e/1FAIpQLSeLutq4a-0sOm-EIfP8yvyCp5glenLwXi5ya5P2go2CopW5fA/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_fd79xF3.png	2019-12-28 00:00:00+03	2019-12-29 00:00:00+03	t	2020-05-24 03:42:16.51422+03	\N	1	\N	\N	1	\N	\N	akll-sehirler-hackathonu
+955	IEEE ODTÜ Pixery Mobil Teknolojiler Hackathonu	11,12,13 Ocak 2020 - VIAFLAT, Söğütözü - Ankara	\N	http://ieee.metu.edu.tr/hackathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_Kjc7LvC.png	2020-01-11 00:00:00+03	2020-01-14 00:00:00+03	t	2020-05-24 03:42:18.678907+03	\N	1	\N	\N	1	\N	\N	ieee-odtu-pixery-mobil-teknolojiler-hackathonu
+956	AGT IDEATHON	15 - 16 Şubat 2020 - Antalya OSB Teknopark	\N	https://ideathon.agt.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_LWoxeWI.png	2020-02-15 00:00:00+03	2020-02-17 00:00:00+03	t	2020-05-24 03:42:19.706295+03	\N	3	\N	\N	1	\N	\N	agt-ideathon
+974	Science Expo Hackathon	20-23 Nisan 2020 - Bursa Tüyap Fuar Alanı	<p>Bursa B&uuml;y&uuml;kşehir Belediyesi Bilim ve Teknoloji Merkezi tarafından d&uuml;zenlenen <strong>Science Expo Hackathon</strong>, akıllı ulaşım ve trafik sorunlarının giderilmesiyle ilgili alanlara ilişkin hizmet ve uygulamalar geliştirmek amacıyla lise, &uuml;niversiteve girişimcilere hitap eden geniş kapsamlı bir yarışmadır.</p>	https://www.bursabilimsenligi.org/hackathon-yarismasi?ref=hackathonturkiye	\N	thumbnails/thumbnail_qagUcwx.png	2020-04-20 00:00:00+03	2020-04-24 00:00:00+03	t	2020-05-24 03:42:40.280984+03	\N	1	\N	Bursa	1	\N	Bursa Büyükşehir Belediyesi	science-expo-hackathon
+959	Hack4Mobility İdeathon	11-12 Ocak 2020 - Kültürpark İzmir	\N	http://hack4mobility.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_bcouUWf.png	2020-01-11 00:00:00+03	2020-01-13 00:00:00+03	t	2020-05-24 03:42:23.286204+03	\N	\N	\N	\N	1	\N	\N	hack4mobility-ideathon
+969	Tobb Gkp Ideathon	15-16 Şubat 2020 - Bilgiyi Ticarileştirme Merkezi, İstanbul		https://docs.google.com/forms/d/e/1FAIpQLSdm9ADmdIsMRG-ZZn7jo1aCv0eXAN58-iawnyLqkXuWIzDofg/viewform?ref=hackathonturkiye	\N	thumbnails/thumbnail_Ne1QEta.png	2020-02-15 00:00:00+03	2020-02-17 00:00:00+03	f	2020-05-24 03:42:35.005017+03	\N	3	\N	İstanbul	1	\N	\N	tobb-gkp-ideathon
+960	IAthon	21-22 Şubat 2020 - Saint Benoît Fransız Lisesi	<p><span style="color: #1a3a6e; font-family: 'Open Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif; font-size: 20px; text-align: justify; background-color: #ffffff;">Saint Beno&icirc;t Lisesi ve Dijital Araştırma ve Geliştirme Komitesi (CDRN), Fransa&rsquo;nın T&uuml;rkiye B&uuml;y&uuml;kel&ccedil;iliği, CNED (Uzaktan Eğitim Ulusal Merkezi), CANOPE (Pedagojik Destek ve Ara&ccedil; Ağı) ve Bah&ccedil;eşehir &Uuml;niversitesi'nin iş birliğiyle 21 ve 22 Şubat 2020 tarihlerinde Uluslararası Dijital Bahar'ın (UDB) 6. Buluşmasını ger&ccedil;ekleştirecek.</span></p>	https://www.sb.k12.tr/6-uluslararasi-dijital-bahar-udb/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_Zekdqyk.png	2020-02-21 00:00:00+03	2020-02-23 00:00:00+03	t	2020-05-24 03:42:24.908963+03	\N	\N	\N	\N	1	\N	Saint Benoît Lisesi	iathon
+971	Akıllı Teknolojiler IoT Hackathonu	14-16 Şubat 2020 - Ankara	\N	https://habitatdernegi.org/haber/akilli-teknolojiler-iot-hackathonunu-kacirma.html/?ref=hackathonturkiye	\N	thumbnails/thumbnail_ZtOJSjT.png	2020-02-14 00:00:00+03	2020-02-17 00:00:00+03	t	2020-05-24 03:42:36.979146+03	\N	1	\N	\N	1	\N	\N	akll-teknolojiler-iot-hackathonu
+980	U4S ERÜ Girişimcilik Kampı	13-15 Mart 2020 - Erciyes Üniversitesi 15 Temmuz Yerleşkesi Konferans Salonu, Kayseri	<p>Teknoloji tabanlı bir iş fikriniz mi var?</p>\r\n<p>İş geliştirici, yazılımcı ya da tasarımcı mısınız?</p>\r\n<p>Bu etkinlik tam size g&ouml;re!</p>	https://u4s.at/kayit.php?event=33&ref=hackathonturkiye	\N	thumbnails/thumbnail_cFZm9Gq.png	2020-03-13 00:00:00+03	2020-03-16 00:00:00+03	t	2020-05-24 03:42:46.360142+03	\N	1	\N	Kayseri	1	\N	University4Society	u4s-eru-girisimcilik-kamp
+965	Peak Unithon	29 Şubat - 1 Mart 2020 - Grand Hyatt Hotel, Istanbul		https://unithon.peak.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_5GPH7ma.png	2020-02-29 00:00:00+03	2020-03-02 00:00:00+03	t	2020-05-24 03:42:30.546981+03	\N	\N	\N	İstanbul	1	\N	\N	peak-unithon
+968	Algorun'20 Hackathon	22-23 Şubat 2020 - ITU Ayazaga Kampusu, Teknokent ARI 2, Istanbul		https://www.algorunhackathon.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_61eUMYK.png	2020-02-22 00:00:00+03	2020-02-24 00:00:00+03	t	2020-05-24 03:42:33.917603+03	\N	1	\N	İstanbul	1	\N	\N	algorun20-hackathon
+1004	NASA Space Apps Covid-19 Challenge	May 30-31, 2020 - Online		https://covid19.spaceappschallenge.org/?ref=hackathonturkiye	\N	thumbnails/thumbnail_iQ8xWvq.png	2020-05-30 00:00:00+03	2020-06-01 00:00:00+03	t	2020-05-24 03:43:09.845948+03	\N	7	\N	online	1	\N	\N	nasa-space-apps-covid-19-challenge
+805	Arduino Hackathon	9-10 Aralık / IEEE GTÜ	\N	https://twitter.com/gtuieee	\N	thumbnails/thumbnail_uFn4Apc.png	2017-12-11 11:20:00+03	\N	t	2020-05-24 03:39:59.735295+03	\N	1	\N	\N	1	\N	\N	arduino-hackathon
+812	Fish Hackathon	10-11 Şubat - İstanbul - İzmir	\N	http://fishackathon.hackernest.com/	\N	thumbnails/thumbnail_MvaSfZB.png	2018-02-10 00:00:00+03	\N	t	2020-05-24 03:40:04.829914+03	\N	1	\N	\N	1	\N	\N	fish-hackathon
+813	IEEE ODTÜ Hackathon	22-24 Ocak ODTÜ Kültür Kongre Merkezi - Ankara	\N	https://ieee.metu.edu.tr/hackathon/	\N	thumbnails/thumbnail_1OB9aNi.png	2018-01-22 00:00:00+03	\N	t	2020-05-24 03:40:05.463857+03	\N	1	\N	\N	1	\N	\N	ieee-odtu-hackathon-2018
+816	2Friday Hackathon	22 Aralık - 5 Ocak - Online	\N	https://github.com/2Friday/Hackathon	\N	thumbnails/thumbnail_5PPocEO.png	2018-01-05 00:00:00+03	\N	t	2020-05-24 03:40:10.594757+03	\N	1	\N	online	1	\N	\N	2friday-hackathon-2018
+818	İsbak Yazılım Maratonu	3-4 Mart - Son Başvuru: 18 Ocak 23:59	\N	http://ituym.ituieee.com/	\N		2018-03-03 00:00:00+03	\N	t	2020-05-24 03:40:11.28522+03	\N	\N	\N	\N	1	\N	\N	isbak-yazlm-maratonu
+819	Global Game Jam EGE	26-28 Ocak, 2018, İzmir	\N	https://www.ggjege.org/	\N	thumbnails/thumbnail_NXjfCLc.png	2018-01-26 00:00:00+03	\N	t	2020-05-24 03:40:11.58303+03	\N	2	\N	\N	1	\N	\N	global-game-jam-ege
+821	Creathon - Hikayeyi Sen Tamamla	2-4 Şubat 2018 - Impact Hub İstanbul	\N	https://creathon.arikovani.com/	\N	thumbnails/thumbnail_VNmikMi.png	2018-02-02 00:00:00+03	\N	t	2020-05-24 03:40:13.601184+03	\N	\N	\N	\N	1	\N	\N	creathon-hikayeyi-sen-tamamla
+823	Rural Development Hackathon	5-27 Şubat - Online	\N	https://www.hackerearth.com/sprints/lets-hack-for-rural-development/custom-tab/agriculture/	\N	thumbnails/thumbnail_Ph6ZLlC.png	2018-02-27 00:00:00+03	\N	t	2020-05-24 03:40:14.518523+03	\N	1	\N	online	1	\N	\N	rural-development-hackathon
+829	University4Society	9-11 Mart 2018 - Kocaeli Üniversitesi - Savaş Ayberk Konferans Salonu	\N	https://kou.university4society.com/	\N		2018-03-09 00:00:00+03	\N	t	2020-05-24 03:40:18.200605+03	\N	\N	\N	\N	1	\N	\N	university4society
+838	AGÜCS Mobil Hackathon	Kayseri	\N	https://docs.google.com/forms/d/e/1FAIpQLScF6ioAncKPxc1n7RlFJ4xcapgjR_o5MTmrv_VjtcneFkDs0Q/viewform	\N	thumbnails/thumbnail_cLflwko.png	2018-04-14 00:00:00+03	\N	t	2020-05-24 03:40:24.379417+03	\N	1	\N	\N	1	\N	\N	agucs-mobil-hackathon
+860	Hack'n Break	1-9 Eylül 2018, Urla - Open Campus	\N	http://hacknbreak.com/	\N	thumbnails/thumbnail_qILHfC5.png	2018-09-01 00:00:00+03	\N	t	2020-05-24 03:40:40.077288+03	\N	\N	\N	\N	1	\N	\N	hackn-break
+863	Hack’n Roll - Commencis	3-4 Ağustos 2018 - Teknopark İzmir	\N	https://www.technroll.com.tr/sayfa/hackathon---commencis	\N	thumbnails/thumbnail_p3zeUse.png	2018-08-03 00:00:00+03	\N	t	2020-05-24 03:40:42.560083+03	\N	\N	\N	\N	1	\N	\N	hackn-roll-commencis
+874	ING Datathon	1 Kasım - 1 Aralık 2018/ ING Bank Genel Müdürlüğü Maslak - İstanbul	\N	http://datathon.ingbank.com.tr/	\N	thumbnails/thumbnail_xlGxVo8.png	2018-11-01 00:00:00+03	\N	t	2020-05-24 03:40:50.140062+03	\N	4	\N	\N	1	\N	\N	ing-datathon
+877	BTK Oyun Maratonu	18-20 Aralık 2018 / BTK - Ankara	\N	https://gim.btk.gov.tr/oyunmaratonu/	\N	thumbnails/thumbnail_sFOV3cB.png	2018-12-18 00:00:00+03	\N	t	2020-05-24 03:40:53.334044+03	\N	\N	\N	\N	1	\N	\N	btk-oyun-maratonu
+881	Hack.Istanbul	1-2 Aralık 2018 Mercedes-Benz Türk Genel Müdürlük	\N	http://hackathon.mercedes-benz.com.tr/tr/	\N	thumbnails/thumbnail_tubiXA1.png	2018-12-01 00:00:00+03	\N	t	2020-05-24 03:40:57.279634+03	\N	\N	\N	\N	1	\N	\N	hackistanbul
+884	TIL Mini Hackathon - #1 Hello World	1 Aralık 2018 Cumartesi - Şişli/ İstanbul	\N	https://www.meetup.com/today-i-learned/events/256562990/	\N	thumbnails/thumbnail_TnffU6n.png	2018-12-01 00:00:00+03	\N	t	2020-05-24 03:41:00.133968+03	\N	1	\N	\N	1	\N	\N	til-mini-hackathon-1-hello-world
+886	2. Maker Hackathon	14-16 Aralık 2018 / Mevlana Kalkınma Ajansı Hizmet Binası / Konya	\N	https://docs.google.com/forms/d/e/1FAIpQLSfmNa5TGSQXo3AcTBpqvNPGgFsJ9aVrZpCoJtqzJJvCAxBkdw/viewform	\N	thumbnails/thumbnail_gaFVOcS.png	2018-12-14 00:00:00+03	\N	t	2020-05-24 03:41:02.223423+03	\N	1	\N	\N	1	\N	\N	2-maker-hackathon
+894	Producthon	1 Şubat 2019 - İstanbul	\N	http://producthon.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_wjCC5fE.png	2019-02-01 00:00:00+03	\N	t	2020-05-24 03:41:10.314644+03	\N	\N	\N	\N	1	\N	\N	producthon
+908	Hack.PCB - Ulusal PCB Tasarım Hackathonu	6-7 Nisan 2019 -  Gaziantep Üniversitesi içi Belediye Kültür Merkezi.	\N	http://pcb.hackathlon.org/index.php?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_oyCTj1A.png	2019-04-06 00:00:00+03	\N	t	2020-05-24 03:41:24.150633+03	\N	1	\N	\N	1	\N	\N	hackpcb-ulusal-pcb-tasarm-hackathonu
+967	Hackidhon Robert College	15 Şubat 2020 - Robert Kolej, Istanbul	\N	https://docs.google.com/forms/d/e/1FAIpQLSf2J86FlfcTlvzGS7QpFa95-Ij1rJHXrPv2BLQ3L8cZgleosA/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_PjFfB28.png	2020-02-15 00:00:00+03	2020-02-16 00:00:00+03	t	2020-05-24 03:42:32.638118+03	\N	\N	\N	\N	1	\N	\N	hackidhon-robert-college
+981	Big React Hackathon	20 Mart 2020 - Abdullah Gül Üniversitesi, Kayseri	<p><strong>Mobil Uygulama Geliştirme Yarışması</strong></p>\r\n<p><strong>Hackathon</strong>​ (ya da ​<strong>codefest</strong>​ olarak bilinir) bilgisayar programcıları, grafik tasarımcıları, aray&uuml;z tasarımcıları ve proje y&ouml;neticileri de dahil olmak &uuml;zere katılanların yoğun bir şekilde yazılım projelerinin geliştirilmesi amacıyla diğer takımlar ile rekabet i&ccedil;erisinde bulunduğu bir olaydır. <strong>Hackathon </strong>genellikle bir g&uuml;n s&uuml;rer. Bir&ccedil;ok durumda asıl ama&ccedil; yazılım oluşturulması ya da yazılım geliştirilmesi olduğu kadar, bazı hackathonlar yalnızca sosyal veya eğitim amacına y&ouml;neliktir.</p>	https://bigreact.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_Bc4GwLy.png	2020-03-20 00:00:00+03	2020-03-21 00:00:00+03	t	2020-05-24 03:42:47.157091+03	\N	1	\N	Kayseri	1	\N	Big React	big-react-hackathon
+988	Coronathon Türkiye	21-22 Mart 2020, Online	<p>Covid-19 salgınının yarattığı sorunlara sosyal ve lojistik anlamda yenilik&ccedil;i &ccedil;&ouml;z&uuml;mler &uuml;reten fikirleri bekliyoruz.</p>	https://coronathonturkiye.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_74ycPyY.png	2020-03-21 00:00:00+03	2020-03-23 00:00:00+03	t	2020-05-24 03:42:53.805622+03	\N	1	\N	online	1	\N	\N	coronathon-turkiye
+993	Hack the Normal	15-17 Mayıs 2020, Online	<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; font-family: Roboto; white-space: inherit; line-height: 18px; font-size: 12px;"><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px; font-family: jtcj; color: #154653;"><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px;">K&uuml;resel COVID-19 krizinin yaşandığı bu d&ouml;nemde, krizin beraberinde getirdiği dinamikleri etkili y&ouml;netmek, &ccedil;evik ve işbirlik&ccedil;i yaklaşımla fark yaratacak adımlar atmak her zamankinden daha &ouml;nemli. Krizin etkileri t&uuml;m d&uuml;nyada yaşanırken; bireyler, topluluklar ve organizasyonların sağlığını, g&uuml;venliğini ve iyi oluş h&acirc;lini desteklemek adına, organik olarak b&uuml;y&uuml;yen ve bağ kuran bir dayanışmanın,</span></span><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px; font-family: jtcj; color: #154653;"><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px;"> gidişatı tersine &ccedil;evireceğine inanıyoruz.</span></span></p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; font-family: Roboto; white-space: inherit; line-height: 18px; font-size: 12px;"><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px; font-family: jtcj; color: #154653;"><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px;"><br style="-webkit-tap-highlight-color: transparent;" />Dijital d&ouml;n&uuml;ş&uuml;m vizyonunu ger&ccedil;ekleştirmek i&ccedil;in y&uuml;r&uuml;tt&uuml;ğ&uuml; projelerin yanı sıra fikirlerin hayata ge&ccedil;irilmesine imk&acirc;n sağlayacak teknolojik ve organizasyonel </span></span><span style="color: #154653; font-family: jtcj; white-space: inherit;">yapılar sunan Ar&ccedil;elik olarak AT&Ouml;LYE iş birliği ile <strong>Hack the Normal</strong> <strong>hackathonunu </strong>d&uuml;zenliyoruz. Belirsizlikte yol alırken yeni stratejiler geliştirerek değişime adapte olmayı ve bireylerden başlayarak ailelere ve organizasyonlara etki edecek </span><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px; font-family: jtcj; color: #154653;"><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px;">d&ouml;n&uuml;ş&uuml;m&uuml; başlatmayı hedefliyoruz. Bu d&ouml;n&uuml;ş&uuml;m&uuml; başlatırken de kriz sonrası </span></span><span style="color: #154653; font-family: jtcj; white-space: inherit;">&ldquo;yeni normal&rdquo; olarak adlandırılan d&ouml;nemi odağımıza alıyor ve şu soruyu soruyoruz: &ldquo;COVID-19 krizi ile hayatımıza giren, evlerdeki &lsquo;yeni normal&rsquo; yaşam tarzına nasıl olumlu bir etki yaratabiliriz?&rdquo;</span></p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; font-family: Roboto; white-space: inherit; line-height: 18px; font-size: 12px;"><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px; font-family: jtcj; color: #154653;"><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px;"><br style="-webkit-tap-highlight-color: transparent;" /><strong>Hack the Normal</strong>, d&uuml;nyanın kademeli olarak y&uuml;zleştiği ve birlikte keşfettiği</span></span><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px; font-family: jtcj; color: #154653;"><span style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; line-height: 1px;">&nbsp;&ldquo;yeni normal&rdquo; olgusunu konu alıyor ve katılımcıları aşağıdaki alanlarda ticarileşme potansiyeli olan yeni &uuml;r&uuml;n, hizmet ve iş modelleri geliştirmeye davet ediyor.</span></span></p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; line-height: 18px;">&nbsp;</p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; line-height: 18px;"><strong><span style="color: #154653; font-family: jtcj;"><span style="font-size: 12px;">Neler Sunuyoruz?</span></span></strong></p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; line-height: 18px;"><span style="color: #154653; font-family: jtcj;"><span style="font-size: 12px;">&nbsp;</span></span></p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; line-height: 18px;"><span style="color: #154653; font-family: jtcj;"><span style="font-size: 12px;"><strong>Hack the Normal</strong>&rsquo;a katılan takımlar, <strong>Ar&ccedil;elik</strong>&rsquo;in d&uuml;zenlediği ve <strong>AT&Ouml;LYE </strong>tarafından organize edilen program kapsamında problemi keşfetme, araştırma, &ccedil;&ouml;z&uuml;m geliştirme, prototipleme ve hik&acirc;ye anlatıcılığı gibi farklı alanlarda eğitimler alacak ve alanında uzman kişilerin konuşmacı olarak yer alacağı seminerlere katılacak. Katılımcılar, hackathon s&uuml;resince farklı disiplinlerden ve alanlardan gelen uzmanlardan mentorluk alarak projelerini geliştirme ve fikirlerini rafine etme şansı bulacak.</span></span></p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; line-height: 18px;"><span style="color: #154653; font-family: jtcj;"><span style="font-size: 12px;">&nbsp;</span></span></p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; line-height: 18px;"><span style="color: #154653; font-family: jtcj;"><span style="font-size: 12px;"><strong>Hackathon </strong>sonrasında Ar&ccedil;elik ve paydaşları ile oluşturulacak değerlendirme ekibinin se&ccedil;eceği projelere Ar&ccedil;elik tarafından prototipleme, &uuml;retim, belgelendirme i&ccedil;in test ve onay s&uuml;re&ccedil;leri ile ilgili &uuml;r&uuml;n geliştirme desteği, Ar&ccedil;elik T&uuml;rkiye kanalları &uuml;zerinden m&uuml;şterilere erişim i&ccedil;in tanıtım desteği ve satış olanağı ile fikri hakları i&ccedil;in iş modeli desteği verilecek.</span></span></p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; line-height: 18px;"><span style="color: #154653; font-family: jtcj;"><span style="font-size: 12px;">&nbsp;</span></span></p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; line-height: 18px;">&nbsp;</p>\r\n<p style="-webkit-tap-highlight-color: transparent; margin: 0px; padding: 0px; border: 0px; vertical-align: baseline; margin-block-start: 0px; margin-block-end: 0px; line-height: 18px;"><span style="color: #154653; font-family: jtcj;"><span style="font-size: 12px;">Ayrıca değerlendirme ekibinin se&ccedil;eceği projelere s&uuml;re&ccedil; takibi konusunda destek veren partnerler tarafından hızlandırma ve kulu&ccedil;ka programlarına katılım, kullanıcılara, yatırım ağlarına ve ekosisteme erişim imk&acirc;nları sunulacak.</span></span></p>	https://hackthenormal.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_5UzFZZk.png	2020-05-15 00:00:00+03	2020-05-17 00:00:00+03	t	2020-05-24 03:42:59.343538+03	\N	\N	\N	online	1	\N	Arçelik	hack-the-normal
+1000	Flutter Hackathon	27–28th June 2020, Online	\N	https://flutterhackathon.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_Tq0VZRf.png	2020-06-27 00:00:00+03	2020-06-29 00:00:00+03	t	2020-05-24 03:43:05.889351+03	\N	1	\N	online	1	\N	\N	flutter-hackathon
+793	Greenfield	25 Kasım, Eski Büyükdere cad. Maslak No:1 34398, Istanbul	\N	http://javausergroup.istanbul/greenfield	\N	thumbnails/thumbnail_rTJHHPS.png	2017-11-25 11:00:00+03	\N	t	2020-05-24 03:39:55.625062+03	\N	\N	\N	\N	1	\N	\N	greenfield
+798	P&G Avrupa IT Hackathonu	P&G Ana Ofisi: Barbaros Mahallesi, Begonya Sk. No:3, 34750 Ataşehir/İstanbul, Turkey	\N	http://pgcareers.com/it-hackathon	\N		2017-11-24 00:00:00+03	\N	t	2020-05-24 03:39:56.941552+03	\N	1	\N	\N	1	\N	\N	pg-avrupa-it-hackathonu
+799	TAV Technologies Hackathon	Atatürk Havalimanı Dış Hatlar Terminal binasında Ali Sürmen toplantı salonu - İstanbul	\N	http://hackathon.techboomerang.aero/	\N		2017-12-02 00:00:00+03	\N	t	2020-05-24 03:39:56.994766+03	\N	1	\N	\N	1	\N	\N	tav-technologies-hackathon
+800	Turkish Airlines Travel Hackathon	22-24 Aralık- Florya'daki Türk Hava Yolları Uçuş Eğitim Merkezi - İstanbul	\N	https://www.hackathon.turkishairlines.com/	\N	thumbnails/thumbnail_TN3ZwYO.png	2017-12-22 00:00:00+03	\N	t	2020-05-24 03:39:57.459771+03	\N	1	\N	\N	1	\N	\N	turkish-airlines-travel-hackathon
+802	Hack 4 Wellbeing	16-17 Aralık / NüvEGE Kuluçka Merkezi(Ege Üniversitesi EBİLTEM-TTO Binası)	\N	https://www.hack4wellbeing.com/	\N		2017-12-16 00:00:00+03	\N	t	2020-05-24 03:39:57.773905+03	\N	\N	\N	\N	1	\N	\N	hack-4-wellbeing
+804	Özü Hackathon	15-17 Aralık / İstanbul / Özü Girişim	\N	https://www.ozugirisim.club/	\N	thumbnails/thumbnail_IsvlWId.png	2017-12-15 00:00:00+03	\N	t	2020-05-24 03:39:59.135706+03	\N	1	\N	\N	1	\N	\N	ozu-hackathon
+806	Hackathon Yalova	15 -17 Aralık / Yalova	\N	https://t.co/5fiKnzojVE	\N	thumbnails/thumbnail_CkWwudX.png	2017-12-15 00:00:00+03	\N	t	2020-05-24 03:40:00.388157+03	\N	1	\N	\N	1	\N	\N	hackathon-yalova
+807	CODEZILLA	16-17 Aralık / İstanbul @İTÜ, ITUNOVA	\N	http://www.hackathon.bestistanbul.org/	\N	thumbnails/thumbnail_9AC34kU.png	2017-12-16 00:00:00+03	\N	t	2020-05-24 03:40:00.614366+03	\N	\N	\N	\N	1	\N	\N	codezilla
+808	Hack-Auto 4.0	 22-24 Aralık - Bursa Tofaş	\N	http://www.hack-auto.com/	\N	thumbnails/thumbnail_KTAKI2v.png	2017-12-22 00:00:00+03	\N	t	2020-05-24 03:40:01.971565+03	\N	\N	\N	\N	1	\N	\N	hack-auto-40
+809	Genç Fikir Atölyesi Hackathon	20 Aralık - Çankaya Üniversitesi Merkez Kampüs	\N	https://www.bilimsenligi.com/cankaya-universitesi-genc-fikir-atolyesi-hackathon.html	\N	thumbnails/thumbnail_icKvyrf.png	2017-12-20 00:00:00+03	\N	t	2020-05-24 03:40:02.519488+03	\N	1	\N	\N	1	\N	\N	genc-fikir-atolyesi-hackathon
+810	World Virtual Govhack	Son Başvuru: 30 Aralık 2017 Sonuçlar: 10 Ocak 2018 - Online	\N	http://hackathon.govtechprize.ae/	\N	thumbnails/thumbnail_yY8f0QI.png	2018-01-10 00:00:00+03	\N	t	2020-05-24 03:40:03.707221+03	\N	\N	\N	online	1	\N	\N	world-virtual-govhack
+811	RingCentral Bots Challenge	8 Ocak 2018 - Online	\N	https://ringcentral.devpost.com/	\N	thumbnails/thumbnail_s53Tto1.png	2018-01-08 00:00:00+03	\N	t	2020-05-24 03:40:04.164266+03	\N	\N	\N	online	1	\N	\N	ringcentral-bots-challenge
+814	Analytics Vidhya Hiring Hackathon	12-13 Ocak - Online	\N	https://datahack.analyticsvidhya.com/contest/analytics-vidhya-hiring-hackathon/	\N	thumbnails/thumbnail_85dWcLt.png	2018-01-12 00:00:00+03	\N	t	2020-05-24 03:40:08.911595+03	\N	1	\N	online	1	\N	\N	analytics-vidhya-hiring-hackathon
+820	Collaboration Tree Hackathon	9-11 Şubat 2018 - Online	\N	https://www.eventbrite.com/e/collaboration-tree-hackathon-tickets-37789360996?aff=erelexpmlt	\N	thumbnails/thumbnail_EXekSbZ.png	2018-02-09 00:00:00+03	\N	t	2020-05-24 03:40:12.234658+03	\N	1	\N	online	1	\N	\N	collaboration-tree-hackathon
+896	Akıllı Mekanlar Hackathon Yarışması	Son başvuru: 28 Şubat 2019	\N	https://www.teknofestistanbul.org/tr/2019-teknoloji-yarismalari/akilli-mekanlar-hackathon-yarismasi?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_4vBupr2.png	2019-02-28 00:00:00+03	\N	t	2020-05-24 03:41:12.34117+03	\N	1	\N	\N	1	\N	\N	akll-mekanlar-hackathon-yarsmas
+900	Müzede Hackathon	16-17 Şubat - Sakıp Sabancı Müzesi The Seed İstanbul	\N	https://www.eventbrite.com/e/muzede-hackathon-tickets-56038002173?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_a95bXnF.png	2019-02-16 00:00:00+03	\N	t	2020-05-24 03:41:16.399374+03	\N	1	\N	\N	1	\N	\N	muzede-hackathon
+904	Have An Idea - Bi' Fikrin Olsun	28 Şubat - 1 Mart 2019 - Dokuz Eylül Üniversitesi Tınaztepe Kampüsü İzmir	\N	http://bifikrinolsun.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_oYWMUVM.png	2019-02-28 00:00:00+03	\N	t	2020-05-24 03:41:19.823207+03	\N	\N	\N	\N	1	\N	\N	have-an-idea-bi-fikrin-olsun
+915	University4Society Hackathon	10-12 Mayıs 2019 | Harran Üniversitesi	\N	https://www.eventbrite.com/e/university4society-harran-university-tickets-58097197281?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_CnE59xM.png	2019-05-10 00:00:00+03	2019-05-13 00:00:00+03	t	2020-05-24 03:41:31.659935+03	\N	1	\N	\N	1	\N	\N	university4society-hackathon
+919	Gnç Bi'Fikir	21-22 Haziran 2019 | Turkcell Genel Müdürlüğü | İstanbul-Maltepe	\N	https://www.turkcell.com.tr/gnc-bifikir?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_wSbF08Z.png	2019-06-21 00:00:00+03	2019-06-23 00:00:00+03	t	2020-05-24 03:41:36.839262+03	\N	\N	\N	\N	1	\N	\N	gnc-bifikir
+929	SERATHON-IN	25-27 Ekim 2019 / Workinton Levent - İstanbul	\N	http://serathonin.org.tr/default.aspx?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_UKme023.png	2019-10-25 00:00:00+03	2019-10-28 00:00:00+03	t	2020-05-24 03:41:47.863865+03	\N	\N	\N	\N	1	\N	\N	serathon-in
+932	Logo Machine Learning Hackathon	19 Eylül 2019 - Galata Rum Okulu İstanbul	\N	https://awsloft.istanbul/event/6c69e1f8-4771-45ee-ba41-b2a43a416265?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_M9QqfNF.png	2019-09-19 00:00:00+03	2019-09-20 00:00:00+03	t	2020-05-24 03:41:50.296407+03	\N	1	\N	\N	1	\N	\N	logo-machine-learning-hackathon
+940	Fiat Deneyim Atölyesi	19-20 Ekim 2019 - Tofaş Genel Müdürlük - İstanbul	\N	https://deneyim.fiat.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_NBiTMHM.png	2019-10-19 00:00:00+03	2019-10-21 00:00:00+03	t	2020-05-24 03:41:58.405301+03	\N	\N	\N	\N	1	\N	\N	fiat-deneyim-atolyesi
+957	Sertifier Ideathon	18-19 Ocak 2020 - Bilgiyi Ticarileştirme Merkezi - Şişli/İstanbul	\N	https://www.eventbrite.com/e/sertifier-ideathon-tickets-86317492945?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_gBDaZ8P.png	2020-01-18 00:00:00+03	2020-01-20 00:00:00+03	t	2020-05-24 03:42:20.830872+03	\N	3	\N	\N	1	\N	\N	sertifier-ideathon
+961	DevC İstanbul Semi Ideathon	18 January 2020 - Facebook İstasyon Maslak - İstanbul	\N	https://www.meetup.com/en-AU/Facebook-Developer-Circle-Istanbul/events/267663190/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_b8TIioO.png	2020-01-18 00:00:00+03	2020-01-19 00:00:00+03	t	2020-05-24 03:42:26.178046+03	\N	3	\N	\N	1	\N	\N	devc-istanbul-semi-ideathon
+962	Genç Hackathon - Benim Yurdum	13 Şubat 2020 - Ankara	\N	http://e-genc.gsb.gov.tr/EGenc/Content/Hackathon2020?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_rhkWK8g.png	2020-02-13 00:00:00+03	2020-02-14 00:00:00+03	t	2020-05-24 03:42:27.343779+03	\N	1	\N	\N	1	\N	\N	genc-hackathon-benim-yurdum
+797	BIG DATA HACKATHON	Istanbul Spark Meetup, PyData Istanbul Big Data Hackathon' u Microsoft Türkiye ofisinde gerçekleştirilecek	\N	http://hackathon.datademi.com/	\N		2017-11-10 00:00:00+03	\N	t	2020-05-24 03:39:56.882594+03	\N	1	\N	\N	1	\N	\N	big-data-hackathon
+801	code.yapıkredi Hackathon	8-10 Aralık Banka API'larını kullanarak fintech ve bankacılık ekosistemine yön verecek öğrenci ve genç girişimcilerin fikirlerini yarıştırdığı bir maratondur	\N	https://code.yapikredi.com.tr/anasayfa/hackathon	\N		2017-12-08 00:00:00+03	\N	t	2020-05-24 03:39:57.733996+03	\N	1	\N	\N	1	\N	\N	codeyapkredi-hackathon
+803	Istanbul Social Innovation Hackathon	8-10 Aralık / İstanbul / Impact Hub	\N	https://www.eventbrite.com/e/istanbul-social-innovation-hackathon-tickets-39954269295	\N	thumbnails/thumbnail_soA367D.png	2017-12-08 00:00:00+03	\N	t	2020-05-24 03:39:58.436875+03	\N	1	\N	\N	1	\N	\N	istanbul-social-innovation-hackathon
+855	Hackathon City İstanbul	2-3 Kasım, Lutfi Kirdar International Convention & Exhibition Center	\N	http://hackathoncity.istanbul	\N		2017-11-03 00:00:00+03	\N	t	2020-05-24 03:40:39.232436+03	\N	1	\N	\N	1	\N	\N	hackathon-city-istanbul
+856	Ford Hackhaton	4 – 5 Kasım 2017 / Ford Otosan Sancaktepe AR-GE Merkezi	\N	http://openxchackathon.com	\N		2017-11-04 00:00:00+03	\N	t	2020-05-24 03:40:39.26652+03	\N	\N	\N	\N	1	\N	\N	ford-hackhaton
+910	Kuveyt Türk Hackathon 2019	13-14 Nisan Kuveyt Türk Bankacılık Üssü - İstanbul	\N	http://www.kt-invent.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_SbywydH.png	2019-04-13 00:00:00+03	2019-04-15 00:00:00+03	t	2020-05-24 03:41:26.726094+03	\N	1	\N	\N	1	\N	\N	kuveyt-turk-hackathon-2019
+922	Diplohack Ankara	4-5 Temmuz 2019 - TED Üniversitesi - Çankaya - Ankara	\N	https://www.ab.gov.tr/51681.html?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_Nje4kpA.png	2019-07-04 00:00:00+03	2019-07-06 00:00:00+03	t	2020-05-24 03:41:39.787333+03	\N	\N	\N	\N	1	\N	\N	diplohack-ankara
+926	Genç Hackathon	7-8 Eylül 2019 / Gençlik ve Spor Bakanlığı - Ankara	\N	http://e-genc.gsb.gov.tr/EGenc/Content/Hackathon2019?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_cPtAtk6.png	2019-09-07 00:00:00+03	2019-09-09 00:00:00+03	t	2020-05-24 03:41:44.772956+03	\N	1	\N	\N	1	\N	\N	genc-hackathon
+936	Anadolu Sigorta Hackathon	23-24 Kasım 2019 - Anadolu Sigorta Genel Müdürlük / Beykoz - İstanbul	\N	https://hackathon.anadolusigorta.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_YCctv5c.png	2019-11-23 00:00:00+03	2019-11-25 00:00:00+03	t	2020-05-24 03:41:53.935207+03	\N	1	\N	\N	1	\N	\N	anadolu-sigorta-hackathon
+943	Dijital Türkiye Fikir Maratonu	14 Aralık 2019 - Teknopark Ankara	\N	https://fikirmaratonu.turksat.com.tr/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_MMuscl7.png	2019-12-14 00:00:00+03	2019-12-15 00:00:00+03	t	2020-05-24 03:42:01.782665+03	\N	\N	\N	\N	1	\N	\N	dijital-turkiye-fikir-maratonu
+946	Açık Hack	30 Kasım - 1 Aralık 2019 Yer: Bilişim Vadisi [Muallimköy Mahallesi, Deniz Cd. No:143-5, 41400 Gebze/Kocaeli]	\N	https://www.acikhack.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_Ub0zMPP.png	2019-11-30 00:00:00+03	2019-12-02 00:00:00+03	t	2020-05-24 03:42:06.622788+03	\N	\N	\N	\N	1	\N	\N	ack-hack
+950	Kuantum Programlama Uygulamaları Hackathonu	14-15 Aralık 2019 ODTÜ CoZone Ankara	\N	https://docs.google.com/forms/d/e/1FAIpQLSeGMgpr2jZ_WYkCcm4GhjULd94l_pbXFwtwkoNEr74kcPBQsA/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_csz08nX.png	2019-12-14 00:00:00+03	2019-12-16 00:00:00+03	t	2020-05-24 03:42:12.892964+03	\N	1	\N	\N	1	\N	\N	kuantum-programlama-uygulamalar-hackathonu
+985	Github Actions Hackathon	5-31 Mart 2020 - Online		https://githubhackathon.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_pCsXWG1.png	2020-03-05 00:00:00+03	2020-04-01 00:00:00+03	t	2020-05-24 03:42:50.728036+03	\N	1	\N	online	1	\N	\N	github-actions-hackathon
+1003	Complexity Jam	Online Game Jam, 29th May - 5th June 2020		https://mome.hu/en/hir/228/game-jam-a-hirdompingben-online-versenyt-hirdet-a-mome?ref=hackathonturkiye	\N	thumbnails/thumbnail_fQFYZQL.png	2020-05-29 00:00:00+03	2020-06-06 00:00:00+03	t	2020-05-24 03:43:08.641137+03	\N	2	\N	online	1	\N	\N	complexity-jam
+976	Alternatif Bank Engelsiz Bankacılık Hackathon	2 Mart 2020 - Özyeğin Üniversitesi, İstanbul	<h1 style="box-sizing: border-box; margin: 0.2rem 0px 0.5rem; padding: 0px; color: #333333; font-family: 'Source Serif Pro', 'Times New Roman', Times, serif; font-weight: normal; line-height: 1.4; text-rendering: optimizelegibility; font-size: 2.75rem; background-color: #ffffff;">Alternatif Bank Engelsiz Bankacılık Hackathon'u</h1>\r\n<p>Engelsiz bir gelecek i&ccedil;in engelleri inovasyonla hackliyoruz!</p>	https://www.ozyegin.edu.tr/tr/duyurular/10698/alternatif-bank-engelsiz-bankacilik-hackathon?ref=hackathonturkiye	\N	thumbnails/thumbnail_FYfyt2s.png	2020-03-02 00:00:00+03	2020-03-03 00:00:00+03	t	2020-05-24 03:42:42.470173+03	\N	1	\N	İstanbul	1	\N	Alternatif Bank	alternatif-bank-engelsiz-bankaclk-hackathon
+982	McKinsey's Datathon - The City Cup - Istanbul	25 Nisan 2020 - İstanbul	\N	https://jobs.mckinsey.com/careers/eventDetails?folderId=38757&ref=hackathonturkiye	\N	thumbnails/thumbnail_m2f7Pki.png	2020-04-25 00:00:00+03	2020-04-26 00:00:00+03	t	2020-05-24 03:42:48.042998+03	\N	4	\N	\N	1	\N	\N	mckinseys-datathon-the-city-cup-istanbul
+991	Designathon for Cure	11-12 Nisan 2020, Online	<p><strong>Designathon for Cure</strong>, <strong>End&uuml;striyel Tasarımcılar Meslek Kuruluşu</strong>, <strong>Maya Girişim Merkezi</strong> ve <strong>Design Mesh Innovation Lab</strong> y&uuml;r&uuml;t&uuml;c&uuml;l&uuml;ğ&uuml;nde, 11-12 Nisan 2020 tarihleri arasında internet &uuml;zerinden ger&ccedil;ekleşecek.</p>\r\n<p>Kovid-19 salgını socunda D&uuml;nya&rsquo;nın yaşamakta olduğu bu krize karşın; tasarımcı, &ouml;ğrenci, m&uuml;hendis, sağlık &ccedil;alışanları, ekonomist, sosyolog gibi bir&ccedil;ok farklı alandan kişilerin online ortamda biraraya gelerek hem bug&uuml;ne hem de geleceğe y&ouml;nelik &ccedil;&ouml;z&uuml;mler geliştireceği <strong>Designathon for Cure</strong>, farklı temalar altında kısa s&uuml;rede geliştirilecek projelere ev sahipliği yapacak.</p>	https://www.designathonturkey.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_aBqbInq.png	2020-04-11 00:00:00+03	2020-04-13 00:00:00+03	t	2020-05-24 03:42:57.053206+03	\N	6	\N	online	1	\N	\N	designathon-for-cure
+996	Tasarım Hackathonu: Covid – 19 Salgını ile Mücadele	Başakşehir Living Lab, 2-5 Haziran 2020, Online	<p style="margin: 0px; padding: 0px 0px 1em; border: 0px; outline: 0px; font-size: 14px; vertical-align: baseline; background: #ffffff; line-height: 1.7em; color: #666666; font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;">Covid-19 Salgını d&ouml;neminde ve sonrasında salgınla m&uuml;cadele kapsamında&nbsp; insanların sağlıklı kalmasına ve salgının bulaşmasının engellenmesine yardımcı olacak bir &uuml;r&uuml;n tasarımı yapmak bizim elimizde.</p>\r\n<p style="margin: 0px; padding: 0px 0px 1em; border: 0px; outline: 0px; font-size: 14px; vertical-align: baseline; background: #ffffff; line-height: 1.7em; color: #666666; font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;">Salgın sırasında ve sonrasında teknolojinin &ouml;neminin gittik&ccedil;e artmasının sonucunda &ouml;zellikle son zamanlarda 3 boyutlu teknolojilerden &nbsp;faydalanarak sağlık sekt&ouml;r&uuml;ne yapılan b&uuml;y&uuml;k destekler hepimiz i&ccedil;in &ouml;nem arz etmektedir.</p>\r\n<p style="margin: 0px; padding: 0px 0px 1em; border: 0px; outline: 0px; font-size: 14px; vertical-align: baseline; background: #ffffff; line-height: 1.7em; color: #666666; font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;">Bu <strong>Başakşehir Living Lab Tasarım Hackathonu</strong> ile amacımız; 3B yazıcılarla &uuml;retebileceğimiz 3 boyutlu tasarımlarla bu s&uuml;rece destek olmak, 3B yazıcı teknolojisi ile ilgili bilinirliği arttırarak g&uuml;nl&uuml;k hayatta bu teknolojinin yer edinebileceğini g&ouml;stermek, gen&ccedil;lerin yaratıcılıklarını geliştirerek daha &uuml;retken, sorgulayıcı ve &ccedil;&ouml;z&uuml;m odaklı bireyler olmalarını teşvik ederek Covid-19 salgını sırasında teknoloji ile tasarımı birleştirmenin &ouml;nemini &nbsp;vurgulamaktır.</p>\r\n<p style="margin: 0px; padding: 0px 0px 1em; border: 0px; outline: 0px; font-size: 14px; vertical-align: baseline; background: #ffffff; line-height: 1.7em; color: #666666; font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;">Bu s&uuml;reci m&uuml;mk&uuml;n olduğunca &ccedil;abuk atlatmak ve sonrasında da insanları korumak i&ccedil;in tasarımlar yapmak ve &ouml;nlemler almak m&uuml;mk&uuml;n.</p>\r\n<p style="margin: 0px; padding: 0px 0px 1em; border: 0px; outline: 0px; font-size: 14px; vertical-align: baseline; background: #ffffff; line-height: 1.7em; color: #666666; font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;">Se&ccedil;enekler sonsuz ve ihtiya&ccedil; b&uuml;y&uuml;k.</p>\r\n<p style="margin: 0px; padding: 0px 0px 1em; border: 0px; outline: 0px; font-size: 14px; vertical-align: baseline; background: #ffffff; line-height: 1.7em; color: #666666; font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;">Sizlerin de fikirleriniz ve tasarımlarınızla bu s&uuml;rece katkıda bulunmanızı&nbsp; bekliyoruz</p>\r\n<p style="margin: 0px; padding: 0px 0px 1em; border: 0px; outline: 0px; font-size: 14px; vertical-align: baseline; background: #ffffff; line-height: 1.7em; color: #666666; font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;">&nbsp;</p>\r\n<p style="margin: 0px; padding: 0px 0px 1em; border: 0px; outline: 0px; font-size: 14px; vertical-align: baseline; background: #ffffff; line-height: 1.7em; color: #666666; font-family: 'Open Sans', Helvetica, Arial, Lucida, sans-serif;">Başakşehir Living Lab Tasarım Hackathonu&rsquo;nda, katılımcıların belirli bir s&uuml;re ve program dahilinde belirlenmiş olan konularda bir veya&nbsp; daha fazla par&ccedil;alardan oluşan ve&nbsp; salgına karşı bir &ccedil;&ouml;z&uuml;m i&ccedil;eren &nbsp;&uuml;r&uuml;nleri 3 boyutlu modelleme programlarında &ccedil;izerek tasarlamaları ve sağlayacağı faydaları hazırlayacakları sunumlar ile anlatmaları ama&ccedil;lanmaktadır. Bu tasarımların 3B yazıcılardan &uuml;retilebilir olması gerekmektedir. &Uuml;retilecek prototipin, &uuml;r&uuml;n&uuml;n işlevinin anlaşılabileceği şekilde &ccedil;alışır olması gerekmektedir. Katılımcılar ile Zoom &uuml;zerinden online olarak y&uuml;r&uuml;t&uuml;lecek bu etkinlik sonunda se&ccedil;ilen tasarımlar 3B baskıları Başakşehir Living Lab Sergi Alan&rsquo;ındaki tasarım b&ouml;l&uuml;m&uuml;nde sergilenecek ve Başakşehir Living-Lab Dijital Mecralarında ve B&uuml;ltenlerinde yer alacaktır.</p>	http://basaksehir-livinglab.com/BLL/blog/2020/04/30/basaksehir-living-lab-tasarim-hackathonu-covid-19-salgini-ile-mucadele/?ref=hackathonturkiye	\N	thumbnails/thumbnail_uU9aqY0.png	2020-06-02 00:00:00+03	2020-06-06 00:00:00+03	t	2020-05-24 03:43:02.226019+03	\N	1	\N	online	1	\N	\N	tasarm-hackathonu-covid-19-salgn-ile-mucadele
+1006	Facebook Hackathons - AR, AI, Messaging	24 June 2020 - Online	\N	https://devpost.com/facebook/?ref=hackathonturkiye	\N	thumbnails/thumbnail_9iDyrni.png	2020-06-24 00:00:00+03	2020-06-25 00:00:00+03	t	2020-05-24 03:43:11.665044+03	\N	1	\N	online	1	\N	\N	facebook-hackathons-ar-ai-messaging
+794	HACK THE BOSS	DEPARK Beta (Dokuz Eylül Teknoloji Geliştirme) Kuruçeşme Mahallesi, 35390 Buca/İzmir	\N	http://hacktheboss.com/	\N	thumbnails/thumbnail_ThpxXre.png	2017-11-23 12:00:00+03	\N	t	2020-05-24 03:39:56.20168+03	\N	\N	\N	\N	1	\N	\N	hack-the-boss
+795	Accenture Digital Hackathon The Global Connected Edition 	Accenture Turkey Tamburi Ali Efendi Sok. No:13 Etiler, İstanbul 34337	\N	https://www.accenture.com/tr-en/careers/event-digital-hackathon	\N		2017-11-11 00:00:00+03	\N	t	2020-05-24 03:39:56.278815+03	\N	1	\N	\N	1	\N	\N	accenture-digital-hackathon-the-global-connected-edition
+796	Node Knockout	node.js üzerine 48 saatlik çevrimiçi hackathon 1-4 kişilik takımlarla yapılacaktır	\N	https://www.nodeknockout.com/	\N	thumbnails/thumbnail_09L7kzZ.png	2017-11-11 11:00:00+03	\N	t	2020-05-24 03:39:56.818531+03	\N	\N	\N	\N	1	\N	\N	node-knockout
+815	McKinsey Analytics Online Hackathon - Sales Excellence	20-21 Ocak - Online	\N	https://datahack.analyticsvidhya.com/contest/mckinsey-analytics-online-hackathon-ii/	\N	thumbnails/thumbnail_4y2O1rG.png	2018-01-20 00:00:00+03	\N	t	2020-05-24 03:40:09.878502+03	\N	1	\N	online	1	\N	\N	mckinsey-analytics-online-hackathon-sales-excellence
+817	2Friday Hackathon	5 Ocak - 19 Ocak - Online	\N	https://github.com/2Friday/Hackathon	\N	thumbnails/thumbnail_G8rpYE9.png	2018-01-19 00:00:00+03	\N	t	2020-05-24 03:40:11.1892+03	\N	1	\N	online	1	\N	\N	2friday-hackathon
+822	Stockpile Ideathon	Son Tarih: 18 Mart - Online	\N	https://www.hackerearth.com/sprints/stockpile-for-millennials-ideathon/	\N	thumbnails/thumbnail_g2bkjJq.png	2018-03-18 00:00:00+03	\N	t	2020-05-24 03:40:14.080685+03	\N	3	\N	online	1	\N	\N	stockpile-ideathon
+824	January Circuits '18	20-29 Ocak - Online	\N	https://www.hackerearth.com/challenge/competitive/january-circuits-18/	\N	thumbnails/thumbnail_doGj7th.png	2018-01-20 00:00:00+03	\N	t	2020-05-24 03:40:14.902838+03	\N	\N	\N	online	1	\N	\N	january-circuits-18
+825	Hack’oMusic	Son başvuru: 15 Şubat - İzmir	\N	https://www.hackomusic.com/	\N	thumbnails/thumbnail_Zu5ljQ6.png	2018-02-24 00:00:00+03	\N	t	2020-05-24 03:40:15.346914+03	\N	\N	\N	\N	1	\N	\N	hackomusic
+828	Code of Duty	9-11 Mart 2018 - İzmir	\N	https://docs.google.com/forms/d/e/1FAIpQLSd7vr98wQCkaKLg0VFdUUiBV0NegP4a9BguLW7XsUgM_-hmRg/viewform	\N	thumbnails/thumbnail_dTBOjFE.png	2018-03-09 00:00:00+03	\N	t	2020-05-24 03:40:18.134597+03	\N	\N	\N	\N	1	\N	\N	code-of-duty-2018
+845	Cumhuriyet Üniversitesi Hackathon	11-12 Mayıs 2018 / Cumhuriyet Üniversitesi Mühendislik Fakültesi B Blok Zemin Kat Bilgisayar Laboratuvar / Sivas	\N	https://docs.google.com/forms/d/e/1FAIpQLSe0vZhkR13oKHf74UA8dCJgm9DBuc5NFsSCFFxDaVK7FB1wDg/viewform	\N	thumbnails/thumbnail_ctx3whd.png	2018-05-11 00:00:00+03	\N	t	2020-05-24 03:40:31.559521+03	\N	1	\N	\N	1	\N	\N	cumhuriyet-universitesi-hackathon
+865	Travel Hackathon 2018	21-23 Eylül / İstanbul Yeni Havalimanı	\N	https://www.hackathon.turkishairlines.com/	\N	thumbnails/thumbnail_X3M4xw4.png	2018-09-21 00:00:00+03	\N	t	2020-05-24 03:40:43.620666+03	\N	1	\N	\N	1	\N	\N	travel-hackathon-2018
+887	Borusan Atölye Robothon	7-8 Aralık 2018 / Bahçeşehir Fen ve Teknoloji Lisesi – Başakşehir/İstanbul	\N	https://www.toptalent.co/borusan-grubu-robothon	\N	thumbnails/thumbnail_IsyE2Xe.png	2018-12-07 00:00:00+03	\N	t	2020-05-24 03:41:03.12478+03	\N	\N	\N	\N	1	\N	\N	borusan-atolye-robothon
+889	Game Jam	20 Aralık 2018 / Dokuz Eylül Üniversitesi Tınaztepe Kampüsü, DEPARK Bambu Hızlandırma ve Ön Kuluçka Merkezi - İzmir	\N	https://docs.google.com/forms/d/1aYqAtZGnaSfUkQRXhkypv4HEzGZUXcG4iRUfygRF0Tg/viewform?edit_requested=true	\N	thumbnails/thumbnail_34PhmlX.png	2018-12-20 00:00:00+03	\N	t	2020-05-24 03:41:05.250319+03	\N	2	\N	\N	1	\N	\N	game-jam
+901	Çiçeksepeti Hackathon 2019	22-23 Mart 2019 ÇiçekSepeti Teknoloji Yıldız Teknopark Davutpaşa, İstanbul	\N	http://hackathon.ciceksepeti.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_TiRQGxD.png	2019-03-22 00:00:00+03	\N	t	2020-05-24 03:41:17.341282+03	\N	1	\N	\N	1	\N	\N	ciceksepeti-hackathon-2019
+911	Token Hackathon 2019	3-4 Mayıs 2019 - ITU / İstanbul	\N	https://live.peoplise.com/arcelik/Application/Landing/90fd2ba2-d9f8-44b2-8ce5-e5295cbe453e?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_Jg88mNg.png	2019-05-03 00:00:00+03	2019-05-05 00:00:00+03	t	2020-05-24 03:41:27.747042+03	\N	1	\N	\N	1	\N	\N	token-hackathon-2019
+913	Hackathon Tokat	27-28 Nisan 2019 | Tokat Teknopark	\N	http://www.tokatteknopark.com/tr/duyurular/tokat-hackathon-yarismasi-27-28-nisanda-yapilacaktir.html?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_rBxOQDD.png	2019-04-27 00:00:00+03	2019-04-29 00:00:00+03	t	2020-05-24 03:41:29.681614+03	\N	1	\N	\N	1	\N	\N	hackathon-tokat
+931	Coğrafi Bilgi Sistemleri Ideathon	24 Ekim 2019 - TBB Av. Özdemir Özok Kongre Merkezi - Ankara	\N	https://cbskongresi.org/girisim-yarismasi-basvuru-formu/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_J1j0o67.png	2019-10-24 00:00:00+03	2019-10-25 00:00:00+03	t	2020-05-24 03:41:49.490181+03	\N	3	\N	\N	1	\N	\N	cografi-bilgi-sistemleri-ideathon
+939	Habitat Online Hackathon	15 Eylül - 31 Ekim 2019 - Online	\N	https://habitatdernegi.org/online-hackathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_0i0AQwI.png	2019-09-15 00:00:00+03	2019-11-01 00:00:00+03	t	2020-05-24 03:41:57.40599+03	\N	1	\N	online	1	\N	\N	habitat-online-hackathon
+942	Akbank LAB Code: Yarının Bankacılığı	15 -17 Kasım 2019	\N	https://www.akbanklab.com/tr/hackathon?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_gAlnSWh.png	2019-11-15 00:00:00+03	2019-11-18 00:00:00+03	t	2020-05-24 03:42:00.819691+03	\N	\N	\N	\N	1	\N	\N	akbank-lab-code-yarnn-bankaclg
+966	Sabancı Üniversitesi Blockchain Hackathon	15 Şubat 2020 - Karaköy Minerva Palas, Istanbul	\N	https://docs.google.com/forms/d/1F6MuQ79cRJR5UqGInuUp4UyTxk11sHwialuBqfw5JSA/viewform?edit_requested=true&utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_jM5ixyQ.png	2020-02-15 00:00:00+03	2020-02-16 00:00:00+03	t	2020-05-24 03:42:31.722387+03	\N	1	\N	\N	1	\N	\N	sabanc-universitesi-blockchain-hackathon
+963	Hackathon Life Solutions	6-7 Mart 2020 - InogarArt Ataşehir - İstanbul		https://forms.office.com/Pages/ResponsePage.aspx?id=DQSIkWdsW0yxEjajBLZtrQAAAAAAAAAAAANAARnvrFlUNTJQOFkwNDA0R0dJVENHQUMxSFlKSUlVRi4u&utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_R36EGGU.png	2020-03-06 00:00:00+03	2020-03-08 00:00:00+03	f	2020-05-24 03:42:28.512564+03	\N	1	\N	\N	1	\N	\N	hackathon-life-solutions
+987	Chainathon - Blockchain Hackathon	27-29 Mart 2020 -  Facebook İstasyon, İstanbul		https://habitatdernegi.org/haber/istanbul-blockchain-okulu-projesi-blockchain-hackathonu.html/?ref=hackathonturkiye	\N	thumbnails/thumbnail_iYOrkTI.png	2020-03-27 00:00:00+03	2020-03-30 00:00:00+03	f	2020-05-24 03:42:52.71058+03	\N	1	\N	\N	1	\N	Habitat Derneği	chainathon-blockchain-hackathon
+918	Hack O Life	11 Mayıs 2019 | İzmir Ekonomi Üniversitesi | İzmir	\N	https://www.eventbrite.com/e/hack-o-life-engelli-yasamn-kolaylastrmaya-yon-registration-60026292256?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_Eaexooy.png	2019-05-11 00:00:00+03	2019-05-12 00:00:00+03	t	2020-05-24 03:41:34.83139+03	\N	\N	\N	\N	1	\N	\N	hack-o-life
+920	Zemin İstanbul Hackathon	14 Haziran 2019 | Zemin İstanbul | İstanbul-Beyoğlu	\N	https://docs.google.com/forms/d/e/1FAIpQLSfwyolnWEOGulPXkh2zT8hIlpGWFN1khYPTxIcpzp3acHG7Hw/viewform?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_PGIG0ma.png	2019-06-14 00:00:00+03	2019-06-15 00:00:00+03	t	2020-05-24 03:41:37.736917+03	\N	1	\N	\N	1	\N	\N	zemin-istanbul-hackathon
+944	BEST İstanbul Hackathon	7-8 Aralık 2019 - İTÜ Ayazağa Kampüsü - İstanbul	\N	https://www.hackathon.bestistanbul.org/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_MFDOYRU.png	2019-12-07 00:00:00+03	2019-12-09 00:00:00+03	t	2020-05-24 03:42:03.582429+03	\N	1	\N	\N	1	\N	\N	best-istanbul-hackathon
+1002	HacknBreak 2020	5. büyük buluşma: 22 - 30 AĞUSTOS 2020, Open Campus Urla, İzmir	<p style="text-align: center;"><span style="color: #444444; font-family: 'Open Sans', sans-serif; font-size: 24px; background-color: #ffffff;">A&ccedil;ık İnovasyon Derneği koordinasyonunda d&uuml;zenlenen HacknBreak A&ccedil;ık İnovasyon Kampı 5. kez, 22 Ağustos &ndash; 28 Ağustos 2020 tarihleri arasında Open Campus Urla&rsquo;da ger&ccedil;ekleştirilecek. &Ccedil;ok sayıda paydaş kurum, topluluk ve bireyin işbirliği ile d&uuml;zenlenen kampın bu yıl teması &ldquo;S&uuml;rd&uuml;r&uuml;lebilirlik&rdquo; ve &ldquo;Akıllı Şehirler&rdquo;. Kamp bu temalar &ccedil;er&ccedil;evesinde eğitim ve at&ouml;lyelere ek olarak iki b&uuml;y&uuml;k hackathon&rsquo;a da ev sahipliği yapacak. Program ve konuşmacılarla ilgili detaylar buradan a&ccedil;ıklanacak.&nbsp;</span></p>\r\n<p style="text-align: center;">&nbsp;</p>\r\n<div class="elementor-element elementor-element-0e3e975 elementor-widget elementor-widget-heading" style="box-sizing: border-box; position: relative; width: 1180px; margin-bottom: 20px; text-align: center; color: #444444; font-family: 'Open Sans', sans-serif; font-size: 16px; background-color: #ffffff;" data-id="0e3e975" data-element_type="widget" data-widget_type="heading.default">\r\n<div class="elementor-widget-container" style="box-sizing: border-box; transition: background 0.3s ease 0s, border 0.3s ease 0s, border-radius 0.3s ease 0s, box-shadow 0.3s ease 0s, -webkit-border-radius 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;">\r\n<h2 class="elementor-heading-title elementor-size-default" style="box-sizing: border-box; margin: 0px; line-height: 1.7em; color: #282828; font-size: 32px; clear: both; padding: 0px;">Bu yıl HacknBreak katılımcılarını neler bekliyor!</h2>\r\n</div>\r\n</div>\r\n<div class="elementor-element elementor-element-03965e4 elementor-widget elementor-widget-text-editor" style="box-sizing: border-box; position: relative; width: 1180px; font-size: 18px; line-height: 1.8em; color: #444444; font-family: 'Open Sans', sans-serif; background-color: #ffffff;" data-id="03965e4" data-element_type="widget" data-widget_type="text-editor.default">\r\n<div class="elementor-widget-container" style="box-sizing: border-box; transition: background 0.3s ease 0s, border 0.3s ease 0s, border-radius 0.3s ease 0s, box-shadow 0.3s ease 0s, -webkit-border-radius 0.3s ease 0s, -webkit-box-shadow 0.3s ease 0s;">\r\n<div class="elementor-text-editor elementor-clearfix" style="box-sizing: border-box; text-align: center;">\r\n<p style="box-sizing: border-box; margin: 0px 0px 24px;">A&ccedil;ık İnovasyon Derneği koordinasyonunda ve liderliğinde bu yıl 5. kez d&uuml;zenleyeceğimiz HacknBreak kampında &ldquo;S&uuml;rd&uuml;rebilirlik&rdquo; ve &ldquo;Akıllı Şehirler&rdquo; temalarına ilgi duyan 1000 kişiyi biraraya getireceğiz.&nbsp;<span style="box-sizing: border-box;">A&ccedil;ık inovasyonun ve işbirliğinin faydalarına inanan ve bu ama&ccedil;larla planladığımız kampı desteklemek isteyen veya g&uuml;ncel sorunlarına &ccedil;&ouml;z&uuml;m arayan t&uuml;m kişi ve kurumları HacknBreak&rsquo;e katılmaya ve katkı sunmaya davet ediyoruz.&nbsp;&nbsp;</span></p>\r\n<p style="box-sizing: border-box; margin: 0px 0px 24px;"><span style="box-sizing: border-box;">Ge&ccedil;miş yıllardan farklı olarak bu yıl HacknBreak kamp programını iki ana b&ouml;l&uuml;mde ger&ccedil;ekleştirmeyi planlıyoruz. Kampın ilk b&ouml;l&uuml;m&uuml; yoğun olarak eğitim ve at&ouml;lye &ccedil;alışmalarına odaklanırken, son iki g&uuml;n 48 saat s&uuml;recek geniş katılımlı ve &ouml;d&uuml;ll&uuml; iki hackathona ev sahipliği yapacağız.</span></p>\r\n</div>\r\n</div>\r\n</div>	https://hacknbreak.com/hnb2020/?ref=hackathonturkiye	\N	thumbnails/thumbnail_0pbpqYk.png	2020-08-22 00:00:00+03	2020-08-31 00:00:00+03	t	2020-05-24 03:43:07.668126+03	\N	\N	\N	izmir	1	\N	Open Campus	hacknbreak-2020
+977	Educathon	21-23 Ağustos 2020 | Levent 199 Workinton, İstanbul	<p><span style="color: #3a3a3a; font-family: Montserrat, sans-serif; font-size: 15px; background-color: #ffffff;"><strong>Educathon</strong>; eğitimci, yazılımcı ve tasarımcılardan oluşan disiplinlerarası ekiplerin 48 saat boyunca eğitim teknolojileri alanında prototip geliştirdikleri bir hackathondur.</span></p>\r\n<p><span style="color: #3a3a3a; font-family: Montserrat, sans-serif; font-size: 15px; background-color: #ffffff;">İlk defa 5-7 Nisan 2019 tarihlerinde&nbsp;</span><span style="box-sizing: inherit; border: 0px; font-size: 15px; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: #3a3a3a; font-family: Montserrat, sans-serif; background-color: #ffffff;">Mektepp</span><span style="color: #3a3a3a; font-family: Montserrat, sans-serif; font-size: 15px; background-color: #ffffff;">&nbsp;ve&nbsp;</span><span style="box-sizing: inherit; border: 0px; font-size: 15px; font-weight: bold; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; color: #3a3a3a; font-family: Montserrat, sans-serif; background-color: #ffffff;">VR First BAU</span><span style="color: #3a3a3a; font-family: Montserrat, sans-serif; font-size: 15px; background-color: #ffffff;">&nbsp;ortaklığı ile ger&ccedil;ekleşen&nbsp;</span><a style="box-sizing: inherit; border: 0px; font-size: 15px; margin: 0px; outline: 0px; padding: 0px; vertical-align: baseline; background-color: #ffffff; text-decoration-line: none; color: #007527; transition: all 0.2s linear 0s; font-family: Montserrat, sans-serif;" href="https://m.youtube.com/watch?v=2xW-yrwElfM">Educathon19</a><span style="color: #3a3a3a; font-family: Montserrat, sans-serif; font-size: 15px; background-color: #ffffff;">&rsquo;a 12 takım katılmış ve her takım 48 saatlik s&uuml;recin sonunda bir eğitim teknolojileri prototipi ortaya &ccedil;ıkarmıştır.</span></p>	http://educathon.com.tr/?ref=hackathonturkiye	\N	thumbnails/thumbnail_2InJHRg.png	2020-08-21 00:00:00+03	2020-08-24 00:00:00+03	t	2020-05-24 03:42:43.315179+03	\N	5	\N	\N	1	\N	\N	educathon
+1001	CaseCampus Bootcamp Live	6-9 Haziran 2020, Online	<p><strong>CaseCampus Bootcamp Live</strong>, 2020 yılında t&uuml;m program i&ccedil;eriğini online ortama aktararak, se&ccedil;eceği 75 katılımcısı ile 6-9 Haziran tarihleri arasında ger&ccedil;ekleşiyor. <strong>CaseCampus</strong>, bu d&ouml;rt g&uuml;nl&uuml;k online programıyla katılımcılarına, girişimciliğe y&ouml;nelik at&ouml;lyeler ve vaka &ccedil;alışmaları sunuyor. Bu sayede katılımcılar, girişim d&uuml;nyasını daha yakından tanıyarak kendi girişim fikirlerini olgunlaştırıyor ve &ouml;l&ccedil;ekleme odaklı olarak yeniden değerlendirme şansı yakalıyor. Başarılı girişimcilerin vakaları, girişimcilik ve inovasyon at&ouml;lye &ccedil;alışmaları, yatırımcı ve girişimci buluşmalarını bu kez online ortamda sunuyoruz.</p>\r\n<p>Sen de girişim d&uuml;nyasını yakından tanımak ve deneyimlemek istiyorsan hemen başvur ve bu d&ouml;nemin 75 katılımcısından biri olma şansını yakala.</p>	https://casecampus.org.tr/?ref=hackathonturkiye	\N	thumbnails/thumbnail_QA0TZ9y.png	2020-06-06 00:00:00+03	2020-06-10 00:00:00+03	t	2020-05-24 03:43:06.808549+03	\N	7	\N	online	1	\N	\N	casecampus-bootcamp-live
+989	Yarını Kodlayanlar Online Covideathon	11-12 Nisan 2020, Online	<p style="box-sizing: border-box; overflow-wrap: break-word; margin: 0px 0px 24px; padding: 0px; color: #515151; font-family: 'Nunito Sans'; font-size: 16px; background-color: #ffffff;"><span style="box-sizing: border-box; overflow-wrap: break-word; font-weight: bold; margin-bottom: 0px;">Habitat Derneği ve T&uuml;rkiye Vodafone Vakfı, Yarını Kodlayanlar Projesi kapsamında T&uuml;rkiye&rsquo;nin gen&ccedil; beyinlerini, bug&uuml;n&uuml;n &ccedil;&ouml;z&uuml;mlerini ve yarının &ouml;nlemlerini bulabilmeleri i&ccedil;in Yarını Kodlayanlar Online Covideathon&rsquo;una davet ediyor.</span></p>\r\n<p style="box-sizing: border-box; overflow-wrap: break-word; margin: 0px 0px 24px; padding: 0px; color: #515151; font-family: 'Nunito Sans'; font-size: 16px; background-color: #ffffff;"><span style="box-sizing: border-box; overflow-wrap: break-word; font-weight: bold;">14-17</span>&nbsp;Yaş arası gen&ccedil;lerimizin&nbsp;<span style="box-sizing: border-box; overflow-wrap: break-word; font-weight: bold; margin-bottom: 0px;">en az 2 en fazla 4 kişilik gruplar halinde</span>&nbsp;katılabileceği <strong>Covideathon</strong>&rsquo;umuzda, ana konu olarak T&uuml;rkiye&rsquo;nin i&ccedil;erisinde bulunduğu &ldquo;Pandemi&rdquo; durumunun yaratmış olduğu bir problemlere teknoloji odaklı &ccedil;&ouml;z&uuml;mler bulmalarını bekliyoruz.</p>\r\n<p style="box-sizing: border-box; overflow-wrap: break-word; margin: 0px 0px 24px; padding: 0px; color: #515151; font-family: 'Nunito Sans'; font-size: 16px; background-color: #ffffff;"><span style="box-sizing: border-box; overflow-wrap: break-word; font-weight: bold; margin-bottom: 0px;">Pandemi</span>: Birden fazla &uuml;lkede, bir kıta veya t&uuml;m d&uuml;nya y&uuml;zeyi gibi &ccedil;ok geniş alanda yayılan ve etkisini g&ouml;steren salgın hastalıklara verilen addır.</p>\r\n<p style="box-sizing: border-box; overflow-wrap: break-word; margin: 0px 0px 24px; padding: 0px; color: #515151; font-family: 'Nunito Sans'; font-size: 16px; background-color: #ffffff;"><span style="box-sizing: border-box; overflow-wrap: break-word; font-weight: bold; margin-bottom: 0px;">Bir Fikrim Var!</span></p>\r\n<p style="box-sizing: border-box; overflow-wrap: break-word; margin: 0px 0px 24px; padding: 0px; color: #515151; font-family: 'Nunito Sans'; font-size: 16px; background-color: #ffffff;">D&uuml;nya&rsquo;yı topluca etkileyen COVID-19 salgını nedeniyle T&uuml;rkiye olarak 2 haftadır evdeyiz. Sağlık sekt&ouml;r&uuml;nden, gıda sekt&ouml;r&uuml;ne; sosyal yaşantılarımızdan, okul hayatımıza kadar bu salgın durumundan etkilendik. Sen de bu durumun farkındaysan ve bir fikrinin olduğunu d&uuml;ş&uuml;n&uuml;yorsan arkadaşlarınla 2 veya 4 kişilik gruplar oluşturarak fikrini hayata ge&ccedil;irmek harekete ge&ccedil;!</p>\r\n<p style="box-sizing: border-box; overflow-wrap: break-word; margin: 0px 0px 24px; padding: 0px; color: #515151; font-family: 'Nunito Sans'; font-size: 16px; background-color: #ffffff;"><span style="box-sizing: border-box; overflow-wrap: break-word; font-weight: bold; margin-bottom: 0px;">Dereceye girenler takımlara toplam 17.000 TL &ouml;d&uuml;l!</span></p>	https://habitatdernegi.org/yarini-kodlayanlar-online-covideathon/?ref=hackathonturkiye	\N	thumbnails/thumbnail_ryZQxaG.png	2020-04-11 00:00:00+03	2020-04-13 00:00:00+03	t	2020-05-24 03:42:54.823917+03	\N	3	\N	online	1	\N	Habitat Derneği	yarn-kodlayanlar-online-covideathon
+999	Gameathon Genç	19 Mayıs 2020, Online	<p style="box-sizing: inherit; overflow-wrap: break-word; margin-top: 0px; margin-bottom: 1.75em; color: #303030; font-family: 'Exo 2', sans-serif; font-size: 16px; background-color: #ffffff;"><strong>Gameathon Gen&ccedil;</strong>, 15-20 yaş grubu gen&ccedil;lerin &ccedil;evrimi&ccedil;i ortamda bilgi, beceri ve yetkinliklerinin desteklendiği keyifli ve interaktif 3 saat s&uuml;ren oyun ve &ouml;ğrenme maratonudur. Bu s&uuml;re&ccedil;te gen&ccedil;ler 3 gruba ayrılır ve her grup farklı bir at&ouml;lyeye katılır. At&ouml;lyeler toplamda 40 dakika s&uuml;rer. Bir at&ouml;lye sona erdiğinde, gen&ccedil;ler ortak alanda toplanır, t&uuml;m grupla kısa bir değerlendirme yapılır ve hareketlendirici oynanır. Daha sonra gen&ccedil;ler bir diğer at&ouml;lyeye katılır. Bu şekilde her gen&ccedil; toplam 3 farklı at&ouml;lyeye katılmış olur. Her at&ouml;lye alanında uzman bir eğitmen eşliğinde ve gen&ccedil;lerin aktif katılımına olanak verecek şekilde ger&ccedil;ekleşir.</p>\r\n<p style="box-sizing: inherit; overflow-wrap: break-word; margin-top: 0px; margin-bottom: 1.75em; color: #303030; font-family: 'Exo 2', sans-serif; font-size: 16px; background-color: #ffffff;"><strong style="box-sizing: inherit; overflow-wrap: break-word;">Gameathon Gen&ccedil; At&ouml;lyeleri:</strong></p>\r\n<ul style="box-sizing: inherit; overflow-wrap: break-word; margin: 0px 0px 1.75em; padding-left: 1.75em; list-style-position: initial; list-style-image: initial; color: #303030; font-family: 'Exo 2', sans-serif; font-size: 16px; background-color: #ffffff;">\r\n<li style="box-sizing: inherit; overflow-wrap: break-word;"><strong style="box-sizing: inherit; overflow-wrap: break-word;">Kariyer Planlama At&ouml;lyesi:</strong>&nbsp;Kariyer planlama neden &ouml;nemlidir, nasıl planlanır, kariyer planlama aşamaları ve beklenmedik durumlarda ortaya &ccedil;ıkan kriz durumlarında neler yapılacağı konularında &ccedil;alışmalar yapılan bir at&ouml;lyedir.</li>\r\n<li style="box-sizing: inherit; overflow-wrap: break-word;"><strong style="box-sizing: inherit; overflow-wrap: break-word;">Oyunlaştırma At&ouml;lyesi:&nbsp;</strong>G&uuml;nl&uuml;k hatanda ve iş yaşamında oyunlaştırma yapmak isteyenlerin, karşılaştıkları motivasyonel sorunlara oyunlaştırılmış &ccedil;&ouml;z&uuml;mler geliştirebilecekleri ve oyunlaştırma mekaniklerinin &ouml;ğrenileceği bir at&ouml;lyedir.</li>\r\n<li style="box-sizing: inherit; overflow-wrap: break-word;"><strong style="box-sizing: inherit; overflow-wrap: break-word;">Hikayeleştirme At&ouml;lyesi:&nbsp;</strong>Hikayelere ve oyunlara ilgi duyan kişiler i&ccedil;in hikayeleştirmenin ne olduğu, nasıl yapılacağı ve &ouml;rnek &ccedil;alışmalar konusunda uygulamalı olarak &ccedil;alışmalar yapılan bir at&ouml;lyedir.</li>\r\n<li style="box-sizing: inherit; overflow-wrap: break-word;"><strong style="box-sizing: inherit; overflow-wrap: break-word;">Toplumsal Eşitlik At&ouml;lyesi:</strong>&nbsp;Eğitimdeki, iş yaşamındaki ve g&uuml;nl&uuml;k hayattaki alışılagelmiş eşitsizliklerin farkına varılması, davranış ve s&ouml;zlerimizdeki eşitsizliği yansıtan durumların tespit edilmesi ve değiştirilmesi i&ccedil;in &ccedil;alışmalar yapılan bir at&ouml;lyedir.</li>\r\n<li style="box-sizing: inherit; overflow-wrap: break-word;"><strong style="box-sizing: inherit; overflow-wrap: break-word;">Sosyal Girişim At&ouml;lyesi:</strong>&nbsp;Sosyal girişimcinin kim olduğu, sosyal girişim fikri bulma, geliştirme, planlama ve uygulama s&uuml;recinde deneyimlenerek &ouml;ğrenildiği bir at&ouml;lyedir.</li>\r\n<li style="box-sizing: inherit; overflow-wrap: break-word;"><strong style="box-sizing: inherit; overflow-wrap: break-word;">Tasarım Odaklı D&uuml;ş&uuml;nme At&ouml;lyesi:&nbsp;</strong>Tasarım Odaklı D&uuml;ş&uuml;nme&rsquo;nin d&uuml;ş&uuml;nce yapısı, metotları, ger&ccedil;ek insanlardan ilham alınarak geliştirilen pratik uygulamaları, prototip geliştirme gibi konuların deneyimlenerek ortamda &ouml;ğrenildiği at&ouml;lyedir.</li>\r\n<li style="box-sizing: inherit; overflow-wrap: break-word;"><strong style="box-sizing: inherit; overflow-wrap: break-word;">Gen&ccedil;lik Fırsatları At&ouml;lyesi:&nbsp;</strong>Gen&ccedil;ler i&ccedil;in Avrupa&rsquo;daki fırsatlar, fonlar, ağlar, başvuru s&uuml;reci, başvuru koşulları, kimler i&ccedil;in uygun olduğu gibi konularda &ouml;rneklerle anlatılan bir at&ouml;lyedir.</li>\r\n</ul>	https://ogrenmetasarimlari.com/gameathon-genc-19-mayis-2020/	\N	thumbnails/thumbnail_e0YVZwK.png	2020-05-19 00:00:00+03	2020-05-20 00:00:00+03	t	2020-05-24 03:43:05.062325+03	\N	2	\N	online	1	\N	\N	gameathon-genc
+997	UNIdeathon	T3 Girişim Merkezi, 19-22 Mayıs 2020, Online	<p style="box-sizing: border-box; margin: 0px 0px 24px; line-height: 24px; padding-top: 10px; font-size: 14px; color: #767676; font-family: 'Open Sans', sans-serif; background-color: #ffffff;"><strong>UNIdeathon</strong>; T&uuml;rkiye Teknoloji Takımı Girişim Merkezi tarafından d&uuml;zenlenen COVID-19 ve sonrası normalleşme s&uuml;recinde &uuml;niversitelerin ve &ouml;ğrencilerin karşılaşabilecekleri problemlere &ccedil;&ouml;z&uuml;m geliştirme maratonudur.</p>\r\n<p style="box-sizing: border-box; margin: 0px 0px 24px; line-height: 24px; padding-top: 10px; font-size: 14px; color: #767676; font-family: 'Open Sans', sans-serif; background-color: #ffffff;">Yaşanan Covid-19 pandemi s&uuml;recinde &ouml;ğrenciler, eğitim hayatlarında alışılmış d&uuml;zenin dışında farklı &ccedil;&ouml;z&uuml;mlerle karşı karşıya kalmış ve buna adapte olmaya &ccedil;alışmışlardır. Pandemi sonrası eğitim hayatında normalleşme s&uuml;recine girileceğinin konuşulduğu bu d&ouml;nemde &ouml;ğrenciler normalleşme s&uuml;recinde kendilerini nelerin beklediği konusunda endişe duymaktadır. Yaşanan bu olumsuz durumun ger&ccedil;ekleştireceğimiz maraton ile pandemi sonrası eğitim sisteminde karşılaşılabilecek problemlere &ccedil;&ouml;z&uuml;m geliştirme ve daha uzun vadede ise eğitim sisteminde dijital inovasyon a&ccedil;ısından bir fırsata d&ouml;n&uuml;şeceğine inanıyoruz.<br style="box-sizing: border-box;" />Bu maratonun &uuml;niversitelere de katkısı olması adına maratonda tespit edilen problemler ve olası alternatif &ccedil;&ouml;z&uuml;mler raporlaştırılarak web sitesinde yayınlanacaktır.</p>	https://t3gm.org/unideathon-basvur.php?ref=hackathonturkiye	\N	thumbnails/thumbnail_KpRFJrF.png	2020-05-19 00:00:00+03	2020-05-23 00:00:00+03	t	2020-05-24 03:43:03.230248+03	\N	3	\N	online	1	\N	\N	unideathon
+998	Code Mamak	17-19 Mayıs 2020, Online	<p><span style="color: #181b31; font-family: Roboto, sans-serif; font-size: 21px; text-align: center; background-color: #ffffff;"><strong>CodeMamak Hackathon</strong>'un amacı gen&ccedil; yetenekleri keşfetmek, fikirleri hayata ge&ccedil;irmek ve 94'ten beri s&uuml;regelen g&ouml;n&uuml;l belediyeciliği anlayışımızın dijital d&ouml;n&uuml;ş&uuml;m&uuml;n&uuml; sağlamaktır.</span></p>\r\n<p><strong style="box-sizing: border-box; color: #3d3d3b; font-family: Roboto, sans-serif; font-size: 44px; text-align: center; background-color: #ffffff;">Katılımcıları</strong><span style="color: #3d3d3b; font-family: Roboto, sans-serif; font-size: 44px; text-align: center; background-color: #ffffff;">&nbsp;Ne Bekliyor?</span></p>\r\n<p class="lead text-dark" style="box-sizing: border-box; margin: 0px 0px 20px; font-size: 21px; line-height: 1.4; font-family: Roboto, sans-serif; text-align: center; background-color: #ffffff; color: #181b31 !important;">M&uuml;şterilerin hayatlarına değer katacak yeni fikirler birbiriyle yarışıyor, en başarılılar j&uuml;ri tarafından belirlenerek &ouml;d&uuml;llendiriliyor.</p>\r\n<p class="lead text-dark" style="box-sizing: border-box; margin: 0px 0px 20px; font-size: 21px; line-height: 1.4; font-family: Roboto, sans-serif; text-align: center; background-color: #ffffff; color: #181b31 !important;">48 saat boyunca s&uuml;recek kıyasıya bir rekabet ve soluksuz bir yarışma sizleri bekliyor.</p>\r\n<p class="lead text-dark" style="box-sizing: border-box; margin: 0px 0px 20px; font-size: 21px; line-height: 1.4; font-family: Roboto, sans-serif; text-align: center; background-color: #ffffff; color: #181b31 !important;">Yazılım ve servisler hakkında takıldığınız her konuda mentorlarımız sorularınızı yanıtlamak i&ccedil;in 48 saat sizinle olacaklar.</p>\r\n<p class="lead text-dark" style="box-sizing: border-box; margin: 0px 0px 20px; font-size: 21px; line-height: 1.4; font-family: Roboto, sans-serif; text-align: center; background-color: #ffffff; color: #181b31 !important;"><strong>Hackathon </strong>boyunca yazılımcılar, girişimciler ve mentorlarımızla tanışma ve fikirlerinizi paylaşma fırsatları yakalayacaksınız.</p>	http://code.mamak.bel.tr/?ref=hackathonturkiye	\N	thumbnails/thumbnail_BwmArUf.png	2020-05-17 00:00:00+03	2020-05-20 00:00:00+03	t	2020-05-24 03:43:04.259364+03	\N	1	\N	online	1	\N	\N	code-mamak
+995	Online Simülasyon Hackathonu	15-20 Mayıs 2020, Online	<p><span style="color: #0d1d31; font-family: Roboto; font-size: 24px; font-weight: 900; text-transform: uppercase; background-color: #fbfbfb;">SIMATHON NEDİR?</span></p>\r\n<p><span style="color: #6d7a83; font-family: Roboto; font-size: 18px; background-color: #fbfbfb;">&Ouml;ğrencilerin, COVID-19 dolayısıyla kuruluşların yaşadığı problemlere veya salgın dolayısıyla ger&ccedil;ekleşme ihtimali olan kendi belirledikleri vakalara modelleme ve sim&uuml;lasyon uygulamalarını kullanarak &ccedil;&ouml;z&uuml;m geliştireceği bir online etkinliktir.</span></p>\r\n<p><span style="background-color: #fbfbfb;"><span style="color: #6d7a83; font-family: Roboto;"><span style="font-size: 18px;">&Ouml;ğrencilerin, kurumlarda bulunan veya kendi belirledikleri vakalar &uuml;zerinden modelleme ve sim&uuml;lasyon uygulamalarını kullanarak &ccedil;&ouml;z&uuml;mler &uuml;retmesiyle hem yeteneklerini geliştirmek hem de sekt&ouml;rdeki bir&ccedil;ok uzmana sim&uuml;lasyon y&ouml;ntemleri konusunda farklı bakış a&ccedil;ıları kazandırarak kurumları ve &ouml;ğrencileri bir araya getirmektir.</span></span></span></p>	https://simathon.org/?ref=hackathonturkiye	\N	thumbnails/thumbnail_Wfugbfk.png	2020-05-14 00:00:00+03	2020-05-20 00:00:00+03	t	2020-05-24 03:43:01.214305+03	\N	1	\N	online	1	\N	\N	online-simulasyon-hackathonu
+992	Online Marketing Hackathon	2-3 Mayıs 2020, Online	<p><span style="color: #8b8b9a; font-family: Barlow, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; font-size: 16px; text-align: center; background-color: #ffffff;"><strong>Marketing Online</strong> <strong>Hackathon </strong>i&ccedil;in hazır mısınız? <strong>Hackathon&rsquo;un </strong>hedefi m&uuml;şterilere iletişim kanalları, m&uuml;şteri iletişim teknikleri ve m&uuml;şteri &ccedil;&ouml;z&uuml;mleri i&ccedil;in yeni nesil teknolojiler &uuml;retmek.. Dijital projeler geliştirmekten keyif alan, <strong>Hackathon </strong>ruhunu yaşamak isteyen, potansiyel ve mevcut m&uuml;şterilerimize g&uuml;nl&uuml;k hayatlarında ilişkili bir fayda sağlayabilecek inovatif fikirlere sahip t&uuml;m yazılımcı, tasarımcı ve geliştiricileri <strong>Marketing Online Hackathon</strong>&rsquo;a bekliyoruz!</span></p>	http://hackathon.kirenyazilim.com?ref=hackathonturkiye	\N	thumbnails/thumbnail_8QjfAjT.png	2020-05-02 00:00:00+03	2020-05-04 00:00:00+03	t	2020-05-24 03:42:58.201552+03	\N	1	\N	online	1	\N	Kiren Yazılım	online-marketing-hackathon
+972	Denizli Çocuk Hackathonu	11-12 Nisan 2020 - Denizli Koleji	<p style="color: #555555; font-family: 'Lucida Grande', sans-serif; font-size: 14px; background-color: #ffffff; text-align: center;"><strong>Milli Eğitim Bakanlığı, Denizli Koleji ve Mucitimo işbirliğinde d&uuml;zenlenecek robotik kodlama yarışması Denizli'nin ilk &Ccedil;ocuk Hackathonunda d&uuml;nyayı değiştirmek i&ccedil;in seni bekliyoruz.</strong></p>\r\n<p style="color: #555555; font-family: 'Lucida Grande', sans-serif; font-size: 14px; background-color: #ffffff; text-align: center;">1 g&uuml;n boyunca g&uuml;n i&ccedil;inde verilecek konu ile ilgili kodlama ve robotik yapacaksın ve bunun i&ccedil;in sadece 1 g&uuml;n&uuml;n olacak. Ayrıca &uuml;cretsiz olarak eğitimde alabileceksin. 5. 6. 7. ve 8. sınıfta &ouml;ğrenim g&ouml;r&uuml;yorsan 3 kişilik takımını kur, hemen başvur!</p>	http://www.hackathon.denizlikoleji.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_ZR5r9KK.png	2020-04-11 00:00:00+03	2020-04-13 00:00:00+03	t	2020-05-24 03:42:37.926457+03	\N	1	\N	Denizli	1	\N	\N	denizli-cocuk-hackathonu
+990	FarkLabs Hackathon - #fikrinevdekalmasin	10-13 Nisan 2020, Online	<p>Evde ge&ccedil;irilen bu g&uuml;nlerde hen&uuml;z kimsenin cevabını bulamadığı bir bilmeceyi &ccedil;&ouml;zmeye ne dersin?</p>\r\n<p>&nbsp;</p>\r\n<p>"Kargo sistemindeki eksikleri anında tespit ederim"</p>\r\n<p>"Paket servisin daha iyisini yaparım"</p>\r\n<p>"Hijyenik olduğuna da bahse girerim"</p>\r\n<p>"Teslimat ekosistemini değiştirecek bir fikrim var, kimse beni duymuyor" diyorsan;</p>\r\n<p>&nbsp;</p>\r\n<p>&Uuml;r&uuml;n bazlı teslimat &ccedil;&ouml;z&uuml;m&uuml;n&uuml; paylaşmak i&ccedil;in online hackathon'da bize katıl, fark yarat!</p>\r\n<h2 style="box-sizing: inherit; font-family: Montserrat; line-height: 1.2; margin-top: 0px; margin-bottom: 0.5rem; color: #ffffff; font-size: 36px; background-color: #ffffff;"><span style="box-sizing: inherit; color: #000000;">Seni Neler Bekliyor?</span></h2>\r\n<p style="box-sizing: inherit; margin-top: 0px; margin-bottom: 1rem; font-family: 'Open Sans'; font-size: 18px; background-color: #ffffff;"><span style="box-sizing: inherit;">Kesintisiz 72 saat boyunca s&uuml;recek yarışmada katılımcılardan son kilometre teslimat s&uuml;re&ccedil;lerini farklı bir bakış a&ccedil;ısıyla değerlendirmeleri, yeni teknolojileri yaratıcı ve yenilik&ccedil;i bi&ccedil;imde d&uuml;ş&uuml;nmeleri ve bu alanda &ccedil;&ouml;z&uuml;m olabilecek &uuml;r&uuml;n veya hizmet fikirleri sunmaları istenmektedir.</span></p>	https://hackathon.farklabs.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_2IRUsEk.png	2020-04-10 00:00:00+03	2020-04-13 00:00:00+03	t	2020-05-24 03:42:55.800915+03	\N	1	\N	online	1	\N	Fark Labs	farklabs-hackathon-fikrinevdekalmasin
+979	ANSIAD Değişim Yarat Hackathon	2-3 Nisan 2020 - Antalya	<p style="box-sizing: border-box; margin: 0px 0px 10px; font-family: Arial, sans-serif; color: #333333; font-size: 14px; text-align: justify;"><strong>"Değişim Yarat" Girişimcilik Kampı</strong> Programı, Antalya Sanayici ve İş İnsanları Derneği tarafından Avrupa Birliği &ndash; T&uuml;rkiye Arasındaki Sivil Toplum Diyaloğu&rsquo;nun Desteklenmesi Hibe Programı (CSD&ndash;5) ile fonlanan &ldquo;Girişimciliğin Ortak Dili&rdquo; adlı proje kapsamında d&uuml;zenlenmekte. Değişim yaratacak bir girişim fikrine sahipsen ve bu fikri geliştirmek, ger&ccedil;ek bir girişim planına d&ouml;n&uuml;şt&uuml;rmek istiyorsan bu fırsatı sakın ka&ccedil;ırma!</p>\r\n<p style="box-sizing: border-box; margin: 0px 0px 10px; font-family: Arial, sans-serif; color: #333333; font-size: 14px; text-align: justify;">Kampa 16 &ndash; 30 yaş arası gen&ccedil;ler başvurabilecek. Ayrıca T&uuml;rk gen&ccedil;lerle birlikte Avrupa&rsquo;dan gelen gen&ccedil;ler de olacak. Bu nedenle kamp dili İngilizce.</p>	http://www.ansiad.org.tr/index.php?goto=icerik&cat_idx=63&ref=hackathonturkiye	\N	thumbnails/thumbnail_ojLLv66.png	2020-04-02 00:00:00+03	2020-04-04 00:00:00+03	t	2020-05-24 03:42:45.34584+03	\N	1	\N	Antalya	1	\N	\N	ansiad-degisim-yarat-hackathon
+984	Veri Müşterekleri için Ağ Haritalama Hackathonu	21-22 Mart 2020 - TMMOB Mimarlar Odası, online	<h1 id="verini-kap-da-gel-ağlarımızı-&ouml;r&uuml;yoruz" style="box-sizing: border-box; margin: 20px 0px 10px; font-size: 36px; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.1; color: #404040; background-color: #ffffff;">Verini kap da gel! Ağlarımızı &ouml;r&uuml;yoruz!</h1>\r\n<p style="box-sizing: border-box; margin: 30px 0px; line-height: 1.5; color: #404040; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; background-color: #ffffff;">Toplumsal konularda veri takibi yapan oluşumlar, araştırmacılar ve yazılımcılar verileri birbiriyle konuşturmak, m&uuml;şterekleştirmek i&ccedil;in bir araya geliyor.</p>\r\n<p style="box-sizing: border-box; margin: 30px 0px; line-height: 1.5; color: #404040; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; background-color: #ffffff;">Somut grup &ccedil;alışmalarına zemin hazırlayabilmek i&ccedil;in aşağıdaki &ouml;nc&uuml;l &ccedil;alışma gruplarını &ouml;neriyoruz. S&uuml;re&ccedil; i&ccedil;erisinde grupların değişmesi, birleşmesi, ayrışması m&uuml;mk&uuml;n, hatta ama&ccedil;lanmaktadır.</p>\r\n<h4 id="kimler-katılmalı" style="box-sizing: border-box; font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.1; color: #404040; margin-top: 10px; margin-bottom: 10px; font-size: 18px; background-color: #ffffff;">Kimler katılmalı?</h4>\r\n<p style="box-sizing: border-box; margin: 30px 0px; line-height: 1.5; color: #404040; font-family: Georgia, 'Times New Roman', serif; font-size: 20px; background-color: #ffffff;">Yazılımcılar, veri bilimiyle uğraşanlar, yetenekleriyle toplumsal d&ouml;n&uuml;ş&uuml;m i&ccedil;in yaratıcı uygulamalar geliştirmek isteyenler. Sosyal, tarihsel, mekansal, ekonomik, hukuki toplumun bug&uuml;n&uuml; ve d&uuml;n&uuml;ndeki herhangi bir sorun alanında veri-bazlı &ccedil;alışanlar.</p>	https://graphcommons.github.io/hackathons/2020/03/02/veri-musterekleri/?ref=hackathonturkiye	\N	thumbnails/thumbnail_OFk8k2M.png	2020-03-21 00:00:00+03	2020-03-23 00:00:00+03	t	2020-05-24 03:42:49.80292+03	\N	1	\N	online	1	\N	\N	veri-musterekleri-icin-ag-haritalama-hackathonu
+954	Genç Duruş Hackathonu	21-22 Mart 2020 - TOBB Ekonomi ve Teknoloji Üniversitesi - Ankara	<p style="box-sizing: border-box; margin: 0px 0px 1rem; padding: 0px; border: none; outline: none; position: relative; line-height: 1.8em; color: #2d2d2d; font-family: Arimo, sans-serif; font-size: medium;"><strong>Korona Vir&uuml;s&uuml; ile ilgili gelişmeler nedeniyle 21-22 Mart 2020 tarihinde yapılacak Hackathon ikinci bir duyuruya kadar ertelenmiştir.</strong></p>\r\n<p style="box-sizing: border-box; margin: 0px 0px 1rem; padding: 0px; border: none; outline: none; position: relative; line-height: 1.8em; color: #2d2d2d; font-family: Arimo, sans-serif; font-size: medium;">&nbsp;</p>\r\n<h6 style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; font-family: Roboto, sans-serif; font-weight: normal; line-height: 1.6em; color: #7a7a7a; font-size: 18px; position: relative; background: none #ffffff; opacity: 1; visibility: visible; transition: opacity 0.24s ease-in-out 0s;">Şiddete varan aşırıcılık &ccedil;alışmalarına y&ouml;nelik kolay uygulamalar ve yazılımlar geliştirilecektir. Bu kapsamda bilgisayar bilimleri ve bilişim teknolojileri alanındaki uzmanların ve lisans ve lisans&uuml;st&uuml; &ouml;ğrencilerin katılımıyla bir <strong>Hackathon </strong>d&uuml;zenlenecektir. Bu uygulamalar ve yazılımlar, sanal alanda haritalama &ccedil;alışmalarının yanı sıra izleme ve destek sağlamaya da yardımcı olacaktır.</h6>\r\n<h6 style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; font-family: Roboto, sans-serif; font-weight: normal; line-height: 1.6em; color: #7a7a7a; font-size: 18px; position: relative; background: none #ffffff; opacity: 1; visibility: visible; transition: opacity 0.24s ease-in-out 0s;">&nbsp;</h6>\r\n<h6 style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; font-family: Roboto, sans-serif; font-weight: normal; line-height: 1.6em; color: #7a7a7a; font-size: 18px; position: relative; background: none #ffffff; opacity: 1; visibility: visible; transition: opacity 0.24s ease-in-out 0s;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; font-weight: bolder;">Uygulama:&nbsp;</span>T&uuml;rk&ccedil;e ger&ccedil;ekleştirilecek olan <strong>Hackathon </strong>yarışması katılımcılarının niyet beyanı, ilgili projenin kısa &ouml;zeti ve referans mektuplarını i&ccedil;eren belgeleri g&ouml;ndermelerini isteyen duyuruyla başlatılacaktır. İlk başvurular arasından araştırmacılar ve alanında uzmanlar &ouml;n se&ccedil;imle 15 grup belirleyecektir. Her grup, biri sosyal bilimci olmak &uuml;zere 3 katılımcıdan oluşacaktır. Ankara&rsquo;da TOBB Ekonomi ve Teknoloji &Uuml;niversitesi&rsquo;nde d&uuml;zenlenecek 24 saatlik <strong>Hackathon&rsquo;da </strong>katılımcılar &uuml;r&uuml;nlerini geliştirecek ve sunacaklardır. Yenilik&ccedil;ilik, kolaylık, alandaki acil bir ihtiyaca cevap verebilme ve pratik d&uuml;zeyde kullanılabilecek olma kriterlerine g&ouml;re en iyi uygulama yarışmayla belirlenecektir. Kazanan uygulama ve/veya yazılım projenin internet sitesinde yer alacaktır.</h6>\r\n<h6 style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; font-family: Roboto, sans-serif; font-weight: normal; line-height: 1.6em; color: #7a7a7a; font-size: 18px; position: relative; background: none #ffffff; opacity: 1; visibility: visible; transition: opacity 0.24s ease-in-out 0s;">&nbsp;</h6>\r\n<h6 style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; font-family: Roboto, sans-serif; font-weight: normal; line-height: 1.6em; color: #7a7a7a; font-size: 18px; position: relative; background: none #ffffff; opacity: 1; visibility: visible; transition: opacity 0.24s ease-in-out 0s;"><span style="box-sizing: border-box; margin: 0px; padding: 0px; border: none; outline: none; font-weight: bolder;">Beklenen &ccedil;ıktı:</span> Şiddete varan aşırıcılık &ccedil;alışmalarını desteklemek amacıyla ihtiya&ccedil; duyulan yazılım ve uygulamalar geliştirilip ilgili tarafların kullanımına sunulacaktır.</h6>	http://gencdurus.com/hackathon/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_ihfaUsL.png	2020-03-21 00:00:00+03	2020-03-23 00:00:00+03	t	2020-05-24 03:42:17.502968+03	\N	1	\N	Ankara	1	\N	\N	genc-durus-hackathonu
+983	Siber Güvenlik Fikir Yarışması	20-21 Mart 2020 - Teknopark İstanbul	<p>Siber G&uuml;venlik, T&uuml;rkiye&rsquo;de ve D&uuml;nya&rsquo;da artan siber tehditlerin de etkisiyle hızla b&uuml;y&uuml;meye devam eden bir sekt&ouml;r. Bu sekt&ouml;rde global arenaya sunulabilecek kalitede &uuml;r&uuml;n &uuml;retebilme kabiliyeti kazanmak hem ihracat potansiyeli hem de &uuml;lkemiz i&ccedil;erisindeki kritik siber altyapıların korunması i&ccedil;in gereken bilgi birikimine sahip olmak a&ccedil;ılarından b&uuml;y&uuml;k &ouml;nem taşımaktadır. T&uuml;rkiye&rsquo;de Siber G&uuml;venlik alanında yeni girişimcilerin ticarileşebilir yenilik&ccedil;i iş fikirlerinin desteklenmesi amacıyla d&uuml;zenlenen organizasyonda &ouml;n eleme sonucu se&ccedil;ilecek 16 takım yeni iş fikirleri &uuml;retmek, olgunlaştırmak, global pazar analizi yapmak ve fikirlerinin prototiplerini ortaya &ccedil;ıkarmak i&ccedil;in bir araya gelecek.</p>	https://siberguvenlikfikiryarismasi.org/basvuru/?ref=hackathonturkiye	\N	thumbnails/thumbnail_J8oWHp8.png	2020-03-20 00:00:00+03	2020-03-22 00:00:00+03	t	2020-05-24 03:42:48.95398+03	\N	3	\N	İstanbul	1	\N	\N	siber-guvenlik-fikir-yarsmas
+986	Hack PCB	13-15 Mart 2020 - Gaziantep Teknopark	<h1 class="margin-top in-view__child in-view__child--fadein in-view__child--in" style="box-sizing: inherit; font-size: 56px; margin: 24px 0px 12px; clear: both; font-family: Poppins, sans-serif; line-height: 72px; letter-spacing: -0.02em; opacity: 1; transform: none; transform-origin: 0px 0px; transition: opacity 0.4s ease 0s, transform 1.2s ease 0s, -webkit-transform 1.2s ease 0s; will-change: opacity, transform; color: #222222; text-align: center; background-color: #ffffff;">2. Ulusal PCB Tasarım Hackathonu</h1>\r\n<p><span style="color: #222222; font-family: Karla, sans-serif; font-size: 16px; background-color: #ffffff;"><strong>Gaziantep Gen&ccedil; Emo</strong> olarak PCB (Elektronik Kart Tasarımı) &uuml;zerine ulusal &ccedil;apta 2. <strong>Hackathonu </strong>d&uuml;zenliyoruz. Teknoloji Zirvesi Organizasyonumuz 500 kişi kapasiteli Gaziantep &Uuml;niversitesi M&uuml;hendislik Fak&uuml;ltesi Dekanlığı Konferans Salonunda, Hackathonumuz 60 kişi kapasiteli GA&Uuml;N Kamp&uuml;s İ&ccedil;i Gizem Doğan Yaşayarak &Ouml;ğrenme Merkezi'nde yapılacaktır. 3 g&uuml;n s&uuml;recek yarışmada ilk g&uuml;n &uuml;lkemizde PCB alanında &ccedil;alışmalar yapan şirketlerden katılımcılarla konuşmalar, paneller d&uuml;zenlenecek daha sonrasında 40 saat s&uuml;recek kart tasarımları yapılacak.</span></p>\r\n<p><span style="color: #222222; font-family: Karla, sans-serif; font-size: 16px; background-color: #ffffff;">&Uuml;lkemizde ilk defa ger&ccedil;ekleştirdiğimiz ikincisini yapmayı hedeflediğimiz PCB &uuml;zerine yapılacak <strong>hackathon</strong>, se&ccedil;kin mentorları, akademisyenleri ve misafirleri Gaziantep &Uuml;niversitesi Kamp&uuml;s&uuml;nde toplayarak &uuml;lke i&ccedil;in bilin&ccedil; oluşturmayı ve her yıl Mart ayında d&uuml;zenlenmeye devam ederek gelenekselleşen bir organizasyon olmayı hedeflenmektedir. İmajı ve y&uuml;ksek kalitesi en &ouml;nemli değerimiz olan organizasyonumuzda sizi stratejik ortağımız olarak yanımızda g&ouml;rmekten b&uuml;y&uuml;k mutluluk duyarız. İnanıyoruz ki; siz ve diğer stratejik ortaklarımızın da katkıları ile organizasyon daha b&uuml;y&uuml;k ve canlı hale gelecek, basında ve iş d&uuml;nyasında geniş yer bulacaktır. Sizinle iş birliği yapmaktan b&uuml;y&uuml;k mutluluk duyarız. Saygılarımızla,</span></p>\r\n<p>&nbsp;</p>	http://pcb.hackathlon.org/?ref=hackathonturkiye	\N	thumbnails/thumbnail_ZmOn1Is.png	2020-03-13 00:00:00+03	2020-03-16 00:00:00+03	t	2020-05-24 03:42:51.536973+03	\N	1	\N	Gaziantep	1	\N	Gaziantep Genç Emo	hack-pcb
+964	Deprem Hackathonu	13-15 Mart 2020 - Zemin İstanbul	<p><strong>DEPREM HACKATHONU NEDİR?</strong></p>\r\n<p>İstanbul&rsquo;da olası bir deprem anında ve sonrasındaki iletişim problemlerini (mağdurla yakın arasındaki, mağdurla kurtarma ekipleri arasındaki, vs.) &ccedil;&ouml;zmek amacıyla, İstanbul B&uuml;y&uuml;kşehir Belediyesi, T&uuml;rkiye Bilişim Vakfı, Başlangı&ccedil; Noktası, İT&Uuml; Yapay Zeka Merkezi, Zemin İstanbul ve Kodluyoruz işbirliği ile <strong>28-31 Mayıs 2020</strong> tarihlerinde online bir yarışma d&uuml;zenliyoruz. Bu yarışmaya se&ccedil;ilen takımlar, <strong>84 saat</strong> boyunca boyunca <strong>makine &ouml;ğrenmesi</strong>, <strong>yapay zeka</strong>, <strong>b&uuml;y&uuml;k veri</strong>, <strong>blockchain</strong>, <strong>nesnelerin interneti</strong> gibi yeni teknolojileri kullanarak inovatif &ccedil;&ouml;z&uuml;mler geliştirmeye &ccedil;alışacaklar.</p>	https://depremhackathonu.ibb.istanbul/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_1GB0lpz.png	2020-03-13 00:00:00+03	2020-03-16 00:00:00+03	t	2020-05-24 03:42:29.627317+03	\N	1	\N	İstanbul	1	\N	\N	deprem-hackathonu
+958	Sosyal Hackathon	6-8 Mart 2020 - İGA (İstanbul Havalimanı)	<p><strong>Covid-19 nedeniyle İGA Sosyal Hackathon ileri bir tarihe ertelenmiştir.</strong></p>\r\n<p>&nbsp;</p>\r\n<p><strong>İGA SOSYAL HACKATHON NEDİR?</strong></p>\r\n<p><strong>İGA Sosyal Hack</strong>, sosyal girişimciler ile bilgisayar programcıları grafik tasarımcıları, ara y&uuml;z tasarımcıları ve proje y&ouml;neticilerinin bir araya gelerek toplumsal sorunlara akıllı dijital &ccedil;&ouml;z&uuml;mlerin yaratılması i&ccedil;in yoğun bir şekilde yazılım veya iş fikirleri geliştireceği bir etkinliktir.</p>\r\n<p>&nbsp;</p>\r\n<p>Sosyal girişimcilik, sosyal sorunları; bir hizmet, &uuml;r&uuml;n veya model geliştirerek &ccedil;&ouml;zmeyi hedefleyen girişimciliktir.</p>\r\n<p>&nbsp;</p>\r\n<p>Sosyal girişimlerde, rekabet değil; kalıcı sosyal etki, s&uuml;rd&uuml;r&uuml;lebilirlik ve dayanışma esastır.</p>\r\n<p>&nbsp;</p>\r\n<p>Dijital teknolojiler ise, insanların her g&uuml;n karşılaştıkları sosyal zorluklarla m&uuml;cadelede en g&uuml;&ccedil;l&uuml; ara&ccedil;lardandır.</p>\r\n<p>&nbsp;</p>\r\n<p><strong>İGA Sosyal Hack</strong>&rsquo;in amacı daha iyi bir d&uuml;nya yaratmak i&ccedil;in sosyal bilimcileri, yazılımcıları ve girişimcileri g&uuml;&ccedil;lerini birleştirmeleri i&ccedil;in bir araya getirmektir.</p>	https://www.igasocialhack.com/?utm_source=hackathonturkiye&utm_medium=affiliate&utm_campaign=cpc	\N	thumbnails/thumbnail_G8aake1.png	2020-03-06 00:00:00+03	2020-03-09 00:00:00+03	t	2020-05-24 03:42:22.06455+03	\N	1	\N	İstanbul	1	\N	Türk Havayolları	sosyal-hackathon
+973	İzmir Hackathon	6-7 Mart 2020 - İzmir Havagazı Fabrikası	<p><strong>Ulaşımın Geleceği İzmir&rsquo;de Tasarlanıyor!</strong></p>\r\n<p><span style="background-color: #ffffff; color: #888888; font-family: Roboto, sans-serif; font-size: 16px;">Raylı ulaşım, kentsel ulaşım sistemleri i&ccedil;erisinde, y&uuml;ksek taşıma kapasitesi, enerji verimi, &ccedil;evrecilik ve erişilebilirlik &ouml;zellikleri nedeni ile en &ouml;nemli &ccedil;&ouml;z&uuml;mlerden biridir. İzmir kent yaşamının tam odağında bulunan raylı ulaşım deneyimini yenilik&ccedil;i yaklaşımlar ile daha da ileri g&ouml;t&uuml;rmeyi hedefliyoruz!</span></p>\r\n<p><br style="box-sizing: border-box; color: #888888; font-family: Roboto, sans-serif; font-size: 16px; background-color: #ffffff;" /><span style="color: #888888; font-family: Roboto, sans-serif; font-size: 16px; background-color: #ffffff;">Bu ama&ccedil;la 6 - 7 Mart 2020 tarihlerinde İzmir Havagazı Fabrikasında d&uuml;zenlenecek olan İzmir Ulaşım Hackathon&rsquo;unda kentin raylı ulaşım sistemlerinden sorumlu olan İzmir B&uuml;y&uuml;kşehir Belediyesi ulaşım iştiraki İzmir Metro A.Ş. verilerini katılımcılara a&ccedil;acaktır. Raylı ulaşım ve mobilite teması altında İzmir Metro AŞ. tarafından tespit edilen problemlere &ccedil;&ouml;z&uuml;m olacak, s&uuml;rd&uuml;r&uuml;lebilirliği, sosyal faydayı ve erişilebilirliği &ouml;n plana &ccedil;ıkaracak &ccedil;&ouml;z&uuml;mlerinizi bekliyoruz.</span><br style="box-sizing: border-box; color: #888888; font-family: Roboto, sans-serif; font-size: 16px; background-color: #ffffff;" /><br style="box-sizing: border-box; color: #888888; font-family: Roboto, sans-serif; font-size: 16px; background-color: #ffffff;" /><span style="color: #888888; font-family: Roboto, sans-serif; font-size: 16px; background-color: #ffffff;">&Ouml;n&uuml;m&uuml;zde yenilik&ccedil;i fikir yaratma heyecanı taşıyan herkesin katılabileceği ve bu s&uuml;re&ccedil;te katılımcıların alanında lider ment&ouml;rler tarafından destekleneceği, 24 saatlik, heyecanlı bir maraton var. Yenilik&ccedil;i &ccedil;&ouml;z&uuml;mlerinizi bekliyoruz!</span></p>	http://izmirhackathon.com/?ref=hackathonturkiye	\N	thumbnails/thumbnail_5FWs1vn.png	2020-03-06 00:00:00+03	2020-03-08 00:00:00+03	t	2020-05-24 03:42:39.226247+03	\N	1	\N	İzmir	1	\N	Sanayi ve Teknoloji Bakanlığı	izmir-hackathon
+994	Online Genç Ideathon	Evde Yaşam Üzerine Yenilikçi Fikir Maratonu\r\n13-15 Mayıs 2020, Online	<p><strong>Ideathon</strong>; belirli bir konuda yenilik&ccedil;i fikri olan kişi veya takımların; iş geliştirme, tasarım ve proje y&ouml;netim yeteneklerini kullanarak fikirlerini yarıştırdıkları bir fikir maratonudur.</p>\r\n<p>Koronavir&uuml;s tedbirleri kapsamında evde ge&ccedil;irmekte olduğumuz bu g&uuml;nlerde Evde Spor, Evde G&ouml;n&uuml;ll&uuml;l&uuml;k ve Evde Kişisel Gelişim olmak &uuml;zere 3 farklı kategoride evde yaşam &uuml;zerine &ccedil;&ouml;z&uuml;mler aranıyor. Gen&ccedil;lik ve Spor Bakanlığı; ev hayatı ve yaşam dengesini kurmaya yardımcı olacak, evde hareketliliği artıracak, evde ge&ccedil;irilen s&uuml;re zarfında kişisel gelişimi destekleyecek, g&ouml;n&uuml;ll&uuml;l&uuml;k faaliyetlerini iyileştirecek ve Bakanlık ile gen&ccedil;ler arasındaki iletişimi g&uuml;&ccedil;lendirecek &ccedil;&ouml;z&uuml;mleri gen&ccedil;lerle birlikte geliştirmek istiyor.</p>\r\n<p>Fikrine g&uuml;venen t&uuml;m gen&ccedil;leri ve gen&ccedil; takımları yenilik&ccedil;i &ccedil;&ouml;z&uuml;mler geliştirmek &uuml;zere online bir maceraya davet ediyoruz! Ayrıca kazanan takımları b&uuml;y&uuml;k &ouml;d&uuml;ller ve s&uuml;rprizler bekliyor.</p>	http://e-genc.gsb.gov.tr/EGenc/Content/Ideathon2020?ref=hackathonturkiye	\N	thumbnails/thumbnail_5Ud5g9h.png	2020-05-13 00:00:00+03	2020-05-15 00:00:00+03	t	2020-05-24 03:43:00.447049+03	\N	3	\N	online	1	\N	Gençlik ve Spor Bakanlığı	online-genc-ideathon
+978	Code of Duty	13-15 Mart 2020 - İzmir Yüksek Teknoloji Enstitüsü (Merkezi Kafeterya ve Teknopark İzmir)	<p><span style="color: #666666; font-family: 'Work Sans', sans-serif; font-size: 16px; background-color: #f7f7f7;"><strong>Code of Duty</strong>, IEEE İYTE &ouml;ğrenci topluluğu tarafından ger&ccedil;ekleştirilen bir yazılım maratonudur. <strong>Code of Duty</strong>'nin amacı yazılım alanıyla ilgilenen kişilere birbirleriyle m&uuml;cadele etme fırsatı sunmakla birlikte T&uuml;rkiye&rsquo;nin her kesiminden &ouml;ğrencileri ve yazılım sekt&ouml;r&uuml;n&uuml; bir araya getirerek tanışma olanağı sağlamaktır. &Uuml;lkemizde daha &ouml;nce benzeri yapılmamış olan bu etkinliği diğer organizasyonlardan farklı kılan nokta yetenekli ve yazılım konusunda ilgili olduğu &ouml;l&ccedil;&uuml;de bilgiye de sahip kişileri ortaya &ccedil;ıkarmayı ve de sekt&ouml;r&uuml;n ihtiyacı olan donanımlı işg&uuml;c&uuml; ile tanıştırmayı birincil hedef olarak g&uuml;tmesidir. Bu hedefine ise tek bir alanla sınırlı kalmayıp <strong>Siber G&uuml;venlik</strong>, <strong>Oyun Geliştirme</strong>, <strong>Algoritma ve Yapay Zeka</strong> alanlarında donanımlı kişileri buluşturarak ulaşmak istemektedir. Bu ama&ccedil;lar doğrultusunda etkinliğimiz d&ouml;rt ana kategoriden oluşmaktadır: <strong>IzHack</strong>, <strong>BuildUp</strong>, <strong>BrainHack</strong> ve <strong>MindIn</strong>. Her bir kategori kendi konseptine sahip olmakla birlikte farklı değerlendirmelere tabi tutulacaktır.</span></p>	http://codeofduty.iyte.edu.tr/?ref=hackathonturkiye	\N	thumbnails/thumbnail_J3wPIzA.png	2020-03-13 00:00:00+03	2020-03-16 00:00:00+03	t	2020-05-24 03:42:44.107198+03	\N	1	\N	İzmir	1	\N	IEEE İYTE Öğrenci Topluluğu	code-of-duty
+1005	Next Game Startup - Oyun Girişimciliği	24 Nisan - 15 Temmuz 2020 - Online	<p>YARIŞMANIN KONUSU</p>\r\n<p>Oyun sekt&ouml;r&uuml;nde yer almak isteyen gen&ccedil; girişimcilerin başarılı oyun startupları kurmalarını sağlamak</p>\r\n<p>&nbsp;</p>\r\n<p>YARIŞMANIN AMACI</p>\r\n<p>T&uuml;rkiye'deki oyun ekosistemini desteklemek</p>\r\n<p>Gen&ccedil;ler i&ccedil;in oyun sekt&ouml;r&uuml;nde girişim alanları yaratmak</p>\r\n<p>Oyun sekt&ouml;r&uuml;n&uuml; yeni girişimler ve iş modelleri ile g&uuml;&ccedil;lendirmek</p>\r\n<p>Girişimcilerin ve yatırımcıların dikkatini oyun sekt&ouml;r&uuml;ne &ccedil;ekmek</p>\r\n<p>İnovasyon ve girişimciliği oyun sekt&ouml;r&uuml; ile birleştirmek</p>\r\n<p>T&uuml;rkiye'nin oyun sekt&ouml;r&uuml;nde &ouml;nde gelen &uuml;lkelerden biri haline gelmesine katkı sağlamak</p>	https://www.nextingame.com/next-game-startup/?ref=hackathonturkiye	\N	thumbnails/thumbnail_OIcQwEn.png	2020-04-24 00:00:00+03	2020-07-15 00:00:00+03	t	2020-05-24 03:43:10.760638+03	\N	2	\N	online	1	\N	\N	next-game-startup-oyun-girisimciligi
+975	ÖZÜ Makeathon	21-23 Şubat 2020 - Özyeğin Üniversitesi, İstanbul	<p style="box-sizing: inherit; font-size: 15px; line-height: 1.8; color: #5d5d5d; overflow-wrap: break-word; margin: 0px 0px 10.5px; font-family: Poppins, sans-serif; background-color: #f9f9f9;"><span style="box-sizing: inherit; font-weight: bolder;">&lsquo;YAPABİLECEKLERİNİN HAYAL G&Uuml;C&Uuml;N KADAR SINIRSIZ OLDUĞUNU G&Ouml;RMEK İ&Ccedil;İN SADECE BİR HAFTA SONUNU AYIRABİLİR MİSİN?&rsquo;&rsquo;</span></p>\r\n<p style="box-sizing: inherit; font-size: 15px; line-height: 1.8; color: #5d5d5d; overflow-wrap: break-word; margin: 0px 0px 10.5px; font-family: Poppins, sans-serif; background-color: #f9f9f9;"><span style="box-sizing: inherit; font-weight: bolder;">OZU MAKEATHON&nbsp;</span>tasarımcı, yazılımcı ve iş geliştiricileri bir araya getiren, t&uuml;m&nbsp;<em style="box-sizing: inherit;">T&uuml;rkiye&rsquo;den &uuml;niversite &ouml;ğrencilerinin&nbsp;</em>katılımıyla ger&ccedil;ekleşecek bir maker &ndash; girişimcilik yarışması olup, katılımcı takımlar&nbsp;<span style="box-sizing: inherit; font-weight: bolder;">22,23,24 Şubat 2019&nbsp;</span>tarihinde&nbsp;&nbsp;<span style="box-sizing: inherit; font-weight: bolder;">48 saat&nbsp;</span>i&ccedil;inde&nbsp;<em style="box-sizing: inherit;"><span style="box-sizing: inherit; font-weight: bolder;">&ldquo;Akıllı Şehir ve &Ccedil;evre Teknolojileri&rdquo;</span>,&nbsp;<span style="box-sizing: inherit; font-weight: bolder;">Akıllı Ev Teknolojileri&rdquo;,</span>&nbsp;<span style="box-sizing: inherit; font-weight: bolder;">&ldquo;Sağlık Teknolojileri&rdquo;&nbsp;</span>ve&nbsp;<span style="box-sizing: inherit; font-weight: bolder;">&ldquo;Tarımsal &Uuml;retim Teknolojileri&rdquo;&nbsp;</span></em>ana başlıklarında belirlenen konuda farklı disiplinlerden kurulacak takımların &ccedil;&ouml;z&uuml;mler &uuml;retmesini ama&ccedil;lıyor.&nbsp;</p>\r\n<p style="box-sizing: inherit; font-size: 15px; line-height: 1.8; color: #5d5d5d; overflow-wrap: break-word; margin: 0px 0px 10.5px; font-family: Poppins, sans-serif; background-color: #f9f9f9;"><span style="box-sizing: inherit; font-weight: bolder;">*&nbsp;</span>3D Yazıcılar, Lazer Kesici, Elektronik Kitler ve Ahşap İşleme aletlerinin bulunacağı &ldquo;&Uuml;retim Alanı&rdquo; ile donanım fikri olan takımların prototiplerini &ccedil;ıkarmalarını sağlamayı, fikirlerin doğrulanma s&uuml;resini hızlandırmayı hedefleyen bir yarışma olacaktır.</p>	https://www.youthall.com/event/ozu-makeathon/?ref=hackathonturkiye	\N	thumbnails/thumbnail_3xuNqzW.png	2020-02-21 00:00:00+03	2020-02-24 00:00:00+03	t	2020-05-24 03:42:41.409347+03	\N	8	\N	İstanbul	1	\N	Arçelik	ozu-makeathon
+970	Ostim Teknopark Hackathon	17-18 Şubat 2020 - Ostim Teknopark, Ankara	<p><span style="color: #333333; font-family: Raleway, sans-serif; font-size: 15px; background-color: #ffffff;">Ostim Teknopark Hackathon; belirlenen konular &uuml;zerinde yenilik&ccedil;i fikirler geliştirebilecek olan takımların bir araya gelerek; 2 g&uuml;n i&ccedil;erisinde ve sabit bir ortamda iş geliştirme, problem &ccedil;&ouml;zme, proje y&ouml;netimi ve/veya yazılım yeteneklerini kullanarak, beyin fırtınası ile kısa s&uuml;re i&ccedil;erisinde projenin ve/veya yazılımın yazılacağı bir etkinliktir. Etkinlik s&uuml;resince mentorlar hazır bulunacak olup, fikir geliştirme s&uuml;resince katılımcılara destek verilecektir.</span></p>	https://www.ostimteknopark.com.tr/ostim-teknopark-hackathon-haberi-88?ref=hackathonturkiye	\N	thumbnails/thumbnail_7kL2oMB.png	2020-02-17 00:00:00+03	2020-02-19 00:00:00+03	t	2020-05-24 03:42:35.982853+03	\N	1	\N	Ankara	1	\N	Ostim Teknopark	ostim-teknopark-hackathon
+\.
+
+
+--
+-- Data for Name: event_event_tags; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.event_event_tags (id, event_id, tag_id) FROM stdin;
+2	977	1
+3	977	2
+4	1002	3
+5	1002	4
+6	996	5
+7	977	6
+8	1001	1
+9	996	6
+10	1004	1
+11	1003	1
+12	999	1
+13	997	1
+14	997	5
+15	997	6
+16	998	1
+17	998	3
+18	998	4
+19	998	6
+20	995	1
+21	993	1
+22	993	3
+23	993	5
+24	993	6
+25	994	1
+26	994	5
+27	994	6
+28	992	1
+29	992	6
+30	1005	1
+31	1005	6
+32	974	6
+33	974	7
+34	991	1
+35	991	5
+36	989	1
+37	989	5
+38	989	6
+39	972	6
+40	990	1
+41	979	8
+42	987	9
+43	988	1
+44	988	5
+45	984	1
+46	984	2
+47	954	2
+48	983	10
+49	983	6
+50	981	2
+51	981	6
+52	986	2
+53	986	6
+54	980	8
+55	978	2
+56	978	10
+57	964	9
+58	964	6
+59	973	4
+60	973	7
+61	963	3
+62	958	8
+63	958	6
+64	985	1
+65	976	6
+66	968	6
+67	965	11
+68	1003	11
+69	1005	11
+70	975	6
+71	960	2
+72	970	6
+73	969	2
+\.
+
+
+--
+-- Data for Name: event_eventtag; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.event_eventtag (id, name) FROM stdin;
+1	online
+2	commercial
+3	Sürdürülebilirlik
+4	Akıllı Şehirler
+5	Covid19
+6	ödüllü
+7	Akıllı Ulaşım
+8	Girişimcilik
+9	Blockchain
+10	Siber Güvenlik
+11	Oyun
+\.
+
+
+--
+-- Data for Name: event_eventtype; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.event_eventtype (id, name, url) FROM stdin;
+1	hackathon	\N
+3	ideathon	\N
+4	datathon	\N
+5	educathon	\N
+6	designathon	\N
+2	gamejam	\N
+7	bootcamp	\N
+8	Makeathon	\N
+\.
+
+
+--
+-- Data for Name: profile_profile; Type: TABLE DATA; Schema: public; Owner: root
+--
+
+COPY public.profile_profile (id, title, bio, linkedin, instagram, user_id) FROM stdin;
+2					2
+3					3
+1					1
+5					5
+4					4
+\.
+
+
+--
+-- Name: auth_group_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.auth_group_id_seq', 1, false);
+
+
+--
+-- Name: auth_group_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.auth_group_permissions_id_seq', 1, false);
+
+
+--
+-- Name: auth_permission_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.auth_permission_id_seq', 64, true);
+
+
+--
+-- Name: auth_user_groups_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.auth_user_groups_id_seq', 1, false);
+
+
+--
+-- Name: auth_user_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.auth_user_id_seq', 5, true);
+
+
+--
+-- Name: auth_user_user_permissions_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.auth_user_user_permissions_id_seq', 20, true);
+
+
+--
+-- Name: blog_post_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.blog_post_id_seq', 5, true);
+
+
+--
+-- Name: blog_post_tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.blog_post_tags_id_seq', 4, true);
+
+
+--
+-- Name: blog_postcategory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.blog_postcategory_id_seq', 1, true);
+
+
+--
+-- Name: blog_posttag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.blog_posttag_id_seq', 4, true);
+
+
+--
+-- Name: common_tag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.common_tag_id_seq', 11, true);
+
+
+--
+-- Name: contact_contactform_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.contact_contactform_id_seq', 6, true);
+
+
+--
+-- Name: contact_contactformcategory_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.contact_contactformcategory_id_seq', 2, true);
+
+
+--
+-- Name: django_admin_log_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.django_admin_log_id_seq', 84, true);
+
+
+--
+-- Name: django_content_type_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.django_content_type_id_seq', 16, true);
+
+
+--
+-- Name: django_migrations_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.django_migrations_id_seq', 51, true);
+
+
+--
+-- Name: event_event_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.event_event_id_seq', 1006, true);
+
+
+--
+-- Name: event_event_tags_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.event_event_tags_id_seq', 73, true);
+
+
+--
+-- Name: event_eventtag_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.event_eventtag_id_seq', 11, true);
+
+
+--
+-- Name: event_eventtype_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.event_eventtype_id_seq', 8, true);
+
+
+--
+-- Name: profile_profile_id_seq; Type: SEQUENCE SET; Schema: public; Owner: root
+--
+
+SELECT pg_catalog.setval('public.profile_profile_id_seq', 5, true);
+
+
+--
+-- Name: auth_group auth_group_name_key; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_group
+    ADD CONSTRAINT auth_group_name_key UNIQUE (name);
+
+
+--
+-- Name: auth_group_permissions auth_group_permissions_group_id_permission_id_0cd325b0_uniq; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_group_id_permission_id_0cd325b0_uniq UNIQUE (group_id, permission_id);
+
+
+--
+-- Name: auth_group_permissions auth_group_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_group auth_group_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_group
+    ADD CONSTRAINT auth_group_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_permission auth_permission_content_type_id_codename_01ab375a_uniq; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_permission
+    ADD CONSTRAINT auth_permission_content_type_id_codename_01ab375a_uniq UNIQUE (content_type_id, codename);
+
+
+--
+-- Name: auth_permission auth_permission_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_permission
+    ADD CONSTRAINT auth_permission_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_groups auth_user_groups_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_groups
+    ADD CONSTRAINT auth_user_groups_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_groups auth_user_groups_user_id_group_id_94350c0c_uniq; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_groups
+    ADD CONSTRAINT auth_user_groups_user_id_group_id_94350c0c_uniq UNIQUE (user_id, group_id);
+
+
+--
+-- Name: auth_user auth_user_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user
+    ADD CONSTRAINT auth_user_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_user_permissions auth_user_user_permissions_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permissions_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: auth_user_user_permissions auth_user_user_permissions_user_id_permission_id_14a6b632_uniq; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permissions_user_id_permission_id_14a6b632_uniq UNIQUE (user_id, permission_id);
+
+
+--
+-- Name: auth_user auth_user_username_key; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user
+    ADD CONSTRAINT auth_user_username_key UNIQUE (username);
+
+
+--
+-- Name: blog_post blog_post_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post
+    ADD CONSTRAINT blog_post_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: blog_post blog_post_slug_b95473f2_uniq; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post
+    ADD CONSTRAINT blog_post_slug_b95473f2_uniq UNIQUE (slug);
+
+
+--
+-- Name: blog_post_tags blog_post_tags_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post_tags
+    ADD CONSTRAINT blog_post_tags_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: blog_post_tags blog_post_tags_post_id_posttag_id_8aa4ec05_uniq; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post_tags
+    ADD CONSTRAINT blog_post_tags_post_id_posttag_id_8aa4ec05_uniq UNIQUE (post_id, posttag_id);
+
+
+--
+-- Name: blog_postcategory blog_postcategory_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_postcategory
+    ADD CONSTRAINT blog_postcategory_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: blog_posttag blog_posttag_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_posttag
+    ADD CONSTRAINT blog_posttag_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: common_tag common_tag_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.common_tag
+    ADD CONSTRAINT common_tag_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: common_tag common_tag_slug_key; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.common_tag
+    ADD CONSTRAINT common_tag_slug_key UNIQUE (slug);
+
+
+--
+-- Name: contact_contactform contact_contactform_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.contact_contactform
+    ADD CONSTRAINT contact_contactform_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: contact_contactformcategory contact_contactformcategory_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.contact_contactformcategory
+    ADD CONSTRAINT contact_contactformcategory_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_admin_log django_admin_log_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_admin_log
+    ADD CONSTRAINT django_admin_log_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_content_type django_content_type_app_label_model_76bd3d3b_uniq; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_content_type
+    ADD CONSTRAINT django_content_type_app_label_model_76bd3d3b_uniq UNIQUE (app_label, model);
+
+
+--
+-- Name: django_content_type django_content_type_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_content_type
+    ADD CONSTRAINT django_content_type_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_migrations django_migrations_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_migrations
+    ADD CONSTRAINT django_migrations_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: django_session django_session_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_session
+    ADD CONSTRAINT django_session_pkey PRIMARY KEY (session_key);
+
+
+--
+-- Name: event_event event_event_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event
+    ADD CONSTRAINT event_event_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: event_event event_event_slug_0a1b0a1c_uniq; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event
+    ADD CONSTRAINT event_event_slug_0a1b0a1c_uniq UNIQUE (slug);
+
+
+--
+-- Name: event_event_tags event_event_tags_event_id_eventtag_id_c56b1024_uniq; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event_tags
+    ADD CONSTRAINT event_event_tags_event_id_eventtag_id_c56b1024_uniq UNIQUE (event_id, tag_id);
+
+
+--
+-- Name: event_event_tags event_event_tags_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event_tags
+    ADD CONSTRAINT event_event_tags_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: event_eventtag event_eventtag_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_eventtag
+    ADD CONSTRAINT event_eventtag_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: event_eventtype event_eventtype_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_eventtype
+    ADD CONSTRAINT event_eventtype_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: profile_profile profile_profile_pkey; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.profile_profile
+    ADD CONSTRAINT profile_profile_pkey PRIMARY KEY (id);
+
+
+--
+-- Name: profile_profile profile_profile_user_id_key; Type: CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.profile_profile
+    ADD CONSTRAINT profile_profile_user_id_key UNIQUE (user_id);
+
+
+--
+-- Name: auth_group_name_a6ea08ec_like; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX auth_group_name_a6ea08ec_like ON public.auth_group USING btree (name varchar_pattern_ops);
+
+
+--
+-- Name: auth_group_permissions_group_id_b120cbf9; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX auth_group_permissions_group_id_b120cbf9 ON public.auth_group_permissions USING btree (group_id);
+
+
+--
+-- Name: auth_group_permissions_permission_id_84c5c92e; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX auth_group_permissions_permission_id_84c5c92e ON public.auth_group_permissions USING btree (permission_id);
+
+
+--
+-- Name: auth_permission_content_type_id_2f476e4b; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX auth_permission_content_type_id_2f476e4b ON public.auth_permission USING btree (content_type_id);
+
+
+--
+-- Name: auth_user_groups_group_id_97559544; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX auth_user_groups_group_id_97559544 ON public.auth_user_groups USING btree (group_id);
+
+
+--
+-- Name: auth_user_groups_user_id_6a12ed8b; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX auth_user_groups_user_id_6a12ed8b ON public.auth_user_groups USING btree (user_id);
+
+
+--
+-- Name: auth_user_user_permissions_permission_id_1fbb5f2c; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX auth_user_user_permissions_permission_id_1fbb5f2c ON public.auth_user_user_permissions USING btree (permission_id);
+
+
+--
+-- Name: auth_user_user_permissions_user_id_a95ead1b; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX auth_user_user_permissions_user_id_a95ead1b ON public.auth_user_user_permissions USING btree (user_id);
+
+
+--
+-- Name: auth_user_username_6821ab7c_like; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX auth_user_username_6821ab7c_like ON public.auth_user USING btree (username varchar_pattern_ops);
+
+
+--
+-- Name: blog_post_author_id_dd7a8485; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX blog_post_author_id_dd7a8485 ON public.blog_post USING btree (author_id);
+
+
+--
+-- Name: blog_post_category_id_c326dbf8; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX blog_post_category_id_c326dbf8 ON public.blog_post USING btree (category_id);
+
+
+--
+-- Name: blog_post_slug_b95473f2_like; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX blog_post_slug_b95473f2_like ON public.blog_post USING btree (slug varchar_pattern_ops);
+
+
+--
+-- Name: blog_post_tags_post_id_a1c71c8a; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX blog_post_tags_post_id_a1c71c8a ON public.blog_post_tags USING btree (post_id);
+
+
+--
+-- Name: blog_post_tags_posttag_id_282159fd; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX blog_post_tags_posttag_id_282159fd ON public.blog_post_tags USING btree (posttag_id);
+
+
+--
+-- Name: common_tag_slug_da042814_like; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX common_tag_slug_da042814_like ON public.common_tag USING btree (slug varchar_pattern_ops);
+
+
+--
+-- Name: contact_contactform_category_id_71b55e03; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX contact_contactform_category_id_71b55e03 ON public.contact_contactform USING btree (category_id);
+
+
+--
+-- Name: django_admin_log_content_type_id_c4bce8eb; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX django_admin_log_content_type_id_c4bce8eb ON public.django_admin_log USING btree (content_type_id);
+
+
+--
+-- Name: django_admin_log_user_id_c564eba6; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX django_admin_log_user_id_c564eba6 ON public.django_admin_log USING btree (user_id);
+
+
+--
+-- Name: django_session_expire_date_a5c62663; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX django_session_expire_date_a5c62663 ON public.django_session USING btree (expire_date);
+
+
+--
+-- Name: django_session_session_key_c0390e0f_like; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX django_session_session_key_c0390e0f_like ON public.django_session USING btree (session_key varchar_pattern_ops);
+
+
+--
+-- Name: event_event_added_by_id_05ec7da4; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX event_event_added_by_id_05ec7da4 ON public.event_event USING btree (added_by_id);
+
+
+--
+-- Name: event_event_etype_id_cc37efe9; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX event_event_etype_id_cc37efe9 ON public.event_event USING btree (etype_id);
+
+
+--
+-- Name: event_event_slug_0a1b0a1c_like; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX event_event_slug_0a1b0a1c_like ON public.event_event USING btree (slug varchar_pattern_ops);
+
+
+--
+-- Name: event_event_tags_event_id_afbaaffb; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX event_event_tags_event_id_afbaaffb ON public.event_event_tags USING btree (event_id);
+
+
+--
+-- Name: event_event_tags_eventtag_id_b86f9848; Type: INDEX; Schema: public; Owner: root
+--
+
+CREATE INDEX event_event_tags_eventtag_id_b86f9848 ON public.event_event_tags USING btree (tag_id);
+
+
+--
+-- Name: auth_group_permissions auth_group_permissio_permission_id_84c5c92e_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_group_permissions
+    ADD CONSTRAINT auth_group_permissio_permission_id_84c5c92e_fk_auth_perm FOREIGN KEY (permission_id) REFERENCES public.auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_group_permissions auth_group_permissions_group_id_b120cbf9_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_group_permissions
+    ADD CONSTRAINT auth_group_permissions_group_id_b120cbf9_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES public.auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_permission auth_permission_content_type_id_2f476e4b_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_permission
+    ADD CONSTRAINT auth_permission_content_type_id_2f476e4b_fk_django_co FOREIGN KEY (content_type_id) REFERENCES public.django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_user_groups auth_user_groups_group_id_97559544_fk_auth_group_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_groups
+    ADD CONSTRAINT auth_user_groups_group_id_97559544_fk_auth_group_id FOREIGN KEY (group_id) REFERENCES public.auth_group(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_user_groups auth_user_groups_user_id_6a12ed8b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_groups
+    ADD CONSTRAINT auth_user_groups_user_id_6a12ed8b_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES public.auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_user_user_permissions auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permi_permission_id_1fbb5f2c_fk_auth_perm FOREIGN KEY (permission_id) REFERENCES public.auth_permission(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: auth_user_user_permissions auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.auth_user_user_permissions
+    ADD CONSTRAINT auth_user_user_permissions_user_id_a95ead1b_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES public.auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: blog_post blog_post_author_id_dd7a8485_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post
+    ADD CONSTRAINT blog_post_author_id_dd7a8485_fk_auth_user_id FOREIGN KEY (author_id) REFERENCES public.auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: blog_post blog_post_category_id_c326dbf8_fk_blog_postcategory_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post
+    ADD CONSTRAINT blog_post_category_id_c326dbf8_fk_blog_postcategory_id FOREIGN KEY (category_id) REFERENCES public.blog_postcategory(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: blog_post_tags blog_post_tags_post_id_a1c71c8a_fk_blog_post_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post_tags
+    ADD CONSTRAINT blog_post_tags_post_id_a1c71c8a_fk_blog_post_id FOREIGN KEY (post_id) REFERENCES public.blog_post(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: blog_post_tags blog_post_tags_posttag_id_282159fd_fk_blog_posttag_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.blog_post_tags
+    ADD CONSTRAINT blog_post_tags_posttag_id_282159fd_fk_blog_posttag_id FOREIGN KEY (posttag_id) REFERENCES public.blog_posttag(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: contact_contactform contact_contactform_category_id_71b55e03_fk_contact_c; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.contact_contactform
+    ADD CONSTRAINT contact_contactform_category_id_71b55e03_fk_contact_c FOREIGN KEY (category_id) REFERENCES public.contact_contactformcategory(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: django_admin_log django_admin_log_content_type_id_c4bce8eb_fk_django_co; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_admin_log
+    ADD CONSTRAINT django_admin_log_content_type_id_c4bce8eb_fk_django_co FOREIGN KEY (content_type_id) REFERENCES public.django_content_type(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: django_admin_log django_admin_log_user_id_c564eba6_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.django_admin_log
+    ADD CONSTRAINT django_admin_log_user_id_c564eba6_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES public.auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: event_event event_event_added_by_id_05ec7da4_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event
+    ADD CONSTRAINT event_event_added_by_id_05ec7da4_fk_auth_user_id FOREIGN KEY (added_by_id) REFERENCES public.auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: event_event event_event_etype_id_cc37efe9_fk_event_eventtype_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event
+    ADD CONSTRAINT event_event_etype_id_cc37efe9_fk_event_eventtype_id FOREIGN KEY (etype_id) REFERENCES public.event_eventtype(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: event_event_tags event_event_tags_event_id_afbaaffb_fk_event_event_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event_tags
+    ADD CONSTRAINT event_event_tags_event_id_afbaaffb_fk_event_event_id FOREIGN KEY (event_id) REFERENCES public.event_event(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: event_event_tags event_event_tags_tag_id_70d4a176_fk_common_tag_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.event_event_tags
+    ADD CONSTRAINT event_event_tags_tag_id_70d4a176_fk_common_tag_id FOREIGN KEY (tag_id) REFERENCES public.common_tag(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- Name: profile_profile profile_profile_user_id_7b0aedd8_fk_auth_user_id; Type: FK CONSTRAINT; Schema: public; Owner: root
+--
+
+ALTER TABLE ONLY public.profile_profile
+    ADD CONSTRAINT profile_profile_user_id_7b0aedd8_fk_auth_user_id FOREIGN KEY (user_id) REFERENCES public.auth_user(id) DEFERRABLE INITIALLY DEFERRED;
+
+
+--
+-- PostgreSQL database dump complete
+--
+
