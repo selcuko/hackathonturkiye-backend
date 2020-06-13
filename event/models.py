@@ -8,22 +8,22 @@ from common.models import Tag
 
 
 class EventType(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=200)
     url = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name
 
 class EventTag(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=200)
     
     def __str__(self):
         return self.name
 
 
 class Event(models.Model):
-    name = models.CharField(max_length=64)
-    description = models.TextField(max_length=140, null=True)
+    name = models.CharField(max_length=640)
+    description = models.TextField(max_length=1400, null=True)
     body = RichTextField(blank=True, null=True)
     etype = models.ForeignKey(EventType, on_delete=models.SET_NULL,
                               blank=True, null=True, 
@@ -44,10 +44,10 @@ class Event(models.Model):
     starts_at = models.DateTimeField()
     ends_at = models.DateTimeField(blank=True, null=True)
     deadline = models.DateTimeField(blank=True, null=True)
-    location = models.CharField(max_length=100, blank=True, null=True)
-    prize = models.CharField(max_length=20, blank=True, null=True)
+    location = models.CharField(max_length=1000, blank=True, null=True)
+    prize = models.CharField(max_length=200, blank=True, null=True)
     priority = models.IntegerField(default=1)
-    holder = models.CharField(max_length=20, null=True, blank=True)
+    holder = models.CharField(max_length=200, null=True, blank=True)
     published = models.BooleanField(default=True)
     tags = models.ManyToManyField(Tag, related_name='eventtag')
 

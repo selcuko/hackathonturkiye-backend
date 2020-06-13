@@ -5,7 +5,7 @@ from djrichtextfield.models import RichTextField
 from common.models import Tag
 
 class PostCategory(models.Model):
-    name = models.CharField(max_length=20)
+    name = models.CharField(max_length=200)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -16,7 +16,7 @@ class PostCategory(models.Model):
 
 
 class PostTag(models.Model):
-    name = models.CharField(max_length=16)
+    name = models.CharField(max_length=160)
     created_at = models.DateTimeField(auto_now_add=True)
 
     def __str__(self):
@@ -29,14 +29,14 @@ class Post(models.Model):
         ("c", "Review"),
         ("p", "Publish")
     )
-    title = models.CharField(max_length=140)
+    title = models.CharField(max_length=1400)
     summary = models.TextField(max_length=2000, blank=True, null=True)
     body = RichTextField(max_length=1024**2)
     status = models.CharField(max_length=1, choices=status_codes, default="d")
     slug = models.SlugField(
         default='',
         editable=False,
-        max_length=140,
+        max_length=1400,
         unique=True,
     )
 
