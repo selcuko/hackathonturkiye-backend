@@ -31,16 +31,17 @@ class PostSerializer(ModelActionSerializer):
             'category',
             'tags',
             'read',
-            'time'
+            'time',
         ]
         action_fields = {"list": {"fields": (
             "slug",
+            'summary',
             "title",
             'author',
             'category',
             'tags',
             'read',
-            'time'
+            'time',
         )}}
     
     def create(self, validated_data):
