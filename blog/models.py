@@ -39,6 +39,7 @@ class Post(models.Model):
         max_length=1400,
         unique=True,
     )
+    thumbnail = models.ImageField(upload_to='blog/thumbnails', default='blog/none.png', max_length=1024)
 
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True)

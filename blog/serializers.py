@@ -32,6 +32,7 @@ class PostSerializer(ModelActionSerializer):
             'tags',
             'read',
             'time',
+            'thumbnail',
         ]
         action_fields = {"list": {"fields": (
             "slug",
@@ -42,6 +43,7 @@ class PostSerializer(ModelActionSerializer):
             'tags',
             'read',
             'time',
+            'thumbnail,
         )}}
     
     def create(self, validated_data):
