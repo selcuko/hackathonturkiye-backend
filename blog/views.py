@@ -39,6 +39,10 @@ class PostViewSet(viewsets.ModelViewSet):
         else:
             self.queryset = self.queryset.order_by('priority')
         
+        category = params.get('category', None)
+        if category:
+            self.queryset = self.queryset.filter(category__name=category)
+        
         self.queryset = self.queryset.filter(**filters)
                 
         return self.queryset
