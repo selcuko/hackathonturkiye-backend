@@ -13,6 +13,12 @@ class Profile(models.Model):
     linkedin = models.URLField()
     instagram = models.URLField()
 
+    def __str__(self):
+        if self.user.first_name:
+            return f'{self.user.first_name} {self.user.last_name} (@{self.user.username})'
+        else:
+            return self.user.username
+
 
 """
 Tying up Profile objects with User objects

@@ -11,7 +11,8 @@ class PostAdmin(admin.ModelAdmin):
         'status',
         'created_at',
         'author',
-        'edited_at'
+        'edited_at',
+        'thumbnail',
     )
     readonly_fields = [
         'created_at',
