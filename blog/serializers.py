@@ -43,7 +43,7 @@ class PostSerializer(ModelActionSerializer):
             'tags',
             'read',
             'time',
-            'thumbnail,
+            'thumbnail',
         )}}
     
     def create(self, validated_data):
