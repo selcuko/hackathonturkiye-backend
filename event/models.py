@@ -49,7 +49,7 @@ class Event(models.Model):
     priority = models.IntegerField(default=1)
     holder = models.CharField(max_length=200, null=True, blank=True)
     published = models.BooleanField(default=True)
-    tags = models.ManyToManyField(Tag, related_name='eventtag')
+    tags = models.ManyToManyField(Tag, related_name='events')
 
     added_at = models.DateTimeField(auto_now_add=True)
     added_by = models.ForeignKey(

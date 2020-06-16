@@ -45,7 +45,7 @@ class Post(models.Model):
         User, on_delete=models.SET_NULL, null=True)
 
     category = models.ForeignKey(PostCategory, null=True, on_delete=models.SET_NULL)
-    tags = models.ManyToManyField(Tag, blank=True)
+    tags = models.ManyToManyField(Tag, blank=True, related_name='posts')
 
     # statistical
     priority = models.IntegerField(default=1)

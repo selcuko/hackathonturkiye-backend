@@ -14,3 +14,9 @@ class Tag(models.Model):
     def save(self, *args, **kwargs):
         self.slug = slugify(self.name.lower().replace('ı', 'i'), allow_unicode=False)
         super().save(*args, **kwargs)
+    
+    def in_events(self):
+        return self.events.all()
+    
+    def in_posts(self):
+        return self.posts.all()
