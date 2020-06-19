@@ -30,9 +30,11 @@ class EventViewSet(viewsets.ModelViewSet):
             "after",
             "before",
             "order_by",
-            'tags'
+            'tags',
+            'status',
         ]
         params = self.request.query_params
+        today = str(date.today())
 
         # depreceated, use combination of order_by and limit instead
         highlighted = params.get('highlighted', None)
@@ -43,6 +45,13 @@ class EventViewSet(viewsets.ModelViewSet):
         pk = params.get('pk', None)
         if pk is not None:
             pass
+
+        status = params.get('status', None)
+        if status:
+            if status == 'ongoing':
+                self.queryset = self.queryset.filter(starts_at__lt=today, ends_at__gt=today)
+            elif status == 'finished':
+                self.queryset = self.queryset.filter(ends_at__lt=today)
 
 
         filters = {}
@@ -72,7 +81,8 @@ class EventViewSet(viewsets.ModelViewSet):
         if after:
             self.queryset = self.queryset.filter(starts_at__gt=after)
         else:
-            self.queryset = self.queryset.filter(starts_at__gt=str(date.today()))
+            if not (status == 'finished'):
+                self.queryset = self.queryset.filter(starts_at__gt=today)
         if before:
             self.queryset = self.queryset.filter(starts_at__lt=before)
         
