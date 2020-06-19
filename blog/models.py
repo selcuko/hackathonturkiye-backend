@@ -62,8 +62,11 @@ class Post(models.Model):
     
     def published(self) -> bool:
         return self.status == 'p'
+
+    def author_name(self): pass
+
     
     def save(self, *args, **kwargs):
         self.slug = slugify(self.title, allow_unicode=False)
-        self.time = len(self.body.split(" ")) // 100
+        self.time = len(self.body.split(" ")) // 200
         super().save(*args, **kwargs)

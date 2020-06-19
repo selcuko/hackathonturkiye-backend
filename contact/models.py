@@ -4,7 +4,7 @@ from django.db import models
 class ContactFormCategory(models.Model):
     name = models.CharField(max_length=32)
     url = models.URLField(null=True)
-
+    def __str__(self): return str(self.name)
 
 class ContactForm(models.Model):
     # server filled fields
@@ -21,3 +21,5 @@ class ContactForm(models.Model):
     contact = models.CharField(max_length=64)
     phone = models.CharField(max_length=32, null=True)
 
+    def __str__(self):
+        return str(self.title)

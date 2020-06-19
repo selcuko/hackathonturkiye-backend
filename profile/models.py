@@ -10,8 +10,8 @@ class Profile(models.Model):
     title = models.CharField(max_length=100, blank=True)
     bio = models.TextField(max_length=200, blank=True)
 
-    linkedin = models.URLField()
-    instagram = models.URLField()
+    linkedin = models.URLField(blank=True, null=True)
+    instagram = models.URLField(blank=True, null=True)
 
     def __str__(self):
         if self.user.first_name:

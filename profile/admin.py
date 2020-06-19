@@ -1,4 +1,9 @@
 from django.contrib import admin
 from profile.models import Profile
 
-admin.site.register(Profile)
+
+class ProfileAdmin(admin.ModelAdmin):
+    exclude = ['user']
+
+
+admin.site.register(Profile, ProfileAdmin)

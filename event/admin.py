@@ -16,4 +16,4 @@ class EventAdmin(admin.ModelAdmin):
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(EventType)
-admin.site.register(EventTag)
+#admin.site.register(EventTag)
