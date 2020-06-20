@@ -68,6 +68,7 @@ INSTALLED_APPS = [
     'event.apps.EventConfig',
     'contact.apps.ContactConfig',
     'common',
+    'hosting',
 ]
 
 MIDDLEWARE = [
