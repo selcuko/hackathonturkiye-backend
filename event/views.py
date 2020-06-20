@@ -87,7 +87,10 @@ class EventViewSet(viewsets.ModelViewSet):
             self.queryset = self.queryset.filter(starts_at__lt=before)
         
         if len(filters):
-            self.queryset = self.queryset.filter(**filters)
+            for f, q in filters.items():
+                if f == 'location': self.queryset = self.queryset.filter(location__iexact=q)
+                else: self.queryset = self.queryset.filter(**{f'{f}__iexact':q})
+            #self.queryset = self.queryset.filter(**filters)
         return self.queryset
 
 
