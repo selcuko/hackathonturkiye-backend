@@ -156,9 +156,19 @@ DJRICHTEXTFIELD_CONFIG = {
     'js': [f'//cdn.tiny.cloud/1/{os.getenv("TINYMCE_API", "no-api-key")}/tinymce/5/tinymce.min.js'],
     'init_template': 'djrichtextfield/init/tinymce.js',
     'settings': {
-        'menubar': False,
-        'plugins': 'link image',
-        'toolbar': 'bold italic | link image | removeformat',
-        'width': 700
+        'menubar': 'file edit insert view format table tools help',
+        'plugins': 'link image autosave lists autolink code',
+        'toolbar': 'undo redo | styleselect | bold italic fontselect fontsizeselect | link image | removeformat',
+        'width': 700,
+        'menu': {
+    'file': { 'title': 'File', 'items': 'newdocument restoredraft | preview | print ' },
+    'edit': { 'title': 'Edit', 'items': 'undo redo | cut copy paste | selectall | searchreplace' },
+    'view': { 'title': 'View', 'items': 'code | visualaid visualchars visualblocks | spellchecker | preview fullscreen' },
+    'insert': { 'title': 'Insert', 'items': 'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime' },
+    'format': { 'title': 'Format', 'items': 'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align | forecolor backcolor | removeformat' },
+    'tools': { 'title': 'Tools', 'items': 'spellchecker spellcheckerlanguage | code wordcount' },
+    'table': { 'title': 'Table', 'items': 'inserttable | cell row column | tableprops deletetable' },
+    'help': { 'title': 'Help', 'items': 'help' }
+  }
     }
 }

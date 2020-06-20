@@ -68,6 +68,8 @@ class EventViewSet(viewsets.ModelViewSet):
             except EventType.DoesNotExist:
                 # todo: make below line more elegant
                 self.queryset = self.queryset.none()
+            # ie try this somewhen
+            # self.queryset.filter(etype__name=etype)
         
         tags = params.get('tags', None)
         if tags:
