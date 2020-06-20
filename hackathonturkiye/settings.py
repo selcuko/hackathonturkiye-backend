@@ -161,14 +161,21 @@ DJRICHTEXTFIELD_CONFIG = {
         'toolbar': 'undo redo | styleselect | bold italic fontselect fontsizeselect | link image | removeformat',
         'width': 700,
         'menu': {
-    'file': { 'title': 'File', 'items': 'newdocument restoredraft | preview | print ' },
-    'edit': { 'title': 'Edit', 'items': 'undo redo | cut copy paste | selectall | searchreplace' },
-    'view': { 'title': 'View', 'items': 'code | visualaid visualchars visualblocks | spellchecker | preview fullscreen' },
-    'insert': { 'title': 'Insert', 'items': 'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime' },
-    'format': { 'title': 'Format', 'items': 'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align | forecolor backcolor | removeformat' },
-    'tools': { 'title': 'Tools', 'items': 'spellchecker spellcheckerlanguage | code wordcount' },
-    'table': { 'title': 'Table', 'items': 'inserttable | cell row column | tableprops deletetable' },
-    'help': { 'title': 'Help', 'items': 'help' }
-  }
+            'file': { 'title': 'File', 'items': 'newdocument restoredraft | preview | print ' },
+            'edit': { 'title': 'Edit', 'items': 'undo redo | cut copy paste | selectall | searchreplace' },
+            'view': { 'title': 'View', 'items': 'code | visualaid visualchars visualblocks | spellchecker | preview fullscreen' },
+            'insert': { 'title': 'Insert', 'items': 'image link media template codesample inserttable | charmap emoticons hr | pagebreak nonbreaking anchor toc | insertdatetime' },
+            'format': { 'title': 'Format', 'items': 'bold italic underline strikethrough superscript subscript codeformat | formats blockformats fontformats fontsizes align | forecolor backcolor | removeformat' },
+            'tools': { 'title': 'Tools', 'items': 'spellchecker spellcheckerlanguage | code wordcount' },
+            'table': { 'title': 'Table', 'items': 'inserttable | cell row column | tableprops deletetable' },
+            'help': { 'title': 'Help', 'items': 'help' }
+        },
+        'content_css':[
+            '//fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap',
+            '//fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap',
+            '//fonts.googleapis.com/css2?family=Nunito:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap',
+            '//fonts.googleapis.com/css2?family=Fairplay+Display:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap'
+        ],
+        'font_formats':'Fairplay Display=fairplay display;Roboto=roboto;Nunito=nunito;Montserrat=montserrat;Andale Mono=andale mono,times;Arial=arial,helvetica,sans-serif;Arial Black=arial black,avant garde;Book Antiqua=book antiqua,palatino;Comic Sans MS=comic sans ms,sans-serif;Courier New=courier new,courier;Georgia=georgia,palatino;Helvetica=helvetica;Impact=impact,chicago;Symbol=symbol;Tahoma=tahoma,arial,helvetica,sans-serif;Terminal=terminal,monaco;Times New Roman=times new roman,times;Trebuchet MS=trebuchet ms,geneva;Verdana=verdana,geneva;Webdings=webdings;Wingdings=wingdings,zapf dingbats'
     }
 }
