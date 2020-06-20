@@ -9,6 +9,7 @@ class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=100, blank=True)
     bio = models.TextField(max_length=200, blank=True)
+    pic = models.ImageField(upload_to='profiles', null=True, default='profiles/none.png')
 
     linkedin = models.URLField(blank=True, null=True)
     instagram = models.URLField(blank=True, null=True)

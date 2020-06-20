@@ -18,7 +18,7 @@ class ProfileSerializer(serializers.ModelSerializer):
 class UserSerializer(serializers.HyperlinkedModelSerializer):
     profile = ProfileSerializer(
         many=False,
-        read_only=False,
+        read_only=True,
     )
     class Meta:
         model = User
