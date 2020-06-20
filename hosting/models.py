@@ -9,5 +9,5 @@ class Image(models.Model):
         return self.friendly_name if self.friendly_name else self.uri
 
     def save(self, *args, **kwargs):
-        self.uri = self.image.path
+        self.uri = self.image.url
         super().save(*args, **kwargs)
