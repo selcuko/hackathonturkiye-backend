@@ -44,6 +44,7 @@ class PostSerializer(ModelActionSerializer):
             'read',
             'time',
             'thumbnail',
+            'published_at',
         )}}
     
     def create(self, validated_data):

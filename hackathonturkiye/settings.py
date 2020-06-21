@@ -157,9 +157,12 @@ DJRICHTEXTFIELD_CONFIG = {
     'js': [f'//cdn.tiny.cloud/1/{os.getenv("TINYMCE_API", "no-api-key")}/tinymce/5/tinymce.min.js'],
     'init_template': 'djrichtextfield/init/tinymce.js',
     'settings': {
+        'relative_urls' : False,
+        'remove_script_host' : False,
+        'document_base_url' : 'http://omerselcuk.engineer:8000/',
         'menubar': 'file edit insert view format table tools help',
-        'plugins': 'link image autosave lists autolink code',
-        'toolbar': 'undo redo | styleselect | bold italic fontselect fontsizeselect | link image | removeformat',
+        'plugins': 'media link image autosave lists autolink code',
+        'toolbar': 'undo redo | styleselect | bold italic fontselect fontsizeselect | link image media | removeformat',
         'width': 700,
         'menu': {
             'file': { 'title': 'File', 'items': 'newdocument restoredraft | preview | print ' },

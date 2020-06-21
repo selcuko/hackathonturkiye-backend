@@ -67,6 +67,7 @@ class Post(models.Model):
 
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.title, allow_unicode=False)
+        self.slug = slugify(self.title.lower().replace('ı', 'i'), allow_unicode=False)
         self.time = len(self.body.split(" ")) // 200
+        if not self.published_at and self.published(): self.published_at = self.created_at
         super().save(*args, **kwargs)

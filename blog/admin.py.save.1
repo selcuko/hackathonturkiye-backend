@@ -10,16 +10,14 @@ class PostAdmin(admin.ModelAdmin):
         'body',
         'status',
         'created_at',
-        'author',
+        'author__first_name',
         'edited_at',
         'thumbnail',
         'priority',
-        'published_at',
     )
     readonly_fields = [
         'created_at',
         'edited_at',
-        #'published_at',
     ]
     list_display = [
         'title',
