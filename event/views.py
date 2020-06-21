@@ -12,7 +12,7 @@ class EventViewSet(viewsets.ModelViewSet):
     """
     API endpoint
     """
-    queryset = Event.objects.filter(published=True).order_by('starts_at')
+    queryset = Event.objects.filter(published=True).order_by('priority', 'starts_at')
     serializer_class = EventSerializer
     lookup_field = 'slug'
 
@@ -39,7 +39,7 @@ class EventViewSet(viewsets.ModelViewSet):
         # depreceated, use combination of order_by and limit instead
         highlighted = params.get('highlighted', None)
         if highlighted is not None:
-            return self.query.order_by('priority', 'starts_at')[:int(highlihted)]
+            return self.queryset.order_by('priority', 'starts_at')[:int(highlighted)]
         
         # single event (details) request
         pk = params.get('pk', None)
@@ -52,6 +52,7 @@ class EventViewSet(viewsets.ModelViewSet):
                 self.queryset = self.queryset.filter(starts_at__lt=today, ends_at__gt=today)
             elif status == 'finished':
                 self.queryset = self.queryset.filter(ends_at__lt=today)
+        
 
 
         filters = {}
@@ -93,6 +94,10 @@ class EventViewSet(viewsets.ModelViewSet):
                 if f == 'location': self.queryset = self.queryset.filter(location__iexact=q)
                 else: self.queryset = self.queryset.filter(**{f'{f}__iexact':q})
             #self.queryset = self.queryset.filter(**filters)
+        
+        order_by = params.get('order_by', None)
+        if order_by:
+            self.queryset = self.queryset.order_by(order_by)
         return self.queryset
 
 

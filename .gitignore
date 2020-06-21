@@ -1,7 +1,6 @@
 media/
 legacy/
 static/
-DB
 
 .vscode/
 .github/
@@ -11,5 +10,8 @@ venv/
 
 script.py
 record/
+
+db*
+*.log
 
 
