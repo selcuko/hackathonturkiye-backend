@@ -6,7 +6,7 @@ from .cross import CrossSearchTagSerializer
 
 
 class CrossSearchTagViewSet(ModelViewSet):
-    lookup_field = 'slug'
+    lookup_field = 'slug__iexact'
     serializer_class = CrossSearchTagSerializer
     queryset = Tag.objects.all()
     
