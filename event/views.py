@@ -1,5 +1,6 @@
 from datetime import date
 from django.views import View
+from django.utils import timezone
 from django.core.exceptions import FieldError
 from rest_framework import viewsets
 from rest_framework.response import Response
@@ -16,9 +17,8 @@ class EventViewSet(viewsets.ModelViewSet):
     serializer_class = EventSerializer
     lookup_field = 'slug'
 
-    
+
     def get_queryset(self):
-        
         # todo: find another method, im sure it exists
         nonfield = [
             "etype", 
@@ -34,8 +34,8 @@ class EventViewSet(viewsets.ModelViewSet):
             'status',
         ]
         params = self.request.query_params
-        today = str(date.today())
-
+        today = str(timezone.now())
+        #today = str(date.today())
         # depreceated, use combination of order_by and limit instead
         highlighted = params.get('highlighted', None)
         if highlighted is not None:

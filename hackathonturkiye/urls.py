@@ -30,7 +30,8 @@ router.register(r'groups', profile_views.GroupViewSet)
 router.register(r'users', profile_views.UserViewSet)
 router.register(r'posts', blog_views.PostViewSet)
 router.register(r'contact', contact_views.ContactFormViewSet)
-router.register(r'tagsearch', common_views.CrossSearchTagViewSet)
+router.register(r'tagsearch', common_views.CrossSearchTagViewSet, basename='tagsearch')
+router.register(r'tags', common_views.TagViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
