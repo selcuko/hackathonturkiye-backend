@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 from django.contrib.auth.models import User
 from datetime import datetime
 from djrichtextfield.models import RichTextField
@@ -62,7 +63,7 @@ class Event(models.Model):
         return f"{self.name} ({self.starts_at.year})"
     
     def is_applicable(self):
-        return datetime.now() > self.deadline if self.deadline else None
+        return timezone.now() > self.deadline if self.deadline else None
     
     def has_details(self):
         return bool(self.body)

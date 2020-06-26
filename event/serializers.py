@@ -43,10 +43,11 @@ class EventSerializer(ModelActionSerializer):
             'etype',
             'origin_url',
             'is_applicable',
+            'has_details',
             'tags',
         )
         action_fields = {"list": {"fields": (
-            "slug", 
+            "slug",
             "name",
             'starts_at',
             'ends_at',

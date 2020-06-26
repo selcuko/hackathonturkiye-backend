@@ -22,6 +22,7 @@ class PostSerializer(ModelActionSerializer):
     class Meta:
         model = Post
         fields = [
+            'slug',
             'pk',
             'title',
             'summary',
