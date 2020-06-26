@@ -11,6 +11,15 @@ class CrossSearchTagViewSet(ModelViewSet):
     serializer_class = CrossSearchTagSerializer
     queryset = Tag.objects.all()
 
+    def get_queryset(self):
+        params = self.request.query_params
+        
+        inexact_match = params.get('inexact', None)
+        if inexact_match:
+            self.queryset = self.queryset.filter(name__icontains=inexact_match)
+        
+        return self.queryset
+
 
 class TagViewSet(ModelViewSet):
     lookup_field = 'slug'
