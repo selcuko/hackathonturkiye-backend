@@ -69,11 +69,11 @@ class Event(models.Model):
         return bool(self.body)
     
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name, allow_unicode=False)
+        self.slug = slugify(self.name.lower().replace('ı', 'i'), allow_unicode=False)
         try:
             self.validate_unique()
         except:
-            self.slug += f'-{self.starts_at.year}'
+            self.slug += f'pk-{self.pk}'
             self.validate_unique()
         super().save(*args, **kwargs)
 
