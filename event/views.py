@@ -49,9 +49,9 @@ class EventViewSet(viewsets.ModelViewSet):
         status = params.get('status', None)
         if status:
             if status == 'ongoing':
-                self.queryset = self.queryset.filter(starts_at__lt=today, ends_at__gt=today)
+                self.queryset = self.queryset.filter(starts_at__lte=today, ends_at__gte=today)
             elif status == 'finished':
-                self.queryset = self.queryset.filter(ends_at__lt=today)
+                self.queryset = self.queryset.filter(ends_at__lte=today)
         
 
 

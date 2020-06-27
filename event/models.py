@@ -63,7 +63,7 @@ class Event(models.Model):
         return f"{self.name} ({self.starts_at.year})"
     
     def is_applicable(self):
-        return timezone.now() > self.deadline if self.deadline else None
+        return timezone.now() < self.deadline if self.deadline else None
     
     def has_details(self):
         return bool(self.body)
@@ -73,7 +73,7 @@ class Event(models.Model):
         try:
             self.validate_unique()
         except:
-            self.slug += f'pk-{self.pk}'
+            self.slug += f'-{self.pk}'
             self.validate_unique()
         super().save(*args, **kwargs)
 
