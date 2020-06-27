@@ -84,7 +84,7 @@ class EventViewSet(viewsets.ModelViewSet):
         if after:
             self.queryset = self.queryset.filter(starts_at__gt=after)
         else:
-            if not (status == 'finished'):
+            if not (status):
                 self.queryset = self.queryset.filter(starts_at__gt=today)
         if before:
             self.queryset = self.queryset.filter(starts_at__lt=before)
