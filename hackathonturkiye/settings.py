@@ -164,7 +164,7 @@ DJRICHTEXTFIELD_CONFIG = {
         'block_formats': 'Paragraph=p; Heading 2=h2; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading 6=h6; Preformatted=pre',
         'menubar': 'file edit insert view format table tools help',
         'plugins': 'autoresize media link image autosave lists autolink code',
-        'toolbar': 'undo redo | formatselect | bold italic fontselect fontsizeselect | link image media | removeformat',
+        'toolbar': 'undo redo | formatselect | bold italic underline fontselect fontsizeselect | link image media | removeformat',
         #'width': 900,
         'menu': {
             'file': { 'title': 'File', 'items': 'newdocument restoredraft | preview | print ' },
