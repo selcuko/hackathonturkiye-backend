@@ -52,6 +52,8 @@ class EventViewSet(viewsets.ModelViewSet):
                 self.queryset = self.queryset.filter(starts_at__lte=today, ends_at__gte=today)
             elif status == 'finished':
                 self.queryset = self.queryset.filter(ends_at__lte=today)
+            elif status == 'future':
+                self.queryset = self.queryset.filter(starts_at__gte=today)
         
 
 
