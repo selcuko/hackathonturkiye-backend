@@ -33,11 +33,16 @@ class PostViewSet(viewsets.ModelViewSet):
             for tag in tags:
                 self.queryset = self.queryset.filter(tags__slug=tag).distinct()
         
+        highlighted = params.get('highlighted', None)
+        
+        
         order_by = params.get('order_by', None)
         if order_by:
-            self.queryset = self.queryset.order_by('priority', order_by)
-        else:
-            self.queryset = self.queryset.order_by('priority')
+            self.queryset = self.queryset.order_by(order_by)
+        elif not highlighted:
+            self.queryset = self.queryset.order_by('-created_at')
+        elif highlighted:
+            self.queryset = self.queryset.order_by('-priority')
         
         category = params.get('category', None)
         if category:
@@ -45,6 +50,8 @@ class PostViewSet(viewsets.ModelViewSet):
         
         self.queryset = self.queryset.filter(**filters)
                 
+        if highlighted:
+            return self.queryset[:int(highlighted)]
         return self.queryset
 
 
