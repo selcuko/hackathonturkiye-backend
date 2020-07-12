@@ -12,12 +12,20 @@ ALLOWED_HOSTS = [
     'localhost',                        # Gunicorn needs this
     'jacqueline',                       # Local development environment
     'testserver',                       # Used for unit testing
-    'omerselcuk.engineer',
+    'ht.omerselcuk.engineer',
+    'api.hackathonturkiye.com',
+    '209.97.180.252',
 ]
 
 CORS_ORIGIN_WHITELIST = [
     'https://hackathonturkiye.com',
     'http://hackathonturkiye.com',
+    'http://209.97.180.252',
+    'http://209.97.180.252:4000',
+    'http://127.0.0.1:4000',
+    'http://127.0.0.1',
+#    'localhost',
+#    'http://127.0.0.1',
 ]
 CORS_ORIGIN_ALLOW_ALL = True  # Testing something...
 

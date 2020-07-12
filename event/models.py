@@ -57,7 +57,7 @@ class Event(models.Model):
         User, on_delete=models.SET_NULL, blank=True, null=True)
 
     class Meta:
-        ordering = ('starts_at',)
+        ordering = ('-starts_at',)
 
     def __str__(self):
         return f"{self.name} ({self.starts_at.year})"

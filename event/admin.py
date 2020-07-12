@@ -8,6 +8,7 @@ class EventAdmin(admin.ModelAdmin):
         'starts_at',
         'published',
         'holder',
+        'deadline',
     ]
     list_filter = ['etype', 'published']
     exclude = ['added_by']

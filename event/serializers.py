@@ -29,7 +29,7 @@ class EventSerializer(ModelActionSerializer):
     class Meta:
         model = Event
         fields = (
-            'slug',
+            #'slug',
             'name',
             'description',
             'starts_at',
@@ -43,7 +43,7 @@ class EventSerializer(ModelActionSerializer):
             'etype',
             'origin_url',
             'is_applicable',
-            'has_details',
+            #'has_details',
             'tags',
         )
         action_fields = {"list": {"fields": (
