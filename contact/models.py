@@ -14,12 +14,12 @@ class ContactForm(models.Model):
     path = models.CharField(max_length=256)
 
     # request filled fields
-    title = models.CharField(max_length=256, null=True)
-    category = models.ForeignKey(ContactFormCategory, null=True, on_delete=models.SET_NULL)
+    title = models.CharField(max_length=256, null=True, blank=True)
+    category = models.ForeignKey(ContactFormCategory, null=True, on_delete=models.SET_NULL, blank=True)
     body = models.TextField(max_length=2048)
     email = models.EmailField()
     contact = models.CharField(max_length=64)
-    phone = models.CharField(max_length=32, null=True)
+    phone = models.CharField(max_length=32, null=True, blank=True)
 
     def __str__(self):
         return str(self.title)
