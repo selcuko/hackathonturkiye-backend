@@ -168,7 +168,7 @@ DJRICHTEXTFIELD_CONFIG = {
         'relative_urls' : False,
         'remove_script_host' : False,
         'resize': 'both',
-        'document_base_url' : 'http://omerselcuk.engineer:8000/',
+        'document_base_url' : 'https://api.hackathonturkiye.com/',
         'block_formats': 'Paragraph=p; Heading 2=h2; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading 6=h6; Preformatted=pre',
         'menubar': 'file edit insert view format table tools help',
         'plugins': 'autoresize media link image autosave lists autolink code',
