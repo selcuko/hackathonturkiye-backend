@@ -171,8 +171,8 @@ DJRICHTEXTFIELD_CONFIG = {
         'document_base_url' : 'https://api.hackathonturkiye.com/',
         'block_formats': 'Paragraph=p; Heading 2=h2; Heading 3=h3; Heading 4=h4; Heading 5=h5; Heading 6=h6; Preformatted=pre',
         'menubar': 'file edit insert view format table tools help',
-        'plugins': 'fullscreen autoresize media link image autosave lists autolink code',
-        'toolbar': 'undo redo | formatselect | bold italic underline fontselect fontsizeselect | link image media | removeformat fullscreen',
+        'plugins': 'lists fullscreen autoresize media link image autosave lists autolink code',
+        'toolbar': 'undo redo | formatselect | bold italic underline fontselect fontsizeselect | link image media | numlist bullist | removeformat fullscreen',
         #'width': 900,
         'menu': {
             'file': { 'title': 'File', 'items': 'newdocument restoredraft | preview | print ' },
