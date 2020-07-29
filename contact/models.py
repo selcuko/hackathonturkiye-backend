@@ -9,9 +9,9 @@ class ContactFormCategory(models.Model):
 class ContactForm(models.Model):
     # server filled fields
     created_at = models.DateTimeField(auto_now_add=True)
-    remote_addr = models.GenericIPAddressField()
+    remote_addr = models.GenericIPAddressField(null=True)
     user_agent = models.CharField(max_length=256, null=True)
-    path = models.CharField(max_length=256)
+    path = models.CharField(max_length=256, null=True)
 
     # request filled fields
     title = models.CharField(max_length=256, null=True, blank=True)
