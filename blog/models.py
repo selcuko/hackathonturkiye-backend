@@ -69,7 +69,7 @@ class Post(models.Model):
         upload_to='blog/thumbnails', 
         default='blog/none.png',
         max_length=1024,
-        validators=[validate_img_res])
+        validators=[validate_image_res])
 
     author = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True)

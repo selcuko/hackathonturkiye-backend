@@ -13,7 +13,7 @@ class EventViewSet(viewsets.ModelViewSet):
     """
     API endpoint
     """
-    queryset = Event.objects.all() #.filter(published=True)
+    queryset = Event.objects.filter(published=True)
     serializer_class = EventSerializer
     lookup_field = 'slug'
 
