@@ -72,7 +72,7 @@ class Event(models.Model):
         max_length=1024,
         validators=[validate_image_res])
     starts_at = models.DateTimeField()
-    ends_at = models.DateTimeField(blank=True, null=True)
+    ends_at = models.DateTimeField(null=True)
     deadline = models.DateTimeField(blank=True, null=True)
     location = models.CharField(max_length=1000, blank=True, null=True)
     prize = models.CharField(max_length=200, blank=True, null=True)
