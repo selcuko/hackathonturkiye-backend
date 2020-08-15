@@ -22,4 +22,4 @@ class ContactForm(models.Model):
     phone = models.CharField(max_length=32, null=True, blank=True)
 
     def __str__(self):
-        return str(self.title)
+        return f'[{self.category.name}] {self.contact} ({self.email})'

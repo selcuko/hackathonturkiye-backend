@@ -5,11 +5,10 @@ from .models import *
 class ContactAdmin(admin.ModelAdmin):
     list_display = [
         'contact',
-        'category__name',
+        'category',
         'email',
     ]
-    list_filter = ['category__name']
-    readonly_fields = '__all__'
+    list_filter = ['category']
     exclude = ['title', 'user_agent', 'remote_addr', 'path']
 
 
