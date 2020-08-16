@@ -35,13 +35,13 @@ class ContactFormSerializer(serializers.ModelSerializer):
             'user_agent': request.META.get('HTTP_USER_AGENT', None),
             'category': category
         })
-        contact = validated_data('contact', 'null')
-        phone = validated_data('phone', None)
-        message = validated_data('body', None)
-        email = validated_data('email', None)
+        contact = validated_data.get('contact', 'null')
+        phone = validated_data.get('phone', None)
+        message = validated_data.get('body', None)
+        email = validated_data.get('email', None)
         send_mail(
             subject=f"Merhabalar, {contact} {category.name.lower()} hakkında konuşmak istiyor.",
-            message=body,
+            message=message,
             name=contact,
             email=email,
             phone=phone,

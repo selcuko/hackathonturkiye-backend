@@ -1,0 +1,5 @@
+SECRET_KEY='fc1ae709-d69e-430a-bea5-372960f6e709'
+DATABASE_URL='postgres://root:e3194721-b5ac-4c48-82ca-d89ac3b6ba60@localhost:5432/htdb'
+TINYMCE_API='lwy31s1h2ibljp3isywu73ejk0pzqd9qwy53mr7laa0qb6si'
+SENDGRID_API_KEY='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'
+
