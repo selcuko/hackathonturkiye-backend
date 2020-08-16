@@ -6,6 +6,7 @@ static/
 .github/
 
 venv/
+env
 **/__pycache__/
 
 script.py
