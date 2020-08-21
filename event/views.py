@@ -99,9 +99,9 @@ class EventViewSet(viewsets.ModelViewSet):
         
         order_by = params.get('order_by', None)
         if order_by:
-            self.queryset = self.queryset.order_by('priority', order_by)
+            self.queryset = self.queryset.order_by('-priority', order_by)
         else:
-            self.queryset = self.queryset.order_by('priority')
+            self.queryset = self.queryset.order_by('-priority')
         return self.queryset
 
 

@@ -10,7 +10,7 @@ class EventAdmin(admin.ModelAdmin):
         'holder',
         'deadline',
     ]
-    list_filter = ['etype', 'published']
+    list_filter = ['etype', 'published', 'priority',]
     exclude = ['added_by']
     
 
