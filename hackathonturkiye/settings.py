@@ -15,6 +15,7 @@ ALLOWED_HOSTS = [
     'ht.omerselcuk.engineer',
     'api.hackathonturkiye.com',
     '209.97.180.252',
+    '192.168.1.6',
 ]
 
 CORS_ORIGIN_WHITELIST = [
