@@ -11,6 +11,10 @@ from rest_framework import routers, permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
 
+admin.site.site_header = 'Hackathon Türkiye Yönetim Paneli'
+admin.site.index_title = 'Yönetim Paneli'
+admin.site.site_title = 'Hackathon Türkiye'
+
 schema_view = get_schema_view(
    openapi.Info(
       title="HackathonTurkiye Backend API",
