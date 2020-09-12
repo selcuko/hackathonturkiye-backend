@@ -34,6 +34,7 @@ class PostSerializer(ModelActionSerializer):
             'read',
             'time',
             'thumbnail',
+            'priority',
         ]
         action_fields = {"list": {"fields": (
             "slug",

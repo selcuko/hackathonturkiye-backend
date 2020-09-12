@@ -45,6 +45,7 @@ class EventSerializer(ModelActionSerializer):
             'is_applicable',
             #'has_details',
             'tags',
+            'slug',
         )
         action_fields = {"list": {"fields": (
             "slug",
