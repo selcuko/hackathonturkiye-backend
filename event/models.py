@@ -23,7 +23,7 @@ h_allowance_percent = .05 # max 1
 img_max_size = 256 # kilobytes
 
 def validate_image_res(img):
-    if img.width < 600: 
+    if img.width < 600:
         raise ValidationError(f'Bu ne ufacuk resim! Eni en az 600px olsun.')
 
     if abs(img.width/img.height-16/9)>.1:

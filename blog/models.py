@@ -9,7 +9,7 @@ from common.models import Tag
 img_max_size = 256 # kilobytes
 
 def validate_image_res(img):
-    if 600 < img.width:
+    if 600 > img.width:
         raise ValidationError(f'Bu ne ufacık? Eni olsun en az 600px.')
 
     if img.size//1024 > img_max_size:
@@ -17,8 +17,8 @@ def validate_image_res(img):
 
     if abs(img.width/img.height-16/9)>.1:
         raise ValidationError(f'Resmin oranı uygunsuz. Geçerli oran: ~16:9.')
-            
-    raise ValidationError(f'Resim istediğim boyutta değil. Geçerli boyutlar: {valid_img_res}')
+    return
+    #raise ValidationError(f'Resim istediğim boyutta değil. Geçerli boyutlar: {valid_img_res}')
 
 class PostCategory(models.Model):
     name = models.CharField(max_length=200, verbose_name='Yazı kategorisi')
@@ -59,13 +59,12 @@ class Post(models.Model):
         upload_to='blog/thumbnails', 
         default='blog/none.png',
         max_length=1024,
-        validators=[validate_image_res]
+        validators=[validate_image_res],
         verbose_name='Albüm kapağı',
         )
 
-v
-    author = models.ForeignKey(
-        User, on_delete=models.SET_NULL, null=True, verbose_name='Yazar')
+
+    author = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, verbose_name='Yazar')
 
     category = models.ForeignKey(PostCategory, null=True, on_delete=models.SET_NULL, verbose_name='Kategori')
     tags = models.ManyToManyField(Tag, blank=True, related_name='posts', verbose_name='Etiketler')
