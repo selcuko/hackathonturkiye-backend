@@ -62,6 +62,7 @@ class EventSerializer(ModelActionSerializer):
             'is_applicable',
             'priority',
             'has_details',
+            'url',
             )}}
     
     def create(self, validated_data):

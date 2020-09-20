@@ -98,6 +98,11 @@ class Event(models.Model):
         verbose_name='etkinlik'
         verbose_name_plural='etkinlikler'
 
+
+    @property
+    def url(self):
+        return f'/etkinlik/{self.slug}' if self.has_details() else self.origin_url
+
     def __str__(self):
         return f"{self.name} ({self.starts_at.year})"
     
