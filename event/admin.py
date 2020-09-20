@@ -8,6 +8,7 @@ class EventAdmin(admin.ModelAdmin):
         'starts_at',
         'published',
         'holder',
+        'etype',
         'deadline',
     ]
     list_filter = ['etype', 'published', 'priority',]
