@@ -46,6 +46,7 @@ class EventSerializer(ModelActionSerializer):
             #'has_details',
             'tags',
             'slug',
+            'deadline',
         )
         action_fields = {"list": {"fields": (
             "slug",
@@ -55,7 +56,7 @@ class EventSerializer(ModelActionSerializer):
             'location',
             'tags',
             'prize',
-            'origin_url',
+#            'origin_url',
             'description',
             'thumbnail',
             'etype',

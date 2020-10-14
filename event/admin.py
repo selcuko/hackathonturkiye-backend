@@ -13,7 +13,7 @@ class EventAdmin(admin.ModelAdmin):
     ]
     list_filter = ['etype', 'published', 'priority',]
     exclude = ['added_by', 'internal_url']
-    
+
 
 
 admin.site.register(Event, EventAdmin)

@@ -61,8 +61,7 @@ class Event(models.Model):
     name = models.CharField(max_length=640, verbose_name='Etkinliğin adı')
     description = models.TextField(max_length=1400, null=True, verbose_name='Etkinliğin kısa açıklaması/özeti')
     body = RichTextField(blank=True, null=True, verbose_name='Etkinliğin detaylı açıklaması')
-    etype = models.ForeignKey(EventType, on_delete=models.SET_NULL,
-                              blank=True, null=True, 
+    etype = models.ForeignKey(EventType, on_delete=models.CASCADE,
                               verbose_name="Etkinlik türü")
     slug = models.SlugField(
         default='',
@@ -79,9 +78,9 @@ class Event(models.Model):
         max_length=1024,
         validators=[validate_image_res],
         verbose_name='Albüm kapağı')
+    deadline = models.DateTimeField(blank=True, null=True, verbose_name='Son başvuru tarihi')
     starts_at = models.DateTimeField(verbose_name='Başlangıç tarihi')
     ends_at = models.DateTimeField(verbose_name='Bitiş tarihi')
-    deadline = models.DateTimeField(blank=True, null=True, verbose_name='Son başvuru tarihi')
     location = models.CharField(max_length=1000, blank=True, null=True, verbose_name='Etkinliğin konumu')
     prize = models.CharField(max_length=200, blank=True, null=True, verbose_name='Etkinlikte dağıtılacak toplam para ödülü')
     priority = models.IntegerField(default=1, verbose_name='Öncelik (aksi söylenmedikçe 1 bırakın)')
@@ -101,7 +100,7 @@ class Event(models.Model):
 
     @property
     def url(self):
-        return f'/etkinlik/{self.slug}' if self.has_details() else self.origin_url
+        return f'https://hackathonturkiye.com/etkinlik/{self.slug}' if self.has_details() else self.origin_url
 
     def __str__(self):
         return f"{self.name} ({self.starts_at.year})"
