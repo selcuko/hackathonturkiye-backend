@@ -11,7 +11,7 @@ class PostViewSet(viewsets.ModelViewSet):
     serializer_class = PostSerializer
     queryset = Post.objects.filter(status='p')
     lookup_field = 'slug'
-    
+
     def get_queryset(self):
         params = self.request.query_params
         filters = {}
@@ -40,7 +40,7 @@ class PostViewSet(viewsets.ModelViewSet):
         if order_by:
             self.queryset = self.queryset.order_by(order_by)
         elif not highlighted:
-            self.queryset = self.queryset.order_by('-created_at')
+            self.queryset = self.queryset.order_by('-published_at')
         elif highlighted:
             self.queryset = self.queryset.order_by('-priority')
         
