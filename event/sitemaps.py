@@ -3,8 +3,6 @@ from .models import Event
 
 
 class EventSitemap(Sitemap):
-    changefreq = 'never'
-    priority = .5
     protocol = 'https'
     
     def items(self):
@@ -16,3 +14,8 @@ class EventSitemap(Sitemap):
         except:
             return 'bir şeyler çok fena ters gitti'
     
+    def lastmod(self, instance):
+        try:
+            return instance.added_at
+        except:
+            return None

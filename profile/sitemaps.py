@@ -1,22 +1,21 @@
 from django.contrib.sitemaps import Sitemap
-from .models import Post
+from .models import Profile
 
 
-class PostSitemap(Sitemap):
+class ProfileSitemap(Sitemap):
     protocol = 'https'
     
     def items(self):
-        return Post.objects.filter(status='p')
+        return [profile.user for profile in Profile.objects.all()]
     
     def location(self, instance):
         try:
-            return f'/blog/{instance.slug}'
+            return f'/blog?author__username={instance.username}'
         except:
             return 'bir şeyler çok fena ters gitti'
     
     def lastmod(self, instance):
         try:
-            return instance.edited_at
+            return instance.date_joined
         except:
             return None
-    
