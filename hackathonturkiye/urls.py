@@ -6,6 +6,7 @@ from event import views as event_views
 from event.sitemaps import EventSitemap
 from profile import views as profile_views
 from blog import views as blog_views
+from blog.sitemaps import PostSitemap
 from contact import views as contact_views
 from common import views as common_views
 from rest_framework import routers, permissions
@@ -41,7 +42,10 @@ router.register(r'tags', common_views.TagViewSet)
 
 urlpatterns = [
    path('admin/', admin.site.urls),
-   path('sitemap.xml', sitemap, {'sitemaps': {'events': EventSitemap}}),
+   path('sitemap.xml', sitemap, {'sitemaps': {
+      'events': EventSitemap,
+      'blogs': PostSitemap,
+      }}),
    path('', include(router.urls)),
    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
