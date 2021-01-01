@@ -3,6 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from event import views as event_views
+from event.sitemaps import EventSitemap
 from profile import views as profile_views
 from blog import views as blog_views
 from contact import views as contact_views
@@ -10,6 +11,7 @@ from common import views as common_views
 from rest_framework import routers, permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from django.contrib.sitemaps.views import sitemap
 
 admin.site.site_header = 'Hackathon Türkiye Yönetim Paneli'
 admin.site.index_title = 'Yönetim Paneli'
@@ -38,12 +40,13 @@ router.register(r'tagsearch', common_views.CrossSearchTagViewSet, basename='tags
 router.register(r'tags', common_views.TagViewSet)
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include(router.urls)),
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
-    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
-    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
-    path('djrichtextfield/', include('djrichtextfield.urls'))
+   path('admin/', admin.site.urls),
+   path('sitemap.xml', sitemap, {'sitemaps': {'events': EventSitemap}}),
+   path('', include(router.urls)),
+   path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+   path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
+   path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+   path('djrichtextfield/', include('djrichtextfield.urls'))
 ]
 
 if settings.DEBUG:

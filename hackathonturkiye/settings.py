@@ -8,11 +8,11 @@ SECRET_KEY = os.getenv("SECRET_KEY", str(uuid.uuid4()))
 
 DEBUG = True
 
+SITE_ID = 1
+
 ALLOWED_HOSTS = [
     'localhost',                        # Gunicorn needs this
-    'jacqueline',                       # Local development environment
     'testserver',                       # Used for unit testing
-    'ht.omerselcuk.engineer',
     'api.hackathonturkiye.com',
     '209.97.180.252',
     '192.168.1.6',
@@ -28,7 +28,7 @@ CORS_ORIGIN_WHITELIST = [
 #    'localhost',
 #    'http://127.0.0.1',
 ]
-CORS_ORIGIN_ALLOW_ALL = True  # Testing something...
+CORS_ORIGIN_ALLOW_ALL = False  # Testing something...
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
@@ -69,6 +69,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
+    'django.contrib.sites',
     'rest_framework',
     'drf_yasg',
     'djrichtextfield',
@@ -112,11 +114,13 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'hackathonturkiye.wsgi.application'
 
+
+DATABASE_URL = os.getenv('DATABASE_URL')
+if not DATABASE_URL:
+    raise Exception('[FATAL] DATABASE_URL environment variable is not supplied.')
+
 DATABASES = {
-    'default': dj_database_url.parse(os.getenv(
-        'DATABASE_URL',
-        'postgres://amy:amy@localhost:5432/htdb'
-        ))
+    'default': dj_database_url.parse(DATABASE_URL),
 }
 
 
