@@ -10,6 +10,7 @@ from blog import views as blog_views
 from blog.sitemaps import PostSitemap
 from contact import views as contact_views
 from common import views as common_views
+from common.sitemaps import TagSitemap
 from rest_framework import routers, permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
@@ -47,6 +48,7 @@ urlpatterns = [
       'events': EventSitemap,
       'blogs': PostSitemap,
       'authors': ProfileSitemap,
+      'tags': TagSitemap,
       }}),
    path('', include(router.urls)),
    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
