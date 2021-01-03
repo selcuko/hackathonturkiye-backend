@@ -10,7 +10,7 @@ class TagSitemap(Sitemap):
     
     def location(self, instance):
         try:
-            return f'/etiket/{instance.slug}'
+            return f'/etiket/{instance.slug}/tag'
         except:
             return 'bir şeyler çok fena ters gitti'
     

@@ -3,7 +3,7 @@ from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
 from event import views as event_views
-from event.sitemaps import EventSitemap
+from event.sitemaps import EventSitemap, LocationSitemap, EventTypeSitemap
 from profile import views as profile_views
 from profile.sitemaps import ProfileSitemap
 from blog import views as blog_views
@@ -49,6 +49,8 @@ urlpatterns = [
       'blogs': PostSitemap,
       'authors': ProfileSitemap,
       'tags': TagSitemap,
+      'etypes': EventTypeSitemap,
+      'locations': LocationSitemap,
       }}),
    path('', include(router.urls)),
    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),

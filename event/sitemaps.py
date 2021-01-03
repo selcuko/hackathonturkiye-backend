@@ -19,3 +19,24 @@ class EventSitemap(Sitemap):
             return instance.added_at
         except:
             return None
+
+
+
+class LocationSitemap(Sitemap):
+    protocol = 'https'
+
+    def items(self):
+        return list(set([e.location for e in Event.objects.filter(location__isnull=False)]))
+    
+    def location(self, item):
+        return f'/etkinlikler/hepsi/{item}'
+
+
+class EventTypeSitemap(Sitemap):
+    protocol = 'https'
+
+    def items(self):
+        return list(set([e.etype for e in Event.objects.filter(etype__isnull=False)]))
+    
+    def location(self, item):
+        return f'/etkinlikler/{item}'
