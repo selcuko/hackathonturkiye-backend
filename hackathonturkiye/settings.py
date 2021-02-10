@@ -40,24 +40,7 @@ REST_FRAMEWORK = {
 }
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': './debug.log',
-        },
-    },
-    'loggers': {
-        'django': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+
 
 # Application definition
 
@@ -80,6 +63,7 @@ INSTALLED_APPS = [
     'contact.apps.ContactConfig',
     'common',
     'hosting',
+    'csvexport',
 ]
 
 MIDDLEWARE = [
@@ -199,3 +183,7 @@ DJRICHTEXTFIELD_CONFIG = {
         'fontsize_formats': '8pt 10pt 12pt 14pt 18pt 19pt 20pt 22pt 24pt 36pt 48pt 72pt',
     }
 }
+
+
+CSV_EXPORT_REFERENCE_DEPTH = 3
+CSV_EXPORT_EMPTY_VALUE = ''

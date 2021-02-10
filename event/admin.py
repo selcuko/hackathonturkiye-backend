@@ -1,8 +1,10 @@
 from django.contrib import admin
 from event.models import *
+from csvexport.actions import csvexport
 
 
 class EventAdmin(admin.ModelAdmin):
+    actions = [csvexport]
     list_display = [
         'name',
         'starts_at',

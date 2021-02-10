@@ -1,8 +1,10 @@
 from django.contrib import admin
 from blog.models import Post, PostCategory, PostTag
+from csvexport.actions import csvexport
 
 
 class PostAdmin(admin.ModelAdmin):
+    actions = [csvexport]
     fields = (
         'title',
         'summary',
