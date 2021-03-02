@@ -49,19 +49,18 @@ class EventSerializer(ModelActionSerializer):
             'deadline',
         )
         action_fields = {"list": {"fields": (
-            "slug",
-            "name",
+            'slug',
+            'name',
             'starts_at',
+            'deadline',
             'ends_at',
             'location',
             'tags',
             'prize',
-#            'origin_url',
             'description',
             'thumbnail',
             'etype',
             'is_applicable',
-            'priority',
             'has_details',
             'url',
             )}}
