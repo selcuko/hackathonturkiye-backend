@@ -28,7 +28,7 @@ CORS_ORIGIN_WHITELIST = [
 #    'localhost',
 #    'http://127.0.0.1',
 ]
-CORS_ORIGIN_ALLOW_ALL = False  # Testing something...
+CORS_ORIGIN_ALLOW_ALL = True  # Testing something...
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
