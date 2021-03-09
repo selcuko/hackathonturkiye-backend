@@ -25,10 +25,12 @@ CORS_ORIGIN_WHITELIST = [
     'http://209.97.180.252:4000',
     'http://127.0.0.1:4000',
     'http://127.0.0.1',
+    'https://mobiler.dev',
 #    'localhost',
 #    'http://127.0.0.1',
 ]
 CORS_ORIGIN_ALLOW_ALL = True  # Testing something...
+CORS_ALLOW_ALL_ORIGINS = True
 
 REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.LimitOffsetPagination',
