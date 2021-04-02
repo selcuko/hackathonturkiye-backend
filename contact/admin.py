@@ -10,7 +10,6 @@ class ContactAdmin(admin.ModelAdmin):
         'created_at',
     ]
     list_filter = ['category']
-    exclude = ['title', 'user_agent', 'remote_addr', 'path']
 
 
 
