@@ -64,6 +64,7 @@ INSTALLED_APPS = [
     'common',
     'hosting',
     'csvexport',
+    'django_object_actions',
 ]
 
 MIDDLEWARE = [
