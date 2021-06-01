@@ -27,8 +27,6 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
             messages.error(request, f'Tweet gönderilirken hata oluştu: {extra!r}')
     tweet_this.label = 'Bunu Tweetle'
 
-        
-    
 
 
 

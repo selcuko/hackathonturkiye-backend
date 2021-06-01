@@ -16,7 +16,11 @@ def tweet_event(event):
 
     try:
         status = twitter.update_with_media(event.thumbnail.path, 
-        f'Yeni {event.etype.name}: {event.title}\n{event.url}')
+        f'''{event.name} #{event.etype.name}
+Son başvuru: {event.deadline.strftime('%d %B %Y')}
+Detaylar: {event.url}
+***
+HT Sponsoru: https://bit.ly/htpoweredby''')
         return True, status
 
     except Exception as exc:
