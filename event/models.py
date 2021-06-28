@@ -9,58 +9,58 @@ from django.utils.text import slugify
 from django.core.exceptions import MultipleObjectsReturned
 from common.models import Tag
 
-valid_img_res = [
-    (640, 360),
-    (854, 480),
-    (960, 540),
-    (1024, 576),
-    (1280, 720),
-    (1280, 728),
-]
-w_allowance_percent = .05 # max 1
-h_allowance_percent = .05 # max 1
 
-img_max_size = 256 # kilobytes
+w_allowance_percent = .05  # max 1
+h_allowance_percent = .05  # max 1
+
+img_max_size = 256  # kilobytes
+
 
 def validate_image_res(img):
     if img.width < 600:
         raise ValidationError(f'Bu ne ufacuk resim! Eni en az 600px olsun.')
 
-    if abs(img.width/img.height-16/9)>.1:
-        raise ValidationError(f'Resmin oranı uygunsuz. ~16:9 oranında resim gerekli.')
+    if abs(img.width/img.height-16/9) > .1:
+        raise ValidationError(
+            f'Resmin oranı uygunsuz. ~16:9 oranında resim gerekli.')
 
     if img.size//1024 > img_max_size:
-        raise ValidationError(f'Resmin dosya boyutu çok büyük. Maximum boyut: {img_max_size}KB')
-    
+        raise ValidationError(
+            f'Resmin dosya boyutu çok büyük. Maximum boyut: {img_max_size}KB')
+
     return
 
 
 class EventType(models.Model):
-    name = models.CharField(max_length=200, verbose_name='Etkinlik türünün adı')
+    name = models.CharField(
+        max_length=200, verbose_name='Etkinlik türünün adı')
     url = models.URLField(blank=True, null=True)
 
     def __str__(self):
         return self.name
-    
+
     class Meta:
-        verbose_name='etkinlik türü'
-        verbose_name_plural='etkinlik türleri'
+        verbose_name = 'etkinlik türü'
+        verbose_name_plural = 'etkinlik türleri'
+
 
 class EventTag(models.Model):
     name = models.CharField(max_length=200, verbose_name='Etiket adı')
-    
+
     def __str__(self):
         return self.name
-    
+
     class Meta:
-        verbose_name='etiket'
-        verbose_name_plural='etiketler'
+        verbose_name = 'etiket'
+        verbose_name_plural = 'etiketler'
 
 
 class Event(models.Model):
     name = models.CharField(max_length=640, verbose_name='Etkinliğin adı')
-    description = models.TextField(max_length=1400, null=True, verbose_name='Etkinliğin kısa açıklaması/özeti')
-    body = RichTextField(blank=True, null=True, verbose_name='Etkinliğin detaylı açıklaması')
+    description = models.TextField(
+        max_length=1400, null=True, verbose_name='Etkinliğin kısa açıklaması/özeti')
+    body = RichTextField(blank=True, null=True,
+                         verbose_name='Etkinliğin detaylı açıklaması')
     etype = models.ForeignKey(EventType, on_delete=models.CASCADE,
                               verbose_name="Etkinlik türü")
     slug = models.SlugField(
@@ -73,20 +73,26 @@ class Event(models.Model):
     origin_url = models.URLField(verbose_name='Etkinliğin resmi sitesi')
     internal_url = models.URLField(null=True, blank=True)
     thumbnail = models.ImageField(
-        upload_to='thumbnails', 
+        upload_to='thumbnails',
         default='thumbnails/none/placeholder.jpg',
         max_length=1024,
         validators=[validate_image_res],
         verbose_name='Albüm kapağı')
-    deadline = models.DateTimeField(blank=True, null=True, verbose_name='Son başvuru tarihi')
+    deadline = models.DateTimeField(
+        blank=True, null=True, verbose_name='Son başvuru tarihi')
     starts_at = models.DateTimeField(verbose_name='Başlangıç tarihi')
     ends_at = models.DateTimeField(verbose_name='Bitiş tarihi')
-    location = models.CharField(max_length=1000, blank=True, null=True, verbose_name='Etkinliğin konumu')
-    prize = models.CharField(max_length=200, blank=True, null=True, verbose_name='Etkinlikte dağıtılacak toplam para ödülü')
-    priority = models.IntegerField(default=1, verbose_name='Öncelik (aksi söylenmedikçe 1 bırakın)')
-    holder = models.CharField(max_length=200, null=True, blank=True, verbose_name='Etkinliği düzenleyen kurum')
+    location = models.CharField(
+        max_length=1000, blank=True, null=True, verbose_name='Etkinliğin konumu')
+    prize = models.CharField(max_length=200, blank=True, null=True,
+                             verbose_name='Etkinlikte dağıtılacak toplam para ödülü')
+    priority = models.IntegerField(
+        default=1, verbose_name='Öncelik (aksi söylenmedikçe 1 bırakın)')
+    holder = models.CharField(
+        max_length=200, null=True, blank=True, verbose_name='Etkinliği düzenleyen kurum')
     published = models.BooleanField(default=True, verbose_name='Yayınla')
-    tags = models.ManyToManyField(Tag, related_name='events', verbose_name='Alakalı etiketler')
+    tags = models.ManyToManyField(
+        Tag, related_name='events', verbose_name='Alakalı etiketler')
 
     added_at = models.DateTimeField(auto_now_add=True)
     added_by = models.ForeignKey(
@@ -94,9 +100,8 @@ class Event(models.Model):
 
     class Meta:
         ordering = ('priority', '-starts_at',)
-        verbose_name='etkinlik'
-        verbose_name_plural='etkinlikler'
-
+        verbose_name = 'etkinlik'
+        verbose_name_plural = 'etkinlikler'
 
     @property
     def url(self):
@@ -104,19 +109,19 @@ class Event(models.Model):
 
     def __str__(self):
         return f"{self.name} ({self.starts_at.year})"
-    
+
     def is_applicable(self):
         return timezone.now() < self.deadline if self.deadline else None
-    
+
     def has_details(self):
         return bool(self.body)
-    
+
     def save(self, *args, **kwargs):
-        self.slug = slugify(self.name.lower().replace('ı', 'i'), allow_unicode=False)
+        self.slug = slugify(self.name.lower().replace(
+            'ı', 'i'), allow_unicode=False)
         try:
             self.validate_unique()
         except:
             self.slug += f'-{self.pk}'
             self.validate_unique()
         super().save(*args, **kwargs)
-

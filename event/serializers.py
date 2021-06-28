@@ -26,10 +26,11 @@ class EventSerializer(ModelActionSerializer):
         many=True,
         read_only=True
     )
+
     class Meta:
         model = Event
         fields = (
-            #'slug',
+            # 'slug',
             'name',
             'description',
             'starts_at',
@@ -63,8 +64,8 @@ class EventSerializer(ModelActionSerializer):
             'is_applicable',
             'has_details',
             'url',
-            )}}
-    
+        )}}
+
     def create(self, validated_data):
 
         request = self.context["request"]
@@ -78,4 +79,3 @@ class EventSerializer(ModelActionSerializer):
             'etype': etype
         })
         return Event.objects.create(**validated_data)
-

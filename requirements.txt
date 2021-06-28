@@ -26,7 +26,6 @@ oauthlib==3.1.0
 packaging==20.4
 pandas==1.1.5
 Pillow==7.1.2
-psycopg2==2.8.5
 psycopg2-binary==2.8.6
 pyparsing==2.4.7
 PySocks==1.7.1

@@ -17,15 +17,14 @@ class EventViewSet(viewsets.ModelViewSet):
     serializer_class = EventSerializer
     lookup_field = 'slug'
 
-
     def get_queryset(self):
         # todo: find another method, im sure it exists
         nonfield = [
-            "etype", 
-            "offset", 
-            "limit", 
-            "page", 
-            "format", 
+            "etype",
+            "offset",
+            "limit",
+            "page",
+            "format",
             "highlighted",
             "after",
             "before",
@@ -40,7 +39,7 @@ class EventViewSet(viewsets.ModelViewSet):
         highlighted = params.get('highlighted', None)
         if highlighted is not None:
             return self.queryset.order_by('priority', 'starts_at')[:int(highlighted)]
-        
+
         # single event (details) request
         pk = params.get('pk', None)
         if pk is not None:
@@ -49,13 +48,12 @@ class EventViewSet(viewsets.ModelViewSet):
         status = params.get('status', None)
         if status:
             if status == 'ongoing':
-                self.queryset = self.queryset.filter(starts_at__lte=today, ends_at__gte=today)
+                self.queryset = self.queryset.filter(
+                    starts_at__lte=today, ends_at__gte=today)
             elif status == 'finished':
                 self.queryset = self.queryset.filter(ends_at__lte=today)
             elif status == 'future':
                 self.queryset = self.queryset.filter(starts_at__gte=today)
-        
-
 
         filters = {}
         for key, value in params.items():
@@ -73,37 +71,38 @@ class EventViewSet(viewsets.ModelViewSet):
                 self.queryset = self.queryset.none()
             # ie try this somewhen
             # self.queryset.filter(etype__name=etype)
-        
+
         tags = params.get('tags', None)
         if tags:
             tags = tags.lower().split(',')
             for tag in tags:
                 self.queryset = self.queryset.filter(tags__slug=tag).distinct()
-        
+
         # filter: by date
         after = params.get('after', None)
         before = params.get('before', None)
         if after:
             self.queryset = self.queryset.filter(starts_at__gt=after)
-        #else:
+        # else:
         #    if not (status):
         #        self.queryset = self.queryset.filter(starts_at__gt=today)
         if before:
             self.queryset = self.queryset.filter(starts_at__lt=before)
-        
+
         if len(filters):
             for f, q in filters.items():
-                if f == 'location': self.queryset = self.queryset.filter(location__iexact=q)
-                else: self.queryset = self.queryset.filter(**{f'{f}__iexact':q})
+                if f == 'location':
+                    self.queryset = self.queryset.filter(location__iexact=q)
+                else:
+                    self.queryset = self.queryset.filter(**{f'{f}__iexact': q})
             #self.queryset = self.queryset.filter(**filters)
-        
+
         order_by = params.get('order_by', None)
         if order_by:
             self.queryset = self.queryset.order_by('-priority', order_by)
         else:
             self.queryset = self.queryset.order_by('-priority')
         return self.queryset
-
 
 
 class EventTypeViewSet(viewsets.ModelViewSet):

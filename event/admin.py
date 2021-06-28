@@ -5,6 +5,7 @@ from csvexport.actions import csvexport
 from django_object_actions import DjangoObjectActions
 from .tweeter import tweet_event
 
+
 class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
     actions = [csvexport]
     change_actions = ['tweet_this']
@@ -16,7 +17,7 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
         'etype',
         'deadline',
     ]
-    list_filter = ['etype', 'published', 'priority',]
+    list_filter = ['etype', 'published', 'priority', ]
     exclude = ['added_by', 'internal_url']
 
     def tweet_this(self, request, obj):
@@ -24,12 +25,11 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
         if success == True:
             messages.success(request, f'Tweet gönderildi. {extra.source_url}')
         else:
-            messages.error(request, f'Tweet gönderilirken hata oluştu: {extra!r}')
+            messages.error(
+                request, f'Tweet gönderilirken hata oluştu: {extra!r}')
     tweet_this.label = 'Bunu Tweetle'
-
-
 
 
 admin.site.register(Event, EventAdmin)
 admin.site.register(EventType)
-#admin.site.register(EventTag)
+# admin.site.register(EventTag)
