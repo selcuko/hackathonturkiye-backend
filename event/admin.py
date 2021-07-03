@@ -3,7 +3,7 @@ from event.models import *
 from django.contrib import messages
 from csvexport.actions import csvexport
 from django_object_actions import DjangoObjectActions
-from .tweeter import tweet_event
+from automata.twitter import tweet_event
 
 
 class EventAdmin(DjangoObjectActions, admin.ModelAdmin):

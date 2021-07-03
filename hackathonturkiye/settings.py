@@ -44,7 +44,7 @@ REST_FRAMEWORK = {
     ]
 }
 
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 
 # Application definition
@@ -70,6 +70,7 @@ INSTALLED_APPS = [
     'hosting',
     'csvexport',
     'django_object_actions',
+    'automata',
 ]
 
 MIDDLEWARE = [
