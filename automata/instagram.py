@@ -5,7 +5,7 @@ import json
 from event.models import Event
 from PIL import Image
 from random import randint
-import io
+import io, os
 
 caption_template = """
 📍 %(ename)s
@@ -31,8 +31,12 @@ def init():
     global client
     auth_file = json.load(open("instagram_auth.json"))
     username, password = auth_file['username'], auth_file['password']
-    client = ApiClient(username=username, password=password)
-    client.log_in()
+    if os.path.exists('/tmp/.instauto'):
+        client = ApiClient.initiate_from_file('/tmp/.instauto')
+    else:
+        client = ApiClient(username=username, password=password)
+        client.log_in()
+    client.save_to_disk('/tmp/.instauto')
 
 
 
