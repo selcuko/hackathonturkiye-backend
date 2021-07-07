@@ -56,7 +56,6 @@ def post_event(event: Event):
             'etags':hashtags
         }
         photo_path = convert_photo(event.thumbnail.path)
-        print('Trying to upload', photo_path)
         post = ps.PostFeed(photo_path, caption)
         response = client.post_post(post)
         return True, response
@@ -89,10 +88,8 @@ def prepare_photo(photo_path):
 
 
 def convert_photo(path):
-    print('Converting:', path, end='\t')
     photo = Image.open(path)
     if not photo.mode == 'RGB': photo = photo.convert('RGB')
     final_path = f'/tmp/hturkiye{randint(100, 999)}.jpg'
     photo.save(final_path, 'JPEG')
-    print('...done:', final_path)
     return final_path
