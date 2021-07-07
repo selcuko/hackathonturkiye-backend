@@ -1,5 +1,6 @@
 from typing import final
-import instagram_private_api
+import instauto.api.actions.structs.post as ps
+from instauto.api.client import ApiClient
 import json
 from event.models import Event
 from PIL import Image
@@ -19,14 +20,16 @@ caption_template = """
 """
 
 
-api = None
+client = None
 
 
 def init():
-    global api
+    global client
     auth_file = json.load(open("instagram_auth.json"))
     username, password = auth_file['username'], auth_file['password']
-    api = instagram_private_api.Client(username, password)
+    client = ApiClient(username=username, password=password)
+    client.log_in()
+
 
 
 
@@ -34,19 +37,22 @@ def init():
 
 def post_event(event: Event):
     try:
-        if api is None: init()
-        photo_output, photo_size = prepare_photo(event.thumbnail.path)
-        photo_binary = photo_output.getvalue()
-        caption = caption_template.format(
-            ename=event.name,
-            eloc=event.location,
-            esum=event.description,
-            edeadline=event.deadline,
-            elink=event.url
-        )
-        api.post_photo(photo_binary, photo_size, caption)
-        return True, None
+        if client is None: init()
+        caption = caption_template % {
+            'ename':event.name,
+            'eloc':event.location,
+            'esum':event.description,
+            'edeadline':event.deadline,
+            'elink':event.url
+        }
+        photo_path = convert_photo(event.thumbnail.path)
+        print('Trying to upload', photo_path)
+        post = ps.PostFeed(photo_path, caption)
+        response = client.post_post(post)
+        return True, response
+
     except Exception as exc:
+        print(f'{exc!r}', exc.args)
         return False, exc
 
 
@@ -70,3 +76,13 @@ def prepare_photo(photo_path):
     photo.save(output, 'JPEG')
     size = photo.size
     return output, size
+
+
+def convert_photo(path):
+    print('Converting:', path, end='\t')
+    photo = Image.open(path)
+    if not photo.mode == 'RGB': photo = photo.convert('RGB')
+    final_path = f'/tmp/hturkiye{randint(100, 999)}.jpg'
+    photo.save(final_path, 'JPEG')
+    print('...done:', final_path)
+    return final_path

@@ -33,7 +33,7 @@ class EventAdmin(DjangoObjectActions, admin.ModelAdmin):
     def post_to_instagram(self, request, obj):
         success, extra = post_event(obj)
         if success == True:
-            messages.success(request, f'Attım Instagrama. {extra.source_url}')
+            messages.success(request, f'Attım Instagrama. {extra!r}')
         else:
             messages.error(
                 request, f'İşlem sırasında hata oluştu: {extra!r}')
