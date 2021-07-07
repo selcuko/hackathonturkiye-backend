@@ -55,7 +55,7 @@ def post_event(event: Event):
             'ename':event.name,
             'eloc':event.location,
             'esum':event.description,
-            'edeadline':event.deadline,
+            'edeadline':event.deadline.strftime('%d %B %Y'),
             'elink':event.url,
             'etags':hashtags
         }
