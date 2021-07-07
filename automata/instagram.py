@@ -17,6 +17,10 @@ caption_template = """
 📍Son Başvuru: %(edeadline)s
 
 📍Detaylar ve başvuru: %(elink)s
+
+
+
+%(etags)s
 """
 
 
@@ -38,12 +42,18 @@ def init():
 def post_event(event: Event):
     try:
         if client is None: init()
+
+        hashtags = ''
+        for tag in event.tags.all():
+            hashtags += f'#{tag.name} '
+
         caption = caption_template % {
             'ename':event.name,
             'eloc':event.location,
             'esum':event.description,
             'edeadline':event.deadline,
-            'elink':event.url
+            'elink':event.url,
+            'etags':hashtags
         }
         photo_path = convert_photo(event.thumbnail.path)
         print('Trying to upload', photo_path)
