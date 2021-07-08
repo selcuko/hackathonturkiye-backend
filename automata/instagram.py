@@ -1,4 +1,3 @@
-from typing import final
 import instauto.api.actions.structs.post as ps
 from instauto.api.client import ApiClient
 import json
@@ -32,10 +31,13 @@ def init():
     auth_file = json.load(open("instagram_auth.json"))
     username, password = auth_file['username'], auth_file['password']
     if os.path.exists('/tmp/.instauto'):
+        print('Loading Instagram session from file')
         client = ApiClient.initiate_from_file('/tmp/.instauto')
     else:
+        print('Logging in to Instagram...', end='\t')
         client = ApiClient(username=username, password=password)
         client.log_in()
+        print('OK')
     client.save_to_disk('/tmp/.instauto')
 
 
@@ -49,7 +51,7 @@ def post_event(event: Event):
 
         hashtags = ''
         for tag in event.tags.all():
-            hashtags += f'#{tag.name} '
+            hashtags += f'#{tag.slug.replace("-", "")} '
 
         caption = caption_template % {
             'ename':event.name,
