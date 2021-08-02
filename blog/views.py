@@ -1,7 +1,19 @@
 from blog.serializers import *
 from rest_framework import viewsets
 from .models import PostTag, Post
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import authentication, permissions
+from django.contrib.auth.models import User
+from .serializers import PostSerializer
 
+class PostPreview(APIView):
+    permission_classes = [permissions.IsAdminUser]
+
+    def get(self, request, slug, format=None):
+        sketch = Post.objects.get(slug=slug)
+        serial = PostSerializer(sketch)
+        return Response(serial.data)
 
 class PostCategoryViewSet(viewsets.ModelViewSet):
     serializer_class = PostCategorySerializer
@@ -54,6 +66,10 @@ class PostViewSet(viewsets.ModelViewSet):
             return self.queryset[:int(highlighted)]
         return self.queryset
 
+    def retrieve(self, request, slug):
+        if request.query_params.get('preview'):
+            return Response(PostSerializer(Post.objects.get(slug=slug)).data)
+        return super().retrieve(request, slug)
 
 
 

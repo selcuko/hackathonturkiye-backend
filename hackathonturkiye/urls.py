@@ -2,6 +2,7 @@ from django.contrib import admin
 from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+import blog
 from event import views as event_views
 from event.sitemaps import EventSitemap, LocationSitemap, EventTypeSitemap
 from profile import views as profile_views
@@ -54,6 +55,7 @@ urlpatterns = [
       }}),
    path('', include(router.urls)),
    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+   path('blog_preview/<slug:slug>/', blog_views.PostPreview.as_view()),
    path('redoc/', schema_view.with_ui('redoc', cache_timeout=0), name='schema-redoc'),
    path('api-auth/', include('rest_framework.urls', namespace='rest_framework')),
    path('djrichtextfield/', include('djrichtextfield.urls'))
