@@ -68,7 +68,8 @@ class PostViewSet(viewsets.ModelViewSet):
 
     def retrieve(self, request, slug):
         if request.query_params.get('preview'):
-            return Response(PostSerializer(Post.objects.get(slug=slug)).data)
+            sketch = Post.objects.get(slug=slug)
+            return Response(PostSerializer(sketch, context={'request': request}).data)
         return super().retrieve(request, slug)
 
 
