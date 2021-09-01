@@ -74,7 +74,7 @@ class Event(models.Model):
     internal_url = models.URLField(null=True, blank=True)
     thumbnail = models.ImageField(
         upload_to='thumbnails',
-        default='thumbnails/none/placeholder.jpg',
+        #default='thumbnails/none/placeholder.jpg',
         max_length=1024,
         validators=[validate_image_res],
         verbose_name='Albüm kapağı')
