@@ -8,6 +8,7 @@ from djrichtextfield.models import RichTextField
 from django.utils.text import slugify
 from django.core.exceptions import MultipleObjectsReturned
 from common.models import Tag
+from django.db.models.functions import Lower
 
 
 w_allowance_percent = .05  # max 1
@@ -40,6 +41,7 @@ class EventType(models.Model):
         return self.name
 
     class Meta:
+        ordering = (Lower('name'),)
         verbose_name = 'etkinlik türü'
         verbose_name_plural = 'etkinlik türleri'
 
@@ -51,6 +53,7 @@ class EventTag(models.Model):
         return self.name
 
     class Meta:
+        ordering = (Lower('name'), )
         verbose_name = 'etiket'
         verbose_name_plural = 'etiketler'
 
