@@ -1,36 +1,65 @@
 from datetime import date
+import coreapi, coreschema
+from drf_yasg import openapi
 from django.views import View
 from django.utils import timezone
 from django.core.exceptions import FieldError
 from rest_framework import viewsets
+from rest_framework.filters import BaseFilterBackend
 from rest_framework.response import Response
+from rest_framework.schemas import ManualSchema
 
 from event.models import Event, EventType
 from event.serializers import *
 
+class SimpleFilterBackend(BaseFilterBackend):
+    def get_schema_fields(self, view):
+        return [
+            coreapi.Field(
+            name='status',
+            location='query',
+            required=False,
+            schema=openapi.Schema(type=openapi.TYPE_STRING, description='Etkinlikleri durumuna göre filtreler. [ongoing|future|finished]')),
+
+            coreapi.Field(
+            name='after',
+            location='query',
+            required=False,
+            schema=openapi.Schema(type=openapi.TYPE_STRING, description='Belirli bir tarihten sonraki etkinlikleri filtreler. [DD-MM-YYYY]')),
+
+            coreapi.Field(
+            name='before',
+            location='query',
+            required=False,
+            schema=openapi.Schema(type=openapi.TYPE_STRING, description='Belirli bir tarihten önceki etkinlikleri filtreler. [DD-MM-YYYY]')),
+
+            coreapi.Field(
+            name='tags',
+            location='query',
+            required=False,
+            schema=openapi.Schema(type=openapi.TYPE_STRING, description='Bu etiketlerden en az birini içeren etkinlikleri filtreler. [tag1,tag2...] Örneğin: fikir,çevre,yapay-zeka')),
+
+            coreapi.Field(
+            name='order_by',
+            location='query',
+            required=False,
+            schema=openapi.Schema(type=openapi.TYPE_STRING, description='Etkinlikleri herhangi bir veriye göre sıralar. [starts_at, prize, etc]')),
+
+            coreapi.Field(
+            name='etype',
+            location='query',
+            required=False,
+            schema=openapi.Schema(type=openapi.TYPE_STRING, description='Etkinlik türüne göre filtreler [hackathon, datathon vb.]')),
+        ]
 
 class EventViewSet(viewsets.ModelViewSet):
-    """
-    API endpoint
-    """
+
     queryset = Event.objects.filter(published=True)
     serializer_class = EventSerializer
     lookup_field = 'slug'
+    filter_backends = [SimpleFilterBackend]
 
     def get_queryset(self):
-        nonfield = [
-            "etype",
-            "offset",
-            "limit",
-            "page",
-            "format",
-            "highlighted",
-            "after",
-            "before",
-            "order_by",
-            'tags',
-            'status',
-        ]
         params = self.request.query_params
         today = str(timezone.now())
 
@@ -46,10 +75,6 @@ class EventViewSet(viewsets.ModelViewSet):
             elif status == 'future':
                 self.queryset = self.queryset.filter(deadline__gte=today)
 
-        filters = {}
-        for key, value in params.items():
-            if key not in nonfield:
-                filters[key] = value
 
         # filter: by event type
         etype = params.get('etype', None)
