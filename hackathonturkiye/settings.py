@@ -158,7 +158,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 DJRICHTEXTFIELD_CONFIG = {
-    'js': [f'//cdn.tiny.cloud/1/{os.getenv("TINYMCE_API", "no-api-key")}/tinymce/5/tinymce.min.js'],
+    'js': [f'//cdn.tiny.cloud/1/lwy31s1h2ibljp3isywu73ejk0pzqd9qwy53mr7laa0qb6si/tinymce/5/tinymce.min.js'],
     'init_template': 'djrichtextfield/init/tinymce.js',
     'settings': {
         'relative_urls' : False,
