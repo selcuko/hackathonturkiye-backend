@@ -51,6 +51,9 @@ class SimpleFilterBackend(BaseFilterBackend):
             required=False,
             schema=openapi.Schema(type=openapi.TYPE_STRING, description='Etkinlik türüne göre filtreler [hackathon, datathon vb.]')),
         ]
+    
+    def filter_queryset(self, request, queryset, view):
+        return queryset
 
 class EventViewSet(viewsets.ModelViewSet):
 
