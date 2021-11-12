@@ -30,10 +30,10 @@ def init():
     global client
     auth_file = json.load(open("instagram_auth.json"))
     username, password = auth_file['username'], auth_file['password']
-    if os.path.exists('/tmp/.instauto'):
-        print('Loading Instagram session from file')
+    try:
+        print('Trying to load Instagram session from file.')
         client = ApiClient.initiate_from_file('/tmp/.instauto')
-    else:
+    except:
         print('Logging in to Instagram...', end='\t')
         client = ApiClient(username=username, password=password)
         client.log_in()
