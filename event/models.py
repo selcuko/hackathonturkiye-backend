@@ -93,6 +93,9 @@ class Event(models.Model):
         default=1, verbose_name='Öncelik (aksi söylenmedikçe 1 bırakın)')
     holder = models.CharField(
         max_length=200, null=True, blank=True, verbose_name='Etkinliği düzenleyen kurum')
+    holder_website = models.URLField(
+        null=True, blank=True, verbose_name='Etkinliği düzenleyen kurumun websitesi'
+    )
     published = models.BooleanField(default=True, verbose_name='Yayınla')
     tags = models.ManyToManyField(
         Tag, related_name='events', verbose_name='Alakalı etiketler')
